@@ -1,0 +1,67 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "CKPRST",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "CKPRST",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "RETHND",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  57,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\CKPRST.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  43,
+                           "name":  "PROC-INIT",
+                           "start_line":  43
+                       },
+                       {
+                           "end_line":  47,
+                           "name":  "PROC-TAKE-CHECKPOINT",
+                           "start_line":  47
+                       },
+                       {
+                           "end_line":  51,
+                           "name":  "PROC-COMMIT-CHECKPOINT",
+                           "start_line":  51
+                       },
+                       {
+                           "end_line":  55,
+                           "name":  "PROC-RESTART",
+                           "start_line":  55
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  13,
+                                          "start_line":  4
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  57,
+                                        "start_line":  26
+                                    },
+                      "DATA":  {
+                                   "end_line":  25,
+                                   "start_line":  14
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  3,
+                                             "start_line":  1
+                                         }
+                  },
+    "program_id":  "CKPRST",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

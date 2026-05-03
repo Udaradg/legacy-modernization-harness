@@ -1,0 +1,91 @@
+﻿{
+    "data_items":  [
+
+                   ],
+    "total_lines":  187,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\templates\\error\\error-handling.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  67,
+                           "name":  "0000-MAIN",
+                           "start_line":  67
+                       },
+                       {
+                           "end_line":  73,
+                           "name":  "1000-INITIALIZE",
+                           "start_line":  73
+                       },
+                       {
+                           "end_line":  80,
+                           "name":  "2000-PROCESS",
+                           "start_line":  80
+                       },
+                       {
+                           "end_line":  98,
+                           "name":  "3000-TERMINATE",
+                           "start_line":  98
+                       },
+                       {
+                           "end_line":  105,
+                           "name":  "8000-CHECK-FINAL-STATUS",
+                           "start_line":  105
+                       },
+                       {
+                           "end_line":  124,
+                           "name":  "8010-HANDLE-WARNING",
+                           "start_line":  124
+                       },
+                       {
+                           "end_line":  135,
+                           "name":  "8020-HANDLE-ERROR",
+                           "start_line":  135
+                       },
+                       {
+                           "end_line":  147,
+                           "name":  "8030-HANDLE-SEVERE",
+                           "start_line":  147
+                       },
+                       {
+                           "end_line":  159,
+                           "name":  "8040-HANDLE-ABEND",
+                           "start_line":  159
+                       },
+                       {
+                           "end_line":  172,
+                           "name":  "8100-LOG-ERROR",
+                           "start_line":  172
+                       },
+                       {
+                           "end_line":  181,
+                           "name":  "8500-INITIATE-ABEND",
+                           "start_line":  181
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  12,
+                                          "start_line":  8
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  187,
+                                        "start_line":  66
+                                    },
+                      "DATA":  {
+                                   "end_line":  65,
+                                   "start_line":  13
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  7,
+                                             "start_line":  5
+                                         }
+                  },
+    "program_id":  "ERROR-HANDLING",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

@@ -1,0 +1,166 @@
+﻿{
+    "record_name":  "HISTLD00_WS",
+    "source_type":  "program_ws",
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\HISTLD00.cbl",
+    "fields":  [
+                   {
+                       "line":  49,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "WS-FILE-STATUS",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  50,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "WS-TH-STATUS",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  51,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "WS-BCT-STATUS",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  53,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "WS-COUNTERS",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  54,
+                       "type":  "SIGNED_INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "0",
+                       "name":  "WS-RECORDS-READ",
+                       "pic":  "S9(9)",
+                       "length":  9,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  55,
+                       "type":  "SIGNED_INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "0",
+                       "name":  "WS-RECORDS-WRITTEN",
+                       "pic":  "S9(9)",
+                       "length":  9,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  56,
+                       "type":  "SIGNED_INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "0",
+                       "name":  "WS-ERROR-COUNT",
+                       "pic":  "S9(9)",
+                       "length":  9,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  57,
+                       "type":  "SIGNED_INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "0",
+                       "name":  "WS-COMMIT-COUNT",
+                       "pic":  "S9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  59,
+                       "type":  "SIGNED_INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  "1000",
+                       "name":  "WS-COMMIT-THRESHOLD",
+                       "pic":  "S9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  61,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "WS-SWITCHES",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  62,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "N",
+                       "name":  "WS-END-OF-FILE-SW",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  63,
+                       "type":  "UNKNOWN",
+                       "is_condition":  true,
+                       "redefines":  null,
+                       "level":  88,
+                       "value":  "Y",
+                       "name":  "END-OF-FILE",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  64,
+                       "type":  "UNKNOWN",
+                       "is_condition":  true,
+                       "redefines":  null,
+                       "level":  88,
+                       "value":  "N",
+                       "name":  "MORE-RECORDS",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   }
+               ],
+    "issues":  [
+
+               ]
+}

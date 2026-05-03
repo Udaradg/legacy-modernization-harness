@@ -1,0 +1,76 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "P100-RECOVER-CONNECTION",
+                           "line_range":  [
+                                              62,
+                                              62
+                                          ]
+                       },
+                       {
+                           "name":  "P100-EXIT",
+                           "line_range":  [
+                                              82,
+                                              82
+                                          ]
+                       },
+                       {
+                           "name":  "P110-ATTEMPT-RECONNECT",
+                           "line_range":  [
+                                              85,
+                                              85
+                                          ]
+                       },
+                       {
+                           "name":  "P110-EXIT",
+                           "line_range":  [
+                                              101,
+                                              101
+                                          ]
+                       },
+                       {
+                           "name":  "P120-WAIT-INTERVAL",
+                           "line_range":  [
+                                              104,
+                                              104
+                                          ]
+                       },
+                       {
+                           "name":  "P120-EXIT",
+                           "line_range":  [
+                                              108,
+                                              108
+                                          ]
+                       },
+                       {
+                           "name":  "P200-RECOVER-TRANSACTION",
+                           "line_range":  [
+                                              111,
+                                              111
+                                          ]
+                       },
+                       {
+                           "name":  "P200-EXIT",
+                           "line_range":  [
+                                              122,
+                                              122
+                                          ]
+                       },
+                       {
+                           "name":  "P300-RECOVER-CURSOR",
+                           "line_range":  [
+                                              125,
+                                              125
+                                          ]
+                       },
+                       {
+                           "name":  "P300-EXIT",
+                           "line_range":  [
+                                              144,
+                                              144
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\online\\DB2RECV.cbl",
+    "program_id":  "DB2RECV"
+}

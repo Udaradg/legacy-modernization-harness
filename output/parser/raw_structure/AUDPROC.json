@@ -1,0 +1,55 @@
+﻿{
+    "data_items": [
+        {
+            "name": "AUDITLOG",
+            "type": "copy"
+        }
+    ],
+    "total_lines": 96,
+    "source_file": "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\AUDPROC.cbl",
+    "paragraphs": [
+        {
+            "end_line": 52,
+            "name": "0000-MAIN",
+            "start_line": 52
+        },
+        {
+            "end_line": 59,
+            "name": "1000-INITIALIZE",
+            "start_line": 59
+        },
+        {
+            "end_line": 71,
+            "name": "2000-PROCESS-AUDIT",
+            "start_line": 71
+        },
+        {
+            "end_line": 94,
+            "name": "3000-TERMINATE",
+            "start_line": 94
+        }
+    ],
+    "divisions": {
+        "ENVIRONMENT": {
+            "end_line": 21,
+            "start_line": 10
+        },
+        "PROCEDURE": {
+            "end_line": 96,
+            "start_line": 51
+        },
+        "DATA": {
+            "end_line": 50,
+            "start_line": 22
+        },
+        "IDENTIFICATION": {
+            "end_line": 9,
+            "start_line": 7
+        }
+    },
+    "program_id": "AUDPROC",
+    "control_flow": {
+        "perform_edges": [],
+        "goto_edges": []
+    }
+}

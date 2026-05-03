@@ -1,0 +1,154 @@
+﻿{
+    "record_name":  "DBPROC",
+    "source_type":  "copybook",
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\copybook\\db2\\DBPROC.cpy",
+    "fields":  [
+                   {
+                       "line":  10,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "DB2-ERROR-HANDLING",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  11,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "DB2-ERROR-MESSAGE",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  12,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  10,
+                       "value":  "SQLCODE:",
+                       "name":  "FILLER",
+                       "pic":  "X(9)",
+                       "length":  9,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  13,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  10,
+                       "value":  null,
+                       "name":  "DB2-SQLCODE-TXT",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  14,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  10,
+                       "value":  "STATE:",
+                       "name":  "FILLER",
+                       "pic":  "X(9)",
+                       "length":  9,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  15,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  10,
+                       "value":  null,
+                       "name":  "DB2-STATE",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  16,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  10,
+                       "value":  "ERROR:",
+                       "name":  "FILLER",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  17,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  10,
+                       "value":  null,
+                       "name":  "DB2-ERROR-TEXT",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  18,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "DB2-SAVE-STATUS",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  19,
+                       "type":  "SIGNED_INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "0",
+                       "name":  "DB2-RETRY-COUNT",
+                       "pic":  "S9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  20,
+                       "type":  "SIGNED_INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "3",
+                       "name":  "DB2-MAX-RETRIES",
+                       "pic":  "S9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  21,
+                       "type":  "SIGNED_INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "100",
+                       "name":  "DB2-RETRY-WAIT",
+                       "pic":  "S9(",
+                       "length":  0,
+                       "occurs":  null
+                   }
+               ],
+    "issues":  [
+
+               ]
+}

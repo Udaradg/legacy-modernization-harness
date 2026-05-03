@@ -1,0 +1,69 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              58,
+                                              58
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE",
+                           "line_range":  [
+                                              76,
+                                              76
+                                          ]
+                       },
+                       {
+                           "name":  "1100-CREATE-STATS-TABLE",
+                           "line_range":  [
+                                              88,
+                                              88
+                                          ]
+                       },
+                       {
+                           "name":  "1200-INSERT-INITIAL",
+                           "line_range":  [
+                                              111,
+                                              111
+                                          ]
+                       },
+                       {
+                           "name":  "2000-UPDATE-STATS",
+                           "line_range":  [
+                                              130,
+                                              130
+                                          ]
+                       },
+                       {
+                           "name":  "3000-TERMINATE",
+                           "line_range":  [
+                                              157,
+                                              157
+                                          ]
+                       },
+                       {
+                           "name":  "3100-CALC-TIMES",
+                           "line_range":  [
+                                              180,
+                                              180
+                                          ]
+                       },
+                       {
+                           "name":  "4000-DISPLAY-STATS",
+                           "line_range":  [
+                                              189,
+                                              189
+                                          ]
+                       },
+                       {
+                           "name":  "9000-ERROR-ROUTINE",
+                           "line_range":  [
+                                              224,
+                                              224
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\common\\DB2STAT.cbl",
+    "program_id":  "DB2STAT"
+}

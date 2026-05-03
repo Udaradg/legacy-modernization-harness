@@ -1,0 +1,69 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "ERRHAND",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  107,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\ERRPROC.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  48,
+                           "name":  "0000-MAIN",
+                           "start_line":  48
+                       },
+                       {
+                           "end_line":  55,
+                           "name":  "1000-INITIALIZE",
+                           "start_line":  55
+                       },
+                       {
+                           "end_line":  65,
+                           "name":  "2000-PROCESS-ERROR",
+                           "start_line":  65
+                       },
+                       {
+                           "end_line":  83,
+                           "name":  "2100-WRITE-LOG",
+                           "start_line":  83
+                       },
+                       {
+                           "end_line":  93,
+                           "name":  "2200-DISPLAY-ERROR",
+                           "start_line":  93
+                       },
+                       {
+                           "end_line":  105,
+                           "name":  "3000-TERMINATE",
+                           "start_line":  105
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  21,
+                                          "start_line":  10
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  107,
+                                        "start_line":  47
+                                    },
+                      "DATA":  {
+                                   "end_line":  46,
+                                   "start_line":  22
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  9,
+                                             "start_line":  7
+                                         }
+                  },
+    "program_id":  "ERRPROC",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

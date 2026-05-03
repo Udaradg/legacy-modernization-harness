@@ -1,0 +1,41 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              76,
+                                              76
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE",
+                           "line_range":  [
+                                              86,
+                                              86
+                                          ]
+                       },
+                       {
+                           "name":  "2000-PROCESS",
+                           "line_range":  [
+                                              104,
+                                              104
+                                          ]
+                       },
+                       {
+                           "name":  "2100-VALIDATE-AND-ADD",
+                           "line_range":  [
+                                              113,
+                                              113
+                                          ]
+                       },
+                       {
+                           "name":  "3000-TERMINATE",
+                           "line_range":  [
+                                              139,
+                                              139
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\portfolio\\PORTADD.cbl",
+    "program_id":  "PORTADD"
+}

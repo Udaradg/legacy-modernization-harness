@@ -1,0 +1,111 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "DB2STAT",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "BCHCTL",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "RTNCODE",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "ERRHAND",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  185,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RPTSTA00.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  96,
+                           "name":  "0000-MAIN",
+                           "start_line":  96
+                       },
+                       {
+                           "end_line":  102,
+                           "name":  "1000-INITIALIZE",
+                           "start_line":  102
+                       },
+                       {
+                           "end_line":  107,
+                           "name":  "1100-OPEN-FILES",
+                           "start_line":  107
+                       },
+                       {
+                           "end_line":  129,
+                           "name":  "1200-WRITE-HEADERS",
+                           "start_line":  129
+                       },
+                       {
+                           "end_line":  135,
+                           "name":  "1300-INIT-ACCUMULATORS",
+                           "start_line":  135
+                       },
+                       {
+                           "end_line":  138,
+                           "name":  "2000-PROCESS-REPORT",
+                           "start_line":  138
+                       },
+                       {
+                           "end_line":  144,
+                           "name":  "2100-PROCESS-DB2-STATS",
+                           "start_line":  144
+                       },
+                       {
+                           "end_line":  156,
+                           "name":  "2200-PROCESS-BATCH-STATS",
+                           "start_line":  156
+                       },
+                       {
+                           "end_line":  168,
+                           "name":  "2300-CALCULATE-METRICS",
+                           "start_line":  168
+                       },
+                       {
+                           "end_line":  172,
+                           "name":  "2400-WRITE-REPORT",
+                           "start_line":  172
+                       },
+                       {
+                           "end_line":  177,
+                           "name":  "3000-CLEANUP",
+                           "start_line":  177
+                       },
+                       {
+                           "end_line":  182,
+                           "name":  "9999-ERROR-HANDLER",
+                           "start_line":  182
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  32,
+                                          "start_line":  14
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  185,
+                                        "start_line":  95
+                                    },
+                      "DATA":  {
+                                   "end_line":  94,
+                                   "start_line":  33
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  13,
+                                             "start_line":  1
+                                         }
+                  },
+    "program_id":  "RPTSTA00",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

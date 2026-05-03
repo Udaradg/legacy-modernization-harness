@@ -1,0 +1,83 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              83,
+                                              83
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE",
+                           "line_range":  [
+                                              103,
+                                              103
+                                          ]
+                       },
+                       {
+                           "name":  "2000-CREATE-PORTFOLIO",
+                           "line_range":  [
+                                              115,
+                                              115
+                                          ]
+                       },
+                       {
+                           "name":  "2100-VALIDATE-PORTFOLIO",
+                           "line_range":  [
+                                              138,
+                                              138
+                                          ]
+                       },
+                       {
+                           "name":  "3000-READ-PORTFOLIO",
+                           "line_range":  [
+                                              163,
+                                              163
+                                          ]
+                       },
+                       {
+                           "name":  "4000-UPDATE-PORTFOLIO",
+                           "line_range":  [
+                                              183,
+                                              183
+                                          ]
+                       },
+                       {
+                           "name":  "5000-DELETE-PORTFOLIO",
+                           "line_range":  [
+                                              209,
+                                              209
+                                          ]
+                       },
+                       {
+                           "name":  "6000-TERMINATE",
+                           "line_range":  [
+                                              228,
+                                              228
+                                          ]
+                       },
+                       {
+                           "name":  "9000-ERROR",
+                           "line_range":  [
+                                              234,
+                                              234
+                                          ]
+                       },
+                       {
+                           "name":  "2100-HANDLE-VSAM-ERROR",
+                           "line_range":  [
+                                              243,
+                                              243
+                                          ]
+                       },
+                       {
+                           "name":  "2100-LOG-PORTFOLIO-UPDATE",
+                           "line_range":  [
+                                              268,
+                                              268
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\portfolio\\PORTMSTR.cbl",
+    "program_id":  "PORTMSTR"
+}

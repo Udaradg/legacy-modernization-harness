@@ -1,0 +1,62 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              46,
+                                              46
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE",
+                           "line_range":  [
+                                              54,
+                                              54
+                                          ]
+                       },
+                       {
+                           "name":  "2000-GENERATE-RECORDS",
+                           "line_range":  [
+                                              65,
+                                              65
+                                          ]
+                       },
+                       {
+                           "name":  "2100-GENERATE-KEY",
+                           "line_range":  [
+                                              82,
+                                              82
+                                          ]
+                       },
+                       {
+                           "name":  "2200-GENERATE-CLIENT-INFO",
+                           "line_range":  [
+                                              91,
+                                              91
+                                          ]
+                       },
+                       {
+                           "name":  "2300-GENERATE-PORTFOLIO-INFO",
+                           "line_range":  [
+                                              99,
+                                              99
+                                          ]
+                       },
+                       {
+                           "name":  "2400-GENERATE-FINANCIAL-INFO",
+                           "line_range":  [
+                                              107,
+                                              107
+                                          ]
+                       },
+                       {
+                           "name":  "3000-TERMINATE",
+                           "line_range":  [
+                                              115,
+                                              115
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\portfolio\\PORTTEST.cbl",
+    "program_id":  "PORTTEST"
+}

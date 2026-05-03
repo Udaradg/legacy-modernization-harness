@@ -1,0 +1,76 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              53,
+                                              53
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE",
+                           "line_range":  [
+                                              75,
+                                              75
+                                          ]
+                       },
+                       {
+                           "name":  "2000-COMMIT",
+                           "line_range":  [
+                                              80,
+                                              80
+                                          ]
+                       },
+                       {
+                           "name":  "2100-ISSUE-COMMIT",
+                           "line_range":  [
+                                              87,
+                                              87
+                                          ]
+                       },
+                       {
+                           "name":  "3000-ROLLBACK",
+                           "line_range":  [
+                                              103,
+                                              103
+                                          ]
+                       },
+                       {
+                           "name":  "4000-SAVEPOINT",
+                           "line_range":  [
+                                              119,
+                                              119
+                                          ]
+                       },
+                       {
+                           "name":  "5000-RESTORE",
+                           "line_range":  [
+                                              137,
+                                              137
+                                          ]
+                       },
+                       {
+                           "name":  "6000-STATISTICS",
+                           "line_range":  [
+                                              155,
+                                              155
+                                          ]
+                       },
+                       {
+                           "name":  "9000-ERROR-ROUTINE",
+                           "line_range":  [
+                                              162,
+                                              162
+                                          ]
+                       },
+                       {
+                           "name":  "9100-LOG-ERROR",
+                           "line_range":  [
+                                              168,
+                                              168
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\common\\DB2CMT.cbl",
+    "program_id":  "DB2CMT"
+}

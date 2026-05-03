@@ -1,0 +1,69 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "PORTFLIO",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  160,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTUPDT.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  83,
+                           "name":  "0000-MAIN",
+                           "start_line":  83
+                       },
+                       {
+                           "end_line":  93,
+                           "name":  "1000-INITIALIZE",
+                           "start_line":  93
+                       },
+                       {
+                           "end_line":  109,
+                           "name":  "2000-PROCESS",
+                           "start_line":  109
+                       },
+                       {
+                           "end_line":  118,
+                           "name":  "2100-PROCESS-UPDATE",
+                           "start_line":  118
+                       },
+                       {
+                           "end_line":  131,
+                           "name":  "2200-APPLY-UPDATE",
+                           "start_line":  131
+                       },
+                       {
+                           "end_line":  152,
+                           "name":  "3000-TERMINATE",
+                           "start_line":  152
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  33,
+                                          "start_line":  15
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  160,
+                                        "start_line":  82
+                                    },
+                      "DATA":  {
+                                   "end_line":  81,
+                                   "start_line":  34
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  14,
+                                             "start_line":  12
+                                         }
+                  },
+    "program_id":  "PORTUPDT",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

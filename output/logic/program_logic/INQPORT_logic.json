@@ -1,0 +1,76 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "P100-INIT-PROGRAM",
+                           "line_range":  [
+                                              57,
+                                              57
+                                          ]
+                       },
+                       {
+                           "name":  "P100-EXIT",
+                           "line_range":  [
+                                              65,
+                                              65
+                                          ]
+                       },
+                       {
+                           "name":  "P200-GET-POSITION",
+                           "line_range":  [
+                                              68,
+                                              68
+                                          ]
+                       },
+                       {
+                           "name":  "P200-EXIT",
+                           "line_range":  [
+                                              83,
+                                              83
+                                          ]
+                       },
+                       {
+                           "name":  "P300-FORMAT-DISPLAY",
+                           "line_range":  [
+                                              86,
+                                              86
+                                          ]
+                       },
+                       {
+                           "name":  "P300-EXIT",
+                           "line_range":  [
+                                              93,
+                                              93
+                                          ]
+                       },
+                       {
+                           "name":  "P900-NOT-FOUND",
+                           "line_range":  [
+                                              96,
+                                              96
+                                          ]
+                       },
+                       {
+                           "name":  "P900-EXIT",
+                           "line_range":  [
+                                              100,
+                                              100
+                                          ]
+                       },
+                       {
+                           "name":  "P999-ERROR-ROUTINE",
+                           "line_range":  [
+                                              103,
+                                              103
+                                          ]
+                       },
+                       {
+                           "name":  "P999-EXIT",
+                           "line_range":  [
+                                              109,
+                                              109
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\online\\INQPORT.cbl",
+    "program_id":  "INQPORT"
+}

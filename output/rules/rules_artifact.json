@@ -1,0 +1,303 @@
+﻿{
+    "statistics": {
+        "duplicates_merged": 0,
+        "total_branches_examined": 382,
+        "total_conditions_classified": 382,
+        "low_confidence_rules": 5,
+        "total_rule_sets": 10,
+        "total_rules": 15
+    },
+    "category_breakdown": {
+        "OTHER": 274,
+        "ROUTING": 31,
+        "CALCULATION": 3,
+        "ERROR_HANDLING": 39,
+        "VALIDATION": 35
+    },
+    "rule_sets": [
+        {
+            "name": "Account validation rules",
+            "rule_set_id": "RS-001",
+            "rule_ids": [],
+            "description": "Account validation rules for business process control",
+            "rule_count": 0,
+            "primary_programs": []
+        },
+        {
+            "name": "Transaction validation rules",
+            "rule_set_id": "RS-002",
+            "rule_ids": [],
+            "description": "Transaction validation rules for business process control",
+            "rule_count": 0,
+            "primary_programs": []
+        },
+        {
+            "name": "Credit limit rules",
+            "rule_set_id": "RS-003",
+            "rule_ids": [],
+            "description": "Credit limit rules for business process control",
+            "rule_count": 0,
+            "primary_programs": []
+        },
+        {
+            "name": "Card management rules",
+            "rule_set_id": "RS-004",
+            "rule_ids": [],
+            "description": "Card management rules for business process control",
+            "rule_count": 0,
+            "primary_programs": []
+        },
+        {
+            "name": "Authentication rules",
+            "rule_set_id": "RS-005",
+            "rule_ids": [],
+            "description": "Authentication rules for business process control",
+            "rule_count": 0,
+            "primary_programs": []
+        },
+        {
+            "name": "Transaction routing rules",
+            "rule_set_id": "RS-006",
+            "rule_ids": [],
+            "description": "Transaction routing rules for business process control",
+            "rule_count": 0,
+            "primary_programs": []
+        },
+        {
+            "name": "Compliance reporting rules",
+            "rule_set_id": "RS-007",
+            "rule_ids": [],
+            "description": "Compliance reporting rules for business process control",
+            "rule_count": 0,
+            "primary_programs": []
+        },
+        {
+            "name": "Error recovery rules",
+            "rule_set_id": "RS-008",
+            "rule_ids": [],
+            "description": "Error recovery rules for business process control",
+            "rule_count": 0,
+            "primary_programs": []
+        },
+        {
+            "name": "Data integrity rules",
+            "rule_set_id": "RS-009",
+            "rule_ids": [],
+            "description": "Data integrity rules for business process control",
+            "rule_count": 0,
+            "primary_programs": []
+        },
+        {
+            "name": "System control rules",
+            "rule_set_id": "RS-010",
+            "rule_ids": [],
+            "description": "System control rules for business process control",
+            "rule_count": 0,
+            "primary_programs": []
+        }
+    ],
+    "business_rules": [
+        {
+            "rule_set_id": "RS-001",
+            "name": " other rule #0",
+            "source_programs": [
+                "BCHCTL00"
+            ],
+            "requires_sme_review": false,
+            "category": "OTHER",
+            "is_duplicated": false,
+            "rule_id": "BR-001",
+            "confidence": "confirmed",
+            "signal_strength": 5
+        },
+        {
+            "rule_set_id": "RS-001",
+            "name": " other rule #1",
+            "source_programs": [
+                "CKPRST"
+            ],
+            "requires_sme_review": false,
+            "category": "OTHER",
+            "is_duplicated": false,
+            "rule_id": "BR-002",
+            "confidence": "high",
+            "signal_strength": 4
+        },
+        {
+            "rule_set_id": "RS-001",
+            "name": " other rule #2",
+            "source_programs": [
+                "HISTLD00"
+            ],
+            "requires_sme_review": true,
+            "category": "OTHER",
+            "is_duplicated": false,
+            "rule_id": "BR-003",
+            "confidence": "medium",
+            "signal_strength": 3
+        },
+        {
+            "rule_set_id": "RS-001",
+            "name": "Route routing rule #0",
+            "source_programs": [
+                "BCHCTL00"
+            ],
+            "requires_sme_review": false,
+            "category": "ROUTING",
+            "is_duplicated": false,
+            "rule_id": "BR-004",
+            "confidence": "confirmed",
+            "signal_strength": 5
+        },
+        {
+            "rule_set_id": "RS-001",
+            "name": "Route routing rule #1",
+            "source_programs": [
+                "CKPRST"
+            ],
+            "requires_sme_review": false,
+            "category": "ROUTING",
+            "is_duplicated": false,
+            "rule_id": "BR-005",
+            "confidence": "high",
+            "signal_strength": 4
+        },
+        {
+            "rule_set_id": "RS-001",
+            "name": "Route routing rule #2",
+            "source_programs": [
+                "HISTLD00"
+            ],
+            "requires_sme_review": true,
+            "category": "ROUTING",
+            "is_duplicated": false,
+            "rule_id": "BR-006",
+            "confidence": "medium",
+            "signal_strength": 3
+        },
+        {
+            "rule_set_id": "RS-001",
+            "name": "Calculate calculation rule #0",
+            "source_programs": [
+                "BCHCTL00"
+            ],
+            "requires_sme_review": false,
+            "category": "CALCULATION",
+            "is_duplicated": false,
+            "rule_id": "BR-007",
+            "confidence": "confirmed",
+            "signal_strength": 5
+        },
+        {
+            "rule_set_id": "RS-001",
+            "name": "Calculate calculation rule #1",
+            "source_programs": [
+                "CKPRST"
+            ],
+            "requires_sme_review": false,
+            "category": "CALCULATION",
+            "is_duplicated": false,
+            "rule_id": "BR-008",
+            "confidence": "high",
+            "signal_strength": 4
+        },
+        {
+            "rule_set_id": "RS-001",
+            "name": "Calculate calculation rule #2",
+            "source_programs": [
+                "HISTLD00"
+            ],
+            "requires_sme_review": true,
+            "category": "CALCULATION",
+            "is_duplicated": false,
+            "rule_id": "BR-009",
+            "confidence": "medium",
+            "signal_strength": 3
+        },
+        {
+            "rule_set_id": "RS-001",
+            "name": "Handle error_handling rule #0",
+            "source_programs": [
+                "BCHCTL00"
+            ],
+            "requires_sme_review": false,
+            "category": "ERROR_HANDLING",
+            "is_duplicated": false,
+            "rule_id": "BR-010",
+            "confidence": "confirmed",
+            "signal_strength": 5
+        },
+        {
+            "rule_set_id": "RS-001",
+            "name": "Handle error_handling rule #1",
+            "source_programs": [
+                "CKPRST"
+            ],
+            "requires_sme_review": false,
+            "category": "ERROR_HANDLING",
+            "is_duplicated": false,
+            "rule_id": "BR-011",
+            "confidence": "high",
+            "signal_strength": 4
+        },
+        {
+            "rule_set_id": "RS-001",
+            "name": "Handle error_handling rule #2",
+            "source_programs": [
+                "HISTLD00"
+            ],
+            "requires_sme_review": true,
+            "category": "ERROR_HANDLING",
+            "is_duplicated": false,
+            "rule_id": "BR-012",
+            "confidence": "medium",
+            "signal_strength": 3
+        },
+        {
+            "rule_set_id": "RS-001",
+            "name": "Validate validation rule #0",
+            "source_programs": [
+                "BCHCTL00"
+            ],
+            "requires_sme_review": false,
+            "category": "VALIDATION",
+            "is_duplicated": false,
+            "rule_id": "BR-013",
+            "confidence": "confirmed",
+            "signal_strength": 5
+        },
+        {
+            "rule_set_id": "RS-001",
+            "name": "Validate validation rule #1",
+            "source_programs": [
+                "CKPRST"
+            ],
+            "requires_sme_review": false,
+            "category": "VALIDATION",
+            "is_duplicated": false,
+            "rule_id": "BR-014",
+            "confidence": "high",
+            "signal_strength": 4
+        },
+        {
+            "rule_set_id": "RS-001",
+            "name": "Validate validation rule #2",
+            "source_programs": [
+                "HISTLD00"
+            ],
+            "requires_sme_review": true,
+            "category": "VALIDATION",
+            "is_duplicated": false,
+            "rule_id": "BR-015",
+            "confidence": "medium",
+            "signal_strength": 3
+        }
+    ],
+    "meta": {
+        "generated_at": "2026-05-03T10:15:50.5971777-05:00",
+        "logic_source": "2026-05-03T10:02:22.5504164-05:00",
+        "agent_version": "5_rules@1.0",
+        "data_source": null,
+        "repo_root": "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness"
+    }
+}

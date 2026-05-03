@@ -1,0 +1,131 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "TRNREC",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "PORTREC",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "ERRHAND",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "AUDITLOG",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  317,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTTRAN.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  60,
+                           "name":  "0000-MAIN",
+                           "start_line":  60
+                       },
+                       {
+                           "end_line":  74,
+                           "name":  "1000-INITIALIZE",
+                           "start_line":  74
+                       },
+                       {
+                           "end_line":  92,
+                           "name":  "2000-PROCESS-TRANSACTIONS",
+                           "start_line":  92
+                       },
+                       {
+                           "end_line":  102,
+                           "name":  "2100-VALIDATE-TRANSACTION",
+                           "start_line":  102
+                       },
+                       {
+                           "end_line":  120,
+                           "name":  "2110-CHECK-PORTFOLIO",
+                           "start_line":  120
+                       },
+                       {
+                           "end_line":  136,
+                           "name":  "2120-CHECK-TRANSACTION-TYPE",
+                           "start_line":  136
+                       },
+                       {
+                           "end_line":  151,
+                           "name":  "2130-CHECK-AMOUNTS",
+                           "start_line":  151
+                       },
+                       {
+                           "end_line":  167,
+                           "name":  "2200-UPDATE-POSITIONS",
+                           "start_line":  167
+                       },
+                       {
+                           "end_line":  182,
+                           "name":  "2210-PROCESS-BUY",
+                           "start_line":  182
+                       },
+                       {
+                           "end_line":  201,
+                           "name":  "2220-PROCESS-SELL",
+                           "start_line":  201
+                       },
+                       {
+                           "end_line":  226,
+                           "name":  "2230-PROCESS-TRANSFER",
+                           "start_line":  226
+                       },
+                       {
+                           "end_line":  231,
+                           "name":  "2240-PROCESS-FEE",
+                           "start_line":  231
+                       },
+                       {
+                           "end_line":  249,
+                           "name":  "2300-UPDATE-AUDIT-TRAIL",
+                           "start_line":  249
+                       },
+                       {
+                           "end_line":  292,
+                           "name":  "2310-WRITE-AUDIT-RECORD",
+                           "start_line":  292
+                       },
+                       {
+                           "end_line":  302,
+                           "name":  "3000-TERMINATE",
+                           "start_line":  302
+                       },
+                       {
+                           "end_line":  311,
+                           "name":  "9000-ERROR-ROUTINE",
+                           "start_line":  311
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  29,
+                                          "start_line":  10
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  317,
+                                        "start_line":  59
+                                    },
+                      "DATA":  {
+                                   "end_line":  58,
+                                   "start_line":  30
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  9,
+                                             "start_line":  7
+                                         }
+                  },
+    "program_id":  "PORTTRAN",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

@@ -1,0 +1,90 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              87,
+                                              87
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE",
+                           "line_range":  [
+                                              93,
+                                              93
+                                          ]
+                       },
+                       {
+                           "name":  "1100-OPEN-FILES",
+                           "line_range":  [
+                                              97,
+                                              97
+                                          ]
+                       },
+                       {
+                           "name":  "1200-INIT-PROCESSING",
+                           "line_range":  [
+                                              119,
+                                              119
+                                          ]
+                       },
+                       {
+                           "name":  "2000-PROCESS",
+                           "line_range":  [
+                                              122,
+                                              122
+                                          ]
+                       },
+                       {
+                           "name":  "2100-PROCESS-FUNCTION",
+                           "line_range":  [
+                                              132,
+                                              132
+                                          ]
+                       },
+                       {
+                           "name":  "2200-ARCHIVE-PROCESS",
+                           "line_range":  [
+                                              148,
+                                              148
+                                          ]
+                       },
+                       {
+                           "name":  "2300-CLEANUP-PROCESS",
+                           "line_range":  [
+                                              154,
+                                              154
+                                          ]
+                       },
+                       {
+                           "name":  "2400-REORG-PROCESS",
+                           "line_range":  [
+                                              160,
+                                              160
+                                          ]
+                       },
+                       {
+                           "name":  "2500-ANALYZE-PROCESS",
+                           "line_range":  [
+                                              166,
+                                              166
+                                          ]
+                       },
+                       {
+                           "name":  "3000-CLEANUP",
+                           "line_range":  [
+                                              171,
+                                              171
+                                          ]
+                       },
+                       {
+                           "name":  "9999-ERROR-HANDLER",
+                           "line_range":  [
+                                              176,
+                                              176
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\utility\\UTLMNT00.cbl",
+    "program_id":  "UTLMNT00"
+}

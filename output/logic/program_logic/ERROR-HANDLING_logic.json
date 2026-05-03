@@ -1,0 +1,83 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              67,
+                                              67
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE",
+                           "line_range":  [
+                                              73,
+                                              73
+                                          ]
+                       },
+                       {
+                           "name":  "2000-PROCESS",
+                           "line_range":  [
+                                              80,
+                                              80
+                                          ]
+                       },
+                       {
+                           "name":  "3000-TERMINATE",
+                           "line_range":  [
+                                              98,
+                                              98
+                                          ]
+                       },
+                       {
+                           "name":  "8000-CHECK-FINAL-STATUS",
+                           "line_range":  [
+                                              105,
+                                              105
+                                          ]
+                       },
+                       {
+                           "name":  "8010-HANDLE-WARNING",
+                           "line_range":  [
+                                              124,
+                                              124
+                                          ]
+                       },
+                       {
+                           "name":  "8020-HANDLE-ERROR",
+                           "line_range":  [
+                                              135,
+                                              135
+                                          ]
+                       },
+                       {
+                           "name":  "8030-HANDLE-SEVERE",
+                           "line_range":  [
+                                              147,
+                                              147
+                                          ]
+                       },
+                       {
+                           "name":  "8040-HANDLE-ABEND",
+                           "line_range":  [
+                                              159,
+                                              159
+                                          ]
+                       },
+                       {
+                           "name":  "8100-LOG-ERROR",
+                           "line_range":  [
+                                              172,
+                                              172
+                                          ]
+                       },
+                       {
+                           "name":  "8500-INITIATE-ABEND",
+                           "line_range":  [
+                                              181,
+                                              181
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\templates\\error\\error-handling.cbl",
+    "program_id":  "ERROR-HANDLING"
+}

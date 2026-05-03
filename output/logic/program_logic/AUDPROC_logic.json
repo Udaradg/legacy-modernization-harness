@@ -1,0 +1,34 @@
+﻿{
+    "paragraphs": [
+        {
+            "name": "0000-MAIN",
+            "line_range": [
+                52,
+                52
+            ]
+        },
+        {
+            "name": "1000-INITIALIZE",
+            "line_range": [
+                59,
+                59
+            ]
+        },
+        {
+            "name": "2000-PROCESS-AUDIT",
+            "line_range": [
+                71,
+                71
+            ]
+        },
+        {
+            "name": "3000-TERMINATE",
+            "line_range": [
+                94,
+                94
+            ]
+        }
+    ],
+    "source_file": "src\\programs\\common\\AUDPROC.cbl",
+    "program_id": "AUDPROC"
+}

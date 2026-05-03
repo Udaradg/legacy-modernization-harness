@@ -1,0 +1,48 @@
+﻿{
+    "paragraphs": [
+        {
+            "name": "0000-MAIN",
+            "line_range": [
+                60,
+                60
+            ]
+        },
+        {
+            "name": "1000-PROCESS-INITIALIZE",
+            "line_range": [
+                83,
+                83
+            ]
+        },
+        {
+            "name": "2000-CHECK-PREREQUISITES",
+            "line_range": [
+                90,
+                90
+            ]
+        },
+        {
+            "name": "3000-UPDATE-STATUS",
+            "line_range": [
+                100,
+                100
+            ]
+        },
+        {
+            "name": "4000-PROCESS-TERMINATE",
+            "line_range": [
+                106,
+                106
+            ]
+        },
+        {
+            "name": "9000-ERROR-ROUTINE",
+            "line_range": [
+                111,
+                111
+            ]
+        }
+    ],
+    "source_file": "src\\programs\\batch\\BCHCTL00.cbl",
+    "program_id": "BCHCTL00"
+}

@@ -1,0 +1,116 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "PORTFLIO",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "TRNREC",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "RTNCODE",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "ERRHAND",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  216,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\test\\TSTGEN00.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  109,
+                           "name":  "0000-MAIN",
+                           "start_line":  109
+                       },
+                       {
+                           "end_line":  115,
+                           "name":  "1000-INITIALIZE",
+                           "start_line":  115
+                       },
+                       {
+                           "end_line":  120,
+                           "name":  "1100-OPEN-FILES",
+                           "start_line":  120
+                       },
+                       {
+                           "end_line":  149,
+                           "name":  "1200-INIT-RANDOM",
+                           "start_line":  149
+                       },
+                       {
+                           "end_line":  153,
+                           "name":  "1300-INIT-COUNTERS",
+                           "start_line":  153
+                       },
+                       {
+                           "end_line":  156,
+                           "name":  "2000-PROCESS",
+                           "start_line":  156
+                       },
+                       {
+                           "end_line":  166,
+                           "name":  "2100-GENERATE-TEST-DATA",
+                           "start_line":  166
+                       },
+                       {
+                           "end_line":  182,
+                           "name":  "2200-GEN-PORTFOLIO",
+                           "start_line":  182
+                       },
+                       {
+                           "end_line":  189,
+                           "name":  "2300-GEN-TRANSACTION",
+                           "start_line":  189
+                       },
+                       {
+                           "end_line":  196,
+                           "name":  "2400-GEN-ERROR-DATA",
+                           "start_line":  196
+                       },
+                       {
+                           "end_line":  200,
+                           "name":  "2500-GEN-VOLUME-DATA",
+                           "start_line":  200
+                       },
+                       {
+                           "end_line":  204,
+                           "name":  "3000-CLEANUP",
+                           "start_line":  204
+                       },
+                       {
+                           "end_line":  210,
+                           "name":  "9999-ERROR-HANDLER",
+                           "start_line":  210
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  37,
+                                          "start_line":  14
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  216,
+                                        "start_line":  108
+                                    },
+                      "DATA":  {
+                                   "end_line":  107,
+                                   "start_line":  38
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  13,
+                                             "start_line":  1
+                                         }
+                  },
+    "program_id":  "TSTGEN00",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

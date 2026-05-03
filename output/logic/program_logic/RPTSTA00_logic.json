@@ -1,0 +1,90 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              96,
+                                              96
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE",
+                           "line_range":  [
+                                              102,
+                                              102
+                                          ]
+                       },
+                       {
+                           "name":  "1100-OPEN-FILES",
+                           "line_range":  [
+                                              107,
+                                              107
+                                          ]
+                       },
+                       {
+                           "name":  "1200-WRITE-HEADERS",
+                           "line_range":  [
+                                              129,
+                                              129
+                                          ]
+                       },
+                       {
+                           "name":  "1300-INIT-ACCUMULATORS",
+                           "line_range":  [
+                                              135,
+                                              135
+                                          ]
+                       },
+                       {
+                           "name":  "2000-PROCESS-REPORT",
+                           "line_range":  [
+                                              138,
+                                              138
+                                          ]
+                       },
+                       {
+                           "name":  "2100-PROCESS-DB2-STATS",
+                           "line_range":  [
+                                              144,
+                                              144
+                                          ]
+                       },
+                       {
+                           "name":  "2200-PROCESS-BATCH-STATS",
+                           "line_range":  [
+                                              156,
+                                              156
+                                          ]
+                       },
+                       {
+                           "name":  "2300-CALCULATE-METRICS",
+                           "line_range":  [
+                                              168,
+                                              168
+                                          ]
+                       },
+                       {
+                           "name":  "2400-WRITE-REPORT",
+                           "line_range":  [
+                                              172,
+                                              172
+                                          ]
+                       },
+                       {
+                           "name":  "3000-CLEANUP",
+                           "line_range":  [
+                                              177,
+                                              177
+                                          ]
+                       },
+                       {
+                           "name":  "9999-ERROR-HANDLER",
+                           "line_range":  [
+                                              182,
+                                              182
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\batch\\RPTSTA00.cbl",
+    "program_id":  "RPTSTA00"
+}

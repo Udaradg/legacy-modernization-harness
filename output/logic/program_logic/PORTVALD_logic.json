@@ -1,0 +1,41 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              32,
+                                              32
+                                          ]
+                       },
+                       {
+                           "name":  "1000-VALIDATE-ID",
+                           "line_range":  [
+                                              52,
+                                              52
+                                          ]
+                       },
+                       {
+                           "name":  "2000-VALIDATE-ACCOUNT",
+                           "line_range":  [
+                                              73,
+                                              73
+                                          ]
+                       },
+                       {
+                           "name":  "3000-VALIDATE-TYPE",
+                           "line_range":  [
+                                              88,
+                                              88
+                                          ]
+                       },
+                       {
+                           "name":  "4000-VALIDATE-AMOUNT",
+                           "line_range":  [
+                                              105,
+                                              105
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\portfolio\\PORTVALD.cbl",
+    "program_id":  "PORTVALD"
+}

@@ -1,0 +1,90 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "P100-PROCESS-REQUEST",
+                           "line_range":  [
+                                              53,
+                                              53
+                                          ]
+                       },
+                       {
+                           "name":  "P100-EXIT",
+                           "line_range":  [
+                                              89,
+                                              89
+                                          ]
+                       },
+                       {
+                           "name":  "P200-DISPLAY-MENU",
+                           "line_range":  [
+                                              92,
+                                              92
+                                          ]
+                       },
+                       {
+                           "name":  "P200-EXIT",
+                           "line_range":  [
+                                              98,
+                                              98
+                                          ]
+                       },
+                       {
+                           "name":  "P300-PORTFOLIO-INQUIRY",
+                           "line_range":  [
+                                              101,
+                                              101
+                                          ]
+                       },
+                       {
+                           "name":  "P300-EXIT",
+                           "line_range":  [
+                                              107,
+                                              107
+                                          ]
+                       },
+                       {
+                           "name":  "P400-HISTORY-INQUIRY",
+                           "line_range":  [
+                                              110,
+                                              110
+                                          ]
+                       },
+                       {
+                           "name":  "P400-EXIT",
+                           "line_range":  [
+                                              116,
+                                              116
+                                          ]
+                       },
+                       {
+                           "name":  "P900-ERROR-ROUTINE",
+                           "line_range":  [
+                                              119,
+                                              119
+                                          ]
+                       },
+                       {
+                           "name":  "P900-EXIT",
+                           "line_range":  [
+                                              136,
+                                              136
+                                          ]
+                       },
+                       {
+                           "name":  "P050-SECURITY-CHECK",
+                           "line_range":  [
+                                              139,
+                                              139
+                                          ]
+                       },
+                       {
+                           "name":  "P050-EXIT",
+                           "line_range":  [
+                                              170,
+                                              170
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\online\\INQONLN.cbl",
+    "program_id":  "INQONLN"
+}

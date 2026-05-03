@@ -1,0 +1,48 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              83,
+                                              83
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE",
+                           "line_range":  [
+                                              93,
+                                              93
+                                          ]
+                       },
+                       {
+                           "name":  "2000-PROCESS",
+                           "line_range":  [
+                                              109,
+                                              109
+                                          ]
+                       },
+                       {
+                           "name":  "2100-PROCESS-UPDATE",
+                           "line_range":  [
+                                              118,
+                                              118
+                                          ]
+                       },
+                       {
+                           "name":  "2200-APPLY-UPDATE",
+                           "line_range":  [
+                                              131,
+                                              131
+                                          ]
+                       },
+                       {
+                           "name":  "3000-TERMINATE",
+                           "line_range":  [
+                                              152,
+                                              152
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\portfolio\\PORTUPDT.cbl",
+    "program_id":  "PORTUPDT"
+}

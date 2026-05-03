@@ -1,0 +1,139 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              75,
+                                              75
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE-SEQUENCE",
+                           "line_range":  [
+                                              94,
+                                              94
+                                          ]
+                       },
+                       {
+                           "name":  "2000-GET-NEXT-PROCESS",
+                           "line_range":  [
+                                              100,
+                                              100
+                                          ]
+                       },
+                       {
+                           "name":  "3000-CHECK-STATUS",
+                           "line_range":  [
+                                              108,
+                                              108
+                                          ]
+                       },
+                       {
+                           "name":  "4000-TERMINATE-SEQUENCE",
+                           "line_range":  [
+                                              114,
+                                              114
+                                          ]
+                       },
+                       {
+                           "name":  "9000-ERROR-ROUTINE",
+                           "line_range":  [
+                                              119,
+                                              119
+                                          ]
+                       },
+                       {
+                           "name":  "1100-OPEN-FILES",
+                           "line_range":  [
+                                              141,
+                                              141
+                                          ]
+                       },
+                       {
+                           "name":  "1200-BUILD-SEQUENCE",
+                           "line_range":  [
+                                              155,
+                                              155
+                                          ]
+                       },
+                       {
+                           "name":  "1210-ADD-TO-SEQUENCE",
+                           "line_range":  [
+                                              180,
+                                              180
+                                          ]
+                       },
+                       {
+                           "name":  "1300-CREATE-CONTROL-RECORDS",
+                           "line_range":  [
+                                              188,
+                                              188
+                                          ]
+                       },
+                       {
+                           "name":  "2100-FIND-NEXT-READY",
+                           "line_range":  [
+                                              206,
+                                              206
+                                          ]
+                       },
+                       {
+                           "name":  "2200-CHECK-DEPENDENCIES",
+                           "line_range":  [
+                                              221,
+                                              221
+                                          ]
+                       },
+                       {
+                           "name":  "2210-CHECK-DEP-STATUS",
+                           "line_range":  [
+                                              239,
+                                              239
+                                          ]
+                       },
+                       {
+                           "name":  "2300-UPDATE-PROCESS-STATUS",
+                           "line_range":  [
+                                              260,
+                                              260
+                                          ]
+                       },
+                       {
+                           "name":  "3100-READ-CONTROL-STATUS",
+                           "line_range":  [
+                                              281,
+                                              281
+                                          ]
+                       },
+                       {
+                           "name":  "3200-UPDATE-SEQUENCE-TABLE",
+                           "line_range":  [
+                                              292,
+                                              292
+                                          ]
+                       },
+                       {
+                           "name":  "3300-CHECK-COMPLETION",
+                           "line_range":  [
+                                              305,
+                                              305
+                                          ]
+                       },
+                       {
+                           "name":  "4100-CHECK-FINAL-STATUS",
+                           "line_range":  [
+                                              322,
+                                              322
+                                          ]
+                       },
+                       {
+                           "name":  "4200-CLOSE-FILES",
+                           "line_range":  [
+                                              336,
+                                              336
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\batch\\PRCSEQ00.cbl",
+    "program_id":  "PRCSEQ00"
+}

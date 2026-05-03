@@ -1,0 +1,103 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "INQCOM",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "INQCOM",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  193,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\INQHIST.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  81,
+                           "name":  "P100-INIT-PROGRAM",
+                           "start_line":  81
+                       },
+                       {
+                           "end_line":  92,
+                           "name":  "P100-EXIT",
+                           "start_line":  92
+                       },
+                       {
+                           "end_line":  95,
+                           "name":  "P150-DB2-CONNECT",
+                           "start_line":  95
+                       },
+                       {
+                           "end_line":  126,
+                           "name":  "P150-EXIT",
+                           "start_line":  126
+                       },
+                       {
+                           "end_line":  129,
+                           "name":  "P200-GET-HISTORY",
+                           "start_line":  129
+                       },
+                       {
+                           "end_line":  161,
+                           "name":  "P200-EXIT",
+                           "start_line":  161
+                       },
+                       {
+                           "end_line":  164,
+                           "name":  "P250-FETCH-HISTORY",
+                           "start_line":  164
+                       },
+                       {
+                           "end_line":  174,
+                           "name":  "P250-EXIT",
+                           "start_line":  174
+                       },
+                       {
+                           "end_line":  177,
+                           "name":  "P300-FORMAT-DISPLAY",
+                           "start_line":  177
+                       },
+                       {
+                           "end_line":  185,
+                           "name":  "P300-EXIT",
+                           "start_line":  185
+                       },
+                       {
+                           "end_line":  188,
+                           "name":  "P999-ERROR-ROUTINE",
+                           "start_line":  188
+                       },
+                       {
+                           "end_line":  192,
+                           "name":  "P999-EXIT",
+                           "start_line":  192
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  11,
+                                          "start_line":  10
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  193,
+                                        "start_line":  69
+                                    },
+                      "DATA":  {
+                                   "end_line":  68,
+                                   "start_line":  12
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  9,
+                                             "start_line":  1
+                                         }
+                  },
+    "program_id":  "INQHIST",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

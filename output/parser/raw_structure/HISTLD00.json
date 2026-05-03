@@ -1,0 +1,143 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "HISTREC",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "BCHCTL",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "DBTBLS",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "SQLCA",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "DBPROC",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "ERRHAND",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "BCHCON",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  233,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\HISTLD00.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  67,
+                           "name":  "0000-MAIN",
+                           "start_line":  67
+                       },
+                       {
+                           "end_line":  80,
+                           "name":  "1000-INITIALIZE",
+                           "start_line":  80
+                       },
+                       {
+                           "end_line":  86,
+                           "name":  "2000-PROCESS",
+                           "start_line":  86
+                       },
+                       {
+                           "end_line":  95,
+                           "name":  "3000-TERMINATE",
+                           "start_line":  95
+                       },
+                       {
+                           "end_line":  102,
+                           "name":  "1100-OPEN-FILES",
+                           "start_line":  102
+                       },
+                       {
+                           "end_line":  116,
+                           "name":  "1200-CONNECT-DB2",
+                           "start_line":  116
+                       },
+                       {
+                           "end_line":  120,
+                           "name":  "1300-INIT-CHECKPOINTS",
+                           "start_line":  120
+                       },
+                       {
+                           "end_line":  134,
+                           "name":  "2100-READ-HISTORY",
+                           "start_line":  134
+                       },
+                       {
+                           "end_line":  143,
+                           "name":  "2200-LOAD-TO-DB2",
+                           "start_line":  143
+                       },
+                       {
+                           "end_line":  177,
+                           "name":  "2300-CHECK-COMMIT",
+                           "start_line":  177
+                       },
+                       {
+                           "end_line":  191,
+                           "name":  "2310-UPDATE-CHECKPOINT",
+                           "start_line":  191
+                       },
+                       {
+                           "end_line":  202,
+                           "name":  "3100-FINAL-COMMIT",
+                           "start_line":  202
+                       },
+                       {
+                           "end_line":  210,
+                           "name":  "3200-CLOSE-FILES",
+                           "start_line":  210
+                       },
+                       {
+                           "end_line":  215,
+                           "name":  "3300-DISCONNECT-DB2",
+                           "start_line":  215
+                       },
+                       {
+                           "end_line":  219,
+                           "name":  "3400-DISPLAY-STATS",
+                           "start_line":  219
+                       },
+                       {
+                           "end_line":  226,
+                           "name":  "9000-ERROR-ROUTINE",
+                           "start_line":  226
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  30,
+                                          "start_line":  10
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  233,
+                                        "start_line":  66
+                                    },
+                      "DATA":  {
+                                   "end_line":  65,
+                                   "start_line":  31
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  9,
+                                             "start_line":  7
+                                         }
+                  },
+    "program_id":  "HISTLD00",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

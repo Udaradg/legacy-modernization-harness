@@ -1,0 +1,48 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "P100-VALIDATE-USER",
+                           "line_range":  [
+                                              56,
+                                              56
+                                          ]
+                       },
+                       {
+                           "name":  "P100-EXIT",
+                           "line_range":  [
+                                              75,
+                                              75
+                                          ]
+                       },
+                       {
+                           "name":  "P200-CHECK-AUTH",
+                           "line_range":  [
+                                              78,
+                                              78
+                                          ]
+                       },
+                       {
+                           "name":  "P200-EXIT",
+                           "line_range":  [
+                                              102,
+                                              102
+                                          ]
+                       },
+                       {
+                           "name":  "P300-LOG-ACCESS",
+                           "line_range":  [
+                                              105,
+                                              105
+                                          ]
+                       },
+                       {
+                           "name":  "P300-EXIT",
+                           "line_range":  [
+                                              134,
+                                              134
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\online\\SECMGR.cbl",
+    "program_id":  "SECMGR"
+}

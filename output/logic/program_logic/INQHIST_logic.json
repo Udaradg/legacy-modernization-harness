@@ -1,0 +1,90 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "P100-INIT-PROGRAM",
+                           "line_range":  [
+                                              81,
+                                              81
+                                          ]
+                       },
+                       {
+                           "name":  "P100-EXIT",
+                           "line_range":  [
+                                              92,
+                                              92
+                                          ]
+                       },
+                       {
+                           "name":  "P150-DB2-CONNECT",
+                           "line_range":  [
+                                              95,
+                                              95
+                                          ]
+                       },
+                       {
+                           "name":  "P150-EXIT",
+                           "line_range":  [
+                                              126,
+                                              126
+                                          ]
+                       },
+                       {
+                           "name":  "P200-GET-HISTORY",
+                           "line_range":  [
+                                              129,
+                                              129
+                                          ]
+                       },
+                       {
+                           "name":  "P200-EXIT",
+                           "line_range":  [
+                                              161,
+                                              161
+                                          ]
+                       },
+                       {
+                           "name":  "P250-FETCH-HISTORY",
+                           "line_range":  [
+                                              164,
+                                              164
+                                          ]
+                       },
+                       {
+                           "name":  "P250-EXIT",
+                           "line_range":  [
+                                              174,
+                                              174
+                                          ]
+                       },
+                       {
+                           "name":  "P300-FORMAT-DISPLAY",
+                           "line_range":  [
+                                              177,
+                                              177
+                                          ]
+                       },
+                       {
+                           "name":  "P300-EXIT",
+                           "line_range":  [
+                                              185,
+                                              185
+                                          ]
+                       },
+                       {
+                           "name":  "P999-ERROR-ROUTINE",
+                           "line_range":  [
+                                              188,
+                                              188
+                                          ]
+                       },
+                       {
+                           "name":  "P999-EXIT",
+                           "line_range":  [
+                                              192,
+                                              192
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\online\\INQHIST.cbl",
+    "program_id":  "INQHIST"
+}

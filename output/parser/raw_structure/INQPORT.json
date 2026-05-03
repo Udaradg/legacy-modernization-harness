@@ -1,0 +1,97 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "INQCOM",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "POSREC",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "INQCOM",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  110,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\INQPORT.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  57,
+                           "name":  "P100-INIT-PROGRAM",
+                           "start_line":  57
+                       },
+                       {
+                           "end_line":  65,
+                           "name":  "P100-EXIT",
+                           "start_line":  65
+                       },
+                       {
+                           "end_line":  68,
+                           "name":  "P200-GET-POSITION",
+                           "start_line":  68
+                       },
+                       {
+                           "end_line":  83,
+                           "name":  "P200-EXIT",
+                           "start_line":  83
+                       },
+                       {
+                           "end_line":  86,
+                           "name":  "P300-FORMAT-DISPLAY",
+                           "start_line":  86
+                       },
+                       {
+                           "end_line":  93,
+                           "name":  "P300-EXIT",
+                           "start_line":  93
+                       },
+                       {
+                           "end_line":  96,
+                           "name":  "P900-NOT-FOUND",
+                           "start_line":  96
+                       },
+                       {
+                           "end_line":  100,
+                           "name":  "P900-EXIT",
+                           "start_line":  100
+                       },
+                       {
+                           "end_line":  103,
+                           "name":  "P999-ERROR-ROUTINE",
+                           "start_line":  103
+                       },
+                       {
+                           "end_line":  109,
+                           "name":  "P999-EXIT",
+                           "start_line":  109
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  11,
+                                          "start_line":  10
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  110,
+                                        "start_line":  40
+                                    },
+                      "DATA":  {
+                                   "end_line":  39,
+                                   "start_line":  12
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  9,
+                                             "start_line":  1
+                                         }
+                  },
+    "program_id":  "INQPORT",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

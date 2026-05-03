@@ -1,0 +1,107 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "DB2STAT",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "RTNCODE",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "ERRHAND",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  221,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\utility\\UTLMON00.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  128,
+                           "name":  "0000-MAIN",
+                           "start_line":  128
+                       },
+                       {
+                           "end_line":  134,
+                           "name":  "1000-INITIALIZE",
+                           "start_line":  134
+                       },
+                       {
+                           "end_line":  139,
+                           "name":  "1100-OPEN-FILES",
+                           "start_line":  139
+                       },
+                       {
+                           "end_line":  168,
+                           "name":  "1200-INIT-PROCESSING",
+                           "start_line":  168
+                       },
+                       {
+                           "end_line":  171,
+                           "name":  "1300-READ-CONFIG",
+                           "start_line":  171
+                       },
+                       {
+                           "end_line":  181,
+                           "name":  "2000-PROCESS",
+                           "start_line":  181
+                       },
+                       {
+                           "end_line":  189,
+                           "name":  "2100-COLLECT-METRICS",
+                           "start_line":  189
+                       },
+                       {
+                           "end_line":  195,
+                           "name":  "2200-CHECK-THRESHOLDS",
+                           "start_line":  195
+                       },
+                       {
+                           "end_line":  201,
+                           "name":  "2300-LOG-STATUS",
+                           "start_line":  201
+                       },
+                       {
+                           "end_line":  206,
+                           "name":  "2400-GENERATE-ALERTS",
+                           "start_line":  206
+                       },
+                       {
+                           "end_line":  212,
+                           "name":  "3000-CLEANUP",
+                           "start_line":  212
+                       },
+                       {
+                           "end_line":  218,
+                           "name":  "9999-ERROR-HANDLER",
+                           "start_line":  218
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  40,
+                                          "start_line":  14
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  221,
+                                        "start_line":  127
+                                    },
+                      "DATA":  {
+                                   "end_line":  126,
+                                   "start_line":  41
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  13,
+                                             "start_line":  1
+                                         }
+                  },
+    "program_id":  "UTLMON00",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

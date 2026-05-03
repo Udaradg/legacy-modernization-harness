@@ -1,0 +1,20 @@
+﻿{
+    "record_name": "CKPRST_WS",
+    "source_type": "program_ws",
+    "source_file": "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\CKPRST.cbl",
+    "fields": [
+        {
+            "line": 20,
+            "type": "STRING",
+            "is_condition": false,
+            "redefines": null,
+            "level": 1,
+            "value": null,
+            "name": "WS-FILE-STATUS",
+            "pic": "X(",
+            "length": 0,
+            "occurs": null
+        }
+    ],
+    "issues": []
+}

@@ -1,0 +1,190 @@
+﻿{
+    "record_name":  "INQPORT_WS",
+    "source_type":  "program_ws",
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\INQPORT.cbl",
+    "fields":  [
+                   {
+                       "line":  14,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "WS-COMMAREA",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  17,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "WS-POSITION-RECORD",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  20,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "WS-DB2-POSITION",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  23,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "WS-FLAGS",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  24,
+                       "type":  "SIGNED_INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "WS-RESPONSE-CODE",
+                       "pic":  "S9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  25,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "N",
+                       "name":  "WS-POSITION-FOUND",
+                       "pic":  "X",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  26,
+                       "type":  "UNKNOWN",
+                       "is_condition":  true,
+                       "redefines":  null,
+                       "level":  88,
+                       "value":  "Y",
+                       "name":  "POSITION-EXISTS",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  27,
+                       "type":  "UNKNOWN",
+                       "is_condition":  true,
+                       "redefines":  null,
+                       "level":  88,
+                       "value":  "N",
+                       "name":  "NO-POSITION",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  29,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "WS-MAP-FIELDS",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  30,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "Account:",
+                       "name":  "WS-ACCOUNT-LABEL",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  31,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "Fund ID:",
+                       "name":  "WS-FUND-LABEL",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  32,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "Units:",
+                       "name":  "WS-UNITS-LABEL",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  33,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "Cost Basis:",
+                       "name":  "WS-COST-LABEL",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  34,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "Market Value:",
+                       "name":  "WS-VALUE-LABEL",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  37,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "DFHCOMMAREA",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   }
+               ],
+    "issues":  [
+
+               ]
+}

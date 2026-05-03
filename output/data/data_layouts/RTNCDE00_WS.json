@@ -1,0 +1,142 @@
+﻿{
+    "record_name":  "RTNCDE00_WS",
+    "source_type":  "program_ws",
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RTNCDE00.cbl",
+    "fields":  [
+                   {
+                       "line":  15,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "WS-CURRENT-TIME",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  16,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "WS-CURRENT-DATE",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  17,
+                       "type":  "INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  10,
+                       "value":  null,
+                       "name":  "WS-CURRENT-YEAR",
+                       "pic":  "9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  18,
+                       "type":  "INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  10,
+                       "value":  null,
+                       "name":  "WS-CURRENT-MONTH",
+                       "pic":  "9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  19,
+                       "type":  "INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  10,
+                       "value":  null,
+                       "name":  "WS-CURRENT-DAY",
+                       "pic":  "9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  20,
+                       "type":  "INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "WS-CURRENT-HOURS",
+                       "pic":  "9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  21,
+                       "type":  "INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "WS-CURRENT-MINUTES",
+                       "pic":  "9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  22,
+                       "type":  "INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "WS-CURRENT-SECONDS",
+                       "pic":  "9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  23,
+                       "type":  "INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "WS-CURRENT-MILLISEC",
+                       "pic":  "9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  25,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "WS-DB2-AREA",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  29,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "RC-REQUEST-AREA",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   }
+               ],
+    "issues":  [
+
+               ]
+}

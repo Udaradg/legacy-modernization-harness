@@ -1,0 +1,48 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              47,
+                                              47
+                                          ]
+                       },
+                       {
+                           "name":  "1000-CONNECT",
+                           "line_range":  [
+                                              63,
+                                              63
+                                          ]
+                       },
+                       {
+                           "name":  "1100-HANDLE-CONN-ERROR",
+                           "line_range":  [
+                                              91,
+                                              91
+                                          ]
+                       },
+                       {
+                           "name":  "2000-DISCONNECT",
+                           "line_range":  [
+                                              109,
+                                              109
+                                          ]
+                       },
+                       {
+                           "name":  "3000-CHECK-STATUS",
+                           "line_range":  [
+                                              131,
+                                              131
+                                          ]
+                       },
+                       {
+                           "name":  "9000-ERROR-ROUTINE",
+                           "line_range":  [
+                                              150,
+                                              150
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\common\\DB2CONN.cbl",
+    "program_id":  "DB2CONN"
+}

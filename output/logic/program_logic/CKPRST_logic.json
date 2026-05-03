@@ -1,0 +1,34 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "PROC-INIT",
+                           "line_range":  [
+                                              43,
+                                              43
+                                          ]
+                       },
+                       {
+                           "name":  "PROC-TAKE-CHECKPOINT",
+                           "line_range":  [
+                                              47,
+                                              47
+                                          ]
+                       },
+                       {
+                           "name":  "PROC-COMMIT-CHECKPOINT",
+                           "line_range":  [
+                                              51,
+                                              51
+                                          ]
+                       },
+                       {
+                           "name":  "PROC-RESTART",
+                           "line_range":  [
+                                              55,
+                                              55
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\batch\\CKPRST.cbl",
+    "program_id":  "CKPRST"
+}

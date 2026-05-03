@@ -1,0 +1,83 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              78,
+                                              78
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE",
+                           "line_range":  [
+                                              84,
+                                              84
+                                          ]
+                       },
+                       {
+                           "name":  "1100-OPEN-FILES",
+                           "line_range":  [
+                                              88,
+                                              88
+                                          ]
+                       },
+                       {
+                           "name":  "1200-WRITE-HEADERS",
+                           "line_range":  [
+                                              110,
+                                              110
+                                          ]
+                       },
+                       {
+                           "name":  "2000-PROCESS-REPORT",
+                           "line_range":  [
+                                              116,
+                                              116
+                                          ]
+                       },
+                       {
+                           "name":  "2100-READ-POSITIONS",
+                           "line_range":  [
+                                              121,
+                                              121
+                                          ]
+                       },
+                       {
+                           "name":  "2110-FORMAT-POSITION",
+                           "line_range":  [
+                                              133,
+                                              133
+                                          ]
+                       },
+                       {
+                           "name":  "2200-PROCESS-TRANSACTIONS",
+                           "line_range":  [
+                                              143,
+                                              143
+                                          ]
+                       },
+                       {
+                           "name":  "2300-WRITE-SUMMARY",
+                           "line_range":  [
+                                              147,
+                                              147
+                                          ]
+                       },
+                       {
+                           "name":  "3000-CLEANUP",
+                           "line_range":  [
+                                              152,
+                                              152
+                                          ]
+                       },
+                       {
+                           "name":  "9999-ERROR-HANDLER",
+                           "line_range":  [
+                                              157,
+                                              157
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\batch\\RPTPOS00.cbl",
+    "program_id":  "RPTPOS00"
+}

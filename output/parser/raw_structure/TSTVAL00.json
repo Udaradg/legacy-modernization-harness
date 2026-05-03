@@ -1,0 +1,93 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "RTNCODE",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "ERRHAND",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  225,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\test\\TSTVAL00.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  128,
+                           "name":  "0000-MAIN",
+                           "start_line":  128
+                       },
+                       {
+                           "end_line":  134,
+                           "name":  "1000-INITIALIZE",
+                           "start_line":  134
+                       },
+                       {
+                           "end_line":  139,
+                           "name":  "1100-OPEN-FILES",
+                           "start_line":  139
+                       },
+                       {
+                           "end_line":  168,
+                           "name":  "1200-WRITE-HEADERS",
+                           "start_line":  168
+                       },
+                       {
+                           "end_line":  172,
+                           "name":  "1300-INIT-METRICS",
+                           "start_line":  172
+                       },
+                       {
+                           "end_line":  176,
+                           "name":  "2000-PROCESS",
+                           "start_line":  176
+                       },
+                       {
+                           "end_line":  187,
+                           "name":  "2100-EXECUTE-TEST",
+                           "start_line":  187
+                       },
+                       {
+                           "end_line":  206,
+                           "name":  "2900-WRITE-SUMMARY",
+                           "start_line":  206
+                       },
+                       {
+                           "end_line":  216,
+                           "name":  "3000-CLEANUP",
+                           "start_line":  216
+                       },
+                       {
+                           "end_line":  222,
+                           "name":  "9999-ERROR-HANDLER",
+                           "start_line":  222
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  39,
+                                          "start_line":  14
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  225,
+                                        "start_line":  127
+                                    },
+                      "DATA":  {
+                                   "end_line":  126,
+                                   "start_line":  40
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  13,
+                                             "start_line":  1
+                                         }
+                  },
+    "program_id":  "TSTVAL00",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

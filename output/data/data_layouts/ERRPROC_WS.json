@@ -1,0 +1,166 @@
+﻿{
+    "record_name":  "ERRPROC_WS",
+    "source_type":  "program_ws",
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\ERRPROC.cbl",
+    "fields":  [
+                   {
+                       "line":  27,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "ERROR-LOG-RECORD",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  28,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "LOG-DATA",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  33,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "WS-WORK-AREAS",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  34,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "WS-LOG-STATUS",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  35,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "WS-FORMATTED-TIME",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  38,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "LS-ERROR-REQUEST",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  39,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "LS-PROGRAM-ID",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  40,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "LS-CATEGORY",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  41,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "LS-ERROR-CODE",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  42,
+                       "type":  "SIGNED_INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "LS-SEVERITY",
+                       "pic":  "S9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  43,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "LS-ERROR-TEXT",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  44,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "LS-ERROR-DETAILS",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  45,
+                       "type":  "SIGNED_INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "LS-RETURN-CODE",
+                       "pic":  "S9(",
+                       "length":  0,
+                       "occurs":  null
+                   }
+               ],
+    "issues":  [
+
+               ]
+}

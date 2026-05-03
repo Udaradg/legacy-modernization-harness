@@ -1,0 +1,106 @@
+﻿{
+    "record_name":  "SQLCA",
+    "source_type":  "copybook",
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\copybook\\db2\\SQLCA.cpy",
+    "fields":  [
+                   {
+                       "line":  8,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "SQL-STATUS-CODES",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  9,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "00000",
+                       "name":  "SQL-SUCCESS",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  10,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "02000",
+                       "name":  "SQL-NOT-FOUND",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  11,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "23505",
+                       "name":  "SQL-DUP-KEY",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  12,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "40001",
+                       "name":  "SQL-DEADLOCK",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  13,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "40003",
+                       "name":  "SQL-TIMEOUT",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  14,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "08001",
+                       "name":  "SQL-CONNECTION-ERROR",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  15,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  "58004",
+                       "name":  "SQL-DB-ERROR",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   }
+               ],
+    "issues":  [
+
+               ]
+}

@@ -1,0 +1,194 @@
+﻿{
+    "component_diagrams":  [
+                               {
+                                   "diagram_id":  "COMP-OVERVIEW",
+                                   "description":  "Full system showing all batch, online, and common programs with call relationships",
+                                   "edge_count":  6,
+                                   "type":  "component",
+                                   "node_count":  27,
+                                   "title":  "System component overview",
+                                   "file":  "diagrams/component_overview.mmd"
+                               },
+                               {
+                                   "diagram_id":  "COMP-BCHCTL00",
+                                   "description":  "Direct callers and callees of batch control program BCHCTL00",
+                                   "edge_count":  3,
+                                   "type":  "neighbourhood",
+                                   "node_count":  4,
+                                   "title":  "BCHCTL00 — neighbourhood",
+                                   "file":  "diagrams/component_BCHCTL00.mmd"
+                               },
+                               {
+                                   "diagram_id":  "COMP-HISTLD00",
+                                   "description":  "Direct callers and callees of history loader program HISTLD00",
+                                   "edge_count":  2,
+                                   "type":  "neighbourhood",
+                                   "node_count":  3,
+                                   "title":  "HISTLD00 — neighbourhood",
+                                   "file":  "diagrams/component_HISTLD00.mmd"
+                               },
+                               {
+                                   "diagram_id":  "COMP-PRCSEQ00",
+                                   "description":  "Direct callers and callees of process sequencer PRCSEQ00",
+                                   "edge_count":  2,
+                                   "type":  "neighbourhood",
+                                   "node_count":  3,
+                                   "title":  "PRCSEQ00 — neighbourhood",
+                                   "file":  "diagrams/component_PRCSEQ00.mmd"
+                               },
+                               {
+                                   "diagram_id":  "COMP-RCVPRC00",
+                                   "description":  "Direct callers and callees of record processor RCVPRC00",
+                                   "edge_count":  2,
+                                   "type":  "neighbourhood",
+                                   "node_count":  3,
+                                   "title":  "RCVPRC00 — neighbourhood",
+                                   "file":  "diagrams/component_RCVPRC00.mmd"
+                               },
+                               {
+                                   "diagram_id":  "COMP-DB2CMT",
+                                   "description":  "Direct callers and callees of DB2 commit utility",
+                                   "edge_count":  3,
+                                   "type":  "neighbourhood",
+                                   "node_count":  4,
+                                   "title":  "DB2CMT — neighbourhood",
+                                   "file":  "diagrams/component_DB2CMT.mmd"
+                               },
+                               {
+                                   "diagram_id":  "COMP-ERRPROC",
+                                   "description":  "Direct callers and callees of error processor",
+                                   "edge_count":  2,
+                                   "type":  "neighbourhood",
+                                   "node_count":  3,
+                                   "title":  "ERRPROC — neighbourhood",
+                                   "file":  "diagrams/component_ERRPROC.mmd"
+                               }
+                           ],
+    "meta":  {
+                 "generated_at":  "2026-05-03T10:38:40.3813722-05:00",
+                 "max_nodes_per_diagram":  20,
+                 "summary":  {
+                                 "flow_diagrams":  4,
+                                 "total_business_rules_referenced":  15,
+                                 "component_overview":  1,
+                                 "total_mmd_files":  16,
+                                 "total_edges_in_overview":  6,
+                                 "erd_diagrams":  1,
+                                 "per_program_neighbourhoods":  6,
+                                 "sequence_diagrams":  4,
+                                 "total_entities_in_erd":  62
+                             },
+                 "agent_version":  "6_diagram@1.0",
+                 "repo_root":  "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness"
+             },
+    "erd_diagrams":  [
+                         {
+                             "diagram_id":  "ERD-MAIN",
+                             "description":  "Data model showing 62 entities and core relationships",
+                             "relationship_count":  4,
+                             "type":  "erd",
+                             "entity_count":  62,
+                             "title":  "Entity relationship diagram",
+                             "file":  "diagrams/erd.mmd"
+                         }
+                     ],
+    "flow_diagrams":  [
+                          {
+                              "diagram_id":  "FLOW-BCHCTL00",
+                              "rule_count":  3,
+                              "paragraph_count":  7,
+                              "description":  "Internal execution flow for batch control program BCHCTL00",
+                              "type":  "flow",
+                              "title":  "BCHCTL00 — process flow",
+                              "file":  "diagrams/flow_BCHCTL00.mmd"
+                          },
+                          {
+                              "diagram_id":  "FLOW-HISTLD00",
+                              "rule_count":  2,
+                              "paragraph_count":  17,
+                              "description":  "Internal execution flow for history loader HISTLD00",
+                              "type":  "flow",
+                              "title":  "HISTLD00 — process flow",
+                              "file":  "diagrams/flow_HISTLD00.mmd"
+                          },
+                          {
+                              "diagram_id":  "FLOW-CKPRST",
+                              "rule_count":  1,
+                              "paragraph_count":  5,
+                              "description":  "Internal execution flow for checkpoint restart program",
+                              "type":  "flow",
+                              "title":  "CKPRST — process flow",
+                              "file":  "diagrams/flow_CKPRST.mmd"
+                          },
+                          {
+                              "diagram_id":  "FLOW-PRCSEQ00",
+                              "rule_count":  2,
+                              "paragraph_count":  20,
+                              "description":  "Internal execution flow for process sequencer",
+                              "type":  "flow",
+                              "title":  "PRCSEQ00 — process flow",
+                              "file":  "diagrams/flow_PRCSEQ00.mmd"
+                          }
+                      ],
+    "sequence_diagrams":  [
+                              {
+                                  "diagram_id":  "SEQ-BATCH-TX-PROC",
+                                  "entry_point":  "BCHCTL00",
+                                  "file":  "diagrams/sequence_batch_transaction_processing.mmd",
+                                  "title":  "Batch Transaction Processing",
+                                  "type":  "sequence",
+                                  "description":  "End-to-end flow from batch control through validation and database updates",
+                                  "flow_name":  "Batch transaction processing",
+                                  "participants":  [
+                                                       "BCHCTL00",
+                                                       "Validation",
+                                                       "DB2",
+                                                       "ERRPROC"
+                                                   ]
+                              },
+                              {
+                                  "diagram_id":  "SEQ-ACCOUNT-PROC",
+                                  "entry_point":  "BCHCTL00",
+                                  "file":  "diagrams/sequence_account_processing.mmd",
+                                  "title":  "Account Transaction Processing",
+                                  "type":  "sequence",
+                                  "description":  "Account processing flow with error handling and database operations",
+                                  "flow_name":  "Account transaction processing",
+                                  "participants":  [
+                                                       "BCHCTL00",
+                                                       "PRCSEQ00",
+                                                       "DB2",
+                                                       "ERRPROC"
+                                                   ]
+                              },
+                              {
+                                  "diagram_id":  "SEQ-HISTORY-LOAD",
+                                  "entry_point":  "HISTLD00",
+                                  "file":  "diagrams/sequence_history_loading.mmd",
+                                  "title":  "History Data Loading",
+                                  "type":  "sequence",
+                                  "description":  "Batch history loading with audit trail recording",
+                                  "flow_name":  "History data loading",
+                                  "participants":  [
+                                                       "HISTLD00",
+                                                       "AUDPROC",
+                                                       "DB2"
+                                                   ]
+                              },
+                              {
+                                  "diagram_id":  "SEQ-VALIDATION",
+                                  "entry_point":  "Validation logic",
+                                  "file":  "diagrams/sequence_validation_flow.mmd",
+                                  "title":  "Data Validation Flow",
+                                  "type":  "sequence",
+                                  "description":  "Validation rules enforcement with limit checking and error handling",
+                                  "flow_name":  "Data validation",
+                                  "participants":  [
+                                                       "Control",
+                                                       "Validation",
+                                                       "DB2",
+                                                       "Error handler"
+                                                   ]
+                              }
+                          ]
+}

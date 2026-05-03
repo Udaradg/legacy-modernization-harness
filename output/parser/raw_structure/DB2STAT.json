@@ -1,0 +1,92 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "SQLCA",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "DBPROC",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "ERRHAND",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  228,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\DB2STAT.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  58,
+                           "name":  "0000-MAIN",
+                           "start_line":  58
+                       },
+                       {
+                           "end_line":  76,
+                           "name":  "1000-INITIALIZE",
+                           "start_line":  76
+                       },
+                       {
+                           "end_line":  88,
+                           "name":  "1100-CREATE-STATS-TABLE",
+                           "start_line":  88
+                       },
+                       {
+                           "end_line":  111,
+                           "name":  "1200-INSERT-INITIAL",
+                           "start_line":  111
+                       },
+                       {
+                           "end_line":  130,
+                           "name":  "2000-UPDATE-STATS",
+                           "start_line":  130
+                       },
+                       {
+                           "end_line":  157,
+                           "name":  "3000-TERMINATE",
+                           "start_line":  157
+                       },
+                       {
+                           "end_line":  180,
+                           "name":  "3100-CALC-TIMES",
+                           "start_line":  180
+                       },
+                       {
+                           "end_line":  189,
+                           "name":  "4000-DISPLAY-STATS",
+                           "start_line":  189
+                       },
+                       {
+                           "end_line":  224,
+                           "name":  "9000-ERROR-ROUTINE",
+                           "start_line":  224
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  14,
+                                          "start_line":  10
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  228,
+                                        "start_line":  57
+                                    },
+                      "DATA":  {
+                                   "end_line":  56,
+                                   "start_line":  15
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  9,
+                                             "start_line":  7
+                                         }
+                  },
+    "program_id":  "DB2STAT",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

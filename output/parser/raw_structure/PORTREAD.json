@@ -1,0 +1,64 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "PORTFLIO",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  111,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTREAD.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  64,
+                           "name":  "0000-MAIN",
+                           "start_line":  64
+                       },
+                       {
+                           "end_line":  74,
+                           "name":  "1000-INITIALIZE",
+                           "start_line":  74
+                       },
+                       {
+                           "end_line":  85,
+                           "name":  "2000-PROCESS",
+                           "start_line":  85
+                       },
+                       {
+                           "end_line":  95,
+                           "name":  "2100-DISPLAY-RECORD",
+                           "start_line":  95
+                       },
+                       {
+                           "end_line":  105,
+                           "name":  "3000-TERMINATE",
+                           "start_line":  105
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  28,
+                                          "start_line":  15
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  111,
+                                        "start_line":  60
+                                    },
+                      "DATA":  {
+                                   "end_line":  59,
+                                   "start_line":  29
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  14,
+                                             "start_line":  12
+                                         }
+                  },
+    "program_id":  "PORTREAD",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

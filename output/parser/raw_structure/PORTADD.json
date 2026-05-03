@@ -1,0 +1,68 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "PORTFLIO",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "PORTFLIO",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  148,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTADD.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  76,
+                           "name":  "0000-MAIN",
+                           "start_line":  76
+                       },
+                       {
+                           "end_line":  86,
+                           "name":  "1000-INITIALIZE",
+                           "start_line":  86
+                       },
+                       {
+                           "end_line":  104,
+                           "name":  "2000-PROCESS",
+                           "start_line":  104
+                       },
+                       {
+                           "end_line":  113,
+                           "name":  "2100-VALIDATE-AND-ADD",
+                           "start_line":  113
+                       },
+                       {
+                           "end_line":  139,
+                           "name":  "3000-TERMINATE",
+                           "start_line":  139
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  33,
+                                          "start_line":  15
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  148,
+                                        "start_line":  75
+                                    },
+                      "DATA":  {
+                                   "end_line":  74,
+                                   "start_line":  34
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  14,
+                                             "start_line":  12
+                                         }
+                  },
+    "program_id":  "PORTADD",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

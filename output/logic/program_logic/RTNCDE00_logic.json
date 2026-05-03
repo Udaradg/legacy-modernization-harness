@@ -1,0 +1,76 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "P100-INIT-RETURN-CODES",
+                           "line_range":  [
+                                              53,
+                                              53
+                                          ]
+                       },
+                       {
+                           "name":  "P100-EXIT",
+                           "line_range":  [
+                                              60,
+                                              60
+                                          ]
+                       },
+                       {
+                           "name":  "P200-SET-RETURN-CODE",
+                           "line_range":  [
+                                              63,
+                                              63
+                                          ]
+                       },
+                       {
+                           "name":  "P200-EXIT",
+                           "line_range":  [
+                                              82,
+                                              82
+                                          ]
+                       },
+                       {
+                           "name":  "P300-GET-RETURN-CODE",
+                           "line_range":  [
+                                              85,
+                                              85
+                                          ]
+                       },
+                       {
+                           "name":  "P300-EXIT",
+                           "line_range":  [
+                                              90,
+                                              90
+                                          ]
+                       },
+                       {
+                           "name":  "P400-LOG-RETURN-CODE",
+                           "line_range":  [
+                                              93,
+                                              93
+                                          ]
+                       },
+                       {
+                           "name":  "P400-EXIT",
+                           "line_range":  [
+                                              118,
+                                              118
+                                          ]
+                       },
+                       {
+                           "name":  "P500-ANALYZE-CODES",
+                           "line_range":  [
+                                              121,
+                                              121
+                                          ]
+                       },
+                       {
+                           "name":  "P500-EXIT",
+                           "line_range":  [
+                                              140,
+                                              140
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\batch\\RTNCDE00.cbl",
+    "program_id":  "RTNCDE00"
+}

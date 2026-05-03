@@ -1,0 +1,83 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "PORTFLIO",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "ERRHAND",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  119,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTTEST.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  46,
+                           "name":  "0000-MAIN",
+                           "start_line":  46
+                       },
+                       {
+                           "end_line":  54,
+                           "name":  "1000-INITIALIZE",
+                           "start_line":  54
+                       },
+                       {
+                           "end_line":  65,
+                           "name":  "2000-GENERATE-RECORDS",
+                           "start_line":  65
+                       },
+                       {
+                           "end_line":  82,
+                           "name":  "2100-GENERATE-KEY",
+                           "start_line":  82
+                       },
+                       {
+                           "end_line":  91,
+                           "name":  "2200-GENERATE-CLIENT-INFO",
+                           "start_line":  91
+                       },
+                       {
+                           "end_line":  99,
+                           "name":  "2300-GENERATE-PORTFOLIO-INFO",
+                           "start_line":  99
+                       },
+                       {
+                           "end_line":  107,
+                           "name":  "2400-GENERATE-FINANCIAL-INFO",
+                           "start_line":  107
+                       },
+                       {
+                           "end_line":  115,
+                           "name":  "3000-TERMINATE",
+                           "start_line":  115
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  21,
+                                          "start_line":  10
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  119,
+                                        "start_line":  45
+                                    },
+                      "DATA":  {
+                                   "end_line":  44,
+                                   "start_line":  22
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  9,
+                                             "start_line":  7
+                                         }
+                  },
+    "program_id":  "PORTTEST",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

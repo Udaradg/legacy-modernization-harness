@@ -1,0 +1,91 @@
+﻿{
+    "data_items":  [
+
+                   ],
+    "total_lines":  288,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTMSTR.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  83,
+                           "name":  "0000-MAIN",
+                           "start_line":  83
+                       },
+                       {
+                           "end_line":  103,
+                           "name":  "1000-INITIALIZE",
+                           "start_line":  103
+                       },
+                       {
+                           "end_line":  115,
+                           "name":  "2000-CREATE-PORTFOLIO",
+                           "start_line":  115
+                       },
+                       {
+                           "end_line":  138,
+                           "name":  "2100-VALIDATE-PORTFOLIO",
+                           "start_line":  138
+                       },
+                       {
+                           "end_line":  163,
+                           "name":  "3000-READ-PORTFOLIO",
+                           "start_line":  163
+                       },
+                       {
+                           "end_line":  183,
+                           "name":  "4000-UPDATE-PORTFOLIO",
+                           "start_line":  183
+                       },
+                       {
+                           "end_line":  209,
+                           "name":  "5000-DELETE-PORTFOLIO",
+                           "start_line":  209
+                       },
+                       {
+                           "end_line":  228,
+                           "name":  "6000-TERMINATE",
+                           "start_line":  228
+                       },
+                       {
+                           "end_line":  234,
+                           "name":  "9000-ERROR",
+                           "start_line":  234
+                       },
+                       {
+                           "end_line":  243,
+                           "name":  "2100-HANDLE-VSAM-ERROR",
+                           "start_line":  243
+                       },
+                       {
+                           "end_line":  268,
+                           "name":  "2100-LOG-PORTFOLIO-UPDATE",
+                           "start_line":  268
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  28,
+                                          "start_line":  15
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  288,
+                                        "start_line":  82
+                                    },
+                      "DATA":  {
+                                   "end_line":  81,
+                                   "start_line":  29
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  14,
+                                             "start_line":  12
+                                         }
+                  },
+    "program_id":  "PORTMSTR",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

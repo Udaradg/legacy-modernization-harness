@@ -1,0 +1,146 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "PRCSEQ",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "BCHCTL",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "BCHCON",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "ERRHAND",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  345,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\PRCSEQ00.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  75,
+                           "name":  "0000-MAIN",
+                           "start_line":  75
+                       },
+                       {
+                           "end_line":  94,
+                           "name":  "1000-INITIALIZE-SEQUENCE",
+                           "start_line":  94
+                       },
+                       {
+                           "end_line":  100,
+                           "name":  "2000-GET-NEXT-PROCESS",
+                           "start_line":  100
+                       },
+                       {
+                           "end_line":  108,
+                           "name":  "3000-CHECK-STATUS",
+                           "start_line":  108
+                       },
+                       {
+                           "end_line":  114,
+                           "name":  "4000-TERMINATE-SEQUENCE",
+                           "start_line":  114
+                       },
+                       {
+                           "end_line":  119,
+                           "name":  "9000-ERROR-ROUTINE",
+                           "start_line":  119
+                       },
+                       {
+                           "end_line":  141,
+                           "name":  "1100-OPEN-FILES",
+                           "start_line":  141
+                       },
+                       {
+                           "end_line":  155,
+                           "name":  "1200-BUILD-SEQUENCE",
+                           "start_line":  155
+                       },
+                       {
+                           "end_line":  180,
+                           "name":  "1210-ADD-TO-SEQUENCE",
+                           "start_line":  180
+                       },
+                       {
+                           "end_line":  188,
+                           "name":  "1300-CREATE-CONTROL-RECORDS",
+                           "start_line":  188
+                       },
+                       {
+                           "end_line":  206,
+                           "name":  "2100-FIND-NEXT-READY",
+                           "start_line":  206
+                       },
+                       {
+                           "end_line":  221,
+                           "name":  "2200-CHECK-DEPENDENCIES",
+                           "start_line":  221
+                       },
+                       {
+                           "end_line":  239,
+                           "name":  "2210-CHECK-DEP-STATUS",
+                           "start_line":  239
+                       },
+                       {
+                           "end_line":  260,
+                           "name":  "2300-UPDATE-PROCESS-STATUS",
+                           "start_line":  260
+                       },
+                       {
+                           "end_line":  281,
+                           "name":  "3100-READ-CONTROL-STATUS",
+                           "start_line":  281
+                       },
+                       {
+                           "end_line":  292,
+                           "name":  "3200-UPDATE-SEQUENCE-TABLE",
+                           "start_line":  292
+                       },
+                       {
+                           "end_line":  305,
+                           "name":  "3300-CHECK-COMPLETION",
+                           "start_line":  305
+                       },
+                       {
+                           "end_line":  322,
+                           "name":  "4100-CHECK-FINAL-STATUS",
+                           "start_line":  322
+                       },
+                       {
+                           "end_line":  336,
+                           "name":  "4200-CLOSE-FILES",
+                           "start_line":  336
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  30,
+                                          "start_line":  10
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  345,
+                                        "start_line":  74
+                                    },
+                      "DATA":  {
+                                   "end_line":  73,
+                                   "start_line":  31
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  9,
+                                             "start_line":  7
+                                         }
+                  },
+    "program_id":  "PRCSEQ00",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

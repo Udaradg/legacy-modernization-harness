@@ -1,0 +1,106 @@
+﻿{
+    "record_name":  "ERRHNDL_WS",
+    "source_type":  "program_ws",
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\ERRHNDL.cbl",
+    "fields":  [
+                   {
+                       "line":  23,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "LOG-TIMESTAMP",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  24,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "LOG-PROGRAM",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  25,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "LOG-PARAGRAPH",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  26,
+                       "type":  "SIGNED_INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "LOG-SQLCODE",
+                       "pic":  "S9(9)",
+                       "length":  9,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  27,
+                       "type":  "SIGNED_INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "LOG-CICS-RESP",
+                       "pic":  "S9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  28,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "LOG-SEVERITY",
+                       "pic":  "X.",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  29,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "LOG-MESSAGE",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  30,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "LOG-TRACE-ID",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   }
+               ],
+    "issues":  [
+
+               ]
+}

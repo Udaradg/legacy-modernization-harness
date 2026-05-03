@@ -1,0 +1,132 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              71,
+                                              71
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE-RECOVERY",
+                           "line_range":  [
+                                              88,
+                                              88
+                                          ]
+                       },
+                       {
+                           "name":  "2000-PROCESS-RECOVERY",
+                           "line_range":  [
+                                              94,
+                                              94
+                                          ]
+                       },
+                       {
+                           "name":  "3000-TERMINATE-RECOVERY",
+                           "line_range":  [
+                                              105,
+                                              105
+                                          ]
+                       },
+                       {
+                           "name":  "9000-ERROR-ROUTINE",
+                           "line_range":  [
+                                              110,
+                                              110
+                                          ]
+                       },
+                       {
+                           "name":  "1100-OPEN-FILES",
+                           "line_range":  [
+                                              118,
+                                              118
+                                          ]
+                       },
+                       {
+                           "name":  "1200-VALIDATE-REQUEST",
+                           "line_range":  [
+                                              132,
+                                              132
+                                          ]
+                       },
+                       {
+                           "name":  "1300-SET-RECOVERY-MODE",
+                           "line_range":  [
+                                              149,
+                                              149
+                                          ]
+                       },
+                       {
+                           "name":  "2100-RECOVER-PROCESS",
+                           "line_range":  [
+                                              159,
+                                              159
+                                          ]
+                       },
+                       {
+                           "name":  "2110-DETERMINE-ACTION",
+                           "line_range":  [
+                                              173,
+                                              173
+                                          ]
+                       },
+                       {
+                           "name":  "2120-EXECUTE-RECOVERY",
+                           "line_range":  [
+                                              193,
+                                              193
+                                          ]
+                       },
+                       {
+                           "name":  "2121-RESTART-PROCESS",
+                           "line_range":  [
+                                              204,
+                                              204
+                                          ]
+                       },
+                       {
+                           "name":  "2122-BYPASS-PROCESS",
+                           "line_range":  [
+                                              217,
+                                              217
+                                          ]
+                       },
+                       {
+                           "name":  "2123-TERMINATE-PROCESS",
+                           "line_range":  [
+                                              229,
+                                              229
+                                          ]
+                       },
+                       {
+                           "name":  "2200-RECOVER-SEQUENCE",
+                           "line_range":  [
+                                              241,
+                                              241
+                                          ]
+                       },
+                       {
+                           "name":  "2300-RECOVER-ALL",
+                           "line_range":  [
+                                              263,
+                                              263
+                                          ]
+                       },
+                       {
+                           "name":  "3100-UPDATE-FINAL-STATUS",
+                           "line_range":  [
+                                              283,
+                                              283
+                                          ]
+                       },
+                       {
+                           "name":  "3200-CLOSE-FILES",
+                           "line_range":  [
+                                              293,
+                                              293
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\batch\\RCVPRC00.cbl",
+    "program_id":  "RCVPRC00"
+}

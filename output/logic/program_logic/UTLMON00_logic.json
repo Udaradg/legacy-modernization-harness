@@ -1,0 +1,90 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              128,
+                                              128
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE",
+                           "line_range":  [
+                                              134,
+                                              134
+                                          ]
+                       },
+                       {
+                           "name":  "1100-OPEN-FILES",
+                           "line_range":  [
+                                              139,
+                                              139
+                                          ]
+                       },
+                       {
+                           "name":  "1200-INIT-PROCESSING",
+                           "line_range":  [
+                                              168,
+                                              168
+                                          ]
+                       },
+                       {
+                           "name":  "1300-READ-CONFIG",
+                           "line_range":  [
+                                              171,
+                                              171
+                                          ]
+                       },
+                       {
+                           "name":  "2000-PROCESS",
+                           "line_range":  [
+                                              181,
+                                              181
+                                          ]
+                       },
+                       {
+                           "name":  "2100-COLLECT-METRICS",
+                           "line_range":  [
+                                              189,
+                                              189
+                                          ]
+                       },
+                       {
+                           "name":  "2200-CHECK-THRESHOLDS",
+                           "line_range":  [
+                                              195,
+                                              195
+                                          ]
+                       },
+                       {
+                           "name":  "2300-LOG-STATUS",
+                           "line_range":  [
+                                              201,
+                                              201
+                                          ]
+                       },
+                       {
+                           "name":  "2400-GENERATE-ALERTS",
+                           "line_range":  [
+                                              206,
+                                              206
+                                          ]
+                       },
+                       {
+                           "name":  "3000-CLEANUP",
+                           "line_range":  [
+                                              212,
+                                              212
+                                          ]
+                       },
+                       {
+                           "name":  "9999-ERROR-HANDLER",
+                           "line_range":  [
+                                              218,
+                                              218
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\utility\\UTLMON00.cbl",
+    "program_id":  "UTLMON00"
+}

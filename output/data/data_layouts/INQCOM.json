@@ -1,0 +1,118 @@
+﻿{
+    "record_name":  "INQCOM",
+    "source_type":  "copybook",
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\copybook\\online\\INQCOM.cpy",
+    "fields":  [
+                   {
+                       "line":  4,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "INQCOM-AREA",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  5,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "INQCOM-FUNCTION",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  6,
+                       "type":  "UNKNOWN",
+                       "is_condition":  true,
+                       "redefines":  null,
+                       "level":  88,
+                       "value":  "MENU",
+                       "name":  "INQCOM-MENU",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  7,
+                       "type":  "UNKNOWN",
+                       "is_condition":  true,
+                       "redefines":  null,
+                       "level":  88,
+                       "value":  "INQP",
+                       "name":  "INQCOM-PORTFOLIO",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  8,
+                       "type":  "UNKNOWN",
+                       "is_condition":  true,
+                       "redefines":  null,
+                       "level":  88,
+                       "value":  "INQH",
+                       "name":  "INQCOM-HISTORY",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  9,
+                       "type":  "UNKNOWN",
+                       "is_condition":  true,
+                       "redefines":  null,
+                       "level":  88,
+                       "value":  "EXIT",
+                       "name":  "INQCOM-EXIT",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  10,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "INQCOM-ACCOUNT-NO",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  11,
+                       "type":  "SIGNED_INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "INQCOM-RESPONSE-CODE",
+                       "pic":  "S9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  12,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "INQCOM-ERROR-MSG",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   }
+               ],
+    "issues":  [
+
+               ]
+}

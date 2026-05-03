@@ -1,0 +1,76 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              83,
+                                              83
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE",
+                           "line_range":  [
+                                              89,
+                                              89
+                                          ]
+                       },
+                       {
+                           "name":  "1100-OPEN-FILES",
+                           "line_range":  [
+                                              93,
+                                              93
+                                          ]
+                       },
+                       {
+                           "name":  "1200-WRITE-HEADERS",
+                           "line_range":  [
+                                              115,
+                                              115
+                                          ]
+                       },
+                       {
+                           "name":  "2000-PROCESS-REPORT",
+                           "line_range":  [
+                                              121,
+                                              121
+                                          ]
+                       },
+                       {
+                           "name":  "2100-PROCESS-AUDIT-TRAIL",
+                           "line_range":  [
+                                              126,
+                                              126
+                                          ]
+                       },
+                       {
+                           "name":  "2200-PROCESS-ERROR-LOG",
+                           "line_range":  [
+                                              130,
+                                              130
+                                          ]
+                       },
+                       {
+                           "name":  "2300-WRITE-SUMMARY",
+                           "line_range":  [
+                                              134,
+                                              134
+                                          ]
+                       },
+                       {
+                           "name":  "3000-CLEANUP",
+                           "line_range":  [
+                                              139,
+                                              139
+                                          ]
+                       },
+                       {
+                           "name":  "9999-ERROR-HANDLER",
+                           "line_range":  [
+                                              144,
+                                              144
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\batch\\RPTAUD00.cbl",
+    "program_id":  "RPTAUD00"
+}

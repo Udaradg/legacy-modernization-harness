@@ -1,0 +1,103 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "RTNCODE",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "ERRHAND",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  182,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\utility\\UTLMNT00.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  87,
+                           "name":  "0000-MAIN",
+                           "start_line":  87
+                       },
+                       {
+                           "end_line":  93,
+                           "name":  "1000-INITIALIZE",
+                           "start_line":  93
+                       },
+                       {
+                           "end_line":  97,
+                           "name":  "1100-OPEN-FILES",
+                           "start_line":  97
+                       },
+                       {
+                           "end_line":  119,
+                           "name":  "1200-INIT-PROCESSING",
+                           "start_line":  119
+                       },
+                       {
+                           "end_line":  122,
+                           "name":  "2000-PROCESS",
+                           "start_line":  122
+                       },
+                       {
+                           "end_line":  132,
+                           "name":  "2100-PROCESS-FUNCTION",
+                           "start_line":  132
+                       },
+                       {
+                           "end_line":  148,
+                           "name":  "2200-ARCHIVE-PROCESS",
+                           "start_line":  148
+                       },
+                       {
+                           "end_line":  154,
+                           "name":  "2300-CLEANUP-PROCESS",
+                           "start_line":  154
+                       },
+                       {
+                           "end_line":  160,
+                           "name":  "2400-REORG-PROCESS",
+                           "start_line":  160
+                       },
+                       {
+                           "end_line":  166,
+                           "name":  "2500-ANALYZE-PROCESS",
+                           "start_line":  166
+                       },
+                       {
+                           "end_line":  171,
+                           "name":  "3000-CLEANUP",
+                           "start_line":  171
+                       },
+                       {
+                           "end_line":  176,
+                           "name":  "9999-ERROR-HANDLER",
+                           "start_line":  176
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  34,
+                                          "start_line":  14
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  182,
+                                        "start_line":  86
+                                    },
+                      "DATA":  {
+                                   "end_line":  85,
+                                   "start_line":  35
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  13,
+                                             "start_line":  1
+                                         }
+                  },
+    "program_id":  "UTLMNT00",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

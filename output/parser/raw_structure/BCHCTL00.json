@@ -1,0 +1,77 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "BCHCTL",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "BCHCON",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "ERRHAND",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  127,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\BCHCTL00.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  60,
+                           "name":  "0000-MAIN",
+                           "start_line":  60
+                       },
+                       {
+                           "end_line":  83,
+                           "name":  "1000-PROCESS-INITIALIZE",
+                           "start_line":  83
+                       },
+                       {
+                           "end_line":  90,
+                           "name":  "2000-CHECK-PREREQUISITES",
+                           "start_line":  90
+                       },
+                       {
+                           "end_line":  100,
+                           "name":  "3000-UPDATE-STATUS",
+                           "start_line":  100
+                       },
+                       {
+                           "end_line":  106,
+                           "name":  "4000-PROCESS-TERMINATE",
+                           "start_line":  106
+                       },
+                       {
+                           "end_line":  111,
+                           "name":  "9000-ERROR-ROUTINE",
+                           "start_line":  111
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  23,
+                                          "start_line":  10
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  127,
+                                        "start_line":  59
+                                    },
+                      "DATA":  {
+                                   "end_line":  58,
+                                   "start_line":  24
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  9,
+                                             "start_line":  7
+                                         }
+                  },
+    "program_id":  "BCHCTL00",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

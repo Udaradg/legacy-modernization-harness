@@ -1,0 +1,141 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "BCHCTL",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "PRCSEQ",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "BCHCON",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "ERRHAND",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  302,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RCVPRC00.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  71,
+                           "name":  "0000-MAIN",
+                           "start_line":  71
+                       },
+                       {
+                           "end_line":  88,
+                           "name":  "1000-INITIALIZE-RECOVERY",
+                           "start_line":  88
+                       },
+                       {
+                           "end_line":  94,
+                           "name":  "2000-PROCESS-RECOVERY",
+                           "start_line":  94
+                       },
+                       {
+                           "end_line":  105,
+                           "name":  "3000-TERMINATE-RECOVERY",
+                           "start_line":  105
+                       },
+                       {
+                           "end_line":  110,
+                           "name":  "9000-ERROR-ROUTINE",
+                           "start_line":  110
+                       },
+                       {
+                           "end_line":  118,
+                           "name":  "1100-OPEN-FILES",
+                           "start_line":  118
+                       },
+                       {
+                           "end_line":  132,
+                           "name":  "1200-VALIDATE-REQUEST",
+                           "start_line":  132
+                       },
+                       {
+                           "end_line":  149,
+                           "name":  "1300-SET-RECOVERY-MODE",
+                           "start_line":  149
+                       },
+                       {
+                           "end_line":  159,
+                           "name":  "2100-RECOVER-PROCESS",
+                           "start_line":  159
+                       },
+                       {
+                           "end_line":  173,
+                           "name":  "2110-DETERMINE-ACTION",
+                           "start_line":  173
+                       },
+                       {
+                           "end_line":  193,
+                           "name":  "2120-EXECUTE-RECOVERY",
+                           "start_line":  193
+                       },
+                       {
+                           "end_line":  204,
+                           "name":  "2121-RESTART-PROCESS",
+                           "start_line":  204
+                       },
+                       {
+                           "end_line":  217,
+                           "name":  "2122-BYPASS-PROCESS",
+                           "start_line":  217
+                       },
+                       {
+                           "end_line":  229,
+                           "name":  "2123-TERMINATE-PROCESS",
+                           "start_line":  229
+                       },
+                       {
+                           "end_line":  241,
+                           "name":  "2200-RECOVER-SEQUENCE",
+                           "start_line":  241
+                       },
+                       {
+                           "end_line":  263,
+                           "name":  "2300-RECOVER-ALL",
+                           "start_line":  263
+                       },
+                       {
+                           "end_line":  283,
+                           "name":  "3100-UPDATE-FINAL-STATUS",
+                           "start_line":  283
+                       },
+                       {
+                           "end_line":  293,
+                           "name":  "3200-CLOSE-FILES",
+                           "start_line":  293
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  30,
+                                          "start_line":  10
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  302,
+                                        "start_line":  70
+                                    },
+                      "DATA":  {
+                                   "end_line":  69,
+                                   "start_line":  31
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  9,
+                                             "start_line":  7
+                                         }
+                  },
+    "program_id":  "RCVPRC00",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

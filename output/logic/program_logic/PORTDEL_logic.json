@@ -1,0 +1,55 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              101,
+                                              101
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE",
+                           "line_range":  [
+                                              111,
+                                              111
+                                          ]
+                       },
+                       {
+                           "name":  "2000-PROCESS",
+                           "line_range":  [
+                                              130,
+                                              130
+                                          ]
+                       },
+                       {
+                           "name":  "2100-PROCESS-DELETE",
+                           "line_range":  [
+                                              139,
+                                              139
+                                          ]
+                       },
+                       {
+                           "name":  "2200-DELETE-RECORD",
+                           "line_range":  [
+                                              156,
+                                              156
+                                          ]
+                       },
+                       {
+                           "name":  "2300-WRITE-AUDIT",
+                           "line_range":  [
+                                              168,
+                                              168
+                                          ]
+                       },
+                       {
+                           "name":  "3000-TERMINATE",
+                           "line_range":  [
+                                              184,
+                                              184
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\portfolio\\PORTDEL.cbl",
+    "program_id":  "PORTDEL"
+}

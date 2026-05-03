@@ -1,0 +1,90 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              96,
+                                              96
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE",
+                           "line_range":  [
+                                              102,
+                                              102
+                                          ]
+                       },
+                       {
+                           "name":  "1100-OPEN-FILES",
+                           "line_range":  [
+                                              106,
+                                              106
+                                          ]
+                       },
+                       {
+                           "name":  "1200-INIT-PROCESSING",
+                           "line_range":  [
+                                              135,
+                                              135
+                                          ]
+                       },
+                       {
+                           "name":  "2000-PROCESS",
+                           "line_range":  [
+                                              138,
+                                              138
+                                          ]
+                       },
+                       {
+                           "name":  "2100-PROCESS-VALIDATION",
+                           "line_range":  [
+                                              148,
+                                              148
+                                          ]
+                       },
+                       {
+                           "name":  "2200-CHECK-INTEGRITY",
+                           "line_range":  [
+                                              164,
+                                              164
+                                          ]
+                       },
+                       {
+                           "name":  "2300-CHECK-XREF",
+                           "line_range":  [
+                                              168,
+                                              168
+                                          ]
+                       },
+                       {
+                           "name":  "2400-CHECK-FORMAT",
+                           "line_range":  [
+                                              172,
+                                              172
+                                          ]
+                       },
+                       {
+                           "name":  "2500-CHECK-BALANCE",
+                           "line_range":  [
+                                              176,
+                                              176
+                                          ]
+                       },
+                       {
+                           "name":  "3000-CLEANUP",
+                           "line_range":  [
+                                              180,
+                                              180
+                                          ]
+                       },
+                       {
+                           "name":  "9999-ERROR-HANDLER",
+                           "line_range":  [
+                                              186,
+                                              186
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\utility\\UTLVAL00.cbl",
+    "program_id":  "UTLVAL00"
+}

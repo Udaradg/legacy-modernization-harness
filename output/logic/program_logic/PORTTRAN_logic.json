@@ -1,0 +1,118 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              60,
+                                              60
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE",
+                           "line_range":  [
+                                              74,
+                                              74
+                                          ]
+                       },
+                       {
+                           "name":  "2000-PROCESS-TRANSACTIONS",
+                           "line_range":  [
+                                              92,
+                                              92
+                                          ]
+                       },
+                       {
+                           "name":  "2100-VALIDATE-TRANSACTION",
+                           "line_range":  [
+                                              102,
+                                              102
+                                          ]
+                       },
+                       {
+                           "name":  "2110-CHECK-PORTFOLIO",
+                           "line_range":  [
+                                              120,
+                                              120
+                                          ]
+                       },
+                       {
+                           "name":  "2120-CHECK-TRANSACTION-TYPE",
+                           "line_range":  [
+                                              136,
+                                              136
+                                          ]
+                       },
+                       {
+                           "name":  "2130-CHECK-AMOUNTS",
+                           "line_range":  [
+                                              151,
+                                              151
+                                          ]
+                       },
+                       {
+                           "name":  "2200-UPDATE-POSITIONS",
+                           "line_range":  [
+                                              167,
+                                              167
+                                          ]
+                       },
+                       {
+                           "name":  "2210-PROCESS-BUY",
+                           "line_range":  [
+                                              182,
+                                              182
+                                          ]
+                       },
+                       {
+                           "name":  "2220-PROCESS-SELL",
+                           "line_range":  [
+                                              201,
+                                              201
+                                          ]
+                       },
+                       {
+                           "name":  "2230-PROCESS-TRANSFER",
+                           "line_range":  [
+                                              226,
+                                              226
+                                          ]
+                       },
+                       {
+                           "name":  "2240-PROCESS-FEE",
+                           "line_range":  [
+                                              231,
+                                              231
+                                          ]
+                       },
+                       {
+                           "name":  "2300-UPDATE-AUDIT-TRAIL",
+                           "line_range":  [
+                                              249,
+                                              249
+                                          ]
+                       },
+                       {
+                           "name":  "2310-WRITE-AUDIT-RECORD",
+                           "line_range":  [
+                                              292,
+                                              292
+                                          ]
+                       },
+                       {
+                           "name":  "3000-TERMINATE",
+                           "line_range":  [
+                                              302,
+                                              302
+                                          ]
+                       },
+                       {
+                           "name":  "9000-ERROR-ROUTINE",
+                           "line_range":  [
+                                              311,
+                                              311
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\portfolio\\PORTTRAN.cbl",
+    "program_id":  "PORTTRAN"
+}

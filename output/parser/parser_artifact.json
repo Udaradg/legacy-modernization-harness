@@ -1,0 +1,351 @@
+﻿{
+    "programs": [
+        {
+            "perform_statements": 16,
+            "paragraphs": 7,
+            "copy_statements": 3,
+            "path": "src\\programs\\batch\\BCHCTL00.cbl",
+            "goto_statements": 0,
+            "program_id": "BCHCTL00"
+        },
+        {
+            "perform_statements": 4,
+            "paragraphs": 5,
+            "copy_statements": 3,
+            "path": "src\\programs\\batch\\CKPRST.cbl",
+            "goto_statements": 0,
+            "program_id": "CKPRST"
+        },
+        {
+            "perform_statements": 22,
+            "paragraphs": 17,
+            "copy_statements": 7,
+            "path": "src\\programs\\batch\\HISTLD00.cbl",
+            "goto_statements": 0,
+            "program_id": "HISTLD00"
+        },
+        {
+            "perform_statements": 0,
+            "paragraphs": 0,
+            "copy_statements": 0,
+            "path": "src\\programs\\batch\\POSUPDT.cbl",
+            "goto_statements": 0,
+            "program_id": "POSUPDT"
+        },
+        {
+            "perform_statements": 35,
+            "paragraphs": 20,
+            "copy_statements": 4,
+            "path": "src\\programs\\batch\\PRCSEQ00.cbl",
+            "goto_statements": 0,
+            "program_id": "PRCSEQ00"
+        },
+        {
+            "perform_statements": 34,
+            "paragraphs": 19,
+            "copy_statements": 4,
+            "path": "src\\programs\\batch\\RCVPRC00.cbl",
+            "goto_statements": 0,
+            "program_id": "RCVPRC00"
+        },
+        {
+            "perform_statements": 18,
+            "paragraphs": 11,
+            "copy_statements": 3,
+            "path": "src\\programs\\batch\\RPTAUD00.cbl",
+            "goto_statements": 0,
+            "program_id": "RPTAUD00"
+        },
+        {
+            "perform_statements": 18,
+            "paragraphs": 12,
+            "copy_statements": 4,
+            "path": "src\\programs\\batch\\RPTPOS00.cbl",
+            "goto_statements": 0,
+            "program_id": "RPTPOS00"
+        },
+        {
+            "perform_statements": 22,
+            "paragraphs": 13,
+            "copy_statements": 4,
+            "path": "src\\programs\\batch\\RPTSTA00.cbl",
+            "goto_statements": 0,
+            "program_id": "RPTSTA00"
+        },
+        {
+            "perform_statements": 6,
+            "paragraphs": 13,
+            "copy_statements": 0,
+            "path": "src\\programs\\batch\\RTNANA00.cbl",
+            "goto_statements": 0,
+            "program_id": "RTNANA00"
+        },
+        {
+            "perform_statements": 5,
+            "paragraphs": 10,
+            "copy_statements": 1,
+            "path": "src\\programs\\batch\\RTNCDE00.cbl",
+            "goto_statements": 0,
+            "program_id": "RTNCDE00"
+        },
+        {
+            "perform_statements": 4,
+            "paragraphs": 5,
+            "copy_statements": 1,
+            "path": "src\\programs\\common\\AUDPROC.cbl",
+            "goto_statements": 0,
+            "program_id": "AUDPROC"
+        },
+        {
+            "perform_statements": 12,
+            "paragraphs": 10,
+            "copy_statements": 3,
+            "path": "src\\programs\\common\\DB2CMT.cbl",
+            "goto_statements": 0,
+            "program_id": "DB2CMT"
+        },
+        {
+            "perform_statements": 6,
+            "paragraphs": 6,
+            "copy_statements": 3,
+            "path": "src\\programs\\common\\DB2CONN.cbl",
+            "goto_statements": 0,
+            "program_id": "DB2CONN"
+        },
+        {
+            "perform_statements": 7,
+            "paragraphs": 7,
+            "copy_statements": 4,
+            "path": "src\\programs\\common\\DB2ERR.cbl",
+            "goto_statements": 0,
+            "program_id": "DB2ERR"
+        },
+        {
+            "perform_statements": 14,
+            "paragraphs": 9,
+            "copy_statements": 3,
+            "path": "src\\programs\\common\\DB2STAT.cbl",
+            "goto_statements": 0,
+            "program_id": "DB2STAT"
+        },
+        {
+            "perform_statements": 5,
+            "paragraphs": 7,
+            "copy_statements": 1,
+            "path": "src\\programs\\common\\ERRPROC.cbl",
+            "goto_statements": 0,
+            "program_id": "ERRPROC"
+        },
+        {
+            "perform_statements": 4,
+            "paragraphs": 3,
+            "copy_statements": 0,
+            "path": "src\\programs\\online\\CURSMGR.cbl",
+            "goto_statements": 0,
+            "program_id": "CURSMGR"
+        },
+        {
+            "perform_statements": 5,
+            "paragraphs": 10,
+            "copy_statements": 1,
+            "path": "src\\programs\\online\\DB2ONLN.cbl",
+            "goto_statements": 0,
+            "program_id": "DB2ONLN"
+        },
+        {
+            "perform_statements": 6,
+            "paragraphs": 10,
+            "copy_statements": 2,
+            "path": "src\\programs\\online\\DB2RECV.cbl",
+            "goto_statements": 0,
+            "program_id": "DB2RECV"
+        },
+        {
+            "perform_statements": 4,
+            "paragraphs": 0,
+            "copy_statements": 2,
+            "path": "src\\programs\\online\\ERRHNDL.cbl",
+            "goto_statements": 0,
+            "program_id": "ERRHNDL"
+        },
+        {
+            "perform_statements": 7,
+            "paragraphs": 12,
+            "copy_statements": 2,
+            "path": "src\\programs\\online\\INQHIST.cbl",
+            "goto_statements": 0,
+            "program_id": "INQHIST"
+        },
+        {
+            "perform_statements": 7,
+            "paragraphs": 12,
+            "copy_statements": 3,
+            "path": "src\\programs\\online\\INQONLN.cbl",
+            "goto_statements": 0,
+            "program_id": "INQONLN"
+        },
+        {
+            "perform_statements": 4,
+            "paragraphs": 10,
+            "copy_statements": 3,
+            "path": "src\\programs\\online\\INQPORT.cbl",
+            "goto_statements": 0,
+            "program_id": "INQPORT"
+        },
+        {
+            "perform_statements": 3,
+            "paragraphs": 6,
+            "copy_statements": 1,
+            "path": "src\\programs\\online\\SECMGR.cbl",
+            "goto_statements": 0,
+            "program_id": "SECMGR"
+        },
+        {
+            "perform_statements": 5,
+            "paragraphs": 6,
+            "copy_statements": 2,
+            "path": "src\\programs\\portfolio\\PORTADD.cbl",
+            "goto_statements": 0,
+            "program_id": "PORTADD"
+        },
+        {
+            "perform_statements": 7,
+            "paragraphs": 8,
+            "copy_statements": 1,
+            "path": "src\\programs\\portfolio\\PORTDEL.cbl",
+            "goto_statements": 0,
+            "program_id": "PORTDEL"
+        },
+        {
+            "perform_statements": 22,
+            "paragraphs": 12,
+            "copy_statements": 0,
+            "path": "src\\programs\\portfolio\\PORTMSTR.cbl",
+            "goto_statements": 0,
+            "program_id": "PORTMSTR"
+        },
+        {
+            "perform_statements": 5,
+            "paragraphs": 6,
+            "copy_statements": 1,
+            "path": "src\\programs\\portfolio\\PORTREAD.cbl",
+            "goto_statements": 0,
+            "program_id": "PORTREAD"
+        },
+        {
+            "perform_statements": 8,
+            "paragraphs": 9,
+            "copy_statements": 2,
+            "path": "src\\programs\\portfolio\\PORTTEST.cbl",
+            "goto_statements": 0,
+            "program_id": "PORTTEST"
+        },
+        {
+            "perform_statements": 25,
+            "paragraphs": 17,
+            "copy_statements": 4,
+            "path": "src\\programs\\portfolio\\PORTTRAN.cbl",
+            "goto_statements": 0,
+            "program_id": "PORTTRAN"
+        },
+        {
+            "perform_statements": 6,
+            "paragraphs": 7,
+            "copy_statements": 1,
+            "path": "src\\programs\\portfolio\\PORTUPDT.cbl",
+            "goto_statements": 0,
+            "program_id": "PORTUPDT"
+        },
+        {
+            "perform_statements": 4,
+            "paragraphs": 5,
+            "copy_statements": 1,
+            "path": "src\\programs\\portfolio\\PORTVALD.cbl",
+            "goto_statements": 0,
+            "program_id": "PORTVALD"
+        },
+        {
+            "perform_statements": 27,
+            "paragraphs": 15,
+            "copy_statements": 4,
+            "path": "src\\programs\\test\\TSTGEN00.cbl",
+            "goto_statements": 0,
+            "program_id": "TSTGEN00"
+        },
+        {
+            "perform_statements": 21,
+            "paragraphs": 12,
+            "copy_statements": 2,
+            "path": "src\\programs\\test\\TSTVAL00.cbl",
+            "goto_statements": 0,
+            "program_id": "TSTVAL00"
+        },
+        {
+            "perform_statements": 26,
+            "paragraphs": 14,
+            "copy_statements": 2,
+            "path": "src\\programs\\utility\\UTLMNT00.cbl",
+            "goto_statements": 0,
+            "program_id": "UTLMNT00"
+        },
+        {
+            "perform_statements": 29,
+            "paragraphs": 14,
+            "copy_statements": 3,
+            "path": "src\\programs\\utility\\UTLMON00.cbl",
+            "goto_statements": 0,
+            "program_id": "UTLMON00"
+        },
+        {
+            "perform_statements": 24,
+            "paragraphs": 14,
+            "copy_statements": 4,
+            "path": "src\\programs\\utility\\UTLVAL00.cbl",
+            "goto_statements": 0,
+            "program_id": "UTLVAL00"
+        },
+        {
+            "perform_statements": 17,
+            "paragraphs": 11,
+            "copy_statements": 0,
+            "path": "src\\templates\\database\\db2-handling.cbl",
+            "goto_statements": 0,
+            "program_id": "DB2-HANDLING"
+        },
+        {
+            "perform_statements": 13,
+            "paragraphs": 11,
+            "copy_statements": 0,
+            "path": "src\\templates\\error\\error-handling.cbl",
+            "goto_statements": 0,
+            "program_id": "ERROR-HANDLING"
+        },
+        {
+            "perform_statements": 15,
+            "paragraphs": 11,
+            "copy_statements": 0,
+            "path": "src\\templates\\program\\file-handling.cbl",
+            "goto_statements": 0,
+            "program_id": "FILE-HANDLING"
+        },
+        {
+            "perform_statements": 3,
+            "paragraphs": 6,
+            "copy_statements": 0,
+            "path": "src\\templates\\program\\standard-program.cbl",
+            "goto_statements": 0,
+            "program_id": "STANDARD-PROGRAM"
+        }
+    ],
+    "stats": {
+        "goto_edges": 0,
+        "perform_edges": 525,
+        "paragraphs_found": 412,
+        "total_programs": 42
+    },
+    "meta": {
+        "generated_at": "2026-05-03T09:21:01.3304612-05:00",
+        "agent_version": "2_parser@1.0",
+        "repo_root": "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness"
+    }
+}

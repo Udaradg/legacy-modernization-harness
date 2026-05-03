@@ -1,0 +1,76 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              128,
+                                              128
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE",
+                           "line_range":  [
+                                              134,
+                                              134
+                                          ]
+                       },
+                       {
+                           "name":  "1100-OPEN-FILES",
+                           "line_range":  [
+                                              139,
+                                              139
+                                          ]
+                       },
+                       {
+                           "name":  "1200-WRITE-HEADERS",
+                           "line_range":  [
+                                              168,
+                                              168
+                                          ]
+                       },
+                       {
+                           "name":  "1300-INIT-METRICS",
+                           "line_range":  [
+                                              172,
+                                              172
+                                          ]
+                       },
+                       {
+                           "name":  "2000-PROCESS",
+                           "line_range":  [
+                                              176,
+                                              176
+                                          ]
+                       },
+                       {
+                           "name":  "2100-EXECUTE-TEST",
+                           "line_range":  [
+                                              187,
+                                              187
+                                          ]
+                       },
+                       {
+                           "name":  "2900-WRITE-SUMMARY",
+                           "line_range":  [
+                                              206,
+                                              206
+                                          ]
+                       },
+                       {
+                           "name":  "3000-CLEANUP",
+                           "line_range":  [
+                                              216,
+                                              216
+                                          ]
+                       },
+                       {
+                           "name":  "9999-ERROR-HANDLER",
+                           "line_range":  [
+                                              222,
+                                              222
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\test\\TSTVAL00.cbl",
+    "program_id":  "TSTVAL00"
+}

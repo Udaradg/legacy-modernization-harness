@@ -1,0 +1,41 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              53,
+                                              53
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE",
+                           "line_range":  [
+                                              66,
+                                              66
+                                          ]
+                       },
+                       {
+                           "name":  "2000-PROCESS",
+                           "line_range":  [
+                                              73,
+                                              73
+                                          ]
+                       },
+                       {
+                           "name":  "3000-TERMINATE",
+                           "line_range":  [
+                                              81,
+                                              81
+                                          ]
+                       },
+                       {
+                           "name":  "9000-HANDLE-ERROR",
+                           "line_range":  [
+                                              87,
+                                              87
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\templates\\program\\standard-program.cbl",
+    "program_id":  "STANDARD-PROGRAM"
+}

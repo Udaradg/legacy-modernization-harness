@@ -1,0 +1,130 @@
+﻿{
+    "record_name":  "DB2REQ",
+    "source_type":  "copybook",
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\copybook\\online\\DB2REQ.cpy",
+    "fields":  [
+                   {
+                       "line":  4,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "DB2-REQUEST-AREA",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  5,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "DB2-REQUEST-TYPE",
+                       "pic":  "X.",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  6,
+                       "type":  "UNKNOWN",
+                       "is_condition":  true,
+                       "redefines":  null,
+                       "level":  88,
+                       "value":  "C",
+                       "name":  "DB2-CONNECT",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  7,
+                       "type":  "UNKNOWN",
+                       "is_condition":  true,
+                       "redefines":  null,
+                       "level":  88,
+                       "value":  "D",
+                       "name":  "DB2-DISCONNECT",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  8,
+                       "type":  "UNKNOWN",
+                       "is_condition":  true,
+                       "redefines":  null,
+                       "level":  88,
+                       "value":  "S",
+                       "name":  "DB2-STATUS",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  9,
+                       "type":  "SIGNED_INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "DB2-RESPONSE-CODE",
+                       "pic":  "S9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  10,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "DB2-CONNECTION-TOKEN",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  11,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "DB2-ERROR-INFO",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  12,
+                       "type":  "SIGNED_INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  10,
+                       "value":  null,
+                       "name":  "DB2-SQLCODE",
+                       "pic":  "S9(9)",
+                       "length":  9,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  13,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  10,
+                       "value":  null,
+                       "name":  "DB2-ERROR-MSG",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   }
+               ],
+    "issues":  [
+
+               ]
+}

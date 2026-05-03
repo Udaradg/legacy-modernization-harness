@@ -1,0 +1,130 @@
+﻿{
+    "record_name":  "PORTTRAN_WS",
+    "source_type":  "program_ws",
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTTRAN.cbl",
+    "fields":  [
+                   {
+                       "line":  46,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "WS-FILE-STATUS",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  47,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "WS-TRAN-STATUS",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  48,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "WS-PORT-STATUS",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  50,
+                       "type":  "UNKNOWN",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "WS-COUNTERS",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  51,
+                       "type":  "INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "WS-READ-COUNT",
+                       "pic":  "9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  52,
+                       "type":  "INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "WS-PROCESS-COUNT",
+                       "pic":  "9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  53,
+                       "type":  "INTEGER",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  5,
+                       "value":  null,
+                       "name":  "WS-ERROR-COUNT",
+                       "pic":  "9(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  55,
+                       "type":  "STRING",
+                       "is_condition":  false,
+                       "redefines":  null,
+                       "level":  1,
+                       "value":  null,
+                       "name":  "WS-EOF-FLAG",
+                       "pic":  "X(",
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  56,
+                       "type":  "UNKNOWN",
+                       "is_condition":  true,
+                       "redefines":  null,
+                       "level":  88,
+                       "value":  "Y",
+                       "name":  "END-OF-FILE",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   },
+                   {
+                       "line":  57,
+                       "type":  "UNKNOWN",
+                       "is_condition":  true,
+                       "redefines":  null,
+                       "level":  88,
+                       "value":  "N",
+                       "name":  "MORE-RECORDS",
+                       "pic":  null,
+                       "length":  0,
+                       "occurs":  null
+                   }
+               ],
+    "issues":  [
+
+               ]
+}

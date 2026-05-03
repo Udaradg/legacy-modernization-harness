@@ -1,0 +1,77 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "SQLCA",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "DBPROC",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "ERRHAND",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  154,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\DB2CONN.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  47,
+                           "name":  "0000-MAIN",
+                           "start_line":  47
+                       },
+                       {
+                           "end_line":  63,
+                           "name":  "1000-CONNECT",
+                           "start_line":  63
+                       },
+                       {
+                           "end_line":  91,
+                           "name":  "1100-HANDLE-CONN-ERROR",
+                           "start_line":  91
+                       },
+                       {
+                           "end_line":  109,
+                           "name":  "2000-DISCONNECT",
+                           "start_line":  109
+                       },
+                       {
+                           "end_line":  131,
+                           "name":  "3000-CHECK-STATUS",
+                           "start_line":  131
+                       },
+                       {
+                           "end_line":  150,
+                           "name":  "9000-ERROR-ROUTINE",
+                           "start_line":  150
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  14,
+                                          "start_line":  10
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  154,
+                                        "start_line":  46
+                                    },
+                      "DATA":  {
+                                   "end_line":  45,
+                                   "start_line":  15
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  9,
+                                             "start_line":  7
+                                         }
+                  },
+    "program_id":  "DB2CONN",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

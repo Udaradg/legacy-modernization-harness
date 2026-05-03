@@ -1,0 +1,97 @@
+﻿{
+    "data_items":  [
+                       {
+                           "name":  "SQLCA",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "DBPROC",
+                           "type":  "copy"
+                       },
+                       {
+                           "name":  "ERRHAND",
+                           "type":  "copy"
+                       }
+                   ],
+    "total_lines":  170,
+    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\DB2CMT.cbl",
+    "paragraphs":  [
+                       {
+                           "end_line":  53,
+                           "name":  "0000-MAIN",
+                           "start_line":  53
+                       },
+                       {
+                           "end_line":  75,
+                           "name":  "1000-INITIALIZE",
+                           "start_line":  75
+                       },
+                       {
+                           "end_line":  80,
+                           "name":  "2000-COMMIT",
+                           "start_line":  80
+                       },
+                       {
+                           "end_line":  87,
+                           "name":  "2100-ISSUE-COMMIT",
+                           "start_line":  87
+                       },
+                       {
+                           "end_line":  103,
+                           "name":  "3000-ROLLBACK",
+                           "start_line":  103
+                       },
+                       {
+                           "end_line":  119,
+                           "name":  "4000-SAVEPOINT",
+                           "start_line":  119
+                       },
+                       {
+                           "end_line":  137,
+                           "name":  "5000-RESTORE",
+                           "start_line":  137
+                       },
+                       {
+                           "end_line":  155,
+                           "name":  "6000-STATISTICS",
+                           "start_line":  155
+                       },
+                       {
+                           "end_line":  162,
+                           "name":  "9000-ERROR-ROUTINE",
+                           "start_line":  162
+                       },
+                       {
+                           "end_line":  168,
+                           "name":  "9100-LOG-ERROR",
+                           "start_line":  168
+                       }
+                   ],
+    "divisions":  {
+                      "ENVIRONMENT":  {
+                                          "end_line":  14,
+                                          "start_line":  10
+                                      },
+                      "PROCEDURE":  {
+                                        "end_line":  170,
+                                        "start_line":  52
+                                    },
+                      "DATA":  {
+                                   "end_line":  51,
+                                   "start_line":  15
+                               },
+                      "IDENTIFICATION":  {
+                                             "end_line":  9,
+                                             "start_line":  7
+                                         }
+                  },
+    "program_id":  "DB2CMT",
+    "control_flow":  {
+                         "perform_edges":  [
+
+                                           ],
+                         "goto_edges":  [
+
+                                        ]
+                     }
+}

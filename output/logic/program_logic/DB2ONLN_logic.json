@@ -1,0 +1,76 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "P100-PROCESS-CONNECT",
+                           "line_range":  [
+                                              54,
+                                              54
+                                          ]
+                       },
+                       {
+                           "name":  "P100-EXIT",
+                           "line_range":  [
+                                              63,
+                                              63
+                                          ]
+                       },
+                       {
+                           "name":  "P110-ESTABLISH-CONNECTION",
+                           "line_range":  [
+                                              66,
+                                              66
+                                          ]
+                       },
+                       {
+                           "name":  "P110-EXIT",
+                           "line_range":  [
+                                              80,
+                                              80
+                                          ]
+                       },
+                       {
+                           "name":  "P120-GENERATE-TOKEN",
+                           "line_range":  [
+                                              83,
+                                              83
+                                          ]
+                       },
+                       {
+                           "name":  "P120-EXIT",
+                           "line_range":  [
+                                              88,
+                                              88
+                                          ]
+                       },
+                       {
+                           "name":  "P200-PROCESS-DISCONNECT",
+                           "line_range":  [
+                                              91,
+                                              91
+                                          ]
+                       },
+                       {
+                           "name":  "P200-EXIT",
+                           "line_range":  [
+                                              102,
+                                              102
+                                          ]
+                       },
+                       {
+                           "name":  "P300-CHECK-STATUS",
+                           "line_range":  [
+                                              105,
+                                              105
+                                          ]
+                       },
+                       {
+                           "name":  "P300-EXIT",
+                           "line_range":  [
+                                              119,
+                                              119
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\online\\DB2ONLN.cbl",
+    "program_id":  "DB2ONLN"
+}

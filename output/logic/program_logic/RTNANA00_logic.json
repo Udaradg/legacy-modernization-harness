@@ -1,0 +1,90 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "P100-INIT-PROGRAM",
+                           "line_range":  [
+                                              111,
+                                              111
+                                          ]
+                       },
+                       {
+                           "name":  "P100-EXIT",
+                           "line_range":  [
+                                              122,
+                                              122
+                                          ]
+                       },
+                       {
+                           "name":  "P200-PROCESS-ANALYSIS",
+                           "line_range":  [
+                                              125,
+                                              125
+                                          ]
+                       },
+                       {
+                           "name":  "P200-EXIT",
+                           "line_range":  [
+                                              149,
+                                              149
+                                          ]
+                       },
+                       {
+                           "name":  "P210-WRITE-HEADERS",
+                           "line_range":  [
+                                              152,
+                                              152
+                                          ]
+                       },
+                       {
+                           "name":  "P210-EXIT",
+                           "line_range":  [
+                                              166,
+                                              166
+                                          ]
+                       },
+                       {
+                           "name":  "P220-PROCESS-DETAIL",
+                           "line_range":  [
+                                              169,
+                                              169
+                                          ]
+                       },
+                       {
+                           "name":  "P220-EXIT",
+                           "line_range":  [
+                                              189,
+                                              189
+                                          ]
+                       },
+                       {
+                           "name":  "P300-GENERATE-REPORT",
+                           "line_range":  [
+                                              192,
+                                              192
+                                          ]
+                       },
+                       {
+                           "name":  "P300-EXIT",
+                           "line_range":  [
+                                              204,
+                                              204
+                                          ]
+                       },
+                       {
+                           "name":  "P900-CLOSE-FILES",
+                           "line_range":  [
+                                              207,
+                                              207
+                                          ]
+                       },
+                       {
+                           "name":  "P900-EXIT",
+                           "line_range":  [
+                                              209,
+                                              209
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\batch\\RTNANA00.cbl",
+    "program_id":  "RTNANA00"
+}

@@ -1,0 +1,97 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "0000-MAIN",
+                           "line_range":  [
+                                              109,
+                                              109
+                                          ]
+                       },
+                       {
+                           "name":  "1000-INITIALIZE",
+                           "line_range":  [
+                                              115,
+                                              115
+                                          ]
+                       },
+                       {
+                           "name":  "1100-OPEN-FILES",
+                           "line_range":  [
+                                              120,
+                                              120
+                                          ]
+                       },
+                       {
+                           "name":  "1200-INIT-RANDOM",
+                           "line_range":  [
+                                              149,
+                                              149
+                                          ]
+                       },
+                       {
+                           "name":  "1300-INIT-COUNTERS",
+                           "line_range":  [
+                                              153,
+                                              153
+                                          ]
+                       },
+                       {
+                           "name":  "2000-PROCESS",
+                           "line_range":  [
+                                              156,
+                                              156
+                                          ]
+                       },
+                       {
+                           "name":  "2100-GENERATE-TEST-DATA",
+                           "line_range":  [
+                                              166,
+                                              166
+                                          ]
+                       },
+                       {
+                           "name":  "2200-GEN-PORTFOLIO",
+                           "line_range":  [
+                                              182,
+                                              182
+                                          ]
+                       },
+                       {
+                           "name":  "2300-GEN-TRANSACTION",
+                           "line_range":  [
+                                              189,
+                                              189
+                                          ]
+                       },
+                       {
+                           "name":  "2400-GEN-ERROR-DATA",
+                           "line_range":  [
+                                              196,
+                                              196
+                                          ]
+                       },
+                       {
+                           "name":  "2500-GEN-VOLUME-DATA",
+                           "line_range":  [
+                                              200,
+                                              200
+                                          ]
+                       },
+                       {
+                           "name":  "3000-CLEANUP",
+                           "line_range":  [
+                                              204,
+                                              204
+                                          ]
+                       },
+                       {
+                           "name":  "9999-ERROR-HANDLER",
+                           "line_range":  [
+                                              210,
+                                              210
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\test\\TSTGEN00.cbl",
+    "program_id":  "TSTGEN00"
+}

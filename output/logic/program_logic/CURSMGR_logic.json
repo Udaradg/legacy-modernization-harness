@@ -1,0 +1,27 @@
+﻿{
+    "paragraphs":  [
+                       {
+                           "name":  "P100-DECLARE-CURSOR",
+                           "line_range":  [
+                                              61,
+                                              61
+                                          ]
+                       },
+                       {
+                           "name":  "P100-EXIT",
+                           "line_range":  [
+                                              77,
+                                              77
+                                          ]
+                       },
+                       {
+                           "name":  "P200-OPEN-CURSOR",
+                           "line_range":  [
+                                              80,
+                                              80
+                                          ]
+                       }
+                   ],
+    "source_file":  "src\\programs\\online\\CURSMGR.cbl",
+    "program_id":  "CURSMGR"
+}
