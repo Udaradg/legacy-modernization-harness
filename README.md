@@ -3,21 +3,61 @@
 This repository is a harness for legacy modernization using AI agents (Anthropic Claude and GitHub Copilot).
 The basic idea is to orchestrate specialized agents to analyze, model, and synthesize documentation for COBOL-based systems so teams can modernize safely and systematically.
 
-Pipeline phases
+## Pipeline Phases
 
-Phase 1 — Ingestion & Inventory: An Inventory Agent scans the COBOL codebase, catalogs all programs, copybooks, JCL, and data files, and builds a dependency graph.
+| Phase | Agent | What it does |
+|-------|-------|-------------|
+| 1 — Ingestion & Inventory | Inventory Agent | Scans the COBOL codebase, catalogs all programs, copybooks, JCL, and data files, and builds a dependency graph |
+| 2 — Structural Parsing | Parser Agent | Extracts raw structure — DIVISION/SECTION layouts, paragraph names, WORKING-STORAGE entries, FD/SD definitions, and PERFORM/CALL chains — without trying to interpret meaning yet |
+| 3 — Data Modeling | Data Agent | Takes all COPY, FD, 01-level records, and Working Storage entries and produces a normalized data dictionary, ER relationships, and a canonical data model |
+| 4 — Logic Extraction | Logic Agent | Reads each paragraph and section, traces control flow (EVALUATE/PERFORM/GOTO), and produces pseudocode + annotated flowcharts per program |
+| 5 — Business Rule Mining | Rules Agent | Takes the pseudocode and flags domain-significant conditions (thresholds, validation rules, branching logic) and maps them to named business rules |
+| 6 — Component Diagramming | Diagram Agent | Takes the call/PERFORM graph and produces component, sequence, and process-flow diagrams in structured format |
+| 7 — BRD Synthesis | Synthesis Agent | Assembles everything — inventory, data model, rules, diagrams, process flows — into a structured Business Requirements Document |
 
-Phase 2 — Structural Parsing: A Parser Agent extracts raw structure — DIVISION/SECTION layouts, paragraph names, WORKING-STORAGE entries, FD/SD definitions, and PERFORM/CALL chains — without trying to interpret meaning yet.
+## Agent & Skill Breakdown
 
-Phase 3 — Data Modeling: A Data Agent takes all COPY, FD, 01-level records, and Working Storage entries and produces a normalized data dictionary, ER relationships, and a canonical data model.
+### 1. Inventory Agent
+| Skill | Description |
+|-------|-------------|
+| **File Walker** | Recursively lists all `.cob`, `.cbl`, `.cpy`, `.jcl`, `.ctl` files; extracts program IDs and `COPY` statements |
+| **Dependency Graph** | Builds a directed graph of `CALL`/`COPY`/`EXEC` relationships using a tool like NetworkX or a simple adjacency list in JSON |
 
-Phase 4 — Logic Extraction: A Logic Agent reads each paragraph and section, traces control flow (EVALUATE/PERFORM/GOTO), and produces pseudocode + annotated flowcharts per program.
+### 2. Parser Agent
+| Skill | Description |
+|-------|-------------|
+| **COBOL AST Parser** | Uses a COBOL grammar parser (e.g. `cobol-parser` npm package or GnuCOBOL with `-fsyntax-only`) to extract the raw AST; alternatively, Claude reads raw source and extracts structure in passes |
+| **Section Mapper** | Maps each `DIVISION` → `SECTION` → `Paragraph` into a structured JSON schema |
 
-Phase 5 — Business Rule Mining: A Rules Agent takes the pseudocode and flags domain-significant conditions (thresholds, validation rules, branching logic) and maps them to named business rules.
+### 3. Data Agent
+| Skill | Description |
+|-------|-------------|
+| **Record Layout Parser** | Extracts all `01`-level group items, their children (`PIC` clauses, `REDEFINES`, `OCCURS`), and `COPY`-sourced layouts into a field-level dictionary |
+| **Data Dictionary Builder** | Normalizes fields across all programs, resolves `REDEFINES` aliases, and identifies shared data structures |
 
-Phase 6 — Component Diagramming: A Diagram Agent takes the call/PERFORM graph and produces component, sequence, and process-flow diagrams in structured format.
+### 4. Logic Agent
+| Skill | Description |
+|-------|-------------|
+| **Control Flow Tracer** | Builds a call graph of `PERFORM`/`GO TO` chains per program; flags dead code, recursive performs, and exit conditions |
+| **Pseudocode Generator** | Translates COBOL paragraphs to readable pseudocode with inline comments explaining COBOL-specific idioms (`88`-levels, `COMPUTE` rounding, `STRING`/`UNSTRING`) |
 
-Phase 7 — BRD Synthesis: A Synthesis Agent assembles everything — inventory, data model, rules, diagrams, process flows — into a structured Business Requirements Document.
+### 5. Rules Agent
+| Skill | Description |
+|-------|-------------|
+| **Condition Classifier** | Reads `EVALUATE`/`IF`/`88`-level conditions and classifies them as validation rules, calculation rules, routing rules, or error-handling rules |
+| **Rule Tagger** | Assigns human-readable names to each rule (e.g. `VALIDATE-CREDIT-LIMIT`, `CALC-LATE-PENALTY`) and maps each to the source paragraph |
+
+### 6. Diagram Agent
+| Skill | Description |
+|-------|-------------|
+| **Component Mapper** | Takes the call graph and produces Mermaid or PlantUML component diagrams |
+| **Sequence Builder** | Produces sequence diagrams for key process flows (e.g. transaction processing, batch job runs) |
+
+### 7. Synthesis Agent
+| Skill | Description |
+|-------|-------------|
+| **Section Assembler** | Merges all prior artifacts into a structured BRD template (Executive Summary, Scope, Data Model, Process Flows, Business Rules catalog, Component Diagrams, Glossary) |
+| **Gap Detector** | Identifies areas where logic was ambiguous, incomplete, or inferred — flags them as "requires SME review" |
 
 ## Generated Artifacts (`output/`)
 
