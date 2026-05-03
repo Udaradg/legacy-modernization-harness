@@ -1,51 +1,381 @@
-﻿{
-    "data_items":  [
-
-                   ],
-    "total_lines":  91,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\CURSMGR.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  61,
-                           "name":  "P100-DECLARE-CURSOR",
-                           "start_line":  61
-                       },
-                       {
-                           "end_line":  77,
-                           "name":  "P100-EXIT",
-                           "start_line":  77
-                       },
-                       {
-                           "end_line":  80,
-                           "name":  "P200-OPEN-CURSOR",
-                           "start_line":  80
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  12,
-                                          "start_line":  11
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  91,
-                                        "start_line":  43
-                                    },
-                      "DATA":  {
-                                   "end_line":  42,
-                                   "start_line":  13
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  10,
-                                             "start_line":  1
-                                         }
-                  },
-    "program_id":  "CURSMGR",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "CURSMGR",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\CURSMGR.cbl",
+    "total_lines": 91
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 1,
+    "end_line": 10,
+    "program_id": "CURSMGR"
+  },
+  "data_division": {
+    "start_line": 13,
+    "end_line": 42,
+    "file_section": {
+      "entries": []
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "WS-DB2-AREA",
+          "line": 15,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-CURSOR-STATS",
+          "line": 18,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-FETCH-COUNT",
+          "line": 19,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "0",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ROWS-FETCHED",
+          "line": 20,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "0",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-FETCH-TIME",
+          "line": 21,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "0",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-ARRAY-AREA",
+          "line": 23,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-MAX-ROWS",
+          "line": 24,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "20",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ARRAY-SIZE",
+          "line": 25,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "0",
+          "children": []
+        }
+      ],
+      "start_line": 14
+    },
+    "linkage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "CURSOR-REQUEST-AREA",
+          "line": 28,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "CURS-REQUEST-TYPE",
+          "line": 29,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "CURS-DECLARE",
+          "line": 30,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'D'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "CURS-OPEN",
+          "line": 31,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'O'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "CURS-FETCH",
+          "line": 32,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'F'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "CURS-CLOSE",
+          "line": 33,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'C'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "CURS-NAME",
+          "line": 34,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "CURS-STMT",
+          "line": 35,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "CURS-ARRAY-FETCH",
+          "line": 36,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "USE-ARRAY-FETCH",
+          "line": 37,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Y'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "NO-ARRAY-FETCH",
+          "line": 38,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "CURS-RESPONSE-CODE",
+          "line": 39,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "CURS-DATA-AREA",
+          "line": 40,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "CURS-DATA-LENGTH",
+          "line": 41,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 27
+    }
+  },
+  "procedure_division": {
+    "start_line": 43,
+    "end_line": 91,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "P100-DECLARE-CURSOR",
+        "section": null,
+        "start_line": 61,
+        "end_line": 71,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 72,
+        "end_line": 76,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P100-EXIT",
+        "section": null,
+        "start_line": 77,
+        "end_line": 79,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P200-OPEN-CURSOR",
+        "section": null,
+        "start_line": 80,
+        "end_line": 91,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": []
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "P100-DECLARE-CURSOR"
+    ],
+    "terminal_nodes": [],
+    "nodes": [
+      {
+        "id": "P100-DECLARE-CURSOR",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 61,
+        "end_line": 71,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 72,
+        "end_line": 76,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P100-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 77,
+        "end_line": 79,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P200-OPEN-CURSOR",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 80,
+        "end_line": 91,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [],
+    "dead_code_candidates": [
+      "END-EXEC",
+      "P100-EXIT",
+      "P200-OPEN-CURSOR"
+    ],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

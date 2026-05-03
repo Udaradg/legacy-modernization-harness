@@ -26,7 +26,7 @@ You have two skills. Run them in sequence:
 | Parameter | Description | Required |
 |---|---|---|
 | `INVENTORY_ARTIFACT` | Path to `output/inventory/inventory_artifact.json` from Agent 1 | Yes |
-| `PARSER_ARTIFACT` | Path to `parser_artifact.json` from Agent 2 | Yes |
+| `PARSER_ARTIFACT` | Path to `output/parser/parser_artifact.json` from Agent 2 | Yes |
 | `REPO_ROOT` | Absolute path to the COBOL repository root | Yes |
 | `OUTPUT_DIR` | Directory to write output files | No (default: `./output/data/`) |
 

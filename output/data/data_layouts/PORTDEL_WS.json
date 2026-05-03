@@ -1,478 +1,197 @@
-﻿{
-    "record_name":  "PORTDEL_WS",
-    "source_type":  "program_ws",
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTDEL.cbl",
-    "fields":  [
-                   {
-                       "line":  45,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "DELETE-RECORD",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  46,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "DEL-KEY",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  47,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "DEL-ID",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  48,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "DEL-ACCT-NO",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  49,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "DEL-REASON-CODE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  50,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "01",
-                       "name":  "DEL-CLOSED",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  51,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "02",
-                       "name":  "DEL-TRANSFERRED",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  52,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "03",
-                       "name":  "DEL-REQUESTED",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  53,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "DEL-FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  56,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "AUDIT-RECORD",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  57,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "AUD-TIMESTAMP",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  58,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "AUD-ACTION",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  59,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "AUD-KEY",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  60,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "AUD-REASON",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  61,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "AUD-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  62,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "AUD-FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  68,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-CONSTANTS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  69,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "PORTDEL",
-                       "name":  "WS-PROGRAM-NAME",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  70,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "+0",
-                       "name":  "WS-SUCCESS",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  71,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "+8",
-                       "name":  "WS-ERROR",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  73,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-SWITCHES",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  74,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-FILE-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  75,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "00",
-                       "name":  "WS-SUCCESS-STATUS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  76,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "23",
-                       "name":  "WS-REC-NOT-FND",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  77,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "10",
-                       "name":  "WS-EOF-STATUS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  79,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-DEL-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  80,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "00",
-                       "name":  "WS-DEL-SUCCESS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  81,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "10",
-                       "name":  "WS-DEL-EOF",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  83,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-AUD-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  84,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "00",
-                       "name":  "WS-AUD-SUCCESS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  86,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "N",
-                       "name":  "WS-END-OF-FILE-SW",
-                       "pic":  "X",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  87,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "Y",
-                       "name":  "END-OF-FILE",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  88,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "N",
-                       "name":  "NOT-END-OF-FILE",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  93,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-WORK-AREAS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  94,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-DELETE-COUNT",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  95,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-ERROR-COUNT",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  96,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-NOT-FND-COUNT",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  97,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "+0",
-                       "name":  "WS-RETURN-CODE",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  98,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TIMESTAMP",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   }
-               ],
-    "issues":  [
-
-               ]
+{
+  "id": "PORTDEL_WS",
+  "source_type": "program_ws",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTDEL.cbl",
+  "used_by_programs": [
+    "PORTDEL"
+  ],
+  "total_fields": 23,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "WS-CONSTANTS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 68,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PROGRAM-NAME",
+      "pic": null,
+      "type": "GROUP",
+      "line": 69,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-SUCCESS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 70,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ERROR",
+      "pic": null,
+      "type": "GROUP",
+      "line": 71,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-SWITCHES",
+      "pic": null,
+      "type": "GROUP",
+      "line": 73,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-FILE-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 74,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "WS-SUCCESS-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 75,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "WS-REC-NOT-FND",
+      "pic": null,
+      "type": "GROUP",
+      "line": 76,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "WS-EOF-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 77,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-DEL-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 79,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "WS-DEL-SUCCESS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 80,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "WS-DEL-EOF",
+      "pic": null,
+      "type": "GROUP",
+      "line": 81,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-AUD-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 83,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "WS-AUD-SUCCESS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 84,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-END-OF-FILE-SW",
+      "pic": null,
+      "type": "GROUP",
+      "line": 86,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "END-OF-FILE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 87,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "NOT-END-OF-FILE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 88,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-WORK-AREAS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 93,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-DELETE-COUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 94,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ERROR-COUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 95,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-NOT-FND-COUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 96,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-RETURN-CODE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 97,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TIMESTAMP",
+      "pic": null,
+      "type": "GROUP",
+      "line": 98,
+      "children": []
+    }
+  ],
+  "layout_issues": []
 }

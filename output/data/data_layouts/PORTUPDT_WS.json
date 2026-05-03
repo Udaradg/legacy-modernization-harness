@@ -1,358 +1,173 @@
-﻿{
-    "record_name":  "PORTUPDT_WS",
-    "source_type":  "program_ws",
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTUPDT.cbl",
-    "fields":  [
-                   {
-                       "line":  40,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "UPDATE-RECORD",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  41,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "UPDT-KEY",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  42,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "UPDT-ID",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  43,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "UPDT-ACCT-NO",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  44,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "UPDT-ACTION",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  45,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "S",
-                       "name":  "UPDT-STATUS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  46,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "V",
-                       "name":  "UPDT-VALUE",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  47,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "N",
-                       "name":  "UPDT-NAME",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  48,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "UPDT-NEW-VALUE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  54,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-CONSTANTS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  55,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "PORTUPDT",
-                       "name":  "WS-PROGRAM-NAME",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  56,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "+0",
-                       "name":  "WS-SUCCESS",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  57,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "+8",
-                       "name":  "WS-ERROR",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  59,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-SWITCHES",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  60,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-FILE-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  61,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "00",
-                       "name":  "WS-SUCCESS-STATUS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  62,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "10",
-                       "name":  "WS-EOF-STATUS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  63,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "23",
-                       "name":  "WS-REC-NOT-FND",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  65,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-UPDT-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  66,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "00",
-                       "name":  "WS-UPDT-SUCCESS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  67,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "10",
-                       "name":  "WS-UPDT-EOF",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  69,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "N",
-                       "name":  "WS-END-OF-FILE-SW",
-                       "pic":  "X",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  70,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "Y",
-                       "name":  "END-OF-FILE",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  71,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "N",
-                       "name":  "NOT-END-OF-FILE",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  76,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-WORK-AREAS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  77,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-UPDATE-COUNT",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  78,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-ERROR-COUNT",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  79,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "+0",
-                       "name":  "WS-RETURN-CODE",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  80,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-NUMERIC-WORK",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   }
-               ],
-    "issues":  [
-
-               ]
+{
+  "id": "PORTUPDT_WS",
+  "source_type": "program_ws",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTUPDT.cbl",
+  "used_by_programs": [
+    "PORTUPDT"
+  ],
+  "total_fields": 20,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "WS-CONSTANTS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 54,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PROGRAM-NAME",
+      "pic": null,
+      "type": "GROUP",
+      "line": 55,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-SUCCESS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 56,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ERROR",
+      "pic": null,
+      "type": "GROUP",
+      "line": 57,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-SWITCHES",
+      "pic": null,
+      "type": "GROUP",
+      "line": 59,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-FILE-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 60,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "WS-SUCCESS-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 61,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "WS-EOF-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 62,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "WS-REC-NOT-FND",
+      "pic": null,
+      "type": "GROUP",
+      "line": 63,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-UPDT-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 65,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "WS-UPDT-SUCCESS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 66,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "WS-UPDT-EOF",
+      "pic": null,
+      "type": "GROUP",
+      "line": 67,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-END-OF-FILE-SW",
+      "pic": null,
+      "type": "GROUP",
+      "line": 69,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "END-OF-FILE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 70,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "NOT-END-OF-FILE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 71,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-WORK-AREAS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 76,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-UPDATE-COUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 77,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ERROR-COUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 78,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-RETURN-CODE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 79,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-NUMERIC-WORK",
+      "pic": null,
+      "type": "GROUP",
+      "line": 80,
+      "children": []
+    }
+  ],
+  "layout_issues": []
 }

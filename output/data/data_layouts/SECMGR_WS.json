@@ -1,238 +1,85 @@
-﻿{
-    "record_name":  "SECMGR_WS",
-    "source_type":  "program_ws",
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\SECMGR.cbl",
-    "fields":  [
-                   {
-                       "line":  15,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-DB2-AREA",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  18,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-SECURITY-AREA",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  19,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-USER-ID",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  20,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TERMINAL-ID",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  21,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TRANSACTION-ID",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  22,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-PROGRAM-NAME",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  23,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-ACCESS-TYPE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  24,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TIMESTAMP",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  26,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-ERROR-AREA",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  30,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "SECURITY-REQUEST-AREA",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  31,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "SEC-REQUEST-TYPE",
-                       "pic":  "X.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  32,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "V",
-                       "name":  "SEC-VALIDATE",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  33,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "A",
-                       "name":  "SEC-AUTHORIZE",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  34,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "L",
-                       "name":  "SEC-AUDIT",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  35,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "SEC-USER-ID",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  36,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "SEC-RESOURCE-NAME",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  37,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "SEC-ACCESS-TYPE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  38,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "SEC-RESPONSE-CODE",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  39,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "SEC-ERROR-INFO",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   }
-               ],
-    "issues":  [
-
-               ]
+{
+  "id": "SECMGR_WS",
+  "source_type": "program_ws",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\SECMGR.cbl",
+  "used_by_programs": [
+    "SECMGR"
+  ],
+  "total_fields": 9,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "WS-DB2-AREA",
+      "pic": null,
+      "type": "GROUP",
+      "line": 15,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-SECURITY-AREA",
+      "pic": null,
+      "type": "GROUP",
+      "line": 18,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-USER-ID",
+      "pic": null,
+      "type": "GROUP",
+      "line": 19,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TERMINAL-ID",
+      "pic": null,
+      "type": "GROUP",
+      "line": 20,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TRANSACTION-ID",
+      "pic": null,
+      "type": "GROUP",
+      "line": 21,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PROGRAM-NAME",
+      "pic": null,
+      "type": "GROUP",
+      "line": 22,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ACCESS-TYPE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 23,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TIMESTAMP",
+      "pic": null,
+      "type": "GROUP",
+      "line": 24,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-ERROR-AREA",
+      "pic": null,
+      "type": "GROUP",
+      "line": 26,
+      "children": []
+    }
+  ],
+  "layout_issues": []
 }

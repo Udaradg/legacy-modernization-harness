@@ -1,166 +1,162 @@
-﻿{
-    "record_name":  "HISTLD00_WS",
-    "source_type":  "program_ws",
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\HISTLD00.cbl",
-    "fields":  [
-                   {
-                       "line":  49,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-FILE-STATUS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  50,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TH-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  51,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-BCT-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  53,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-COUNTERS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  54,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "0",
-                       "name":  "WS-RECORDS-READ",
-                       "pic":  "S9(9)",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  55,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "0",
-                       "name":  "WS-RECORDS-WRITTEN",
-                       "pic":  "S9(9)",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  56,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "0",
-                       "name":  "WS-ERROR-COUNT",
-                       "pic":  "S9(9)",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  57,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "0",
-                       "name":  "WS-COMMIT-COUNT",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  59,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  "1000",
-                       "name":  "WS-COMMIT-THRESHOLD",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  61,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-SWITCHES",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  62,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "N",
-                       "name":  "WS-END-OF-FILE-SW",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  63,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "Y",
-                       "name":  "END-OF-FILE",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  64,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "N",
-                       "name":  "MORE-RECORDS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   }
-               ],
-    "issues":  [
-
-               ]
+{
+  "id": "HISTLD00_WS",
+  "source_type": "program_ws",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\HISTLD00.cbl",
+  "used_by_programs": [
+    "HISTLD00"
+  ],
+  "total_fields": 18,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "COPY_DBTBLS",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "DBTBLS",
+      "line": 41,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "COPY_SQLCA",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "SQLCA",
+      "line": 44,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "COPY_DBPROC",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "DBPROC",
+      "line": 45,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "COPY_ERRHAND",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "ERRHAND",
+      "line": 46,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "COPY_BCHCON",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "BCHCON",
+      "line": 47,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-FILE-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 49,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TH-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 50,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-BCT-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 51,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-COUNTERS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 53,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-RECORDS-READ",
+      "pic": null,
+      "type": "GROUP",
+      "line": 54,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-RECORDS-WRITTEN",
+      "pic": null,
+      "type": "GROUP",
+      "line": 55,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ERROR-COUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 56,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-COMMIT-COUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 57,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-COMMIT-THRESHOLD",
+      "pic": null,
+      "type": "GROUP",
+      "line": 59,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-SWITCHES",
+      "pic": null,
+      "type": "GROUP",
+      "line": 61,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-END-OF-FILE-SW",
+      "pic": null,
+      "type": "GROUP",
+      "line": 62,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "END-OF-FILE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 63,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "MORE-RECORDS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 64,
+      "children": []
+    }
+  ],
+  "layout_issues": []
 }

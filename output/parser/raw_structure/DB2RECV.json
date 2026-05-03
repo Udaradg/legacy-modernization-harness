@@ -1,93 +1,636 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "ERRHND",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "DB2REQ",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  145,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\DB2RECV.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  62,
-                           "name":  "P100-RECOVER-CONNECTION",
-                           "start_line":  62
-                       },
-                       {
-                           "end_line":  82,
-                           "name":  "P100-EXIT",
-                           "start_line":  82
-                       },
-                       {
-                           "end_line":  85,
-                           "name":  "P110-ATTEMPT-RECONNECT",
-                           "start_line":  85
-                       },
-                       {
-                           "end_line":  101,
-                           "name":  "P110-EXIT",
-                           "start_line":  101
-                       },
-                       {
-                           "end_line":  104,
-                           "name":  "P120-WAIT-INTERVAL",
-                           "start_line":  104
-                       },
-                       {
-                           "end_line":  108,
-                           "name":  "P120-EXIT",
-                           "start_line":  108
-                       },
-                       {
-                           "end_line":  111,
-                           "name":  "P200-RECOVER-TRANSACTION",
-                           "start_line":  111
-                       },
-                       {
-                           "end_line":  122,
-                           "name":  "P200-EXIT",
-                           "start_line":  122
-                       },
-                       {
-                           "end_line":  125,
-                           "name":  "P300-RECOVER-CURSOR",
-                           "start_line":  125
-                       },
-                       {
-                           "end_line":  144,
-                           "name":  "P300-EXIT",
-                           "start_line":  144
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  12,
-                                          "start_line":  11
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  145,
-                                        "start_line":  47
-                                    },
-                      "DATA":  {
-                                   "end_line":  46,
-                                   "start_line":  13
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  10,
-                                             "start_line":  1
-                                         }
-                  },
-    "program_id":  "DB2RECV",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "DB2RECV",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\DB2RECV.cbl",
+    "total_lines": 145
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 1,
+    "end_line": 10,
+    "program_id": "DB2RECV"
+  },
+  "data_division": {
+    "start_line": 13,
+    "end_line": 46,
+    "file_section": {
+      "entries": []
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "WS-DB2-AREA",
+          "line": 15,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-RECOVERY-STATS",
+          "line": 18,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-RETRY-COUNT",
+          "line": 19,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "0",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-MAX-RETRIES",
+          "line": 20,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "3",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-RETRY-INTERVAL",
+          "line": 21,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "2",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-LAST-ERROR",
+          "line": 22,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "0",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-ERROR-AREA",
+          "line": 24,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-DB2-REQUEST",
+          "line": 27,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 14
+    },
+    "linkage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "RECOVERY-REQUEST-AREA",
+          "line": 31,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "RECV-REQUEST-TYPE",
+          "line": 32,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "RECV-CONNECTION",
+          "line": 33,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'C'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "RECV-TRANSACTION",
+          "line": 34,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'T'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "RECV-CURSOR",
+          "line": 35,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'R'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "RECV-RESPONSE-CODE",
+          "line": 36,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "RECV-SQLCODE",
+          "line": 37,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "RECV-ERROR-INFO",
+          "line": 38,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "RECV-PROGRAM",
+          "line": 39,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "RECV-CURSOR",
+          "line": 40,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "RECV-MESSAGE",
+          "line": 41,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "RECV-STATUS",
+          "line": 42,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "RECV-SUCCESS",
+          "line": 43,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'S'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "RECV-FAILED",
+          "line": 44,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'F'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "RECV-RETRY",
+          "line": 45,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'R'",
+          "children": []
+        }
+      ],
+      "start_line": 30
+    }
+  },
+  "procedure_division": {
+    "start_line": 47,
+    "end_line": 145,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "P100-RECOVER-CONNECTION",
+        "section": null,
+        "start_line": 62,
+        "end_line": 75,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "END-PERFORM",
+        "section": null,
+        "start_line": 76,
+        "end_line": 81,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P100-EXIT",
+        "section": null,
+        "start_line": 82,
+        "end_line": 84,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P110-ATTEMPT-RECONNECT",
+        "section": null,
+        "start_line": 85,
+        "end_line": 90,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 91,
+        "end_line": 100,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P110-EXIT",
+        "section": null,
+        "start_line": 101,
+        "end_line": 103,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P120-WAIT-INTERVAL",
+        "section": null,
+        "start_line": 104,
+        "end_line": 106,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 107,
+        "end_line": 107,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P120-EXIT",
+        "section": null,
+        "start_line": 108,
+        "end_line": 110,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P200-RECOVER-TRANSACTION",
+        "section": null,
+        "start_line": 111,
+        "end_line": 121,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P200-EXIT",
+        "section": null,
+        "start_line": 122,
+        "end_line": 124,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P300-RECOVER-CURSOR",
+        "section": null,
+        "start_line": 125,
+        "end_line": 134,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 135,
+        "end_line": 143,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P300-EXIT",
+        "section": null,
+        "start_line": 144,
+        "end_line": 145,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": []
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "P100-RECOVER-CONNECTION"
+    ],
+    "terminal_nodes": [],
+    "nodes": [
+      {
+        "id": "P100-RECOVER-CONNECTION",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 62,
+        "end_line": 75,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-PERFORM",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 76,
+        "end_line": 81,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P100-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 82,
+        "end_line": 84,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P110-ATTEMPT-RECONNECT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 85,
+        "end_line": 90,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 91,
+        "end_line": 100,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P110-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 101,
+        "end_line": 103,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P120-WAIT-INTERVAL",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 104,
+        "end_line": 106,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 107,
+        "end_line": 107,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P120-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 108,
+        "end_line": 110,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P200-RECOVER-TRANSACTION",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 111,
+        "end_line": 121,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P200-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 122,
+        "end_line": 124,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P300-RECOVER-CURSOR",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 125,
+        "end_line": 134,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 135,
+        "end_line": 143,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P300-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 144,
+        "end_line": 145,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "P100-RECOVER-CONNECTION",
+        "type": "PERFORM_INLINE",
+        "resolved": true,
+        "source_line": 65,
+        "unstructured": false,
+        "to": "P100-RECOVER-CONNECTION",
+        "inline": true
+      },
+      {
+        "from": "P100-RECOVER-CONNECTION",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 66,
+        "unstructured": false,
+        "to": "P110-ATTEMPT-RECONNECT"
+      },
+      {
+        "from": "P100-RECOVER-CONNECTION",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 72,
+        "unstructured": false,
+        "to": "P120-WAIT-INTERVAL"
+      }
+    ],
+    "dead_code_candidates": [
+      "END-PERFORM",
+      "P100-EXIT",
+      "END-EXEC",
+      "P110-EXIT",
+      "END-EXEC",
+      "P120-EXIT",
+      "P200-RECOVER-TRANSACTION",
+      "P200-EXIT",
+      "P300-RECOVER-CURSOR",
+      "END-EXEC",
+      "P300-EXIT"
+    ],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

@@ -1,526 +1,367 @@
-﻿{
-    "record_name":  "RPTSTA00_WS",
-    "source_type":  "program_ws",
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RPTSTA00.cbl",
-    "fields":  [
-                   {
-                       "line":  41,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "REPORT-RECORD",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  47,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-FILE-STATUS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  48,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-DB2-STATUS",
-                       "pic":  "XX.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  49,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-BCH-STATUS",
-                       "pic":  "XX.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  50,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-REPORT-STATUS",
-                       "pic":  "XX.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  52,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-REPORT-HEADERS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  53,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-HEADER1",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  54,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "ALL",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  55,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-HEADER2",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  56,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "SPACES",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  57,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  59,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "SPACES",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  60,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-HEADER3",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  61,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "REPORT DATE:",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  62,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "WS-REPORT-DATE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  63,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "SPACES",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  65,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-PERFORMANCE-METRICS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  66,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-DB2-METRICS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  67,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "WS-DB2-CALLS",
-                       "pic":  "9(9).",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  68,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "WS-DB2-ELAPSED",
-                       "pic":  "9(9)V99.",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  69,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "WS-DB2-CPU",
-                       "pic":  "9(9)V99.",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  70,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "WS-DB2-WAIT",
-                       "pic":  "9(9)V99.",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  71,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-BATCH-METRICS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  72,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "WS-BATCH-JOBS",
-                       "pic":  "9(9).",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  73,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "WS-BATCH-SUCCESS",
-                       "pic":  "9(9).",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  74,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "WS-BATCH-FAILED",
-                       "pic":  "9(9).",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  75,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "WS-BATCH-ELAPSED",
-                       "pic":  "9(9)V99.",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  77,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-DETAIL-LINES",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  78,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-DB2-DETAIL",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  79,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "DB2 CALLS:",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  80,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "WS-DB2-CALLS-OUT",
-                       "pic":  "ZZZ,ZZZ,ZZ9.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  81,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "SPACES",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  82,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "AVG RESPONSE:",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  83,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "WS-DB2-AVG-RESP",
-                       "pic":  "ZZ,ZZ9.999.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  84,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "SPACES",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  86,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-BATCH-DETAIL",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  87,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "BATCH JOBS:",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  88,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "WS-BATCH-TOTAL",
-                       "pic":  "ZZZ,ZZ9.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  89,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "SPACES",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  90,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "SUCCESS RATE:",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  91,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "WS-SUCCESS-RATE",
-                       "pic":  "ZZ9.99.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  92,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "%",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  93,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "SPACES",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   }
-               ],
-    "issues":  [
-
-               ]
+{
+  "id": "RPTSTA00_WS",
+  "source_type": "program_ws",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RPTSTA00.cbl",
+  "used_by_programs": [
+    "RPTSTA00"
+  ],
+  "total_fields": 44,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "COPY_RTNCODE",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "RTNCODE",
+      "line": 44,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "COPY_ERRHAND",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "ERRHAND",
+      "line": 45,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-FILE-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 47,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-DB2-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 48,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-BCH-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 49,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-REPORT-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 50,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-REPORT-HEADERS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 52,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-HEADER1",
+      "pic": null,
+      "type": "GROUP",
+      "line": 53,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-53",
+      "pic": null,
+      "type": "GROUP",
+      "line": 54,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-HEADER2",
+      "pic": null,
+      "type": "GROUP",
+      "line": 55,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-55",
+      "pic": null,
+      "type": "GROUP",
+      "line": 56,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-56",
+      "pic": null,
+      "type": "GROUP",
+      "line": 57,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-58",
+      "pic": null,
+      "type": "GROUP",
+      "line": 59,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-HEADER3",
+      "pic": null,
+      "type": "GROUP",
+      "line": 60,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-60",
+      "pic": null,
+      "type": "GROUP",
+      "line": 61,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "WS-REPORT-DATE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 62,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-62",
+      "pic": null,
+      "type": "GROUP",
+      "line": 63,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-PERFORMANCE-METRICS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 65,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-DB2-METRICS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 66,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "WS-DB2-CALLS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 67,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "WS-DB2-ELAPSED",
+      "pic": null,
+      "type": "GROUP",
+      "line": 68,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "WS-DB2-CPU",
+      "pic": null,
+      "type": "GROUP",
+      "line": 69,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "WS-DB2-WAIT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 70,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-BATCH-METRICS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 71,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "WS-BATCH-JOBS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 72,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "WS-BATCH-SUCCESS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 73,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "WS-BATCH-FAILED",
+      "pic": null,
+      "type": "GROUP",
+      "line": 74,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "WS-BATCH-ELAPSED",
+      "pic": null,
+      "type": "GROUP",
+      "line": 75,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-DETAIL-LINES",
+      "pic": null,
+      "type": "GROUP",
+      "line": 77,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-DB2-DETAIL",
+      "pic": null,
+      "type": "GROUP",
+      "line": 78,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-78",
+      "pic": null,
+      "type": "GROUP",
+      "line": 79,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "WS-DB2-CALLS-OUT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 80,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-80",
+      "pic": null,
+      "type": "GROUP",
+      "line": 81,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-81",
+      "pic": null,
+      "type": "GROUP",
+      "line": 82,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "WS-DB2-AVG-RESP",
+      "pic": null,
+      "type": "GROUP",
+      "line": 83,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-83",
+      "pic": null,
+      "type": "GROUP",
+      "line": 84,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-BATCH-DETAIL",
+      "pic": null,
+      "type": "GROUP",
+      "line": 86,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-86",
+      "pic": null,
+      "type": "GROUP",
+      "line": 87,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "WS-BATCH-TOTAL",
+      "pic": null,
+      "type": "GROUP",
+      "line": 88,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-88",
+      "pic": null,
+      "type": "GROUP",
+      "line": 89,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-89",
+      "pic": null,
+      "type": "GROUP",
+      "line": 90,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "WS-SUCCESS-RATE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 91,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-91",
+      "pic": null,
+      "type": "GROUP",
+      "line": 92,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-92",
+      "pic": null,
+      "type": "GROUP",
+      "line": 93,
+      "children": []
+    }
+  ],
+  "layout_issues": []
 }

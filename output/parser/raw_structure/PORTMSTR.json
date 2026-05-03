@@ -1,91 +1,781 @@
-﻿{
-    "data_items":  [
-
-                   ],
-    "total_lines":  288,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTMSTR.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  83,
-                           "name":  "0000-MAIN",
-                           "start_line":  83
-                       },
-                       {
-                           "end_line":  103,
-                           "name":  "1000-INITIALIZE",
-                           "start_line":  103
-                       },
-                       {
-                           "end_line":  115,
-                           "name":  "2000-CREATE-PORTFOLIO",
-                           "start_line":  115
-                       },
-                       {
-                           "end_line":  138,
-                           "name":  "2100-VALIDATE-PORTFOLIO",
-                           "start_line":  138
-                       },
-                       {
-                           "end_line":  163,
-                           "name":  "3000-READ-PORTFOLIO",
-                           "start_line":  163
-                       },
-                       {
-                           "end_line":  183,
-                           "name":  "4000-UPDATE-PORTFOLIO",
-                           "start_line":  183
-                       },
-                       {
-                           "end_line":  209,
-                           "name":  "5000-DELETE-PORTFOLIO",
-                           "start_line":  209
-                       },
-                       {
-                           "end_line":  228,
-                           "name":  "6000-TERMINATE",
-                           "start_line":  228
-                       },
-                       {
-                           "end_line":  234,
-                           "name":  "9000-ERROR",
-                           "start_line":  234
-                       },
-                       {
-                           "end_line":  243,
-                           "name":  "2100-HANDLE-VSAM-ERROR",
-                           "start_line":  243
-                       },
-                       {
-                           "end_line":  268,
-                           "name":  "2100-LOG-PORTFOLIO-UPDATE",
-                           "start_line":  268
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  28,
-                                          "start_line":  15
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  288,
-                                        "start_line":  82
-                                    },
-                      "DATA":  {
-                                   "end_line":  81,
-                                   "start_line":  29
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  14,
-                                             "start_line":  12
-                                         }
-                  },
-    "program_id":  "PORTMSTR",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "PORTMSTR",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTMSTR.cbl",
+    "total_lines": 288
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 12,
+    "end_line": 14,
+    "program_id": "PORTMSTR"
+  },
+  "data_division": {
+    "start_line": 29,
+    "end_line": 81,
+    "file_section": {
+      "entries": [
+        {
+          "type": "FD",
+          "file_name": "PORTFOLIO-FILE",
+          "line": 31,
+          "end_line": 40,
+          "recording_mode": null,
+          "record_contains": "100 CHARACTERS",
+          "block_contains": null
+        }
+      ],
+      "start_line": 30
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "WS-CONSTANTS",
+          "line": 45,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-PROGRAM-NAME",
+          "line": 46,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'PORTMSTR'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-SUCCESS",
+          "line": 47,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ERROR",
+          "line": 48,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ERROR-TEXT",
+          "line": 49,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-SWITCHES",
+          "line": 51,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-PORT-STATUS",
+          "line": 52,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "PORT-SUCCESS",
+          "line": 53,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'00'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "PORT-EOF",
+          "line": 54,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'10'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "PORT-NOT-FOUND",
+          "line": 55,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'23'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "PORT-DUP-KEY",
+          "line": 56,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'22'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-VALID-STATUS",
+          "line": 58,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "VALID-STATUS",
+          "line": 59,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'A'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-END-OF-FILE-SW",
+          "line": 61,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "END-OF-FILE",
+          "line": 62,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Y'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "NOT-END-OF-FILE",
+          "line": 63,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-WORK-AREAS",
+          "line": 68,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-CURRENT-DATE",
+          "line": 69,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-RETURN-CODE",
+          "line": 70,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 41
+    },
+    "linkage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "LS-COMMAND-AREA",
+          "line": 73,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-COMMAND",
+          "line": 74,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "CREATE-PORT",
+          "line": 75,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'C'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "READ-PORT",
+          "line": 76,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'R'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "UPDATE-PORT",
+          "line": 77,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'U'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "DELETE-PORT",
+          "line": 78,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'D'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-PORTFOLIO",
+          "line": 79,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-RETURN-CODE",
+          "line": 80,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 72
+    }
+  },
+  "procedure_division": {
+    "start_line": 82,
+    "end_line": 288,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 83,
+        "end_line": 102,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-INITIALIZE",
+        "section": null,
+        "start_line": 103,
+        "end_line": 114,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-CREATE-PORTFOLIO",
+        "section": null,
+        "start_line": 115,
+        "end_line": 137,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2100-VALIDATE-PORTFOLIO",
+        "section": null,
+        "start_line": 138,
+        "end_line": 162,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-READ-PORTFOLIO",
+        "section": null,
+        "start_line": 163,
+        "end_line": 182,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "4000-UPDATE-PORTFOLIO",
+        "section": null,
+        "start_line": 183,
+        "end_line": 208,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "5000-DELETE-PORTFOLIO",
+        "section": null,
+        "start_line": 209,
+        "end_line": 227,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "6000-TERMINATE",
+        "section": null,
+        "start_line": 228,
+        "end_line": 233,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "9000-ERROR",
+        "section": null,
+        "start_line": 234,
+        "end_line": 242,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2100-HANDLE-VSAM-ERROR",
+        "section": null,
+        "start_line": 243,
+        "end_line": 267,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2100-LOG-PORTFOLIO-UPDATE",
+        "section": null,
+        "start_line": 268,
+        "end_line": 288,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 101
+      },
+      {
+        "type": "GOBACK",
+        "line": 237
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN",
+      "9000-ERROR"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 83,
+        "end_line": 102,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-INITIALIZE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 103,
+        "end_line": 114,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-CREATE-PORTFOLIO",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 115,
+        "end_line": 137,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2100-VALIDATE-PORTFOLIO",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 138,
+        "end_line": 162,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-READ-PORTFOLIO",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 163,
+        "end_line": 182,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "4000-UPDATE-PORTFOLIO",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 183,
+        "end_line": 208,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "5000-DELETE-PORTFOLIO",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 209,
+        "end_line": 227,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "6000-TERMINATE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 228,
+        "end_line": 233,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "9000-ERROR",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 234,
+        "end_line": 242,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2100-HANDLE-VSAM-ERROR",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 243,
+        "end_line": 267,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2100-LOG-PORTFOLIO-UPDATE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 268,
+        "end_line": 288,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 84,
+        "unstructured": false,
+        "to": "1000-INITIALIZE"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 88,
+        "unstructured": false,
+        "to": "2000-CREATE-PORTFOLIO"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 90,
+        "unstructured": false,
+        "to": "3000-READ-PORTFOLIO"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 92,
+        "unstructured": false,
+        "to": "4000-UPDATE-PORTFOLIO"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 94,
+        "unstructured": false,
+        "to": "5000-DELETE-PORTFOLIO"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 97,
+        "unstructured": false,
+        "to": "9000-ERROR"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 100,
+        "unstructured": false,
+        "to": "6000-TERMINATE"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 109,
+        "unstructured": false,
+        "to": "9000-ERROR"
+      },
+      {
+        "from": "2000-CREATE-PORTFOLIO",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 121,
+        "unstructured": false,
+        "to": "2100-VALIDATE-PORTFOLIO"
+      },
+      {
+        "from": "2000-CREATE-PORTFOLIO",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 123,
+        "unstructured": false,
+        "to": "9000-ERROR"
+      },
+      {
+        "from": "2000-CREATE-PORTFOLIO",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 129,
+        "unstructured": false,
+        "to": "9000-ERROR"
+      },
+      {
+        "from": "2000-CREATE-PORTFOLIO",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 134,
+        "unstructured": false,
+        "to": "9000-ERROR"
+      },
+      {
+        "from": "3000-READ-PORTFOLIO",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 176,
+        "unstructured": false,
+        "to": "9000-ERROR"
+      },
+      {
+        "from": "3000-READ-PORTFOLIO",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 179,
+        "unstructured": false,
+        "to": "9000-ERROR"
+      },
+      {
+        "from": "4000-UPDATE-PORTFOLIO",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 189,
+        "unstructured": false,
+        "to": "2100-VALIDATE-PORTFOLIO"
+      },
+      {
+        "from": "4000-UPDATE-PORTFOLIO",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 191,
+        "unstructured": false,
+        "to": "9000-ERROR"
+      },
+      {
+        "from": "4000-UPDATE-PORTFOLIO",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 198,
+        "unstructured": false,
+        "to": "9000-ERROR"
+      },
+      {
+        "from": "4000-UPDATE-PORTFOLIO",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 203,
+        "unstructured": false,
+        "to": "9000-ERROR"
+      },
+      {
+        "from": "4000-UPDATE-PORTFOLIO",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 206,
+        "unstructured": false,
+        "to": "2100-LOG-PORTFOLIO-UPDATE"
+      },
+      {
+        "from": "5000-DELETE-PORTFOLIO",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 219,
+        "unstructured": false,
+        "to": "9000-ERROR"
+      },
+      {
+        "from": "5000-DELETE-PORTFOLIO",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 224,
+        "unstructured": false,
+        "to": "9000-ERROR"
+      },
+      {
+        "from": "9000-ERROR",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 236,
+        "unstructured": false,
+        "to": "6000-TERMINATE"
+      }
+    ],
+    "dead_code_candidates": [
+      "2100-HANDLE-VSAM-ERROR"
+    ],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

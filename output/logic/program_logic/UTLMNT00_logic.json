@@ -1,90 +1,458 @@
-﻿{
-    "paragraphs":  [
-                       {
-                           "name":  "0000-MAIN",
-                           "line_range":  [
-                                              87,
-                                              87
-                                          ]
-                       },
-                       {
-                           "name":  "1000-INITIALIZE",
-                           "line_range":  [
-                                              93,
-                                              93
-                                          ]
-                       },
-                       {
-                           "name":  "1100-OPEN-FILES",
-                           "line_range":  [
-                                              97,
-                                              97
-                                          ]
-                       },
-                       {
-                           "name":  "1200-INIT-PROCESSING",
-                           "line_range":  [
-                                              119,
-                                              119
-                                          ]
-                       },
-                       {
-                           "name":  "2000-PROCESS",
-                           "line_range":  [
-                                              122,
-                                              122
-                                          ]
-                       },
-                       {
-                           "name":  "2100-PROCESS-FUNCTION",
-                           "line_range":  [
-                                              132,
-                                              132
-                                          ]
-                       },
-                       {
-                           "name":  "2200-ARCHIVE-PROCESS",
-                           "line_range":  [
-                                              148,
-                                              148
-                                          ]
-                       },
-                       {
-                           "name":  "2300-CLEANUP-PROCESS",
-                           "line_range":  [
-                                              154,
-                                              154
-                                          ]
-                       },
-                       {
-                           "name":  "2400-REORG-PROCESS",
-                           "line_range":  [
-                                              160,
-                                              160
-                                          ]
-                       },
-                       {
-                           "name":  "2500-ANALYZE-PROCESS",
-                           "line_range":  [
-                                              166,
-                                              166
-                                          ]
-                       },
-                       {
-                           "name":  "3000-CLEANUP",
-                           "line_range":  [
-                                              171,
-                                              171
-                                          ]
-                       },
-                       {
-                           "name":  "9999-ERROR-HANDLER",
-                           "line_range":  [
-                                              176,
-                                              176
-                                          ]
-                       }
-                   ],
-    "source_file":  "src\\programs\\utility\\UTLMNT00.cbl",
-    "program_id":  "UTLMNT00"
+{
+  "program_id": "UTLMNT00",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\utility\\UTLMNT00.cbl",
+  "processing_timestamp": "2026-05-03T18:35:21.187512Z",
+  "execution_traces": [
+    {
+      "entry_point": "0000-MAIN",
+      "entry_type": "procedure_entry",
+      "steps": [
+        {
+          "step": 1,
+          "paragraph": "0000-MAIN",
+          "action": "PARAGRAPH",
+          "target": null,
+          "condition": null,
+          "line": 87
+        }
+      ]
+    }
+  ],
+  "branch_map": [
+    {
+      "paragraph": "1100-OPEN-FILES",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-CTL-STATUS NOT = '00'",
+          "condition_fields": [
+            "WS-CTL-STATUS"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "WS-ARCH-STATUS NOT = '00'",
+          "condition_fields": [
+            "WS-ARCH-STATUS"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "WS-REPORT-STATUS NOT = '00'",
+          "condition_fields": [
+            "WS-REPORT-STATUS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2100-PROCESS-FUNCTION",
+      "branches": [
+        {
+          "type": "EVALUATE",
+          "subject": "CTL-FUNCTION"
+        }
+      ]
+    },
+    {
+      "paragraph": "9999-ERROR-HANDLER",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-ERROR-COUNT > 100",
+          "condition_fields": [
+            "WS-ERROR-COUNT"
+          ]
+        }
+      ]
+    }
+  ],
+  "loops": [],
+  "dead_code_confirmed": [
+    "END-PERFORM",
+    "REPORT-FILE"
+  ],
+  "unresolvable_paths": [],
+  "trace_issues": [],
+  "program_narrative": "UTLMNT00 is a COBOL program that orchestrates business processes. It processes input data through multiple stages, performing validation, transformation, and output operations. The program includes error handling and data integrity checks.",
+  "paragraphs": [
+    {
+      "name": "0000-MAIN",
+      "section": null,
+      "line_range": [
+        87,
+        92
+      ],
+      "pseudocode": [
+        "-- Paragraph 0000-MAIN: Core business logic",
+        "CALL 1000-initialize",
+        "CALL 2000-process",
+        "CALL 3000-cleanup"
+      ],
+      "pseudocode_text": "-- Paragraph 0000-MAIN: Core business logic\nCALL 1000-initialize\nCALL 2000-process\nCALL 3000-cleanup",
+      "field_references": [
+        "MAIN",
+        "CLEANUP",
+        "PROCESS",
+        "GOBACK",
+        "INITIALIZE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1000-INITIALIZE",
+      "section": null,
+      "line_range": [
+        93,
+        96
+      ],
+      "pseudocode": [
+        "-- Paragraph 1000-INITIALIZE: Initialisation and setup",
+        "CALL 1100-open-files",
+        "CALL 1200-init-processing"
+      ],
+      "pseudocode_text": "-- Paragraph 1000-INITIALIZE: Initialisation and setup\nCALL 1100-open-files\nCALL 1200-init-processing",
+      "field_references": [
+        "OPEN-FILES",
+        "INITIALIZE",
+        "INIT-PROCESSING"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1100-OPEN-FILES",
+      "section": null,
+      "line_range": [
+        97,
+        118
+      ],
+      "pseudocode": [
+        "-- Paragraph 1100-OPEN-FILES: Open files and resources",
+        "IF WS-CTL-STATUS NOT = '00' THEN",
+        "CALL 9999-error-handler",
+        "IF WS-ARCH-STATUS NOT = '00' THEN",
+        "CALL 9999-error-handler",
+        "IF WS-REPORT-STATUS NOT = '00' THEN",
+        "CALL 9999-error-handler"
+      ],
+      "pseudocode_text": "-- Paragraph 1100-OPEN-FILES: Open files and resources\nIF WS-CTL-STATUS NOT = '00' THEN\nCALL 9999-error-handler\nIF WS-ARCH-STATUS NOT = '00' THEN\nCALL 9999-error-handler\nIF WS-REPORT-STATUS NOT = '00' THEN\nCALL 9999-error-handler",
+      "field_references": [
+        "OUTPUT",
+        "FILE",
+        "WS-ARCH-STATUS",
+        "ARCHIVE",
+        "REPORT",
+        "OPEN-FILES",
+        "OPEN",
+        "REPORT-FILE",
+        "ERROR",
+        "WS-ERROR-MESSAGE"
+      ],
+      "calls_made": [],
+      "complexity_score": 3,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1200-INIT-PROCESSING",
+      "section": null,
+      "line_range": [
+        119,
+        121
+      ],
+      "pseudocode": [
+        "-- Paragraph 1200-INIT-PROCESSING: Initialisation and setup",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph 1200-INIT-PROCESSING: Initialisation and setup\n-- [paragraph logic]",
+      "field_references": [
+        "WS-COUNTERS",
+        "INITIALIZE",
+        "INIT-PROCESSING"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2000-PROCESS",
+      "section": null,
+      "line_range": [
+        122,
+        129
+      ],
+      "pseudocode": [
+        "-- Paragraph 2000-PROCESS: Main processing logic",
+        "CALL until",
+        "READ next record from control-file",
+        "CALL 2100-process-function"
+      ],
+      "pseudocode_text": "-- Paragraph 2000-PROCESS: Main processing logic\nCALL until\nREAD next record from control-file\nCALL 2100-process-function",
+      "field_references": [
+        "END-OF-CONTROL",
+        "UNTIL",
+        "PROCESS-FUNCTION",
+        "SET",
+        "PROCESS",
+        "END-READ",
+        "CONTROL-FILE"
+      ],
+      "calls_made": [],
+      "complexity_score": 3,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "END-PERFORM",
+      "section": null,
+      "line_range": [
+        130,
+        131
+      ],
+      "pseudocode": [
+        "-- Paragraph END-PERFORM: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph END-PERFORM: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "END-PERFORM"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2100-PROCESS-FUNCTION",
+      "section": null,
+      "line_range": [
+        132,
+        147
+      ],
+      "pseudocode": [
+        "-- Paragraph 2100-PROCESS-FUNCTION: Main processing logic",
+        "EVALUATE (CTL-FUNCTION)",
+        "CALL 2200-archive-process",
+        "CALL 2300-cleanup-process",
+        "CALL 2400-reorg-process",
+        "CALL 2500-analyze-process",
+        "CALL 9999-error-handler"
+      ],
+      "pseudocode_text": "-- Paragraph 2100-PROCESS-FUNCTION: Main processing logic\nEVALUATE (CTL-FUNCTION)\nCALL 2200-archive-process\nCALL 2300-cleanup-process\nCALL 2400-reorg-process\nCALL 2500-analyze-process\nCALL 9999-error-handler",
+      "field_references": [
+        "ERROR-HANDLER",
+        "WS-ANALYZE",
+        "PROCESS-FUNCTION",
+        "INVALID",
+        "OTHER",
+        "END-EVALUATE",
+        "ARCHIVE-PROCESS",
+        "CTL-FUNCTION",
+        "FUNCTION",
+        "WS-ARCHIVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 9,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2200-ARCHIVE-PROCESS",
+      "section": null,
+      "line_range": [
+        148,
+        153
+      ],
+      "pseudocode": [
+        "-- Paragraph 2200-ARCHIVE-PROCESS: Main processing logic",
+        "SET ws-vsam-name = ctl-file-name",
+        "CALL 2210-open-vsam",
+        "CALL 2220-archive-records",
+        "CALL 2230-close-vsam"
+      ],
+      "pseudocode_text": "-- Paragraph 2200-ARCHIVE-PROCESS: Main processing logic\nSET ws-vsam-name = ctl-file-name\nCALL 2210-open-vsam\nCALL 2220-archive-records\nCALL 2230-close-vsam",
+      "field_references": [
+        "CLOSE-VSAM",
+        "WS-VSAM-NAME",
+        "ARCHIVE-PROCESS",
+        "CTL-FILE-NAME",
+        "OPEN-VSAM",
+        "ARCHIVE-RECORDS",
+        "MOVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2300-CLEANUP-PROCESS",
+      "section": null,
+      "line_range": [
+        154,
+        159
+      ],
+      "pseudocode": [
+        "-- Paragraph 2300-CLEANUP-PROCESS: Main processing logic",
+        "SET ws-vsam-name = ctl-file-name",
+        "CALL 2310-analyze-space",
+        "CALL 2320-delete-old",
+        "CALL 2330-update-catalog"
+      ],
+      "pseudocode_text": "-- Paragraph 2300-CLEANUP-PROCESS: Main processing logic\nSET ws-vsam-name = ctl-file-name\nCALL 2310-analyze-space\nCALL 2320-delete-old\nCALL 2330-update-catalog",
+      "field_references": [
+        "UPDATE-CATALOG",
+        "WS-VSAM-NAME",
+        "CTL-FILE-NAME",
+        "CLEANUP-PROCESS",
+        "DELETE-OLD",
+        "MOVE",
+        "ANALYZE-SPACE"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2400-REORG-PROCESS",
+      "section": null,
+      "line_range": [
+        160,
+        165
+      ],
+      "pseudocode": [
+        "-- Paragraph 2400-REORG-PROCESS: Main processing logic",
+        "SET ws-vsam-name = ctl-file-name",
+        "CALL 2410-export-data",
+        "CALL 2420-delete-define",
+        "CALL 2430-import-data"
+      ],
+      "pseudocode_text": "-- Paragraph 2400-REORG-PROCESS: Main processing logic\nSET ws-vsam-name = ctl-file-name\nCALL 2410-export-data\nCALL 2420-delete-define\nCALL 2430-import-data",
+      "field_references": [
+        "IMPORT-DATA",
+        "WS-VSAM-NAME",
+        "CTL-FILE-NAME",
+        "DELETE-DEFINE",
+        "REORG-PROCESS",
+        "EXPORT-DATA",
+        "MOVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2500-ANALYZE-PROCESS",
+      "section": null,
+      "line_range": [
+        166,
+        170
+      ],
+      "pseudocode": [
+        "-- Paragraph 2500-ANALYZE-PROCESS: Main processing logic",
+        "SET ws-vsam-name = ctl-file-name",
+        "CALL 2510-collect-stats",
+        "CALL 2520-generate-report"
+      ],
+      "pseudocode_text": "-- Paragraph 2500-ANALYZE-PROCESS: Main processing logic\nSET ws-vsam-name = ctl-file-name\nCALL 2510-collect-stats\nCALL 2520-generate-report",
+      "field_references": [
+        "COLLECT-STATS",
+        "WS-VSAM-NAME",
+        "CTL-FILE-NAME",
+        "ANALYZE-PROCESS",
+        "MOVE",
+        "GENERATE-REPORT"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3000-CLEANUP",
+      "section": null,
+      "line_range": [
+        171,
+        173
+      ],
+      "pseudocode": [
+        "-- Paragraph 3000-CLEANUP: Core business logic",
+        "CLOSE control-file"
+      ],
+      "pseudocode_text": "-- Paragraph 3000-CLEANUP: Core business logic\nCLOSE control-file",
+      "field_references": [
+        "CLOSE",
+        "CONTROL-FILE",
+        "CLEANUP",
+        "ARCHIVE-FILE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "REPORT-FILE",
+      "section": null,
+      "line_range": [
+        174,
+        175
+      ],
+      "pseudocode": [
+        "-- Paragraph REPORT-FILE: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph REPORT-FILE: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "REPORT-FILE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "9999-ERROR-HANDLER",
+      "section": null,
+      "line_range": [
+        176,
+        182
+      ],
+      "pseudocode": [
+        "-- Paragraph 9999-ERROR-HANDLER: Error handling",
+        "INCREMENT ws-error-count BY 1",
+        "IF WS-ERROR-COUNT > 100 THEN",
+        "SET return-code = 12",
+        "RETURN to caller"
+      ],
+      "pseudocode_text": "-- Paragraph 9999-ERROR-HANDLER: Error handling\nINCREMENT ws-error-count BY 1\nIF WS-ERROR-COUNT > 100 THEN\nSET return-code = 12\nRETURN to caller",
+      "field_references": [
+        "ERROR-HANDLER",
+        "WS-ERROR-COUNT",
+        "DISPLAY",
+        "CONS",
+        "ADD",
+        "RETURN-CODE",
+        "UPON",
+        "WS-ERROR-MESSAGE",
+        "GOBACK",
+        "END-IF"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    }
+  ],
+  "unresolved_statements": [],
+  "pseudocode_issues": []
 }

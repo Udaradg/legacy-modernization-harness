@@ -1,111 +1,1100 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "DB2STAT",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "BCHCTL",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "RTNCODE",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "ERRHAND",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  185,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RPTSTA00.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  96,
-                           "name":  "0000-MAIN",
-                           "start_line":  96
-                       },
-                       {
-                           "end_line":  102,
-                           "name":  "1000-INITIALIZE",
-                           "start_line":  102
-                       },
-                       {
-                           "end_line":  107,
-                           "name":  "1100-OPEN-FILES",
-                           "start_line":  107
-                       },
-                       {
-                           "end_line":  129,
-                           "name":  "1200-WRITE-HEADERS",
-                           "start_line":  129
-                       },
-                       {
-                           "end_line":  135,
-                           "name":  "1300-INIT-ACCUMULATORS",
-                           "start_line":  135
-                       },
-                       {
-                           "end_line":  138,
-                           "name":  "2000-PROCESS-REPORT",
-                           "start_line":  138
-                       },
-                       {
-                           "end_line":  144,
-                           "name":  "2100-PROCESS-DB2-STATS",
-                           "start_line":  144
-                       },
-                       {
-                           "end_line":  156,
-                           "name":  "2200-PROCESS-BATCH-STATS",
-                           "start_line":  156
-                       },
-                       {
-                           "end_line":  168,
-                           "name":  "2300-CALCULATE-METRICS",
-                           "start_line":  168
-                       },
-                       {
-                           "end_line":  172,
-                           "name":  "2400-WRITE-REPORT",
-                           "start_line":  172
-                       },
-                       {
-                           "end_line":  177,
-                           "name":  "3000-CLEANUP",
-                           "start_line":  177
-                       },
-                       {
-                           "end_line":  182,
-                           "name":  "9999-ERROR-HANDLER",
-                           "start_line":  182
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  32,
-                                          "start_line":  14
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  185,
-                                        "start_line":  95
-                                    },
-                      "DATA":  {
-                                   "end_line":  94,
-                                   "start_line":  33
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  13,
-                                             "start_line":  1
-                                         }
-                  },
-    "program_id":  "RPTSTA00",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "RPTSTA00",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RPTSTA00.cbl",
+    "total_lines": 185
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 1,
+    "end_line": 13,
+    "program_id": "RPTSTA00",
+    "author": "CLAUDE.",
+    "date_written": "2024-04-09."
+  },
+  "data_division": {
+    "start_line": 33,
+    "end_line": 94,
+    "file_section": {
+      "entries": [
+        {
+          "type": "FD",
+          "file_name": "REPORT-FILE",
+          "line": 38,
+          "end_line": 42,
+          "recording_mode": "F",
+          "record_contains": null,
+          "block_contains": "0"
+        }
+      ],
+      "start_line": 34
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "type": "copy_stub",
+          "copybook": "RTNCODE",
+          "library": null,
+          "line": 44,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "type": "copy_stub",
+          "copybook": "ERRHAND",
+          "library": null,
+          "line": 45,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "level": 1,
+          "name": "WS-FILE-STATUS",
+          "line": 47,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DB2-STATUS",
+          "line": 48,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-BCH-STATUS",
+          "line": 49,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-REPORT-STATUS",
+          "line": 50,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-REPORT-HEADERS",
+          "line": 52,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-HEADER1",
+          "line": 53,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-53",
+          "line": 54,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ALL",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-HEADER2",
+          "line": 55,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-55",
+          "line": 56,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-56",
+          "line": 57,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'SYSTEM STATISTICS AND PERFORMANCE REPORT'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-58",
+          "line": 59,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-HEADER3",
+          "line": 60,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-60",
+          "line": 61,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'REPORT DATE:'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-REPORT-DATE",
+          "line": 62,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-62",
+          "line": 63,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-PERFORMANCE-METRICS",
+          "line": 65,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DB2-METRICS",
+          "line": 66,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-DB2-CALLS",
+          "line": 67,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-DB2-ELAPSED",
+          "line": 68,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-DB2-CPU",
+          "line": 69,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-DB2-WAIT",
+          "line": 70,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-BATCH-METRICS",
+          "line": 71,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-BATCH-JOBS",
+          "line": 72,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-BATCH-SUCCESS",
+          "line": 73,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-BATCH-FAILED",
+          "line": 74,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-BATCH-ELAPSED",
+          "line": 75,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-DETAIL-LINES",
+          "line": 77,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DB2-DETAIL",
+          "line": 78,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-78",
+          "line": 79,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'DB2 CALLS:'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-DB2-CALLS-OUT",
+          "line": 80,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-80",
+          "line": 81,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-81",
+          "line": 82,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'AVG RESPONSE:'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-DB2-AVG-RESP",
+          "line": 83,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-83",
+          "line": 84,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-BATCH-DETAIL",
+          "line": 86,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-86",
+          "line": 87,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'BATCH JOBS:'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-BATCH-TOTAL",
+          "line": 88,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-88",
+          "line": 89,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-89",
+          "line": 90,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'SUCCESS RATE:'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-SUCCESS-RATE",
+          "line": 91,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-91",
+          "line": 92,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'%'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-92",
+          "line": 93,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        }
+      ],
+      "start_line": 43
+    },
+    "linkage_section": {
+      "entries": []
+    }
+  },
+  "procedure_division": {
+    "start_line": 95,
+    "end_line": 185,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 96,
+        "end_line": 101,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-INITIALIZE",
+        "section": null,
+        "start_line": 102,
+        "end_line": 106,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1100-OPEN-FILES",
+        "section": null,
+        "start_line": 107,
+        "end_line": 128,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1200-WRITE-HEADERS",
+        "section": null,
+        "start_line": 129,
+        "end_line": 134,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1300-INIT-ACCUMULATORS",
+        "section": null,
+        "start_line": 135,
+        "end_line": 137,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-PROCESS-REPORT",
+        "section": null,
+        "start_line": 138,
+        "end_line": 143,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2100-PROCESS-DB2-STATS",
+        "section": null,
+        "start_line": 144,
+        "end_line": 153,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-PERFORM",
+        "section": null,
+        "start_line": 154,
+        "end_line": 155,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2200-PROCESS-BATCH-STATS",
+        "section": null,
+        "start_line": 156,
+        "end_line": 165,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-PERFORM",
+        "section": null,
+        "start_line": 166,
+        "end_line": 167,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2300-CALCULATE-METRICS",
+        "section": null,
+        "start_line": 168,
+        "end_line": 171,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2400-WRITE-REPORT",
+        "section": null,
+        "start_line": 172,
+        "end_line": 176,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-CLEANUP",
+        "section": null,
+        "start_line": 177,
+        "end_line": 179,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "REPORT-FILE",
+        "section": null,
+        "start_line": 180,
+        "end_line": 181,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "9999-ERROR-HANDLER",
+        "section": null,
+        "start_line": 182,
+        "end_line": 185,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 100
+      },
+      {
+        "type": "GOBACK",
+        "line": 185
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN",
+      "9999-ERROR-HANDLER"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 96,
+        "end_line": 101,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-INITIALIZE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 102,
+        "end_line": 106,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1100-OPEN-FILES",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 107,
+        "end_line": 128,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1200-WRITE-HEADERS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 129,
+        "end_line": 134,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1300-INIT-ACCUMULATORS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 135,
+        "end_line": 137,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-PROCESS-REPORT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 138,
+        "end_line": 143,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2100-PROCESS-DB2-STATS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 144,
+        "end_line": 153,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-PERFORM",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 154,
+        "end_line": 155,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2200-PROCESS-BATCH-STATS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 156,
+        "end_line": 165,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-PERFORM",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 166,
+        "end_line": 167,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2300-CALCULATE-METRICS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 168,
+        "end_line": 171,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2400-WRITE-REPORT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 172,
+        "end_line": 176,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-CLEANUP",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 177,
+        "end_line": 179,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "REPORT-FILE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 180,
+        "end_line": 181,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "9999-ERROR-HANDLER",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 182,
+        "end_line": 185,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 97,
+        "unstructured": false,
+        "to": "1000-INITIALIZE"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 98,
+        "unstructured": false,
+        "to": "2000-PROCESS-REPORT"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 99,
+        "unstructured": false,
+        "to": "3000-CLEANUP"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 103,
+        "unstructured": false,
+        "to": "1100-OPEN-FILES"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 104,
+        "unstructured": false,
+        "to": "1200-WRITE-HEADERS"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 105,
+        "unstructured": false,
+        "to": "1300-INIT-ACCUMULATORS"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 112,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 119,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 126,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "2000-PROCESS-REPORT",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 139,
+        "unstructured": false,
+        "to": "2100-PROCESS-DB2-STATS"
+      },
+      {
+        "from": "2000-PROCESS-REPORT",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 140,
+        "unstructured": false,
+        "to": "2200-PROCESS-BATCH-STATS"
+      },
+      {
+        "from": "2000-PROCESS-REPORT",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 141,
+        "unstructured": false,
+        "to": "2300-CALCULATE-METRICS"
+      },
+      {
+        "from": "2000-PROCESS-REPORT",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 142,
+        "unstructured": false,
+        "to": "2400-WRITE-REPORT"
+      },
+      {
+        "from": "2100-PROCESS-DB2-STATS",
+        "type": "PERFORM_INLINE",
+        "resolved": true,
+        "source_line": 149,
+        "unstructured": false,
+        "to": "2100-PROCESS-DB2-STATS",
+        "inline": true
+      },
+      {
+        "from": "2100-PROCESS-DB2-STATS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 150,
+        "unstructured": false,
+        "to": "2110-ACCUMULATE-DB2-STATS"
+      },
+      {
+        "from": "2200-PROCESS-BATCH-STATS",
+        "type": "PERFORM_INLINE",
+        "resolved": true,
+        "source_line": 161,
+        "unstructured": false,
+        "to": "2200-PROCESS-BATCH-STATS",
+        "inline": true
+      },
+      {
+        "from": "2200-PROCESS-BATCH-STATS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 162,
+        "unstructured": false,
+        "to": "2210-ACCUMULATE-BATCH-STATS"
+      },
+      {
+        "from": "2300-CALCULATE-METRICS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 169,
+        "unstructured": false,
+        "to": "2310-CALC-DB2-METRICS"
+      },
+      {
+        "from": "2300-CALCULATE-METRICS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 170,
+        "unstructured": false,
+        "to": "2320-CALC-BATCH-METRICS"
+      },
+      {
+        "from": "2400-WRITE-REPORT",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 173,
+        "unstructured": false,
+        "to": "2410-WRITE-DB2-SECTION"
+      },
+      {
+        "from": "2400-WRITE-REPORT",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 174,
+        "unstructured": false,
+        "to": "2420-WRITE-BATCH-SECTION"
+      },
+      {
+        "from": "2400-WRITE-REPORT",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 175,
+        "unstructured": false,
+        "to": "2430-WRITE-TREND-ANALYSIS"
+      }
+    ],
+    "dead_code_candidates": [
+      "END-PERFORM",
+      "END-PERFORM",
+      "REPORT-FILE"
+    ],
+    "unstructured_constructs": [],
+    "cfg_issues": [
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2100-PROCESS-DB2-STATS",
+        "target": "2110-ACCUMULATE-DB2-STATS",
+        "message": "Control transfer target '2110-ACCUMULATE-DB2-STATS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2200-PROCESS-BATCH-STATS",
+        "target": "2210-ACCUMULATE-BATCH-STATS",
+        "message": "Control transfer target '2210-ACCUMULATE-BATCH-STATS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2300-CALCULATE-METRICS",
+        "target": "2310-CALC-DB2-METRICS",
+        "message": "Control transfer target '2310-CALC-DB2-METRICS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2300-CALCULATE-METRICS",
+        "target": "2320-CALC-BATCH-METRICS",
+        "message": "Control transfer target '2320-CALC-BATCH-METRICS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2400-WRITE-REPORT",
+        "target": "2410-WRITE-DB2-SECTION",
+        "message": "Control transfer target '2410-WRITE-DB2-SECTION' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2400-WRITE-REPORT",
+        "target": "2420-WRITE-BATCH-SECTION",
+        "message": "Control transfer target '2420-WRITE-BATCH-SECTION' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2400-WRITE-REPORT",
+        "target": "2430-WRITE-TREND-ANALYSIS",
+        "message": "Control transfer target '2430-WRITE-TREND-ANALYSIS' not found in paragraph list"
+      }
+    ]
+  }
 }

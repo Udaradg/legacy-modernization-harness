@@ -1,76 +1,376 @@
-﻿{
-    "paragraphs":  [
-                       {
-                           "name":  "P100-PROCESS-CONNECT",
-                           "line_range":  [
-                                              54,
-                                              54
-                                          ]
-                       },
-                       {
-                           "name":  "P100-EXIT",
-                           "line_range":  [
-                                              63,
-                                              63
-                                          ]
-                       },
-                       {
-                           "name":  "P110-ESTABLISH-CONNECTION",
-                           "line_range":  [
-                                              66,
-                                              66
-                                          ]
-                       },
-                       {
-                           "name":  "P110-EXIT",
-                           "line_range":  [
-                                              80,
-                                              80
-                                          ]
-                       },
-                       {
-                           "name":  "P120-GENERATE-TOKEN",
-                           "line_range":  [
-                                              83,
-                                              83
-                                          ]
-                       },
-                       {
-                           "name":  "P120-EXIT",
-                           "line_range":  [
-                                              88,
-                                              88
-                                          ]
-                       },
-                       {
-                           "name":  "P200-PROCESS-DISCONNECT",
-                           "line_range":  [
-                                              91,
-                                              91
-                                          ]
-                       },
-                       {
-                           "name":  "P200-EXIT",
-                           "line_range":  [
-                                              102,
-                                              102
-                                          ]
-                       },
-                       {
-                           "name":  "P300-CHECK-STATUS",
-                           "line_range":  [
-                                              105,
-                                              105
-                                          ]
-                       },
-                       {
-                           "name":  "P300-EXIT",
-                           "line_range":  [
-                                              119,
-                                              119
-                                          ]
-                       }
-                   ],
-    "source_file":  "src\\programs\\online\\DB2ONLN.cbl",
-    "program_id":  "DB2ONLN"
+{
+  "program_id": "DB2ONLN",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\DB2ONLN.cbl",
+  "processing_timestamp": "2026-05-03T18:35:21.033744Z",
+  "execution_traces": [
+    {
+      "entry_point": "P100-PROCESS-CONNECT",
+      "entry_type": "procedure_entry",
+      "steps": [
+        {
+          "step": 1,
+          "paragraph": "P100-PROCESS-CONNECT",
+          "action": "PARAGRAPH",
+          "target": null,
+          "condition": null,
+          "line": 54
+        }
+      ]
+    }
+  ],
+  "branch_map": [
+    {
+      "paragraph": "P100-PROCESS-CONNECT",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-ACTIVE-CONNECTIONS < WS-MAX-CONNECTIONS",
+          "condition_fields": [
+            "WS-ACTIVE-CONNECTIONS",
+            "WS-MAX-CONNECTIONS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "P110-ESTABLISH-CONNECTION",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "SQLCODE = 0",
+          "condition_fields": [
+            "SQLCODE"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "P200-PROCESS-DISCONNECT",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "SQLCODE = 0",
+          "condition_fields": [
+            "SQLCODE"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "END-EXEC",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "SQLCODE = 0",
+          "condition_fields": [
+            "SQLCODE"
+          ]
+        }
+      ]
+    }
+  ],
+  "loops": [],
+  "dead_code_confirmed": [
+    "P100-EXIT",
+    "P110-EXIT",
+    "P120-EXIT",
+    "P200-EXIT",
+    "END-EXEC",
+    "P300-EXIT"
+  ],
+  "unresolvable_paths": [],
+  "trace_issues": [],
+  "program_narrative": "DB2ONLN is a COBOL program that orchestrates business processes. It processes input data through multiple stages, performing validation, transformation, and output operations. The program includes error handling and data integrity checks.",
+  "paragraphs": [
+    {
+      "name": "P100-PROCESS-CONNECT",
+      "section": null,
+      "line_range": [
+        54,
+        62
+      ],
+      "pseudocode": [
+        "-- Paragraph P100-PROCESS-CONNECT: Main processing logic",
+        "IF WS-ACTIVE-CONNECTIONS < WS-MAX-CONNECTIONS THEN",
+        "CALL p110-establish-connection",
+        "SET db2-response-code = -1"
+      ],
+      "pseudocode_text": "-- Paragraph P100-PROCESS-CONNECT: Main processing logic\nIF WS-ACTIVE-CONNECTIONS < WS-MAX-CONNECTIONS THEN\nCALL p110-establish-connection\nSET db2-response-code = -1",
+      "field_references": [
+        "WS-MAX-CONNECTIONS",
+        "P110-ESTABLISH-CONNECTION",
+        "END-IF",
+        "DB2-ERROR-MSG",
+        "DB2-RESPONSE-CODE",
+        "P110-EXIT",
+        "WS-ACTIVE-CONNECTIONS",
+        "P100-PROCESS-CONNECT",
+        "MOVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P100-EXIT",
+      "section": null,
+      "line_range": [
+        63,
+        65
+      ],
+      "pseudocode": [
+        "-- Paragraph P100-EXIT: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph P100-EXIT: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "P100-EXIT",
+        "EXIT"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P110-ESTABLISH-CONNECTION",
+      "section": null,
+      "line_range": [
+        66,
+        79
+      ],
+      "pseudocode": [
+        "-- Paragraph P110-ESTABLISH-CONNECTION: Core business logic",
+        "IF SQLCODE = 0 THEN",
+        "INCREMENT ws-active-connections BY 1",
+        "SET db2-sqlcode = sqlcode",
+        "SET db2-response-code = 0",
+        "CALL p120-generate-token",
+        "SET db2-sqlcode = sqlcode",
+        "SET db2-error-msg = sqlerrmc",
+        "SET db2-response-code = -1"
+      ],
+      "pseudocode_text": "-- Paragraph P110-ESTABLISH-CONNECTION: Core business logic\nIF SQLCODE = 0 THEN\nINCREMENT ws-active-connections BY 1\nSET db2-sqlcode = sqlcode\nSET db2-response-code = 0\nCALL p120-generate-token\nSET db2-sqlcode = sqlcode\nSET db2-error-msg = sqlerrmc\nSET db2-response-code = -1",
+      "field_references": [
+        "DB2-SQLCODE",
+        "P120-EXIT",
+        "END-EXEC",
+        "CONNECT",
+        "EXEC",
+        "P110-ESTABLISH-CONNECTION",
+        "SQL",
+        "SQLERRMC",
+        "ADD",
+        "DB2-ERROR-MSG"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P110-EXIT",
+      "section": null,
+      "line_range": [
+        80,
+        82
+      ],
+      "pseudocode": [
+        "-- Paragraph P110-EXIT: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph P110-EXIT: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "EXIT",
+        "P110-EXIT"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P120-GENERATE-TOKEN",
+      "section": null,
+      "line_range": [
+        83,
+        87
+      ],
+      "pseudocode": [
+        "-- Paragraph P120-GENERATE-TOKEN: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph P120-GENERATE-TOKEN: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "CURRENT-DATE",
+        "SIZE",
+        "DELIMITED",
+        "STRING",
+        "DB2-CONNECTION-TOKEN",
+        "FUNCTION",
+        "WS-ACTIVE-CONNECTIONS",
+        "P120-GENERATE-TOKEN",
+        "MOVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P120-EXIT",
+      "section": null,
+      "line_range": [
+        88,
+        90
+      ],
+      "pseudocode": [
+        "-- Paragraph P120-EXIT: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph P120-EXIT: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "P120-EXIT",
+        "EXIT"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P200-PROCESS-DISCONNECT",
+      "section": null,
+      "line_range": [
+        91,
+        101
+      ],
+      "pseudocode": [
+        "-- Paragraph P200-PROCESS-DISCONNECT: Main processing logic",
+        "IF SQLCODE = 0 THEN",
+        "DECREMENT ws-active-connections BY 1",
+        "SET db2-response-code = 0",
+        "SET db2-sqlcode = sqlcode",
+        "SET db2-error-msg = sqlerrmc",
+        "SET db2-response-code = -1"
+      ],
+      "pseudocode_text": "-- Paragraph P200-PROCESS-DISCONNECT: Main processing logic\nIF SQLCODE = 0 THEN\nDECREMENT ws-active-connections BY 1\nSET db2-response-code = 0\nSET db2-sqlcode = sqlcode\nSET db2-error-msg = sqlerrmc\nSET db2-response-code = -1",
+      "field_references": [
+        "DB2-SQLCODE",
+        "END-EXEC",
+        "EXEC",
+        "SQL",
+        "DISCONNECT",
+        "SUBTRACT",
+        "SQLERRMC",
+        "DB2-ERROR-MSG",
+        "DB2-RESPONSE-CODE",
+        "WS-ACTIVE-CONNECTIONS"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P200-EXIT",
+      "section": null,
+      "line_range": [
+        102,
+        104
+      ],
+      "pseudocode": [
+        "-- Paragraph P200-EXIT: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph P200-EXIT: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "P200-EXIT",
+        "EXIT"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P300-CHECK-STATUS",
+      "section": null,
+      "line_range": [
+        105,
+        107
+      ],
+      "pseudocode": [
+        "-- Paragraph P300-CHECK-STATUS: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph P300-CHECK-STATUS: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "EXEC",
+        "SQL",
+        "SERVER",
+        "SELECT",
+        "P300-CHECK-STATUS",
+        "DB2-ERROR-MSG",
+        "CURRENT"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "END-EXEC",
+      "section": null,
+      "line_range": [
+        108,
+        118
+      ],
+      "pseudocode": [
+        "-- Paragraph END-EXEC: Core business logic",
+        "IF SQLCODE = 0 THEN",
+        "SET db2-response-code = 0",
+        "SET db2-sqlcode = sqlcode",
+        "SET db2-response-code = -1"
+      ],
+      "pseudocode_text": "-- Paragraph END-EXEC: Core business logic\nIF SQLCODE = 0 THEN\nSET db2-response-code = 0\nSET db2-sqlcode = sqlcode\nSET db2-response-code = -1",
+      "field_references": [
+        "DB2-SQLCODE",
+        "END-EXEC",
+        "DB2-RESPONSE-CODE",
+        "WS-ACTIVE-CONNECTIONS",
+        "END-IF",
+        "MOVE",
+        "SQLCODE"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P300-EXIT",
+      "section": null,
+      "line_range": [
+        119,
+        120
+      ],
+      "pseudocode": [
+        "-- Paragraph P300-EXIT: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph P300-EXIT: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "P300-EXIT",
+        "EXIT"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    }
+  ],
+  "unresolved_statements": [],
+  "pseudocode_issues": []
 }

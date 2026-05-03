@@ -1,92 +1,690 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "SQLCA",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "DBPROC",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "ERRHAND",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  228,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\DB2STAT.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  58,
-                           "name":  "0000-MAIN",
-                           "start_line":  58
-                       },
-                       {
-                           "end_line":  76,
-                           "name":  "1000-INITIALIZE",
-                           "start_line":  76
-                       },
-                       {
-                           "end_line":  88,
-                           "name":  "1100-CREATE-STATS-TABLE",
-                           "start_line":  88
-                       },
-                       {
-                           "end_line":  111,
-                           "name":  "1200-INSERT-INITIAL",
-                           "start_line":  111
-                       },
-                       {
-                           "end_line":  130,
-                           "name":  "2000-UPDATE-STATS",
-                           "start_line":  130
-                       },
-                       {
-                           "end_line":  157,
-                           "name":  "3000-TERMINATE",
-                           "start_line":  157
-                       },
-                       {
-                           "end_line":  180,
-                           "name":  "3100-CALC-TIMES",
-                           "start_line":  180
-                       },
-                       {
-                           "end_line":  189,
-                           "name":  "4000-DISPLAY-STATS",
-                           "start_line":  189
-                       },
-                       {
-                           "end_line":  224,
-                           "name":  "9000-ERROR-ROUTINE",
-                           "start_line":  224
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  14,
-                                          "start_line":  10
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  228,
-                                        "start_line":  57
-                                    },
-                      "DATA":  {
-                                   "end_line":  56,
-                                   "start_line":  15
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  9,
-                                             "start_line":  7
-                                         }
-                  },
-    "program_id":  "DB2STAT",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "DB2STAT",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\DB2STAT.cbl",
+    "total_lines": 228
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 7,
+    "end_line": 9,
+    "program_id": "DB2STAT"
+  },
+  "data_division": {
+    "start_line": 15,
+    "end_line": 56,
+    "file_section": {
+      "entries": []
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "WS-STATS-RECORD",
+          "line": 18,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-PROGRAM-ID",
+          "line": 19,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-START-TIME",
+          "line": 20,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-END-TIME",
+          "line": 21,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ROWS-READ",
+          "line": 22,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ROWS-INSERTED",
+          "line": 23,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ROWS-UPDATED",
+          "line": 24,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ROWS-DELETED",
+          "line": 25,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-COMMITS",
+          "line": 26,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ROLLBACKS",
+          "line": 27,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-CPU-TIME",
+          "line": 28,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ELAPSED-TIME",
+          "line": 29,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-CURRENT-TIMESTAMP",
+          "line": 36,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-START-TIMESTAMP",
+          "line": 37,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-FORMATTED-TIME",
+          "line": 38,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 16
+    },
+    "linkage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "LS-STAT-REQUEST",
+          "line": 41,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-FUNCTION",
+          "line": 42,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "FUNC-INIT",
+          "line": 43,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'INIT'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "FUNC-UPDT",
+          "line": 44,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'UPDT'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "FUNC-TERM",
+          "line": 45,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'TERM'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "FUNC-DISP",
+          "line": 46,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'DISP'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-PROGRAM-ID",
+          "line": 47,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-STAT-DATA",
+          "line": 48,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "LS-ROWS-READ",
+          "line": 49,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "LS-ROWS-INSRT",
+          "line": 50,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "LS-ROWS-UPDT",
+          "line": 51,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "LS-ROWS-DELT",
+          "line": 52,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "LS-COMMITS",
+          "line": 53,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "LS-ROLLBACKS",
+          "line": 54,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-RETURN-CODE",
+          "line": 55,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 40
+    }
+  },
+  "procedure_division": {
+    "start_line": 57,
+    "end_line": 228,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 58,
+        "end_line": 75,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-INITIALIZE",
+        "section": null,
+        "start_line": 76,
+        "end_line": 87,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1100-CREATE-STATS-TABLE",
+        "section": null,
+        "start_line": 88,
+        "end_line": 110,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1200-INSERT-INITIAL",
+        "section": null,
+        "start_line": 111,
+        "end_line": 129,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-UPDATE-STATS",
+        "section": null,
+        "start_line": 130,
+        "end_line": 156,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-TERMINATE",
+        "section": null,
+        "start_line": 157,
+        "end_line": 179,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3100-CALC-TIMES",
+        "section": null,
+        "start_line": 180,
+        "end_line": 188,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "4000-DISPLAY-STATS",
+        "section": null,
+        "start_line": 189,
+        "end_line": 223,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "9000-ERROR-ROUTINE",
+        "section": null,
+        "start_line": 224,
+        "end_line": 228,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 73
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 58,
+        "end_line": 75,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-INITIALIZE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 76,
+        "end_line": 87,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1100-CREATE-STATS-TABLE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 88,
+        "end_line": 110,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1200-INSERT-INITIAL",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 111,
+        "end_line": 129,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-UPDATE-STATS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 130,
+        "end_line": 156,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-TERMINATE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 157,
+        "end_line": 179,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3100-CALC-TIMES",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 180,
+        "end_line": 188,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "4000-DISPLAY-STATS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 189,
+        "end_line": 223,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "9000-ERROR-ROUTINE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 224,
+        "end_line": 228,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 61,
+        "unstructured": false,
+        "to": "1000-INITIALIZE"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 63,
+        "unstructured": false,
+        "to": "2000-UPDATE-STATS"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 65,
+        "unstructured": false,
+        "to": "3000-TERMINATE"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 67,
+        "unstructured": false,
+        "to": "4000-DISPLAY-STATS"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 70,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 84,
+        "unstructured": false,
+        "to": "1100-CREATE-STATS-TABLE"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 85,
+        "unstructured": false,
+        "to": "1200-INSERT-INITIAL"
+      },
+      {
+        "from": "1100-CREATE-STATS-TABLE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 107,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "1200-INSERT-INITIAL",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 126,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2000-UPDATE-STATS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 153,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "3000-TERMINATE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 161,
+        "unstructured": false,
+        "to": "3100-CALC-TIMES"
+      },
+      {
+        "from": "3000-TERMINATE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 173,
+        "unstructured": false,
+        "to": "4000-DISPLAY-STATS"
+      },
+      {
+        "from": "3000-TERMINATE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 176,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "4000-DISPLAY-STATS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 220,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      }
+    ],
+    "dead_code_candidates": [],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

@@ -1,7 +1,304 @@
-﻿{
-    "paragraphs":  [
-
-                   ],
-    "source_file":  "src\\programs\\online\\ERRHNDL.cbl",
-    "program_id":  "ERRHNDL"
+{
+  "program_id": "ERRHNDL",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\ERRHNDL.cbl",
+  "processing_timestamp": "2026-05-03T18:35:21.051144Z",
+  "execution_traces": [
+    {
+      "entry_point": "P100-INIT-ERROR-HANDLER",
+      "entry_type": "procedure_entry",
+      "steps": [
+        {
+          "step": 1,
+          "paragraph": "P100-INIT-ERROR-HANDLER",
+          "action": "PARAGRAPH",
+          "target": null,
+          "condition": null,
+          "line": 52
+        }
+      ]
+    }
+  ],
+  "branch_map": [
+    {
+      "paragraph": "P100-INIT-ERROR-HANDLER",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "ERR-TRACE-ID = SPACES",
+          "condition_fields": [
+            "ERR-TRACE-ID"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "END-EXEC",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "SQLCODE NOT = 0",
+          "condition_fields": [
+            "SQLCODE"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "P400-DETERMINE-ACTION",
+      "branches": [
+        {
+          "type": "EVALUATE",
+          "subject": "TRUE"
+        }
+      ]
+    }
+  ],
+  "loops": [],
+  "dead_code_confirmed": [
+    "P100-EXIT",
+    "END-EXEC",
+    "P200-EXIT",
+    "P300-EXIT",
+    "P400-EXIT"
+  ],
+  "unresolvable_paths": [],
+  "trace_issues": [],
+  "program_narrative": "ERRHNDL is a COBOL program that orchestrates business processes. It processes input data through multiple stages, performing validation, transformation, and output operations. The program includes error handling and data integrity checks.",
+  "paragraphs": [
+    {
+      "name": "P100-INIT-ERROR-HANDLER",
+      "section": null,
+      "line_range": [
+        52,
+        59
+      ],
+      "pseudocode": [
+        "-- Paragraph P100-INIT-ERROR-HANDLER: Initialisation and setup",
+        "SET ws-error-area. = dfhcommarea",
+        "IF ERR-TRACE-ID = SPACES THEN"
+      ],
+      "pseudocode_text": "-- Paragraph P100-INIT-ERROR-HANDLER: Initialisation and setup\nSET ws-error-area. = dfhcommarea\nIF ERR-TRACE-ID = SPACES THEN",
+      "field_references": [
+        "CURRENT-DATE",
+        "ERR-TIMESTAMP",
+        "RANDOM",
+        "ERR-TRACE-ID",
+        "FUNCTION",
+        "WS-ERROR-AREA",
+        "P100-INIT-ERROR-HANDLER",
+        "DFHCOMMAREA",
+        "END-IF",
+        "MOVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P100-EXIT",
+      "section": null,
+      "line_range": [
+        60,
+        62
+      ],
+      "pseudocode": [
+        "-- Paragraph P100-EXIT: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph P100-EXIT: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "P100-EXIT",
+        "EXIT"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P200-LOG-ERROR",
+      "section": null,
+      "line_range": [
+        63,
+        82
+      ],
+      "pseudocode": [
+        "-- Paragraph P200-LOG-ERROR: Error handling",
+        "SET log-timestamp. = err-timestamp",
+        "SET log-program. = err-program",
+        "SET log-paragraph. = err-paragraph",
+        "SET log-sqlcode. = err-sqlcode",
+        "SET log-cics-resp. = err-cics-resp",
+        "SET log-severity. = err-severity",
+        "SET log-message. = err-message",
+        "SET log-trace-id. = err-trace-id"
+      ],
+      "pseudocode_text": "-- Paragraph P200-LOG-ERROR: Error handling\nSET log-timestamp. = err-timestamp\nSET log-program. = err-program\nSET log-paragraph. = err-paragraph\nSET log-sqlcode. = err-sqlcode\nSET log-cics-resp. = err-cics-resp\nSET log-severity. = err-severity\nSET log-message. = err-message\nSET log-trace-id. = err-trace-id",
+      "field_references": [
+        "ERR-SQLCODE",
+        "LOG-TIMESTAMP",
+        "ERR-CICS-RESP",
+        "ERR-SEVERITY",
+        "LOG-SEVERITY",
+        "ERRLOG",
+        "ERR-PROGRAM",
+        "LOG-PROGRAM",
+        "ERR-TIMESTAMP",
+        "EXEC"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "END-EXEC",
+      "section": null,
+      "line_range": [
+        83,
+        88
+      ],
+      "pseudocode": [
+        "-- Paragraph END-EXEC: Core business logic",
+        "IF SQLCODE NOT = 0 THEN"
+      ],
+      "pseudocode_text": "-- Paragraph END-EXEC: Core business logic\nIF SQLCODE NOT = 0 THEN",
+      "field_references": [
+        "END-EXEC",
+        "ERR-FATAL",
+        "ERR-MESSAGE",
+        "SET",
+        "END-IF",
+        "MOVE",
+        "SQLCODE"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P200-EXIT",
+      "section": null,
+      "line_range": [
+        89,
+        91
+      ],
+      "pseudocode": [
+        "-- Paragraph P200-EXIT: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph P200-EXIT: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "P200-EXIT",
+        "EXIT"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P300-FORMAT-MESSAGE",
+      "section": null,
+      "line_range": [
+        92,
+        100
+      ],
+      "pseudocode": [
+        "-- Paragraph P300-FORMAT-MESSAGE: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph P300-FORMAT-MESSAGE: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "SIZE",
+        "P300-FORMAT-MESSAGE",
+        "DELIMITED",
+        "STRING",
+        "ERR-TRACE-ID",
+        "ERR-MESSAGE",
+        "ERR-PROGRAM",
+        "SPACE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P300-EXIT",
+      "section": null,
+      "line_range": [
+        101,
+        103
+      ],
+      "pseudocode": [
+        "-- Paragraph P300-EXIT: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph P300-EXIT: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "P300-EXIT",
+        "EXIT"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P400-DETERMINE-ACTION",
+      "section": null,
+      "line_range": [
+        104,
+        116
+      ],
+      "pseudocode": [
+        "-- Paragraph P400-DETERMINE-ACTION: Core business logic",
+        "EVALUATE (TRUE)",
+        "SET dfhcommarea. = ws-error-area"
+      ],
+      "pseudocode_text": "-- Paragraph P400-DETERMINE-ACTION: Core business logic\nEVALUATE (TRUE)\nSET dfhcommarea. = ws-error-area",
+      "field_references": [
+        "ERR-WARNING",
+        "ERR-ABEND",
+        "OTHER",
+        "END-EVALUATE",
+        "ERR-FATAL",
+        "ERR-INFO",
+        "ERR-RETURN",
+        "SET",
+        "P400-DETERMINE-ACTION",
+        "ERR-CONTINUE"
+      ],
+      "calls_made": [],
+      "complexity_score": 8,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P400-EXIT",
+      "section": null,
+      "line_range": [
+        117,
+        118
+      ],
+      "pseudocode": [
+        "-- Paragraph P400-EXIT: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph P400-EXIT: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "P400-EXIT",
+        "EXIT"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    }
+  ],
+  "unresolved_statements": [],
+  "pseudocode_issues": []
 }

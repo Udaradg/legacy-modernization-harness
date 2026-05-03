@@ -1,272 +1,77 @@
-﻿{
-    "record_name": "CURSMGR_WS",
-    "source_type": "program_ws",
-    "source_file": "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\CURSMGR.cbl",
-    "fields": [
-        {
-            "line": 15,
-            "type": "UNKNOWN",
-            "is_condition": false,
-            "redefines": null,
-            "level": 1,
-            "value": null,
-            "name": "WS-DB2-AREA",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 18,
-            "type": "UNKNOWN",
-            "is_condition": false,
-            "redefines": null,
-            "level": 1,
-            "value": null,
-            "name": "WS-CURSOR-STATS",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 19,
-            "type": "SIGNED_INTEGER",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": "0",
-            "name": "WS-FETCH-COUNT",
-            "pic": "S9(",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 20,
-            "type": "SIGNED_INTEGER",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": "0",
-            "name": "WS-ROWS-FETCHED",
-            "pic": "S9(",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 21,
-            "type": "SIGNED_INTEGER",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": "0",
-            "name": "WS-FETCH-TIME",
-            "pic": "S9(",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 23,
-            "type": "UNKNOWN",
-            "is_condition": false,
-            "redefines": null,
-            "level": 1,
-            "value": null,
-            "name": "WS-ARRAY-AREA",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 24,
-            "type": "SIGNED_INTEGER",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": "20",
-            "name": "WS-MAX-ROWS",
-            "pic": "S9(",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 25,
-            "type": "SIGNED_INTEGER",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": "0",
-            "name": "WS-ARRAY-SIZE",
-            "pic": "S9(",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 28,
-            "type": "UNKNOWN",
-            "is_condition": false,
-            "redefines": null,
-            "level": 1,
-            "value": null,
-            "name": "CURSOR-REQUEST-AREA",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 29,
-            "type": "STRING",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": null,
-            "name": "CURS-REQUEST-TYPE",
-            "pic": "X.",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 30,
-            "type": "UNKNOWN",
-            "is_condition": true,
-            "redefines": null,
-            "level": 88,
-            "value": "D",
-            "name": "CURS-DECLARE",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 31,
-            "type": "UNKNOWN",
-            "is_condition": true,
-            "redefines": null,
-            "level": 88,
-            "value": "O",
-            "name": "CURS-OPEN",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 32,
-            "type": "UNKNOWN",
-            "is_condition": true,
-            "redefines": null,
-            "level": 88,
-            "value": "F",
-            "name": "CURS-FETCH",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 33,
-            "type": "UNKNOWN",
-            "is_condition": true,
-            "redefines": null,
-            "level": 88,
-            "value": "C",
-            "name": "CURS-CLOSE",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 34,
-            "type": "STRING",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": null,
-            "name": "CURS-NAME",
-            "pic": "X(",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 35,
-            "type": "STRING",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": null,
-            "name": "CURS-STMT",
-            "pic": "X(",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 36,
-            "type": "STRING",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": "N",
-            "name": "CURS-ARRAY-FETCH",
-            "pic": "X",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 37,
-            "type": "UNKNOWN",
-            "is_condition": true,
-            "redefines": null,
-            "level": 88,
-            "value": "Y",
-            "name": "USE-ARRAY-FETCH",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 38,
-            "type": "UNKNOWN",
-            "is_condition": true,
-            "redefines": null,
-            "level": 88,
-            "value": "N",
-            "name": "NO-ARRAY-FETCH",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 39,
-            "type": "SIGNED_INTEGER",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": null,
-            "name": "CURS-RESPONSE-CODE",
-            "pic": "S9(",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 40,
-            "type": "STRING",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": null,
-            "name": "CURS-DATA-AREA",
-            "pic": "X(",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 41,
-            "type": "SIGNED_INTEGER",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": null,
-            "name": "CURS-DATA-LENGTH",
-            "pic": "S9(",
-            "length": 0,
-            "occurs": null
-        }
-    ],
-    "issues": []
+{
+  "id": "CURSMGR_WS",
+  "source_type": "program_ws",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\CURSMGR.cbl",
+  "used_by_programs": [
+    "CURSMGR"
+  ],
+  "total_fields": 8,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "WS-DB2-AREA",
+      "pic": null,
+      "type": "GROUP",
+      "line": 15,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-CURSOR-STATS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 18,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-FETCH-COUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 19,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ROWS-FETCHED",
+      "pic": null,
+      "type": "GROUP",
+      "line": 20,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-FETCH-TIME",
+      "pic": null,
+      "type": "GROUP",
+      "line": 21,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-ARRAY-AREA",
+      "pic": null,
+      "type": "GROUP",
+      "line": 23,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-MAX-ROWS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 24,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ARRAY-SIZE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 25,
+      "children": []
+    }
+  ],
+  "layout_issues": []
 }

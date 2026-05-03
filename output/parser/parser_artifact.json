@@ -1,351 +1,478 @@
-﻿{
-    "programs": [
-        {
-            "perform_statements": 16,
-            "paragraphs": 7,
-            "copy_statements": 3,
-            "path": "src\\programs\\batch\\BCHCTL00.cbl",
-            "goto_statements": 0,
-            "program_id": "BCHCTL00"
-        },
-        {
-            "perform_statements": 4,
-            "paragraphs": 5,
-            "copy_statements": 3,
-            "path": "src\\programs\\batch\\CKPRST.cbl",
-            "goto_statements": 0,
-            "program_id": "CKPRST"
-        },
-        {
-            "perform_statements": 22,
-            "paragraphs": 17,
-            "copy_statements": 7,
-            "path": "src\\programs\\batch\\HISTLD00.cbl",
-            "goto_statements": 0,
-            "program_id": "HISTLD00"
-        },
-        {
-            "perform_statements": 0,
-            "paragraphs": 0,
-            "copy_statements": 0,
-            "path": "src\\programs\\batch\\POSUPDT.cbl",
-            "goto_statements": 0,
-            "program_id": "POSUPDT"
-        },
-        {
-            "perform_statements": 35,
-            "paragraphs": 20,
-            "copy_statements": 4,
-            "path": "src\\programs\\batch\\PRCSEQ00.cbl",
-            "goto_statements": 0,
-            "program_id": "PRCSEQ00"
-        },
-        {
-            "perform_statements": 34,
-            "paragraphs": 19,
-            "copy_statements": 4,
-            "path": "src\\programs\\batch\\RCVPRC00.cbl",
-            "goto_statements": 0,
-            "program_id": "RCVPRC00"
-        },
-        {
-            "perform_statements": 18,
-            "paragraphs": 11,
-            "copy_statements": 3,
-            "path": "src\\programs\\batch\\RPTAUD00.cbl",
-            "goto_statements": 0,
-            "program_id": "RPTAUD00"
-        },
-        {
-            "perform_statements": 18,
-            "paragraphs": 12,
-            "copy_statements": 4,
-            "path": "src\\programs\\batch\\RPTPOS00.cbl",
-            "goto_statements": 0,
-            "program_id": "RPTPOS00"
-        },
-        {
-            "perform_statements": 22,
-            "paragraphs": 13,
-            "copy_statements": 4,
-            "path": "src\\programs\\batch\\RPTSTA00.cbl",
-            "goto_statements": 0,
-            "program_id": "RPTSTA00"
-        },
-        {
-            "perform_statements": 6,
-            "paragraphs": 13,
-            "copy_statements": 0,
-            "path": "src\\programs\\batch\\RTNANA00.cbl",
-            "goto_statements": 0,
-            "program_id": "RTNANA00"
-        },
-        {
-            "perform_statements": 5,
-            "paragraphs": 10,
-            "copy_statements": 1,
-            "path": "src\\programs\\batch\\RTNCDE00.cbl",
-            "goto_statements": 0,
-            "program_id": "RTNCDE00"
-        },
-        {
-            "perform_statements": 4,
-            "paragraphs": 5,
-            "copy_statements": 1,
-            "path": "src\\programs\\common\\AUDPROC.cbl",
-            "goto_statements": 0,
-            "program_id": "AUDPROC"
-        },
-        {
-            "perform_statements": 12,
-            "paragraphs": 10,
-            "copy_statements": 3,
-            "path": "src\\programs\\common\\DB2CMT.cbl",
-            "goto_statements": 0,
-            "program_id": "DB2CMT"
-        },
-        {
-            "perform_statements": 6,
-            "paragraphs": 6,
-            "copy_statements": 3,
-            "path": "src\\programs\\common\\DB2CONN.cbl",
-            "goto_statements": 0,
-            "program_id": "DB2CONN"
-        },
-        {
-            "perform_statements": 7,
-            "paragraphs": 7,
-            "copy_statements": 4,
-            "path": "src\\programs\\common\\DB2ERR.cbl",
-            "goto_statements": 0,
-            "program_id": "DB2ERR"
-        },
-        {
-            "perform_statements": 14,
-            "paragraphs": 9,
-            "copy_statements": 3,
-            "path": "src\\programs\\common\\DB2STAT.cbl",
-            "goto_statements": 0,
-            "program_id": "DB2STAT"
-        },
-        {
-            "perform_statements": 5,
-            "paragraphs": 7,
-            "copy_statements": 1,
-            "path": "src\\programs\\common\\ERRPROC.cbl",
-            "goto_statements": 0,
-            "program_id": "ERRPROC"
-        },
-        {
-            "perform_statements": 4,
-            "paragraphs": 3,
-            "copy_statements": 0,
-            "path": "src\\programs\\online\\CURSMGR.cbl",
-            "goto_statements": 0,
-            "program_id": "CURSMGR"
-        },
-        {
-            "perform_statements": 5,
-            "paragraphs": 10,
-            "copy_statements": 1,
-            "path": "src\\programs\\online\\DB2ONLN.cbl",
-            "goto_statements": 0,
-            "program_id": "DB2ONLN"
-        },
-        {
-            "perform_statements": 6,
-            "paragraphs": 10,
-            "copy_statements": 2,
-            "path": "src\\programs\\online\\DB2RECV.cbl",
-            "goto_statements": 0,
-            "program_id": "DB2RECV"
-        },
-        {
-            "perform_statements": 4,
-            "paragraphs": 0,
-            "copy_statements": 2,
-            "path": "src\\programs\\online\\ERRHNDL.cbl",
-            "goto_statements": 0,
-            "program_id": "ERRHNDL"
-        },
-        {
-            "perform_statements": 7,
-            "paragraphs": 12,
-            "copy_statements": 2,
-            "path": "src\\programs\\online\\INQHIST.cbl",
-            "goto_statements": 0,
-            "program_id": "INQHIST"
-        },
-        {
-            "perform_statements": 7,
-            "paragraphs": 12,
-            "copy_statements": 3,
-            "path": "src\\programs\\online\\INQONLN.cbl",
-            "goto_statements": 0,
-            "program_id": "INQONLN"
-        },
-        {
-            "perform_statements": 4,
-            "paragraphs": 10,
-            "copy_statements": 3,
-            "path": "src\\programs\\online\\INQPORT.cbl",
-            "goto_statements": 0,
-            "program_id": "INQPORT"
-        },
-        {
-            "perform_statements": 3,
-            "paragraphs": 6,
-            "copy_statements": 1,
-            "path": "src\\programs\\online\\SECMGR.cbl",
-            "goto_statements": 0,
-            "program_id": "SECMGR"
-        },
-        {
-            "perform_statements": 5,
-            "paragraphs": 6,
-            "copy_statements": 2,
-            "path": "src\\programs\\portfolio\\PORTADD.cbl",
-            "goto_statements": 0,
-            "program_id": "PORTADD"
-        },
-        {
-            "perform_statements": 7,
-            "paragraphs": 8,
-            "copy_statements": 1,
-            "path": "src\\programs\\portfolio\\PORTDEL.cbl",
-            "goto_statements": 0,
-            "program_id": "PORTDEL"
-        },
-        {
-            "perform_statements": 22,
-            "paragraphs": 12,
-            "copy_statements": 0,
-            "path": "src\\programs\\portfolio\\PORTMSTR.cbl",
-            "goto_statements": 0,
-            "program_id": "PORTMSTR"
-        },
-        {
-            "perform_statements": 5,
-            "paragraphs": 6,
-            "copy_statements": 1,
-            "path": "src\\programs\\portfolio\\PORTREAD.cbl",
-            "goto_statements": 0,
-            "program_id": "PORTREAD"
-        },
-        {
-            "perform_statements": 8,
-            "paragraphs": 9,
-            "copy_statements": 2,
-            "path": "src\\programs\\portfolio\\PORTTEST.cbl",
-            "goto_statements": 0,
-            "program_id": "PORTTEST"
-        },
-        {
-            "perform_statements": 25,
-            "paragraphs": 17,
-            "copy_statements": 4,
-            "path": "src\\programs\\portfolio\\PORTTRAN.cbl",
-            "goto_statements": 0,
-            "program_id": "PORTTRAN"
-        },
-        {
-            "perform_statements": 6,
-            "paragraphs": 7,
-            "copy_statements": 1,
-            "path": "src\\programs\\portfolio\\PORTUPDT.cbl",
-            "goto_statements": 0,
-            "program_id": "PORTUPDT"
-        },
-        {
-            "perform_statements": 4,
-            "paragraphs": 5,
-            "copy_statements": 1,
-            "path": "src\\programs\\portfolio\\PORTVALD.cbl",
-            "goto_statements": 0,
-            "program_id": "PORTVALD"
-        },
-        {
-            "perform_statements": 27,
-            "paragraphs": 15,
-            "copy_statements": 4,
-            "path": "src\\programs\\test\\TSTGEN00.cbl",
-            "goto_statements": 0,
-            "program_id": "TSTGEN00"
-        },
-        {
-            "perform_statements": 21,
-            "paragraphs": 12,
-            "copy_statements": 2,
-            "path": "src\\programs\\test\\TSTVAL00.cbl",
-            "goto_statements": 0,
-            "program_id": "TSTVAL00"
-        },
-        {
-            "perform_statements": 26,
-            "paragraphs": 14,
-            "copy_statements": 2,
-            "path": "src\\programs\\utility\\UTLMNT00.cbl",
-            "goto_statements": 0,
-            "program_id": "UTLMNT00"
-        },
-        {
-            "perform_statements": 29,
-            "paragraphs": 14,
-            "copy_statements": 3,
-            "path": "src\\programs\\utility\\UTLMON00.cbl",
-            "goto_statements": 0,
-            "program_id": "UTLMON00"
-        },
-        {
-            "perform_statements": 24,
-            "paragraphs": 14,
-            "copy_statements": 4,
-            "path": "src\\programs\\utility\\UTLVAL00.cbl",
-            "goto_statements": 0,
-            "program_id": "UTLVAL00"
-        },
-        {
-            "perform_statements": 17,
-            "paragraphs": 11,
-            "copy_statements": 0,
-            "path": "src\\templates\\database\\db2-handling.cbl",
-            "goto_statements": 0,
-            "program_id": "DB2-HANDLING"
-        },
-        {
-            "perform_statements": 13,
-            "paragraphs": 11,
-            "copy_statements": 0,
-            "path": "src\\templates\\error\\error-handling.cbl",
-            "goto_statements": 0,
-            "program_id": "ERROR-HANDLING"
-        },
-        {
-            "perform_statements": 15,
-            "paragraphs": 11,
-            "copy_statements": 0,
-            "path": "src\\templates\\program\\file-handling.cbl",
-            "goto_statements": 0,
-            "program_id": "FILE-HANDLING"
-        },
-        {
-            "perform_statements": 3,
-            "paragraphs": 6,
-            "copy_statements": 0,
-            "path": "src\\templates\\program\\standard-program.cbl",
-            "goto_statements": 0,
-            "program_id": "STANDARD-PROGRAM"
-        }
-    ],
-    "stats": {
-        "goto_edges": 0,
-        "perform_edges": 525,
-        "paragraphs_found": 412,
-        "total_programs": 42
+{
+  "meta": {
+    "generated_at": "2026-05-03T12:43:46.116878Z",
+    "agent_version": "2_parser@1.0",
+    "source_artifact": "inventory_artifact.json",
+    "programs_parsed": 38,
+    "programs_failed": 0
+  },
+  "stats": {
+    "total_paragraphs": 404,
+    "total_sections": 0,
+    "total_perform_edges": 444,
+    "total_goto_edges": 0,
+    "total_alter_statements": 0,
+    "total_inline_performs": 20,
+    "total_dead_code_candidates": 112,
+    "programs_with_unstructured_flow": 0
+  },
+  "programs": [
+    {
+      "program_id": "BCHCTL00",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\BCHCTL00.cbl",
+      "ast_file": "raw_structure/BCHCTL00.json",
+      "total_lines": 127,
+      "paragraph_count": 6,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 0,
+      "parse_status": "success"
     },
-    "meta": {
-        "generated_at": "2026-05-03T09:21:01.3304612-05:00",
-        "agent_version": "2_parser@1.0",
-        "repo_root": "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness"
+    {
+      "program_id": "CKPRST",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\CKPRST.cbl",
+      "ast_file": "raw_structure/CKPRST.json",
+      "total_lines": 57,
+      "paragraph_count": 5,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 0,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "HISTLD00",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\HISTLD00.cbl",
+      "ast_file": "raw_structure/HISTLD00.json",
+      "total_lines": 233,
+      "paragraph_count": 16,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 0,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "POSUPDT",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\POSUPDT.cbl",
+      "ast_file": "raw_structure/POSUPDT.json",
+      "total_lines": 1,
+      "paragraph_count": 0,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 0,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "PRCSEQ00",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\PRCSEQ00.cbl",
+      "ast_file": "raw_structure/PRCSEQ00.json",
+      "total_lines": 345,
+      "paragraph_count": 19,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 0,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "RCVPRC00",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RCVPRC00.cbl",
+      "ast_file": "raw_structure/RCVPRC00.json",
+      "total_lines": 302,
+      "paragraph_count": 18,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 0,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "RPTAUD00",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RPTAUD00.cbl",
+      "ast_file": "raw_structure/RPTAUD00.json",
+      "total_lines": 147,
+      "paragraph_count": 11,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 1,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "RPTPOS00",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RPTPOS00.cbl",
+      "ast_file": "raw_structure/RPTPOS00.json",
+      "total_lines": 160,
+      "paragraph_count": 13,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 2,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "RPTSTA00",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RPTSTA00.cbl",
+      "ast_file": "raw_structure/RPTSTA00.json",
+      "total_lines": 185,
+      "paragraph_count": 15,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 3,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "RTNANA00",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RTNANA00.cbl",
+      "ast_file": "raw_structure/RTNANA00.json",
+      "total_lines": 210,
+      "paragraph_count": 14,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 11,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "RTNCDE00",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RTNCDE00.cbl",
+      "ast_file": "raw_structure/RTNCDE00.json",
+      "total_lines": 141,
+      "paragraph_count": 12,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 11,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "AUDPROC",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\AUDPROC.cbl",
+      "ast_file": "raw_structure/AUDPROC.json",
+      "total_lines": 96,
+      "paragraph_count": 4,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 0,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "DB2CMT",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\DB2CMT.cbl",
+      "ast_file": "raw_structure/DB2CMT.json",
+      "total_lines": 170,
+      "paragraph_count": 10,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 0,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "DB2CONN",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\DB2CONN.cbl",
+      "ast_file": "raw_structure/DB2CONN.json",
+      "total_lines": 154,
+      "paragraph_count": 6,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 0,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "DB2ERR",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\DB2ERR.cbl",
+      "ast_file": "raw_structure/DB2ERR.json",
+      "total_lines": 200,
+      "paragraph_count": 7,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 0,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "DB2STAT",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\DB2STAT.cbl",
+      "ast_file": "raw_structure/DB2STAT.json",
+      "total_lines": 228,
+      "paragraph_count": 9,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 0,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "ERRPROC",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\ERRPROC.cbl",
+      "ast_file": "raw_structure/ERRPROC.json",
+      "total_lines": 107,
+      "paragraph_count": 6,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 0,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "CURSMGR",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\CURSMGR.cbl",
+      "ast_file": "raw_structure/CURSMGR.json",
+      "total_lines": 91,
+      "paragraph_count": 4,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 3,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "DB2ONLN",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\DB2ONLN.cbl",
+      "ast_file": "raw_structure/DB2ONLN.json",
+      "total_lines": 120,
+      "paragraph_count": 11,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 8,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "DB2RECV",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\DB2RECV.cbl",
+      "ast_file": "raw_structure/DB2RECV.json",
+      "total_lines": 145,
+      "paragraph_count": 14,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 11,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "ERRHNDL",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\ERRHNDL.cbl",
+      "ast_file": "raw_structure/ERRHNDL.json",
+      "total_lines": 118,
+      "paragraph_count": 9,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 8,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "INQHIST",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\INQHIST.cbl",
+      "ast_file": "raw_structure/INQHIST.json",
+      "total_lines": 193,
+      "paragraph_count": 18,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 14,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "INQONLN",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\INQONLN.cbl",
+      "ast_file": "raw_structure/INQONLN.json",
+      "total_lines": 171,
+      "paragraph_count": 21,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 6,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "INQPORT",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\INQPORT.cbl",
+      "ast_file": "raw_structure/INQPORT.json",
+      "total_lines": 110,
+      "paragraph_count": 13,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 12,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "SECMGR",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\SECMGR.cbl",
+      "ast_file": "raw_structure/SECMGR.json",
+      "total_lines": 135,
+      "paragraph_count": 10,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 9,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "PORTADD",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTADD.cbl",
+      "ast_file": "raw_structure/PORTADD.json",
+      "total_lines": 148,
+      "paragraph_count": 5,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 0,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "PORTDEL",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTDEL.cbl",
+      "ast_file": "raw_structure/PORTDEL.json",
+      "total_lines": 194,
+      "paragraph_count": 7,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 0,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "PORTMSTR",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTMSTR.cbl",
+      "ast_file": "raw_structure/PORTMSTR.json",
+      "total_lines": 288,
+      "paragraph_count": 11,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 1,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "PORTREAD",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTREAD.cbl",
+      "ast_file": "raw_structure/PORTREAD.json",
+      "total_lines": 111,
+      "paragraph_count": 5,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 0,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "PORTTEST",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTTEST.cbl",
+      "ast_file": "raw_structure/PORTTEST.json",
+      "total_lines": 119,
+      "paragraph_count": 8,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 0,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "PORTTRAN",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTTRAN.cbl",
+      "ast_file": "raw_structure/PORTTRAN.json",
+      "total_lines": 317,
+      "paragraph_count": 16,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 1,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "PORTUPDT",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTUPDT.cbl",
+      "ast_file": "raw_structure/PORTUPDT.json",
+      "total_lines": 160,
+      "paragraph_count": 6,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 0,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "PORTVALD",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTVALD.cbl",
+      "ast_file": "raw_structure/PORTVALD.json",
+      "total_lines": 120,
+      "paragraph_count": 5,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 0,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "TSTGEN00",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\test\\TSTGEN00.cbl",
+      "ast_file": "raw_structure/TSTGEN00.json",
+      "total_lines": 216,
+      "paragraph_count": 17,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 4,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "TSTVAL00",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\test\\TSTVAL00.cbl",
+      "ast_file": "raw_structure/TSTVAL00.json",
+      "total_lines": 225,
+      "paragraph_count": 11,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 1,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "UTLMNT00",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\utility\\UTLMNT00.cbl",
+      "ast_file": "raw_structure/UTLMNT00.json",
+      "total_lines": 182,
+      "paragraph_count": 14,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 2,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "UTLMON00",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\utility\\UTLMON00.cbl",
+      "ast_file": "raw_structure/UTLMON00.json",
+      "total_lines": 221,
+      "paragraph_count": 14,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 2,
+      "parse_status": "success"
+    },
+    {
+      "program_id": "UTLVAL00",
+      "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\utility\\UTLVAL00.cbl",
+      "ast_file": "raw_structure/UTLVAL00.json",
+      "total_lines": 190,
+      "paragraph_count": 14,
+      "section_count": 0,
+      "has_unstructured_flow": false,
+      "has_alter": false,
+      "dead_code_candidates": 2,
+      "parse_status": "success"
     }
+  ],
+  "issues": []
 }

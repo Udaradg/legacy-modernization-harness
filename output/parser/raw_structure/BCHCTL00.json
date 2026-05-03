@@ -1,77 +1,660 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "BCHCTL",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "BCHCON",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "ERRHAND",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  127,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\BCHCTL00.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  60,
-                           "name":  "0000-MAIN",
-                           "start_line":  60
-                       },
-                       {
-                           "end_line":  83,
-                           "name":  "1000-PROCESS-INITIALIZE",
-                           "start_line":  83
-                       },
-                       {
-                           "end_line":  90,
-                           "name":  "2000-CHECK-PREREQUISITES",
-                           "start_line":  90
-                       },
-                       {
-                           "end_line":  100,
-                           "name":  "3000-UPDATE-STATUS",
-                           "start_line":  100
-                       },
-                       {
-                           "end_line":  106,
-                           "name":  "4000-PROCESS-TERMINATE",
-                           "start_line":  106
-                       },
-                       {
-                           "end_line":  111,
-                           "name":  "9000-ERROR-ROUTINE",
-                           "start_line":  111
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  23,
-                                          "start_line":  10
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  127,
-                                        "start_line":  59
-                                    },
-                      "DATA":  {
-                                   "end_line":  58,
-                                   "start_line":  24
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  9,
-                                             "start_line":  7
-                                         }
-                  },
-    "program_id":  "BCHCTL00",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "BCHCTL00",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\BCHCTL00.cbl",
+    "total_lines": 127
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 7,
+    "end_line": 9,
+    "program_id": "BCHCTL00"
+  },
+  "data_division": {
+    "start_line": 24,
+    "end_line": 58,
+    "file_section": {
+      "entries": [
+        {
+          "type": "FD",
+          "file_name": "BATCH-CONTROL-FILE",
+          "line": 26,
+          "end_line": 28,
+          "recording_mode": null,
+          "record_contains": null,
+          "block_contains": null
+        }
+      ],
+      "start_line": 25
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "type": "copy_stub",
+          "copybook": "BCHCON",
+          "library": null,
+          "line": 30,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "type": "copy_stub",
+          "copybook": "ERRHAND",
+          "library": null,
+          "line": 31,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "level": 1,
+          "name": "WS-FILE-STATUS",
+          "line": 33,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-BCT-STATUS",
+          "line": 34,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-WORK-AREAS",
+          "line": 36,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-CURRENT-TIME",
+          "line": 37,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-PREREQ-MET",
+          "line": 38,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "PREREQS-SATISFIED",
+          "line": 39,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Y'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "PREREQS-PENDING",
+          "line": 40,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-PROCESS-MODE",
+          "line": 41,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "MODE-INITIALIZE",
+          "line": 42,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'I'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "MODE-CHECK-PREREQ",
+          "line": 43,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'C'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "MODE-UPDATE-STATUS",
+          "line": 44,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'U'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "MODE-FINALIZE",
+          "line": 45,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'F'",
+          "children": []
+        }
+      ],
+      "start_line": 29
+    },
+    "linkage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "LS-CONTROL-REQUEST",
+          "line": 48,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-FUNCTION",
+          "line": 49,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "FUNC-INIT",
+          "line": 50,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'INIT'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "FUNC-CHEK",
+          "line": 51,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'CHEK'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "FUNC-UPDT",
+          "line": 52,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'UPDT'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "FUNC-TERM",
+          "line": 53,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'TERM'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-JOB-NAME",
+          "line": 54,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-PROCESS-DATE",
+          "line": 55,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-SEQUENCE-NO",
+          "line": 56,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-RETURN-CODE",
+          "line": 57,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 47
+    }
+  },
+  "procedure_division": {
+    "start_line": 59,
+    "end_line": 127,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 60,
+        "end_line": 82,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-PROCESS-INITIALIZE",
+        "section": null,
+        "start_line": 83,
+        "end_line": 89,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-CHECK-PREREQUISITES",
+        "section": null,
+        "start_line": 90,
+        "end_line": 99,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-UPDATE-STATUS",
+        "section": null,
+        "start_line": 100,
+        "end_line": 105,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "4000-PROCESS-TERMINATE",
+        "section": null,
+        "start_line": 106,
+        "end_line": 110,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "9000-ERROR-ROUTINE",
+        "section": null,
+        "start_line": 111,
+        "end_line": 127,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 80
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 60,
+        "end_line": 82,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-PROCESS-INITIALIZE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 83,
+        "end_line": 89,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-CHECK-PREREQUISITES",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 90,
+        "end_line": 99,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-UPDATE-STATUS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 100,
+        "end_line": 105,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "4000-PROCESS-TERMINATE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 106,
+        "end_line": 110,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "9000-ERROR-ROUTINE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 111,
+        "end_line": 127,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 64,
+        "unstructured": false,
+        "to": "1000-PROCESS-INITIALIZE"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 67,
+        "unstructured": false,
+        "to": "2000-CHECK-PREREQUISITES"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 70,
+        "unstructured": false,
+        "to": "3000-UPDATE-STATUS"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 73,
+        "unstructured": false,
+        "to": "4000-PROCESS-TERMINATE"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 76,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "1000-PROCESS-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 84,
+        "unstructured": false,
+        "to": "1100-OPEN-FILES"
+      },
+      {
+        "from": "1000-PROCESS-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 85,
+        "unstructured": false,
+        "to": "1200-READ-CONTROL-RECORD"
+      },
+      {
+        "from": "1000-PROCESS-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 86,
+        "unstructured": false,
+        "to": "1300-VALIDATE-PROCESS"
+      },
+      {
+        "from": "1000-PROCESS-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 87,
+        "unstructured": false,
+        "to": "1400-UPDATE-START-STATUS"
+      },
+      {
+        "from": "2000-CHECK-PREREQUISITES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 91,
+        "unstructured": false,
+        "to": "2100-READ-CONTROL-RECORD"
+      },
+      {
+        "from": "2000-CHECK-PREREQUISITES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 92,
+        "unstructured": false,
+        "to": "2200-CHECK-DEPENDENCIES"
+      },
+      {
+        "from": "3000-UPDATE-STATUS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 101,
+        "unstructured": false,
+        "to": "3100-READ-CONTROL-RECORD"
+      },
+      {
+        "from": "3000-UPDATE-STATUS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 102,
+        "unstructured": false,
+        "to": "3200-UPDATE-PROCESS-STATUS"
+      },
+      {
+        "from": "3000-UPDATE-STATUS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 103,
+        "unstructured": false,
+        "to": "3300-WRITE-CONTROL-RECORD"
+      },
+      {
+        "from": "4000-PROCESS-TERMINATE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 107,
+        "unstructured": false,
+        "to": "4100-UPDATE-COMPLETION"
+      },
+      {
+        "from": "4000-PROCESS-TERMINATE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 108,
+        "unstructured": false,
+        "to": "4200-CLOSE-FILES"
+      }
+    ],
+    "dead_code_candidates": [],
+    "unstructured_constructs": [],
+    "cfg_issues": [
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "1000-PROCESS-INITIALIZE",
+        "target": "1100-OPEN-FILES",
+        "message": "Control transfer target '1100-OPEN-FILES' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "1000-PROCESS-INITIALIZE",
+        "target": "1200-READ-CONTROL-RECORD",
+        "message": "Control transfer target '1200-READ-CONTROL-RECORD' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "1000-PROCESS-INITIALIZE",
+        "target": "1300-VALIDATE-PROCESS",
+        "message": "Control transfer target '1300-VALIDATE-PROCESS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "1000-PROCESS-INITIALIZE",
+        "target": "1400-UPDATE-START-STATUS",
+        "message": "Control transfer target '1400-UPDATE-START-STATUS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2000-CHECK-PREREQUISITES",
+        "target": "2100-READ-CONTROL-RECORD",
+        "message": "Control transfer target '2100-READ-CONTROL-RECORD' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2000-CHECK-PREREQUISITES",
+        "target": "2200-CHECK-DEPENDENCIES",
+        "message": "Control transfer target '2200-CHECK-DEPENDENCIES' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "3000-UPDATE-STATUS",
+        "target": "3100-READ-CONTROL-RECORD",
+        "message": "Control transfer target '3100-READ-CONTROL-RECORD' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "3000-UPDATE-STATUS",
+        "target": "3200-UPDATE-PROCESS-STATUS",
+        "message": "Control transfer target '3200-UPDATE-PROCESS-STATUS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "3000-UPDATE-STATUS",
+        "target": "3300-WRITE-CONTROL-RECORD",
+        "message": "Control transfer target '3300-WRITE-CONTROL-RECORD' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "4000-PROCESS-TERMINATE",
+        "target": "4100-UPDATE-COMPLETION",
+        "message": "Control transfer target '4100-UPDATE-COMPLETION' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "4000-PROCESS-TERMINATE",
+        "target": "4200-CLOSE-FILES",
+        "message": "Control transfer target '4200-CLOSE-FILES' not found in paragraph list"
+      }
+    ]
+  }
 }

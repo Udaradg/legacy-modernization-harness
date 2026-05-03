@@ -1,139 +1,825 @@
-﻿{
-    "paragraphs":  [
-                       {
-                           "name":  "0000-MAIN",
-                           "line_range":  [
-                                              75,
-                                              75
-                                          ]
-                       },
-                       {
-                           "name":  "1000-INITIALIZE-SEQUENCE",
-                           "line_range":  [
-                                              94,
-                                              94
-                                          ]
-                       },
-                       {
-                           "name":  "2000-GET-NEXT-PROCESS",
-                           "line_range":  [
-                                              100,
-                                              100
-                                          ]
-                       },
-                       {
-                           "name":  "3000-CHECK-STATUS",
-                           "line_range":  [
-                                              108,
-                                              108
-                                          ]
-                       },
-                       {
-                           "name":  "4000-TERMINATE-SEQUENCE",
-                           "line_range":  [
-                                              114,
-                                              114
-                                          ]
-                       },
-                       {
-                           "name":  "9000-ERROR-ROUTINE",
-                           "line_range":  [
-                                              119,
-                                              119
-                                          ]
-                       },
-                       {
-                           "name":  "1100-OPEN-FILES",
-                           "line_range":  [
-                                              141,
-                                              141
-                                          ]
-                       },
-                       {
-                           "name":  "1200-BUILD-SEQUENCE",
-                           "line_range":  [
-                                              155,
-                                              155
-                                          ]
-                       },
-                       {
-                           "name":  "1210-ADD-TO-SEQUENCE",
-                           "line_range":  [
-                                              180,
-                                              180
-                                          ]
-                       },
-                       {
-                           "name":  "1300-CREATE-CONTROL-RECORDS",
-                           "line_range":  [
-                                              188,
-                                              188
-                                          ]
-                       },
-                       {
-                           "name":  "2100-FIND-NEXT-READY",
-                           "line_range":  [
-                                              206,
-                                              206
-                                          ]
-                       },
-                       {
-                           "name":  "2200-CHECK-DEPENDENCIES",
-                           "line_range":  [
-                                              221,
-                                              221
-                                          ]
-                       },
-                       {
-                           "name":  "2210-CHECK-DEP-STATUS",
-                           "line_range":  [
-                                              239,
-                                              239
-                                          ]
-                       },
-                       {
-                           "name":  "2300-UPDATE-PROCESS-STATUS",
-                           "line_range":  [
-                                              260,
-                                              260
-                                          ]
-                       },
-                       {
-                           "name":  "3100-READ-CONTROL-STATUS",
-                           "line_range":  [
-                                              281,
-                                              281
-                                          ]
-                       },
-                       {
-                           "name":  "3200-UPDATE-SEQUENCE-TABLE",
-                           "line_range":  [
-                                              292,
-                                              292
-                                          ]
-                       },
-                       {
-                           "name":  "3300-CHECK-COMPLETION",
-                           "line_range":  [
-                                              305,
-                                              305
-                                          ]
-                       },
-                       {
-                           "name":  "4100-CHECK-FINAL-STATUS",
-                           "line_range":  [
-                                              322,
-                                              322
-                                          ]
-                       },
-                       {
-                           "name":  "4200-CLOSE-FILES",
-                           "line_range":  [
-                                              336,
-                                              336
-                                          ]
-                       }
-                   ],
-    "source_file":  "src\\programs\\batch\\PRCSEQ00.cbl",
-    "program_id":  "PRCSEQ00"
+{
+  "program_id": "PRCSEQ00",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\PRCSEQ00.cbl",
+  "processing_timestamp": "2026-05-03T18:35:20.914016Z",
+  "execution_traces": [
+    {
+      "entry_point": "0000-MAIN",
+      "entry_type": "procedure_entry",
+      "steps": [
+        {
+          "step": 1,
+          "paragraph": "0000-MAIN",
+          "action": "PARAGRAPH",
+          "target": null,
+          "condition": null,
+          "line": 75
+        }
+      ]
+    }
+  ],
+  "branch_map": [
+    {
+      "paragraph": "0000-MAIN",
+      "branches": [
+        {
+          "type": "EVALUATE",
+          "subject": "TRUE"
+        }
+      ]
+    },
+    {
+      "paragraph": "2000-GET-NEXT-PROCESS",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "LS-RETURN-CODE = ZERO",
+          "condition_fields": [
+            "ZERO",
+            "LS-RETURN-CODE"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "1100-OPEN-FILES",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-PSR-STATUS NOT = '00'",
+          "condition_fields": [
+            "WS-PSR-STATUS"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "WS-BCT-STATUS NOT = '00'",
+          "condition_fields": [
+            "WS-BCT-STATUS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "1200-BUILD-SEQUENCE",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "PSR-TYPE = LS-SEQUENCE-TYPE",
+          "condition_fields": [
+            "PSR-TYPE",
+            "LS-SEQUENCE-TYPE"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2100-FIND-NEXT-READY",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-PROC-STATUS(WS-SEQUENCE-IX) = BCT-STAT-READY",
+          "condition_fields": [
+            "BCT-STAT-READY",
+            "WS-SEQUENCE-IX",
+            "WS-PROC-STATUS"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "WS-SEQUENCE-IX > WS-PROCESS-COUNT",
+          "condition_fields": [
+            "WS-SEQUENCE-IX",
+            "WS-PROCESS-COUNT"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2200-CHECK-DEPENDENCIES",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "LS-RETURN-CODE NOT = ZERO",
+          "condition_fields": [
+            "ZERO",
+            "LS-RETURN-CODE"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2210-CHECK-DEP-STATUS",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "NOT BCT-STATUS-DONE",
+          "condition_fields": [
+            "BCT-STATUS-DONE"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "PSR-DEP-HARD(WS-SUB)",
+          "condition_fields": [
+            "WS-SUB",
+            "PSR-DEP-HARD"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "BCT-RETURN-CODE > PSR-DEP-RC(WS-SUB)",
+          "condition_fields": [
+            "BCT-RETURN-CODE",
+            "WS-SUB",
+            "PSR-DEP-RC"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "3200-UPDATE-SEQUENCE-TABLE",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-PROC-ID(WS-SEQUENCE-IX) = BCT-JOB-NAME",
+          "condition_fields": [
+            "WS-PROC-ID",
+            "WS-SEQUENCE-IX",
+            "BCT-JOB-NAME"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "3300-CHECK-COMPLETION",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-PROC-STATUS(WS-SEQUENCE-IX) = BCT-STAT-ACTIVE",
+          "condition_fields": [
+            "WS-SEQUENCE-IX",
+            "BCT-STAT-ACTIVE",
+            "WS-PROC-STATUS"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "WS-PROC-STATUS(WS-SEQUENCE-IX) = BCT-STAT-ERROR",
+          "condition_fields": [
+            "BCT-STAT-ERROR",
+            "WS-SEQUENCE-IX",
+            "WS-PROC-STATUS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "4100-CHECK-FINAL-STATUS",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-ERROR-COUNT > ZERO",
+          "condition_fields": [
+            "WS-ERROR-COUNT",
+            "ZERO"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "WS-ACTIVE-COUNT > ZERO",
+          "condition_fields": [
+            "ZERO",
+            "WS-ACTIVE-COUNT"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "4200-CLOSE-FILES",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-PSR-STATUS NOT = '00' OR",
+          "condition_fields": [
+            "WS-PSR-STATUS"
+          ]
+        }
+      ]
+    }
+  ],
+  "loops": [],
+  "dead_code_confirmed": [],
+  "unresolvable_paths": [],
+  "trace_issues": [],
+  "program_narrative": "PRCSEQ00 is a COBOL program that orchestrates business processes. It processes input data through multiple stages, performing validation, transformation, and output operations. The program includes error handling and data integrity checks.",
+  "paragraphs": [
+    {
+      "name": "0000-MAIN",
+      "section": null,
+      "line_range": [
+        75,
+        93
+      ],
+      "pseudocode": [
+        "-- Paragraph 0000-MAIN: Core business logic",
+        "EVALUATE (TRUE)",
+        "CALL 1000-initialize-sequence",
+        "CALL 2000-get-next-process",
+        "CALL 3000-check-status",
+        "CALL 4000-terminate-sequence",
+        "CALL 9000-error-routine",
+        "SET return-code = ls-return-code",
+        "RETURN to caller"
+      ],
+      "pseudocode_text": "-- Paragraph 0000-MAIN: Core business logic\nEVALUATE (TRUE)\nCALL 1000-initialize-sequence\nCALL 2000-get-next-process\nCALL 3000-check-status\nCALL 4000-terminate-sequence\nCALL 9000-error-routine\nSET return-code = ls-return-code\nRETURN to caller",
+      "field_references": [
+        "OTHER",
+        "TERMINATE-SEQUENCE",
+        "END-EVALUATE",
+        "GET-NEXT-PROCESS",
+        "FUNC-STAT",
+        "FUNC-TERM",
+        "CHECK-STATUS",
+        "INITIALIZE-SEQUENCE",
+        "FUNC-NEXT",
+        "ERROR-ROUTINE"
+      ],
+      "calls_made": [],
+      "complexity_score": 9,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1000-INITIALIZE-SEQUENCE",
+      "section": null,
+      "line_range": [
+        94,
+        99
+      ],
+      "pseudocode": [
+        "-- Paragraph 1000-INITIALIZE-SEQUENCE: Initialisation and setup",
+        "CALL 1100-open-files",
+        "CALL 1200-build-sequence",
+        "CALL 1300-create-control-records"
+      ],
+      "pseudocode_text": "-- Paragraph 1000-INITIALIZE-SEQUENCE: Initialisation and setup\nCALL 1100-open-files\nCALL 1200-build-sequence\nCALL 1300-create-control-records",
+      "field_references": [
+        "OPEN-FILES",
+        "CREATE-CONTROL-RECORDS",
+        "INITIALIZE-SEQUENCE",
+        "BUILD-SEQUENCE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2000-GET-NEXT-PROCESS",
+      "section": null,
+      "line_range": [
+        100,
+        107
+      ],
+      "pseudocode": [
+        "-- Paragraph 2000-GET-NEXT-PROCESS: Main processing logic",
+        "CALL 2100-find-next-ready",
+        "CALL 2200-check-dependencies",
+        "IF LS-RETURN-CODE = ZERO THEN",
+        "CALL 2300-update-process-status"
+      ],
+      "pseudocode_text": "-- Paragraph 2000-GET-NEXT-PROCESS: Main processing logic\nCALL 2100-find-next-ready\nCALL 2200-check-dependencies\nIF LS-RETURN-CODE = ZERO THEN\nCALL 2300-update-process-status",
+      "field_references": [
+        "GET-NEXT-PROCESS",
+        "FIND-NEXT-READY",
+        "UPDATE-PROCESS-STATUS",
+        "LS-RETURN-CODE",
+        "ZERO",
+        "END-IF",
+        "CHECK-DEPENDENCIES"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3000-CHECK-STATUS",
+      "section": null,
+      "line_range": [
+        108,
+        113
+      ],
+      "pseudocode": [
+        "-- Paragraph 3000-CHECK-STATUS: Core business logic",
+        "CALL 3100-read-control-status",
+        "CALL 3200-update-sequence-table",
+        "CALL 3300-check-completion"
+      ],
+      "pseudocode_text": "-- Paragraph 3000-CHECK-STATUS: Core business logic\nCALL 3100-read-control-status\nCALL 3200-update-sequence-table\nCALL 3300-check-completion",
+      "field_references": [
+        "CHECK-COMPLETION",
+        "READ-CONTROL-STATUS",
+        "CHECK-STATUS",
+        "UPDATE-SEQUENCE-TABLE"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "4000-TERMINATE-SEQUENCE",
+      "section": null,
+      "line_range": [
+        114,
+        118
+      ],
+      "pseudocode": [
+        "-- Paragraph 4000-TERMINATE-SEQUENCE: Core business logic",
+        "CALL 4100-check-final-status",
+        "CALL 4200-close-files"
+      ],
+      "pseudocode_text": "-- Paragraph 4000-TERMINATE-SEQUENCE: Core business logic\nCALL 4100-check-final-status\nCALL 4200-close-files",
+      "field_references": [
+        "TERMINATE-SEQUENCE",
+        "CHECK-FINAL-STATUS",
+        "CLOSE-FILES"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "9000-ERROR-ROUTINE",
+      "section": null,
+      "line_range": [
+        119,
+        140
+      ],
+      "pseudocode": [
+        "-- Paragraph 9000-ERROR-ROUTINE: Error handling",
+        "SET err-program = prcseq00",
+        "SET ls-return-code = bct-rc-error",
+        "CALL ERRPROC"
+      ],
+      "pseudocode_text": "-- Paragraph 9000-ERROR-ROUTINE: Error handling\nSET err-program = prcseq00\nSET ls-return-code = bct-rc-error\nCALL ERRPROC",
+      "field_references": [
+        "USING",
+        "CHECK-COMPLETION",
+        "ERROR-ROUTINE",
+        "READ-CONTROL-STATUS",
+        "CHECK-FINAL-STATUS",
+        "OPEN-FILES",
+        "ERR-PROGRAM",
+        "BCT-RC-ERROR",
+        "UPDATE-SEQUENCE-TABLE",
+        "FIND-NEXT-READY"
+      ],
+      "calls_made": [
+        "ERRPROC"
+      ],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1100-OPEN-FILES",
+      "section": null,
+      "line_range": [
+        141,
+        154
+      ],
+      "pseudocode": [
+        "-- Paragraph 1100-OPEN-FILES: Open files and resources",
+        "IF WS-PSR-STATUS NOT = '00' THEN",
+        "CALL 9000-error-routine",
+        "IF WS-BCT-STATUS NOT = '00' THEN",
+        "CALL 9000-error-routine"
+      ],
+      "pseudocode_text": "-- Paragraph 1100-OPEN-FILES: Open files and resources\nIF WS-PSR-STATUS NOT = '00' THEN\nCALL 9000-error-routine\nIF WS-BCT-STATUS NOT = '00' THEN\nCALL 9000-error-routine",
+      "field_references": [
+        "BATCH-CONTROL-FILE",
+        "OPEN-FILES",
+        "OPEN",
+        "WS-BCT-STATUS",
+        "ERROR-ROUTINE",
+        "WS-PSR-STATUS",
+        "END-IF",
+        "PROCESS-SEQ-FILE",
+        "ERR-TEXT",
+        "I-O"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1200-BUILD-SEQUENCE",
+      "section": null,
+      "line_range": [
+        155,
+        179
+      ],
+      "pseudocode": [
+        "-- Paragraph 1200-BUILD-SEQUENCE: Core business logic",
+        "SET psr-key = ls-process-date",
+        "CALL 9000-error-routine",
+        "CALL until",
+        "READ next record from process-seq-file",
+        "SET ws-psr-status = 10",
+        "IF PSR-TYPE = LS-SEQUENCE-TYPE THEN",
+        "CALL 1210-add-to-sequence"
+      ],
+      "pseudocode_text": "-- Paragraph 1200-BUILD-SEQUENCE: Core business logic\nSET psr-key = ls-process-date\nCALL 9000-error-routine\nCALL until\nREAD next record from process-seq-file\nSET ws-psr-status = 10\nIF PSR-TYPE = LS-SEQUENCE-TYPE THEN\nCALL 1210-add-to-sequence",
+      "field_references": [
+        "NEXT",
+        "LS-PROCESS-DATE",
+        "ERROR-ROUTINE",
+        "WS-PROC-IX",
+        "PROCESS-SEQ-FILE",
+        "WS-PROCESS-TABLE",
+        "PSR-KEY",
+        "KEY",
+        "END-START",
+        "PSR-TYPE"
+      ],
+      "calls_made": [],
+      "complexity_score": 4,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1210-ADD-TO-SEQUENCE",
+      "section": null,
+      "line_range": [
+        180,
+        187
+      ],
+      "pseudocode": [
+        "-- Paragraph 1210-ADD-TO-SEQUENCE: Core business logic",
+        "INCREMENT ws-process-count BY 1",
+        "SET ws-proc-id(ws-proc-ix) = psr-process-id",
+        "SET ws-proc-seq(ws-proc-ix) = ws-process-count",
+        "SET ws-proc-status(ws-proc-ix) = bct-stat-ready"
+      ],
+      "pseudocode_text": "-- Paragraph 1210-ADD-TO-SEQUENCE: Core business logic\nINCREMENT ws-process-count BY 1\nSET ws-proc-id(ws-proc-ix) = psr-process-id\nSET ws-proc-seq(ws-proc-ix) = ws-process-count\nSET ws-proc-status(ws-proc-ix) = bct-stat-ready",
+      "field_references": [
+        "WS-PROC-STATUS",
+        "WS-PROCESS-COUNT",
+        "WS-PROC-SEQ",
+        "ADD",
+        "BCT-STAT-READY",
+        "WS-PROC-IX",
+        "SET",
+        "UP",
+        "WS-PROC-ID",
+        "MOVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1300-CREATE-CONTROL-RECORDS",
+      "section": null,
+      "line_range": [
+        188,
+        205
+      ],
+      "pseudocode": [
+        "-- Paragraph 1300-CREATE-CONTROL-RECORDS: Core business logic",
+        "CALL varying",
+        "SET bct-job-name = ws-proc-id(ws-sequence-ix)",
+        "SET bct-process-date = ls-process-date",
+        "SET bct-sequence-no = ws-proc-seq(ws-sequence-ix)",
+        "SET bct-status = bct-stat-ready",
+        "WRITE batch-control-record to output",
+        "CALL 9000-error-routine"
+      ],
+      "pseudocode_text": "-- Paragraph 1300-CREATE-CONTROL-RECORDS: Core business logic\nCALL varying\nSET bct-job-name = ws-proc-id(ws-sequence-ix)\nSET bct-process-date = ls-process-date\nSET bct-sequence-no = ws-proc-seq(ws-sequence-ix)\nSET bct-status = bct-stat-ready\nWRITE batch-control-record to output\nCALL 9000-error-routine",
+      "field_references": [
+        "BCT-STATUS",
+        "BCT-SEQUENCE-NO",
+        "BATCH-CONTROL-RECORD",
+        "BCT-PROCESS-DATE",
+        "LS-PROCESS-DATE",
+        "ERROR-ROUTINE",
+        "WS-SEQUENCE-IX",
+        "KEY",
+        "INVALID",
+        "WS-PROCESS-COUNT"
+      ],
+      "calls_made": [],
+      "complexity_score": 3,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2100-FIND-NEXT-READY",
+      "section": null,
+      "line_range": [
+        206,
+        220
+      ],
+      "pseudocode": [
+        "-- Paragraph 2100-FIND-NEXT-READY: Read input records",
+        "CALL varying",
+        "IF WS-PROC-STATUS(WS-SEQUENCE-IX) = BCT-STAT-READY THEN",
+        "IF WS-SEQUENCE-IX > WS-PROCESS-COUNT THEN",
+        "INITIALIZE ls-next-process (special value)"
+      ],
+      "pseudocode_text": "-- Paragraph 2100-FIND-NEXT-READY: Read input records\nCALL varying\nIF WS-PROC-STATUS(WS-SEQUENCE-IX) = BCT-STAT-READY THEN\nIF WS-SEQUENCE-IX > WS-PROCESS-COUNT THEN\nINITIALIZE ls-next-process (special value)",
+      "field_references": [
+        "UNTIL",
+        "WS-PROC-STATUS",
+        "VARYING",
+        "WS-PROCESS-COUNT",
+        "END-PERFORM",
+        "BCT-STAT-READY",
+        "FIND-NEXT-READY",
+        "LS-NEXT-PROCESS",
+        "WS-PROC-ID",
+        "WS-SEQUENCE-IX"
+      ],
+      "calls_made": [],
+      "complexity_score": 3,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2200-CHECK-DEPENDENCIES",
+      "section": null,
+      "line_range": [
+        221,
+        238
+      ],
+      "pseudocode": [
+        "-- Paragraph 2200-CHECK-DEPENDENCIES: Core business logic",
+        "SET psr-process-id = ls-next-process",
+        "READ next record from process-seq-file",
+        "CALL 9000-error-routine",
+        "CALL varying",
+        "CALL 2210-check-dep-status",
+        "IF LS-RETURN-CODE NOT = ZERO THEN"
+      ],
+      "pseudocode_text": "-- Paragraph 2200-CHECK-DEPENDENCIES: Core business logic\nSET psr-process-id = ls-next-process\nREAD next record from process-seq-file\nCALL 9000-error-routine\nCALL varying\nCALL 2210-check-dep-status\nIF LS-RETURN-CODE NOT = ZERO THEN",
+      "field_references": [
+        "ERROR-ROUTINE",
+        "PROCESS-SEQ-FILE",
+        "KEY",
+        "END-IF",
+        "EXIT",
+        "PSR-PROCESS-ID",
+        "INVALID",
+        "WS-SUB",
+        "END-PERFORM",
+        "LS-RETURN-CODE"
+      ],
+      "calls_made": [],
+      "complexity_score": 4,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2210-CHECK-DEP-STATUS",
+      "section": null,
+      "line_range": [
+        239,
+        259
+      ],
+      "pseudocode": [
+        "-- Paragraph 2210-CHECK-DEP-STATUS: Core business logic",
+        "SET bct-job-name = psr-dep-id(ws-sub)",
+        "SET bct-process-date = ls-process-date",
+        "READ next record from batch-control-file",
+        "CALL 9000-error-routine",
+        "IF NOT BCT-STATUS-DONE THEN",
+        "IF PSR-DEP-HARD(WS-SUB) THEN",
+        "SET ls-return-code = bct-rc-warning",
+        "IF BCT-RETURN-CODE > PSR-DEP-RC(WS-SUB) THEN",
+        "SET ls-return-code = bct-rc-error"
+      ],
+      "pseudocode_text": "-- Paragraph 2210-CHECK-DEP-STATUS: Core business logic\nSET bct-job-name = psr-dep-id(ws-sub)\nSET bct-process-date = ls-process-date\nREAD next record from batch-control-file\nCALL 9000-error-routine\nIF NOT BCT-STATUS-DONE THEN\nIF PSR-DEP-HARD(WS-SUB) THEN\nSET ls-return-code = bct-rc-warning\nIF BCT-RETURN-CODE > PSR-DEP-RC(WS-SUB) THEN\nSET ls-return-code = bct-rc-error",
+      "field_references": [
+        "BATCH-CONTROL-FILE",
+        "BCT-PROCESS-DATE",
+        "LS-PROCESS-DATE",
+        "ERROR-ROUTINE",
+        "BCT-STATUS-DONE",
+        "KEY",
+        "BCT-RC-ERROR",
+        "END-IF",
+        "INVALID",
+        "WS-SUB"
+      ],
+      "calls_made": [],
+      "complexity_score": 6,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2300-UPDATE-PROCESS-STATUS",
+      "section": null,
+      "line_range": [
+        260,
+        280
+      ],
+      "pseudocode": [
+        "-- Paragraph 2300-UPDATE-PROCESS-STATUS: Main processing logic",
+        "SET bct-job-name = ls-next-process",
+        "SET bct-process-date = ls-process-date",
+        "READ next record from batch-control-file",
+        "CALL 9000-error-routine",
+        "SET bct-status = bct-stat-active",
+        "SET bct-start-time = ws-current-time",
+        "WRITE batch-control-record to output",
+        "CALL 9000-error-routine"
+      ],
+      "pseudocode_text": "-- Paragraph 2300-UPDATE-PROCESS-STATUS: Main processing logic\nSET bct-job-name = ls-next-process\nSET bct-process-date = ls-process-date\nREAD next record from batch-control-file\nCALL 9000-error-routine\nSET bct-status = bct-stat-active\nSET bct-start-time = ws-current-time\nWRITE batch-control-record to output\nCALL 9000-error-routine",
+      "field_references": [
+        "BATCH-CONTROL-FILE",
+        "BCT-STATUS",
+        "MOVE",
+        "BATCH-CONTROL-RECORD",
+        "BCT-PROCESS-DATE",
+        "LS-PROCESS-DATE",
+        "ERROR-ROUTINE",
+        "BCT-START-TIME",
+        "KEY",
+        "ACCEPT"
+      ],
+      "calls_made": [],
+      "complexity_score": 4,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3100-READ-CONTROL-STATUS",
+      "section": null,
+      "line_range": [
+        281,
+        291
+      ],
+      "pseudocode": [
+        "-- Paragraph 3100-READ-CONTROL-STATUS: Read input records",
+        "SET bct-job-name = ls-next-process",
+        "SET bct-process-date = ls-process-date",
+        "READ next record from batch-control-file",
+        "CALL 9000-error-routine"
+      ],
+      "pseudocode_text": "-- Paragraph 3100-READ-CONTROL-STATUS: Read input records\nSET bct-job-name = ls-next-process\nSET bct-process-date = ls-process-date\nREAD next record from batch-control-file\nCALL 9000-error-routine",
+      "field_references": [
+        "LS-NEXT-PROCESS",
+        "BATCH-CONTROL-FILE",
+        "INVALID",
+        "ERR-TEXT",
+        "BCT-PROCESS-DATE",
+        "LS-PROCESS-DATE",
+        "KEY",
+        "ERROR-ROUTINE",
+        "BCT-JOB-NAME",
+        "END-READ"
+      ],
+      "calls_made": [],
+      "complexity_score": 3,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3200-UPDATE-SEQUENCE-TABLE",
+      "section": null,
+      "line_range": [
+        292,
+        304
+      ],
+      "pseudocode": [
+        "-- Paragraph 3200-UPDATE-SEQUENCE-TABLE: Core business logic",
+        "CALL varying",
+        "IF WS-PROC-ID(WS-SEQUENCE-IX) = BCT-JOB-NAME THEN"
+      ],
+      "pseudocode_text": "-- Paragraph 3200-UPDATE-SEQUENCE-TABLE: Core business logic\nCALL varying\nIF WS-PROC-ID(WS-SEQUENCE-IX) = BCT-JOB-NAME THEN",
+      "field_references": [
+        "BCT-STATUS",
+        "UNTIL",
+        "WS-PROC-STATUS",
+        "VARYING",
+        "WS-PROCESS-COUNT",
+        "UPDATE-SEQUENCE-TABLE",
+        "WS-PROC-RC",
+        "END-PERFORM",
+        "BCT-RETURN-CODE",
+        "BCT-JOB-NAME"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3300-CHECK-COMPLETION",
+      "section": null,
+      "line_range": [
+        305,
+        321
+      ],
+      "pseudocode": [
+        "-- Paragraph 3300-CHECK-COMPLETION: Core business logic",
+        "SET ws-active-count = zero",
+        "CALL varying",
+        "IF WS-PROC-STATUS(WS-SEQUENCE-IX) = BCT-STAT-ACTIVE THEN",
+        "INCREMENT ws-active-count BY 1",
+        "IF WS-PROC-STATUS(WS-SEQUENCE-IX) = BCT-STAT-ERROR THEN",
+        "INCREMENT ws-error-count BY 1"
+      ],
+      "pseudocode_text": "-- Paragraph 3300-CHECK-COMPLETION: Core business logic\nSET ws-active-count = zero\nCALL varying\nIF WS-PROC-STATUS(WS-SEQUENCE-IX) = BCT-STAT-ACTIVE THEN\nINCREMENT ws-active-count BY 1\nIF WS-PROC-STATUS(WS-SEQUENCE-IX) = BCT-STAT-ERROR THEN\nINCREMENT ws-error-count BY 1",
+      "field_references": [
+        "BCT-STAT-ACTIVE",
+        "UNTIL",
+        "WS-PROC-STATUS",
+        "CHECK-COMPLETION",
+        "WS-ERROR-COUNT",
+        "VARYING",
+        "WS-PROCESS-COUNT",
+        "BCT-STAT-ERROR",
+        "ADD",
+        "END-PERFORM"
+      ],
+      "calls_made": [],
+      "complexity_score": 3,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "4100-CHECK-FINAL-STATUS",
+      "section": null,
+      "line_range": [
+        322,
+        335
+      ],
+      "pseudocode": [
+        "-- Paragraph 4100-CHECK-FINAL-STATUS: Core business logic",
+        "CALL 3300-check-completion",
+        "IF WS-ERROR-COUNT > ZERO THEN",
+        "SET ls-return-code = bct-rc-error",
+        "IF WS-ACTIVE-COUNT > ZERO THEN",
+        "SET ls-return-code = bct-rc-warning",
+        "SET ls-return-code = bct-rc-success"
+      ],
+      "pseudocode_text": "-- Paragraph 4100-CHECK-FINAL-STATUS: Core business logic\nCALL 3300-check-completion\nIF WS-ERROR-COUNT > ZERO THEN\nSET ls-return-code = bct-rc-error\nIF WS-ACTIVE-COUNT > ZERO THEN\nSET ls-return-code = bct-rc-warning\nSET ls-return-code = bct-rc-success",
+      "field_references": [
+        "BCT-RC-SUCCESS",
+        "CHECK-COMPLETION",
+        "WS-ERROR-COUNT",
+        "BCT-RC-WARNING",
+        "LS-RETURN-CODE",
+        "WS-ACTIVE-COUNT",
+        "ZERO",
+        "CHECK-FINAL-STATUS",
+        "BCT-RC-ERROR",
+        "END-IF"
+      ],
+      "calls_made": [],
+      "complexity_score": 4,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "4200-CLOSE-FILES",
+      "section": null,
+      "line_range": [
+        336,
+        345
+      ],
+      "pseudocode": [
+        "-- Paragraph 4200-CLOSE-FILES: Close files and cleanup",
+        "CLOSE process-seq-file",
+        "IF WS-PSR-STATUS NOT = '00' OR THEN",
+        "CALL 9000-error-routine"
+      ],
+      "pseudocode_text": "-- Paragraph 4200-CLOSE-FILES: Close files and cleanup\nCLOSE process-seq-file\nIF WS-PSR-STATUS NOT = '00' OR THEN\nCALL 9000-error-routine",
+      "field_references": [
+        "BATCH-CONTROL-FILE",
+        "WS-BCT-STATUS",
+        "CLOSE-FILES",
+        "ERROR-ROUTINE",
+        "WS-PSR-STATUS",
+        "PROCESS-SEQ-FILE",
+        "CLOSE",
+        "ERR-TEXT",
+        "END-IF",
+        "MOVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    }
+  ],
+  "unresolved_statements": [],
+  "pseudocode_issues": []
 }

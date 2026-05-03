@@ -1,97 +1,502 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "INQCOM",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "POSREC",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "INQCOM",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  110,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\INQPORT.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  57,
-                           "name":  "P100-INIT-PROGRAM",
-                           "start_line":  57
-                       },
-                       {
-                           "end_line":  65,
-                           "name":  "P100-EXIT",
-                           "start_line":  65
-                       },
-                       {
-                           "end_line":  68,
-                           "name":  "P200-GET-POSITION",
-                           "start_line":  68
-                       },
-                       {
-                           "end_line":  83,
-                           "name":  "P200-EXIT",
-                           "start_line":  83
-                       },
-                       {
-                           "end_line":  86,
-                           "name":  "P300-FORMAT-DISPLAY",
-                           "start_line":  86
-                       },
-                       {
-                           "end_line":  93,
-                           "name":  "P300-EXIT",
-                           "start_line":  93
-                       },
-                       {
-                           "end_line":  96,
-                           "name":  "P900-NOT-FOUND",
-                           "start_line":  96
-                       },
-                       {
-                           "end_line":  100,
-                           "name":  "P900-EXIT",
-                           "start_line":  100
-                       },
-                       {
-                           "end_line":  103,
-                           "name":  "P999-ERROR-ROUTINE",
-                           "start_line":  103
-                       },
-                       {
-                           "end_line":  109,
-                           "name":  "P999-EXIT",
-                           "start_line":  109
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  11,
-                                          "start_line":  10
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  110,
-                                        "start_line":  40
-                                    },
-                      "DATA":  {
-                                   "end_line":  39,
-                                   "start_line":  12
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  9,
-                                             "start_line":  1
-                                         }
-                  },
-    "program_id":  "INQPORT",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "INQPORT",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\INQPORT.cbl",
+    "total_lines": 110
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 1,
+    "end_line": 9,
+    "program_id": "INQPORT"
+  },
+  "data_division": {
+    "start_line": 12,
+    "end_line": 39,
+    "file_section": {
+      "entries": []
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "WS-COMMAREA",
+          "line": 14,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-POSITION-RECORD",
+          "line": 17,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-DB2-POSITION",
+          "line": 20,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-FLAGS",
+          "line": 23,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-RESPONSE-CODE",
+          "line": 24,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-POSITION-FOUND",
+          "line": 25,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "POSITION-EXISTS",
+          "line": 26,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Y'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "NO-POSITION",
+          "line": 27,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-MAP-FIELDS",
+          "line": 29,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ACCOUNT-LABEL",
+          "line": 30,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Account:'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-FUND-LABEL",
+          "line": 31,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Fund ID:'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-UNITS-LABEL",
+          "line": 32,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Units:'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-COST-LABEL",
+          "line": 33,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Cost Basis:'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-VALUE-LABEL",
+          "line": 34,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Market Value:'",
+          "children": []
+        }
+      ],
+      "start_line": 13
+    },
+    "linkage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "DFHCOMMAREA",
+          "line": 37,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 36
+    }
+  },
+  "procedure_division": {
+    "start_line": 40,
+    "end_line": 110,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "P100-INIT-PROGRAM",
+        "section": null,
+        "start_line": 57,
+        "end_line": 63,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 64,
+        "end_line": 64,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P100-EXIT",
+        "section": null,
+        "start_line": 65,
+        "end_line": 67,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P200-GET-POSITION",
+        "section": null,
+        "start_line": 68,
+        "end_line": 75,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 76,
+        "end_line": 82,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P200-EXIT",
+        "section": null,
+        "start_line": 83,
+        "end_line": 85,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P300-FORMAT-DISPLAY",
+        "section": null,
+        "start_line": 86,
+        "end_line": 91,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 92,
+        "end_line": 92,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P300-EXIT",
+        "section": null,
+        "start_line": 93,
+        "end_line": 95,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P900-NOT-FOUND",
+        "section": null,
+        "start_line": 96,
+        "end_line": 99,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P900-EXIT",
+        "section": null,
+        "start_line": 100,
+        "end_line": 102,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P999-ERROR-ROUTINE",
+        "section": null,
+        "start_line": 103,
+        "end_line": 108,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P999-EXIT",
+        "section": null,
+        "start_line": 109,
+        "end_line": 110,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": []
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "P100-INIT-PROGRAM"
+    ],
+    "terminal_nodes": [],
+    "nodes": [
+      {
+        "id": "P100-INIT-PROGRAM",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 57,
+        "end_line": 63,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 64,
+        "end_line": 64,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P100-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 65,
+        "end_line": 67,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P200-GET-POSITION",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 68,
+        "end_line": 75,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 76,
+        "end_line": 82,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P200-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 83,
+        "end_line": 85,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P300-FORMAT-DISPLAY",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 86,
+        "end_line": 91,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 92,
+        "end_line": 92,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P300-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 93,
+        "end_line": 95,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P900-NOT-FOUND",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 96,
+        "end_line": 99,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P900-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 100,
+        "end_line": 102,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P999-ERROR-ROUTINE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 103,
+        "end_line": 108,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P999-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 109,
+        "end_line": 110,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [],
+    "dead_code_candidates": [
+      "END-EXEC",
+      "P100-EXIT",
+      "P200-GET-POSITION",
+      "END-EXEC",
+      "P200-EXIT",
+      "P300-FORMAT-DISPLAY",
+      "END-EXEC",
+      "P300-EXIT",
+      "P900-NOT-FOUND",
+      "P900-EXIT",
+      "P999-ERROR-ROUTINE",
+      "P999-EXIT"
+    ],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

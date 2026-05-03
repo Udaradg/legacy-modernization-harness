@@ -1,97 +1,851 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "AUDITLOG",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "ERRHAND",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "RTNCODE",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  147,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RPTAUD00.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  83,
-                           "name":  "0000-MAIN",
-                           "start_line":  83
-                       },
-                       {
-                           "end_line":  89,
-                           "name":  "1000-INITIALIZE",
-                           "start_line":  89
-                       },
-                       {
-                           "end_line":  93,
-                           "name":  "1100-OPEN-FILES",
-                           "start_line":  93
-                       },
-                       {
-                           "end_line":  115,
-                           "name":  "1200-WRITE-HEADERS",
-                           "start_line":  115
-                       },
-                       {
-                           "end_line":  121,
-                           "name":  "2000-PROCESS-REPORT",
-                           "start_line":  121
-                       },
-                       {
-                           "end_line":  126,
-                           "name":  "2100-PROCESS-AUDIT-TRAIL",
-                           "start_line":  126
-                       },
-                       {
-                           "end_line":  130,
-                           "name":  "2200-PROCESS-ERROR-LOG",
-                           "start_line":  130
-                       },
-                       {
-                           "end_line":  134,
-                           "name":  "2300-WRITE-SUMMARY",
-                           "start_line":  134
-                       },
-                       {
-                           "end_line":  139,
-                           "name":  "3000-CLEANUP",
-                           "start_line":  139
-                       },
-                       {
-                           "end_line":  144,
-                           "name":  "9999-ERROR-HANDLER",
-                           "start_line":  144
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  32,
-                                          "start_line":  14
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  147,
-                                        "start_line":  82
-                                    },
-                      "DATA":  {
-                                   "end_line":  81,
-                                   "start_line":  33
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  13,
-                                             "start_line":  1
-                                         }
-                  },
-    "program_id":  "RPTAUD00",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "RPTAUD00",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RPTAUD00.cbl",
+    "total_lines": 147
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 1,
+    "end_line": 13,
+    "program_id": "RPTAUD00",
+    "author": "CLAUDE.",
+    "date_written": "2024-04-09."
+  },
+  "data_division": {
+    "start_line": 33,
+    "end_line": 81,
+    "file_section": {
+      "entries": [
+        {
+          "type": "FD",
+          "file_name": "REPORT-FILE",
+          "line": 38,
+          "end_line": 42,
+          "recording_mode": "F",
+          "record_contains": null,
+          "block_contains": "0"
+        }
+      ],
+      "start_line": 34
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "type": "copy_stub",
+          "copybook": "RTNCODE",
+          "library": null,
+          "line": 44,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "level": 1,
+          "name": "WS-FILE-STATUS",
+          "line": 46,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-AUDIT-STATUS",
+          "line": 47,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ERROR-STATUS",
+          "line": 48,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-REPORT-STATUS",
+          "line": 49,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-REPORT-HEADERS",
+          "line": 51,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-HEADER1",
+          "line": 52,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-52",
+          "line": 53,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ALL",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-HEADER2",
+          "line": 54,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-54",
+          "line": 55,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-55",
+          "line": 56,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'SYSTEM AUDIT REPORT'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-57",
+          "line": 58,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-HEADER3",
+          "line": 59,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-59",
+          "line": 60,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'REPORT DATE:'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-REPORT-DATE",
+          "line": 61,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-61",
+          "line": 62,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-AUDIT-DETAIL",
+          "line": 64,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-AUD-TIMESTAMP",
+          "line": 65,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "FILLER-65",
+          "line": 66,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-AUD-PROGRAM",
+          "line": 67,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "FILLER-67",
+          "line": 68,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-AUD-TYPE",
+          "line": 69,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "FILLER-69",
+          "line": 70,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-AUD-MESSAGE",
+          "line": 71,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-ERROR-DETAIL",
+          "line": 73,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ERR-TIMESTAMP",
+          "line": 74,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "FILLER-74",
+          "line": 75,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ERR-PROGRAM",
+          "line": 76,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "FILLER-76",
+          "line": 77,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ERR-CODE",
+          "line": 78,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "FILLER-78",
+          "line": 79,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ERR-MESSAGE",
+          "line": 80,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 43
+    },
+    "linkage_section": {
+      "entries": []
+    }
+  },
+  "procedure_division": {
+    "start_line": 82,
+    "end_line": 147,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 83,
+        "end_line": 88,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-INITIALIZE",
+        "section": null,
+        "start_line": 89,
+        "end_line": 92,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1100-OPEN-FILES",
+        "section": null,
+        "start_line": 93,
+        "end_line": 114,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1200-WRITE-HEADERS",
+        "section": null,
+        "start_line": 115,
+        "end_line": 120,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-PROCESS-REPORT",
+        "section": null,
+        "start_line": 121,
+        "end_line": 125,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2100-PROCESS-AUDIT-TRAIL",
+        "section": null,
+        "start_line": 126,
+        "end_line": 129,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2200-PROCESS-ERROR-LOG",
+        "section": null,
+        "start_line": 130,
+        "end_line": 133,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2300-WRITE-SUMMARY",
+        "section": null,
+        "start_line": 134,
+        "end_line": 138,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-CLEANUP",
+        "section": null,
+        "start_line": 139,
+        "end_line": 141,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "REPORT-FILE",
+        "section": null,
+        "start_line": 142,
+        "end_line": 143,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "9999-ERROR-HANDLER",
+        "section": null,
+        "start_line": 144,
+        "end_line": 147,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 87
+      },
+      {
+        "type": "GOBACK",
+        "line": 147
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN",
+      "9999-ERROR-HANDLER"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 83,
+        "end_line": 88,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-INITIALIZE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 89,
+        "end_line": 92,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1100-OPEN-FILES",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 93,
+        "end_line": 114,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1200-WRITE-HEADERS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 115,
+        "end_line": 120,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-PROCESS-REPORT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 121,
+        "end_line": 125,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2100-PROCESS-AUDIT-TRAIL",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 126,
+        "end_line": 129,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2200-PROCESS-ERROR-LOG",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 130,
+        "end_line": 133,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2300-WRITE-SUMMARY",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 134,
+        "end_line": 138,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-CLEANUP",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 139,
+        "end_line": 141,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "REPORT-FILE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 142,
+        "end_line": 143,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "9999-ERROR-HANDLER",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 144,
+        "end_line": 147,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 84,
+        "unstructured": false,
+        "to": "1000-INITIALIZE"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 85,
+        "unstructured": false,
+        "to": "2000-PROCESS-REPORT"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 86,
+        "unstructured": false,
+        "to": "3000-CLEANUP"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 90,
+        "unstructured": false,
+        "to": "1100-OPEN-FILES"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 91,
+        "unstructured": false,
+        "to": "1200-WRITE-HEADERS"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 98,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 105,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 112,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "2000-PROCESS-REPORT",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 122,
+        "unstructured": false,
+        "to": "2100-PROCESS-AUDIT-TRAIL"
+      },
+      {
+        "from": "2000-PROCESS-REPORT",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 123,
+        "unstructured": false,
+        "to": "2200-PROCESS-ERROR-LOG"
+      },
+      {
+        "from": "2000-PROCESS-REPORT",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 124,
+        "unstructured": false,
+        "to": "2300-WRITE-SUMMARY"
+      },
+      {
+        "from": "2100-PROCESS-AUDIT-TRAIL",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 127,
+        "unstructured": false,
+        "to": "2110-READ-AUDIT-RECORDS"
+      },
+      {
+        "from": "2100-PROCESS-AUDIT-TRAIL",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 128,
+        "unstructured": false,
+        "to": "2120-SUMMARIZE-AUDIT"
+      },
+      {
+        "from": "2200-PROCESS-ERROR-LOG",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 131,
+        "unstructured": false,
+        "to": "2210-READ-ERROR-RECORDS"
+      },
+      {
+        "from": "2200-PROCESS-ERROR-LOG",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 132,
+        "unstructured": false,
+        "to": "2220-SUMMARIZE-ERRORS"
+      },
+      {
+        "from": "2300-WRITE-SUMMARY",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 135,
+        "unstructured": false,
+        "to": "2310-WRITE-AUDIT-SUMMARY"
+      },
+      {
+        "from": "2300-WRITE-SUMMARY",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 136,
+        "unstructured": false,
+        "to": "2320-WRITE-ERROR-SUMMARY"
+      },
+      {
+        "from": "2300-WRITE-SUMMARY",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 137,
+        "unstructured": false,
+        "to": "2330-WRITE-CONTROL-SUMMARY"
+      }
+    ],
+    "dead_code_candidates": [
+      "REPORT-FILE"
+    ],
+    "unstructured_constructs": [],
+    "cfg_issues": [
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2100-PROCESS-AUDIT-TRAIL",
+        "target": "2110-READ-AUDIT-RECORDS",
+        "message": "Control transfer target '2110-READ-AUDIT-RECORDS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2100-PROCESS-AUDIT-TRAIL",
+        "target": "2120-SUMMARIZE-AUDIT",
+        "message": "Control transfer target '2120-SUMMARIZE-AUDIT' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2200-PROCESS-ERROR-LOG",
+        "target": "2210-READ-ERROR-RECORDS",
+        "message": "Control transfer target '2210-READ-ERROR-RECORDS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2200-PROCESS-ERROR-LOG",
+        "target": "2220-SUMMARIZE-ERRORS",
+        "message": "Control transfer target '2220-SUMMARIZE-ERRORS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2300-WRITE-SUMMARY",
+        "target": "2310-WRITE-AUDIT-SUMMARY",
+        "message": "Control transfer target '2310-WRITE-AUDIT-SUMMARY' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2300-WRITE-SUMMARY",
+        "target": "2320-WRITE-ERROR-SUMMARY",
+        "message": "Control transfer target '2320-WRITE-ERROR-SUMMARY' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2300-WRITE-SUMMARY",
+        "target": "2330-WRITE-CONTROL-SUMMARY",
+        "message": "Control transfer target '2330-WRITE-CONTROL-SUMMARY' not found in paragraph list"
+      }
+    ]
+  }
 }

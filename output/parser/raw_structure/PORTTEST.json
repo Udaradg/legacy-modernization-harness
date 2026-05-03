@@ -1,83 +1,445 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "PORTFLIO",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "ERRHAND",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  119,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTTEST.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  46,
-                           "name":  "0000-MAIN",
-                           "start_line":  46
-                       },
-                       {
-                           "end_line":  54,
-                           "name":  "1000-INITIALIZE",
-                           "start_line":  54
-                       },
-                       {
-                           "end_line":  65,
-                           "name":  "2000-GENERATE-RECORDS",
-                           "start_line":  65
-                       },
-                       {
-                           "end_line":  82,
-                           "name":  "2100-GENERATE-KEY",
-                           "start_line":  82
-                       },
-                       {
-                           "end_line":  91,
-                           "name":  "2200-GENERATE-CLIENT-INFO",
-                           "start_line":  91
-                       },
-                       {
-                           "end_line":  99,
-                           "name":  "2300-GENERATE-PORTFOLIO-INFO",
-                           "start_line":  99
-                       },
-                       {
-                           "end_line":  107,
-                           "name":  "2400-GENERATE-FINANCIAL-INFO",
-                           "start_line":  107
-                       },
-                       {
-                           "end_line":  115,
-                           "name":  "3000-TERMINATE",
-                           "start_line":  115
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  21,
-                                          "start_line":  10
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  119,
-                                        "start_line":  45
-                                    },
-                      "DATA":  {
-                                   "end_line":  44,
-                                   "start_line":  22
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  9,
-                                             "start_line":  7
-                                         }
-                  },
-    "program_id":  "PORTTEST",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "PORTTEST",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTTEST.cbl",
+    "total_lines": 119
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 7,
+    "end_line": 9,
+    "program_id": "PORTTEST"
+  },
+  "data_division": {
+    "start_line": 22,
+    "end_line": 44,
+    "file_section": {
+      "entries": [
+        {
+          "type": "FD",
+          "file_name": "TEST-FILE",
+          "line": 24,
+          "end_line": 26,
+          "recording_mode": null,
+          "record_contains": null,
+          "block_contains": null
+        }
+      ],
+      "start_line": 23
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "type": "copy_stub",
+          "copybook": "ERRHAND",
+          "library": null,
+          "line": 28,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "level": 1,
+          "name": "WS-VARIABLES",
+          "line": 30,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-FILE-STATUS",
+          "line": 31,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-RECORD-COUNT",
+          "line": 32,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "0",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-MAX-RECORDS",
+          "line": 33,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "100",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-CURRENT-DATE",
+          "line": 34,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-TEST-VALUES",
+          "line": 36,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-CLIENT-TYPES",
+          "line": 37,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'ICT'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-STATUS-TYPES",
+          "line": 38,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'ACS'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-NAME-PREFIX",
+          "line": 39,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'TEST'",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-SUBSCRIPTS",
+          "line": 41,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-TYPE-SUB",
+          "line": 42,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-STATUS-SUB",
+          "line": 43,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 27
+    },
+    "linkage_section": {
+      "entries": []
+    }
+  },
+  "procedure_division": {
+    "start_line": 45,
+    "end_line": 119,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 46,
+        "end_line": 53,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-INITIALIZE",
+        "section": null,
+        "start_line": 54,
+        "end_line": 64,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-GENERATE-RECORDS",
+        "section": null,
+        "start_line": 65,
+        "end_line": 81,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2100-GENERATE-KEY",
+        "section": null,
+        "start_line": 82,
+        "end_line": 90,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2200-GENERATE-CLIENT-INFO",
+        "section": null,
+        "start_line": 91,
+        "end_line": 98,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2300-GENERATE-PORTFOLIO-INFO",
+        "section": null,
+        "start_line": 99,
+        "end_line": 106,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2400-GENERATE-FINANCIAL-INFO",
+        "section": null,
+        "start_line": 107,
+        "end_line": 114,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-TERMINATE",
+        "section": null,
+        "start_line": 115,
+        "end_line": 119,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 51
+      },
+      {
+        "type": "GOBACK",
+        "line": 61
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN",
+      "1000-INITIALIZE"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 46,
+        "end_line": 53,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-INITIALIZE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 54,
+        "end_line": 64,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-GENERATE-RECORDS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 65,
+        "end_line": 81,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2100-GENERATE-KEY",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 82,
+        "end_line": 90,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2200-GENERATE-CLIENT-INFO",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 91,
+        "end_line": 98,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2300-GENERATE-PORTFOLIO-INFO",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 99,
+        "end_line": 106,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2400-GENERATE-FINANCIAL-INFO",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 107,
+        "end_line": 114,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-TERMINATE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 115,
+        "end_line": 119,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 47,
+        "unstructured": false,
+        "to": "1000-INITIALIZE"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 48,
+        "unstructured": false,
+        "to": "2000-GENERATE-RECORDS"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 50,
+        "unstructured": false,
+        "to": "3000-TERMINATE"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 60,
+        "unstructured": false,
+        "to": "3000-TERMINATE"
+      },
+      {
+        "from": "2000-GENERATE-RECORDS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 68,
+        "unstructured": false,
+        "to": "2100-GENERATE-KEY"
+      },
+      {
+        "from": "2000-GENERATE-RECORDS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 69,
+        "unstructured": false,
+        "to": "2200-GENERATE-CLIENT-INFO"
+      },
+      {
+        "from": "2000-GENERATE-RECORDS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 70,
+        "unstructured": false,
+        "to": "2300-GENERATE-PORTFOLIO-INFO"
+      },
+      {
+        "from": "2000-GENERATE-RECORDS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 71,
+        "unstructured": false,
+        "to": "2400-GENERATE-FINANCIAL-INFO"
+      }
+    ],
+    "dead_code_candidates": [],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

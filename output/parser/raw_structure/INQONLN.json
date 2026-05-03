@@ -1,107 +1,721 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "INQCOM",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "ERRHND",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "INQCOM",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  171,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\INQONLN.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  53,
-                           "name":  "P100-PROCESS-REQUEST",
-                           "start_line":  53
-                       },
-                       {
-                           "end_line":  89,
-                           "name":  "P100-EXIT",
-                           "start_line":  89
-                       },
-                       {
-                           "end_line":  92,
-                           "name":  "P200-DISPLAY-MENU",
-                           "start_line":  92
-                       },
-                       {
-                           "end_line":  98,
-                           "name":  "P200-EXIT",
-                           "start_line":  98
-                       },
-                       {
-                           "end_line":  101,
-                           "name":  "P300-PORTFOLIO-INQUIRY",
-                           "start_line":  101
-                       },
-                       {
-                           "end_line":  107,
-                           "name":  "P300-EXIT",
-                           "start_line":  107
-                       },
-                       {
-                           "end_line":  110,
-                           "name":  "P400-HISTORY-INQUIRY",
-                           "start_line":  110
-                       },
-                       {
-                           "end_line":  116,
-                           "name":  "P400-EXIT",
-                           "start_line":  116
-                       },
-                       {
-                           "end_line":  119,
-                           "name":  "P900-ERROR-ROUTINE",
-                           "start_line":  119
-                       },
-                       {
-                           "end_line":  136,
-                           "name":  "P900-EXIT",
-                           "start_line":  136
-                       },
-                       {
-                           "end_line":  139,
-                           "name":  "P050-SECURITY-CHECK",
-                           "start_line":  139
-                       },
-                       {
-                           "end_line":  170,
-                           "name":  "P050-EXIT",
-                           "start_line":  170
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  12,
-                                          "start_line":  11
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  171,
-                                        "start_line":  39
-                                    },
-                      "DATA":  {
-                                   "end_line":  38,
-                                   "start_line":  13
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  10,
-                                             "start_line":  1
-                                         }
-                  },
-    "program_id":  "INQONLN",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "INQONLN",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\INQONLN.cbl",
+    "total_lines": 171
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 1,
+    "end_line": 10,
+    "program_id": "INQONLN"
+  },
+  "data_division": {
+    "start_line": 13,
+    "end_line": 38,
+    "file_section": {
+      "entries": []
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "WS-COMMAREA",
+          "line": 15,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-FLAGS",
+          "line": 18,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-END-OF-SESSION",
+          "line": 19,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "SESSION-ACTIVE",
+          "line": 20,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "SESSION-TERMINATED",
+          "line": 21,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Y'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-RESPONSE-CODE",
+          "line": 22,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-ERROR-AREA",
+          "line": 24,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-SECURITY-REQUEST",
+          "line": 27,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "SEC-REQUEST-TYPE",
+          "line": 28,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "SEC-USER-ID",
+          "line": 29,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "SEC-RESOURCE-NAME",
+          "line": 30,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "SEC-ACCESS-TYPE",
+          "line": 31,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "SEC-RESPONSE-CODE",
+          "line": 32,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "SEC-ERROR-INFO",
+          "line": 33,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 14
+    },
+    "linkage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "DFHCOMMAREA",
+          "line": 36,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 35
+    }
+  },
+  "procedure_division": {
+    "start_line": 39,
+    "end_line": 171,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 44,
+        "end_line": 50,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 51,
+        "end_line": 52,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P100-PROCESS-REQUEST",
+        "section": null,
+        "start_line": 53,
+        "end_line": 59,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 60,
+        "end_line": 88,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P100-EXIT",
+        "section": null,
+        "start_line": 89,
+        "end_line": 91,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P200-DISPLAY-MENU",
+        "section": null,
+        "start_line": 92,
+        "end_line": 96,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 97,
+        "end_line": 97,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P200-EXIT",
+        "section": null,
+        "start_line": 98,
+        "end_line": 100,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P300-PORTFOLIO-INQUIRY",
+        "section": null,
+        "start_line": 101,
+        "end_line": 105,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 106,
+        "end_line": 106,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P300-EXIT",
+        "section": null,
+        "start_line": 107,
+        "end_line": 109,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P400-HISTORY-INQUIRY",
+        "section": null,
+        "start_line": 110,
+        "end_line": 114,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 115,
+        "end_line": 115,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P400-EXIT",
+        "section": null,
+        "start_line": 116,
+        "end_line": 118,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P900-ERROR-ROUTINE",
+        "section": null,
+        "start_line": 119,
+        "end_line": 128,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 129,
+        "end_line": 135,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P900-EXIT",
+        "section": null,
+        "start_line": 136,
+        "end_line": 138,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P050-SECURITY-CHECK",
+        "section": null,
+        "start_line": 139,
+        "end_line": 143,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 144,
+        "end_line": 148,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 149,
+        "end_line": 169,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P050-EXIT",
+        "section": null,
+        "start_line": 170,
+        "end_line": 171,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": []
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "END-EXEC"
+    ],
+    "terminal_nodes": [],
+    "nodes": [
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 44,
+        "end_line": 50,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 51,
+        "end_line": 52,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P100-PROCESS-REQUEST",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 53,
+        "end_line": 59,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 60,
+        "end_line": 88,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P100-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 89,
+        "end_line": 91,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P200-DISPLAY-MENU",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 92,
+        "end_line": 96,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 97,
+        "end_line": 97,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P200-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 98,
+        "end_line": 100,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P300-PORTFOLIO-INQUIRY",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 101,
+        "end_line": 105,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 106,
+        "end_line": 106,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P300-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 107,
+        "end_line": 109,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P400-HISTORY-INQUIRY",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 110,
+        "end_line": 114,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 115,
+        "end_line": 115,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P400-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 116,
+        "end_line": 118,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P900-ERROR-ROUTINE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 119,
+        "end_line": 128,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 129,
+        "end_line": 135,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P900-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 136,
+        "end_line": 138,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P050-SECURITY-CHECK",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 139,
+        "end_line": 143,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 144,
+        "end_line": 148,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 149,
+        "end_line": 169,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P050-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 170,
+        "end_line": 171,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "END-EXEC",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 46,
+        "unstructured": false,
+        "to": "P100-PROCESS-REQUEST"
+      },
+      {
+        "from": "END-EXEC",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 64,
+        "unstructured": false,
+        "to": "P200-DISPLAY-MENU"
+      },
+      {
+        "from": "END-EXEC",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 67,
+        "unstructured": false,
+        "to": "P300-PORTFOLIO-INQUIRY"
+      },
+      {
+        "from": "END-EXEC",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 70,
+        "unstructured": false,
+        "to": "P400-HISTORY-INQUIRY"
+      },
+      {
+        "from": "END-EXEC",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 75,
+        "unstructured": false,
+        "to": "P900-ERROR-ROUTINE"
+      },
+      {
+        "from": "END-EXEC",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 79,
+        "unstructured": false,
+        "to": "P050-SECURITY-CHECK"
+      },
+      {
+        "from": "END-EXEC",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 85,
+        "unstructured": false,
+        "to": "P900-ERROR-ROUTINE"
+      }
+    ],
+    "dead_code_candidates": [
+      "P100-EXIT",
+      "P200-EXIT",
+      "P300-EXIT",
+      "P400-EXIT",
+      "P900-EXIT",
+      "P050-EXIT"
+    ],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

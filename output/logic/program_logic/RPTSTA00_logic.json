@@ -1,90 +1,439 @@
-﻿{
-    "paragraphs":  [
-                       {
-                           "name":  "0000-MAIN",
-                           "line_range":  [
-                                              96,
-                                              96
-                                          ]
-                       },
-                       {
-                           "name":  "1000-INITIALIZE",
-                           "line_range":  [
-                                              102,
-                                              102
-                                          ]
-                       },
-                       {
-                           "name":  "1100-OPEN-FILES",
-                           "line_range":  [
-                                              107,
-                                              107
-                                          ]
-                       },
-                       {
-                           "name":  "1200-WRITE-HEADERS",
-                           "line_range":  [
-                                              129,
-                                              129
-                                          ]
-                       },
-                       {
-                           "name":  "1300-INIT-ACCUMULATORS",
-                           "line_range":  [
-                                              135,
-                                              135
-                                          ]
-                       },
-                       {
-                           "name":  "2000-PROCESS-REPORT",
-                           "line_range":  [
-                                              138,
-                                              138
-                                          ]
-                       },
-                       {
-                           "name":  "2100-PROCESS-DB2-STATS",
-                           "line_range":  [
-                                              144,
-                                              144
-                                          ]
-                       },
-                       {
-                           "name":  "2200-PROCESS-BATCH-STATS",
-                           "line_range":  [
-                                              156,
-                                              156
-                                          ]
-                       },
-                       {
-                           "name":  "2300-CALCULATE-METRICS",
-                           "line_range":  [
-                                              168,
-                                              168
-                                          ]
-                       },
-                       {
-                           "name":  "2400-WRITE-REPORT",
-                           "line_range":  [
-                                              172,
-                                              172
-                                          ]
-                       },
-                       {
-                           "name":  "3000-CLEANUP",
-                           "line_range":  [
-                                              177,
-                                              177
-                                          ]
-                       },
-                       {
-                           "name":  "9999-ERROR-HANDLER",
-                           "line_range":  [
-                                              182,
-                                              182
-                                          ]
-                       }
-                   ],
-    "source_file":  "src\\programs\\batch\\RPTSTA00.cbl",
-    "program_id":  "RPTSTA00"
+{
+  "program_id": "RPTSTA00",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RPTSTA00.cbl",
+  "processing_timestamp": "2026-05-03T18:35:20.951742Z",
+  "execution_traces": [
+    {
+      "entry_point": "0000-MAIN",
+      "entry_type": "procedure_entry",
+      "steps": [
+        {
+          "step": 1,
+          "paragraph": "0000-MAIN",
+          "action": "PARAGRAPH",
+          "target": null,
+          "condition": null,
+          "line": 96
+        }
+      ]
+    }
+  ],
+  "branch_map": [
+    {
+      "paragraph": "1100-OPEN-FILES",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-DB2-STATUS NOT = '00'",
+          "condition_fields": [
+            "WS-DB2-STATUS"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "WS-BCH-STATUS NOT = '00'",
+          "condition_fields": [
+            "WS-BCH-STATUS"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "WS-REPORT-STATUS NOT = '00'",
+          "condition_fields": [
+            "WS-REPORT-STATUS"
+          ]
+        }
+      ]
+    }
+  ],
+  "loops": [],
+  "dead_code_confirmed": [
+    "END-PERFORM",
+    "END-PERFORM",
+    "REPORT-FILE"
+  ],
+  "unresolvable_paths": [],
+  "trace_issues": [],
+  "program_narrative": "RPTSTA00 is a COBOL program that orchestrates business processes. It processes input data through multiple stages, performing validation, transformation, and output operations. The program includes error handling and data integrity checks.",
+  "paragraphs": [
+    {
+      "name": "0000-MAIN",
+      "section": null,
+      "line_range": [
+        96,
+        101
+      ],
+      "pseudocode": [
+        "-- Paragraph 0000-MAIN: Core business logic",
+        "CALL 1000-initialize",
+        "CALL 2000-process-report",
+        "CALL 3000-cleanup"
+      ],
+      "pseudocode_text": "-- Paragraph 0000-MAIN: Core business logic\nCALL 1000-initialize\nCALL 2000-process-report\nCALL 3000-cleanup",
+      "field_references": [
+        "MAIN",
+        "PROCESS-REPORT",
+        "CLEANUP",
+        "GOBACK",
+        "INITIALIZE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1000-INITIALIZE",
+      "section": null,
+      "line_range": [
+        102,
+        106
+      ],
+      "pseudocode": [
+        "-- Paragraph 1000-INITIALIZE: Initialisation and setup",
+        "CALL 1100-open-files",
+        "CALL 1200-write-headers",
+        "CALL 1300-init-accumulators"
+      ],
+      "pseudocode_text": "-- Paragraph 1000-INITIALIZE: Initialisation and setup\nCALL 1100-open-files\nCALL 1200-write-headers\nCALL 1300-init-accumulators",
+      "field_references": [
+        "WRITE-HEADERS",
+        "OPEN-FILES",
+        "INITIALIZE",
+        "INIT-ACCUMULATORS"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1100-OPEN-FILES",
+      "section": null,
+      "line_range": [
+        107,
+        128
+      ],
+      "pseudocode": [
+        "-- Paragraph 1100-OPEN-FILES: Open files and resources",
+        "IF WS-DB2-STATUS NOT = '00' THEN",
+        "CALL 9999-error-handler",
+        "IF WS-BCH-STATUS NOT = '00' THEN",
+        "CALL 9999-error-handler",
+        "IF WS-REPORT-STATUS NOT = '00' THEN",
+        "CALL 9999-error-handler"
+      ],
+      "pseudocode_text": "-- Paragraph 1100-OPEN-FILES: Open files and resources\nIF WS-DB2-STATUS NOT = '00' THEN\nCALL 9999-error-handler\nIF WS-BCH-STATUS NOT = '00' THEN\nCALL 9999-error-handler\nIF WS-REPORT-STATUS NOT = '00' THEN\nCALL 9999-error-handler",
+      "field_references": [
+        "OUTPUT",
+        "FILE",
+        "WS-BCH-STATUS",
+        "STATS",
+        "WS-DB2-STATUS",
+        "REPORT",
+        "OPEN-FILES",
+        "OPEN",
+        "BATCH-STATS",
+        "REPORT-FILE"
+      ],
+      "calls_made": [],
+      "complexity_score": 3,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1200-WRITE-HEADERS",
+      "section": null,
+      "line_range": [
+        129,
+        134
+      ],
+      "pseudocode": [
+        "-- Paragraph 1200-WRITE-HEADERS: Write output records",
+        "WRITE report-record to output",
+        "WRITE report-record to output",
+        "WRITE report-record to output"
+      ],
+      "pseudocode_text": "-- Paragraph 1200-WRITE-HEADERS: Write output records\nWRITE report-record to output\nWRITE report-record to output\nWRITE report-record to output",
+      "field_references": [
+        "WRITE-HEADERS",
+        "REPORT-RECORD",
+        "DATE",
+        "WS-HEADER2",
+        "WS-REPORT-DATE",
+        "WS-HEADER1",
+        "ACCEPT",
+        "WS-HEADER3"
+      ],
+      "calls_made": [],
+      "complexity_score": 4,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1300-INIT-ACCUMULATORS",
+      "section": null,
+      "line_range": [
+        135,
+        137
+      ],
+      "pseudocode": [
+        "-- Paragraph 1300-INIT-ACCUMULATORS: Initialisation and setup",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph 1300-INIT-ACCUMULATORS: Initialisation and setup\n-- [paragraph logic]",
+      "field_references": [
+        "WS-PERFORMANCE-METRICS",
+        "INITIALIZE",
+        "INIT-ACCUMULATORS"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2000-PROCESS-REPORT",
+      "section": null,
+      "line_range": [
+        138,
+        143
+      ],
+      "pseudocode": [
+        "-- Paragraph 2000-PROCESS-REPORT: Main processing logic",
+        "CALL 2100-process-db2-stats",
+        "CALL 2200-process-batch-stats",
+        "CALL 2300-calculate-metrics",
+        "CALL 2400-write-report"
+      ],
+      "pseudocode_text": "-- Paragraph 2000-PROCESS-REPORT: Main processing logic\nCALL 2100-process-db2-stats\nCALL 2200-process-batch-stats\nCALL 2300-calculate-metrics\nCALL 2400-write-report",
+      "field_references": [
+        "PROCESS-REPORT",
+        "WRITE-REPORT",
+        "PROCESS-DB2-STATS",
+        "PROCESS-BATCH-STATS",
+        "CALCULATE-METRICS"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2100-PROCESS-DB2-STATS",
+      "section": null,
+      "line_range": [
+        144,
+        153
+      ],
+      "pseudocode": [
+        "-- Paragraph 2100-PROCESS-DB2-STATS: Main processing logic",
+        "READ next record from db2-stats",
+        "CALL until",
+        "CALL 2110-accumulate-db2-stats",
+        "READ next record from db2-stats"
+      ],
+      "pseudocode_text": "-- Paragraph 2100-PROCESS-DB2-STATS: Main processing logic\nREAD next record from db2-stats\nCALL until\nCALL 2110-accumulate-db2-stats\nREAD next record from db2-stats",
+      "field_references": [
+        "ACCUMULATE-DB2-STATS",
+        "END-OF-DB2-STATS",
+        "UNTIL",
+        "SET",
+        "DB2-STATS",
+        "END-READ",
+        "PROCESS-DB2-STATS"
+      ],
+      "calls_made": [],
+      "complexity_score": 5,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "END-PERFORM",
+      "section": null,
+      "line_range": [
+        154,
+        155
+      ],
+      "pseudocode": [
+        "-- Paragraph END-PERFORM: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph END-PERFORM: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "END-PERFORM"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2200-PROCESS-BATCH-STATS",
+      "section": null,
+      "line_range": [
+        156,
+        165
+      ],
+      "pseudocode": [
+        "-- Paragraph 2200-PROCESS-BATCH-STATS: Main processing logic",
+        "READ next record from batch-stats",
+        "CALL until",
+        "CALL 2210-accumulate-batch-stats",
+        "READ next record from batch-stats"
+      ],
+      "pseudocode_text": "-- Paragraph 2200-PROCESS-BATCH-STATS: Main processing logic\nREAD next record from batch-stats\nCALL until\nCALL 2210-accumulate-batch-stats\nREAD next record from batch-stats",
+      "field_references": [
+        "END-OF-BATCH-STATS",
+        "UNTIL",
+        "BATCH-STATS",
+        "ACCUMULATE-BATCH-STATS",
+        "SET",
+        "END-READ",
+        "PROCESS-BATCH-STATS"
+      ],
+      "calls_made": [],
+      "complexity_score": 5,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "END-PERFORM",
+      "section": null,
+      "line_range": [
+        166,
+        167
+      ],
+      "pseudocode": [
+        "-- Paragraph END-PERFORM: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph END-PERFORM: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "END-PERFORM"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2300-CALCULATE-METRICS",
+      "section": null,
+      "line_range": [
+        168,
+        171
+      ],
+      "pseudocode": [
+        "-- Paragraph 2300-CALCULATE-METRICS: Core business logic",
+        "CALL 2310-calc-db2-metrics",
+        "CALL 2320-calc-batch-metrics"
+      ],
+      "pseudocode_text": "-- Paragraph 2300-CALCULATE-METRICS: Core business logic\nCALL 2310-calc-db2-metrics\nCALL 2320-calc-batch-metrics",
+      "field_references": [
+        "CALC-BATCH-METRICS",
+        "CALC-DB2-METRICS",
+        "CALCULATE-METRICS"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2400-WRITE-REPORT",
+      "section": null,
+      "line_range": [
+        172,
+        176
+      ],
+      "pseudocode": [
+        "-- Paragraph 2400-WRITE-REPORT: Write output records",
+        "CALL 2410-write-db2-section",
+        "CALL 2420-write-batch-section",
+        "CALL 2430-write-trend-analysis"
+      ],
+      "pseudocode_text": "-- Paragraph 2400-WRITE-REPORT: Write output records\nCALL 2410-write-db2-section\nCALL 2420-write-batch-section\nCALL 2430-write-trend-analysis",
+      "field_references": [
+        "WRITE-DB2-SECTION",
+        "WRITE-REPORT",
+        "WRITE-TREND-ANALYSIS",
+        "WRITE-BATCH-SECTION"
+      ],
+      "calls_made": [],
+      "complexity_score": 4,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3000-CLEANUP",
+      "section": null,
+      "line_range": [
+        177,
+        179
+      ],
+      "pseudocode": [
+        "-- Paragraph 3000-CLEANUP: Core business logic",
+        "CLOSE db2-stats"
+      ],
+      "pseudocode_text": "-- Paragraph 3000-CLEANUP: Core business logic\nCLOSE db2-stats",
+      "field_references": [
+        "CLOSE",
+        "DB2-STATS",
+        "BATCH-STATS",
+        "CLEANUP"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "REPORT-FILE",
+      "section": null,
+      "line_range": [
+        180,
+        181
+      ],
+      "pseudocode": [
+        "-- Paragraph REPORT-FILE: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph REPORT-FILE: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "REPORT-FILE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "9999-ERROR-HANDLER",
+      "section": null,
+      "line_range": [
+        182,
+        185
+      ],
+      "pseudocode": [
+        "-- Paragraph 9999-ERROR-HANDLER: Error handling",
+        "SET return-code = 12"
+      ],
+      "pseudocode_text": "-- Paragraph 9999-ERROR-HANDLER: Error handling\nSET return-code = 12",
+      "field_references": [
+        "ERROR-HANDLER",
+        "DISPLAY",
+        "RETURN-CODE",
+        "WS-ERROR-MESSAGE",
+        "GOBACK",
+        "MOVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    }
+  ],
+  "unresolved_statements": [],
+  "pseudocode_issues": []
 }

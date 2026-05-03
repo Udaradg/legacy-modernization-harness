@@ -1,382 +1,247 @@
-﻿{
-    "record_name":  "UTLVAL00_WS",
-    "source_type":  "program_ws",
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\utility\\UTLVAL00.cbl",
-    "fields":  [
-                   {
-                       "line":  50,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "VALIDATION-RECORD",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  51,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "VAL-TYPE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  52,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "VAL-PARAMETERS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  57,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "ERROR-RECORD",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  63,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-FILE-STATUS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  64,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-VAL-STATUS",
-                       "pic":  "XX.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  65,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-POS-STATUS",
-                       "pic":  "XX.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  66,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TRAN-STATUS",
-                       "pic":  "XX.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  67,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-RPT-STATUS",
-                       "pic":  "XX.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  69,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-VALIDATION-TYPES",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  70,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "INTEGRITY",
-                       "name":  "WS-INTEGRITY",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  71,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "XREF",
-                       "name":  "WS-XREF",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  72,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "FORMAT",
-                       "name":  "WS-FORMAT",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  73,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "BALANCE",
-                       "name":  "WS-BALANCE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  75,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-PROCESSING-FLAGS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  76,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "N",
-                       "name":  "WS-END-OF-VAL",
-                       "pic":  "X",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  77,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "Y",
-                       "name":  "END-OF-VALIDATION",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  78,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "N",
-                       "name":  "WS-ERROR-FOUND",
-                       "pic":  "X",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  79,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "Y",
-                       "name":  "ERROR-FOUND",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  81,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-VALIDATION-TOTALS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  82,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-RECORDS-READ",
-                       "pic":  "9(9)",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  83,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-RECORDS-VALID",
-                       "pic":  "9(9)",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  84,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-RECORDS-ERROR",
-                       "pic":  "9(9)",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  85,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-TOTAL-AMOUNT",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  86,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-CONTROL-TOTAL",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  88,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-ERROR-LINE",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  89,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-ERR-TYPE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  90,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "SPACES",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  91,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-ERR-KEY",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  92,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "SPACES",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  93,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-ERR-DESC",
-                       "pic":  "X(9",
-                       "length":  0,
-                       "occurs":  null
-                   }
-               ],
-    "issues":  [
-
-               ]
+{
+  "id": "UTLVAL00_WS",
+  "source_type": "program_ws",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\utility\\UTLVAL00.cbl",
+  "used_by_programs": [
+    "UTLVAL00"
+  ],
+  "total_fields": 29,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "COPY_RTNCODE",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "RTNCODE",
+      "line": 60,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "COPY_ERRHAND",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "ERRHAND",
+      "line": 61,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-FILE-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 63,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-VAL-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 64,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-POS-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 65,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TRAN-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 66,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-RPT-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 67,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-VALIDATION-TYPES",
+      "pic": null,
+      "type": "GROUP",
+      "line": 69,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-INTEGRITY",
+      "pic": null,
+      "type": "GROUP",
+      "line": 70,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-XREF",
+      "pic": null,
+      "type": "GROUP",
+      "line": 71,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-FORMAT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 72,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-BALANCE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 73,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-PROCESSING-FLAGS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 75,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-END-OF-VAL",
+      "pic": null,
+      "type": "GROUP",
+      "line": 76,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "END-OF-VALIDATION",
+      "pic": null,
+      "type": "GROUP",
+      "line": 77,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ERROR-FOUND",
+      "pic": null,
+      "type": "GROUP",
+      "line": 78,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "ERROR-FOUND",
+      "pic": null,
+      "type": "GROUP",
+      "line": 79,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-VALIDATION-TOTALS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 81,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-RECORDS-READ",
+      "pic": null,
+      "type": "GROUP",
+      "line": 82,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-RECORDS-VALID",
+      "pic": null,
+      "type": "GROUP",
+      "line": 83,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-RECORDS-ERROR",
+      "pic": null,
+      "type": "GROUP",
+      "line": 84,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TOTAL-AMOUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 85,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-CONTROL-TOTAL",
+      "pic": null,
+      "type": "GROUP",
+      "line": 86,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-ERROR-LINE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 88,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ERR-TYPE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 89,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "FILLER-89",
+      "pic": null,
+      "type": "GROUP",
+      "line": 90,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ERR-KEY",
+      "pic": null,
+      "type": "GROUP",
+      "line": 91,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "FILLER-91",
+      "pic": null,
+      "type": "GROUP",
+      "line": 92,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ERR-DESC",
+      "pic": null,
+      "type": "GROUP",
+      "line": 93,
+      "children": []
+    }
+  ],
+  "layout_issues": []
 }

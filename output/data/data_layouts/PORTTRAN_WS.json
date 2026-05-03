@@ -1,130 +1,111 @@
-﻿{
-    "record_name":  "PORTTRAN_WS",
-    "source_type":  "program_ws",
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTTRAN.cbl",
-    "fields":  [
-                   {
-                       "line":  46,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-FILE-STATUS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  47,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TRAN-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  48,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-PORT-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  50,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-COUNTERS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  51,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-READ-COUNT",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  52,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-PROCESS-COUNT",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  53,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-ERROR-COUNT",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  55,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-EOF-FLAG",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  56,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "Y",
-                       "name":  "END-OF-FILE",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  57,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "N",
-                       "name":  "MORE-RECORDS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   }
-               ],
-    "issues":  [
-
-               ]
+{
+  "id": "PORTTRAN_WS",
+  "source_type": "program_ws",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTTRAN.cbl",
+  "used_by_programs": [
+    "PORTTRAN"
+  ],
+  "total_fields": 12,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "COPY_ERRHAND",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "ERRHAND",
+      "line": 43,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "COPY_AUDITLOG",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "AUDITLOG",
+      "line": 44,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-FILE-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 46,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TRAN-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 47,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PORT-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 48,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-COUNTERS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 50,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-READ-COUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 51,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PROCESS-COUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 52,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ERROR-COUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 53,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-EOF-FLAG",
+      "pic": null,
+      "type": "GROUP",
+      "line": 55,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "END-OF-FILE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 56,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "MORE-RECORDS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 57,
+      "children": []
+    }
+  ],
+  "layout_issues": []
 }

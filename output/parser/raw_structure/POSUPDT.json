@@ -1,22 +1,17 @@
-﻿{
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     },
-    "paragraphs":  [
-
-                   ],
-    "divisions":  {
-
-                  },
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\POSUPDT.cbl",
-    "total_lines":  1,
-    "program_id":  "POSUPDT",
-    "data_items":  [
-
-                   ]
+{
+  "meta": {
+    "program_id": "POSUPDT",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\POSUPDT.cbl",
+    "total_lines": 1
+  },
+  "parse_issues": [],
+  "control_flow_graph": {
+    "entry_points": [],
+    "terminal_nodes": [],
+    "nodes": [],
+    "edges": [],
+    "dead_code_candidates": [],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

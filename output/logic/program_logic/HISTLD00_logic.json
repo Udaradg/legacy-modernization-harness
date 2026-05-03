@@ -1,118 +1,559 @@
-﻿{
-    "paragraphs":  [
-                       {
-                           "name":  "0000-MAIN",
-                           "line_range":  [
-                                              67,
-                                              67
-                                          ]
-                       },
-                       {
-                           "name":  "1000-INITIALIZE",
-                           "line_range":  [
-                                              80,
-                                              80
-                                          ]
-                       },
-                       {
-                           "name":  "2000-PROCESS",
-                           "line_range":  [
-                                              86,
-                                              86
-                                          ]
-                       },
-                       {
-                           "name":  "3000-TERMINATE",
-                           "line_range":  [
-                                              95,
-                                              95
-                                          ]
-                       },
-                       {
-                           "name":  "1100-OPEN-FILES",
-                           "line_range":  [
-                                              102,
-                                              102
-                                          ]
-                       },
-                       {
-                           "name":  "1200-CONNECT-DB2",
-                           "line_range":  [
-                                              116,
-                                              116
-                                          ]
-                       },
-                       {
-                           "name":  "1300-INIT-CHECKPOINTS",
-                           "line_range":  [
-                                              120,
-                                              120
-                                          ]
-                       },
-                       {
-                           "name":  "2100-READ-HISTORY",
-                           "line_range":  [
-                                              134,
-                                              134
-                                          ]
-                       },
-                       {
-                           "name":  "2200-LOAD-TO-DB2",
-                           "line_range":  [
-                                              143,
-                                              143
-                                          ]
-                       },
-                       {
-                           "name":  "2300-CHECK-COMMIT",
-                           "line_range":  [
-                                              177,
-                                              177
-                                          ]
-                       },
-                       {
-                           "name":  "2310-UPDATE-CHECKPOINT",
-                           "line_range":  [
-                                              191,
-                                              191
-                                          ]
-                       },
-                       {
-                           "name":  "3100-FINAL-COMMIT",
-                           "line_range":  [
-                                              202,
-                                              202
-                                          ]
-                       },
-                       {
-                           "name":  "3200-CLOSE-FILES",
-                           "line_range":  [
-                                              210,
-                                              210
-                                          ]
-                       },
-                       {
-                           "name":  "3300-DISCONNECT-DB2",
-                           "line_range":  [
-                                              215,
-                                              215
-                                          ]
-                       },
-                       {
-                           "name":  "3400-DISPLAY-STATS",
-                           "line_range":  [
-                                              219,
-                                              219
-                                          ]
-                       },
-                       {
-                           "name":  "9000-ERROR-ROUTINE",
-                           "line_range":  [
-                                              226,
-                                              226
-                                          ]
-                       }
-                   ],
-    "source_file":  "src\\programs\\batch\\HISTLD00.cbl",
-    "program_id":  "HISTLD00"
+{
+  "program_id": "HISTLD00",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\HISTLD00.cbl",
+  "processing_timestamp": "2026-05-03T18:35:20.898994Z",
+  "execution_traces": [
+    {
+      "entry_point": "0000-MAIN",
+      "entry_type": "procedure_entry",
+      "steps": [
+        {
+          "step": 1,
+          "paragraph": "0000-MAIN",
+          "action": "PARAGRAPH",
+          "target": null,
+          "condition": null,
+          "line": 67
+        }
+      ]
+    }
+  ],
+  "branch_map": [
+    {
+      "paragraph": "2000-PROCESS",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "MORE-RECORDS",
+          "condition_fields": [
+            "MORE-RECORDS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "1100-OPEN-FILES",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-TH-STATUS NOT = '00'",
+          "condition_fields": [
+            "WS-TH-STATUS"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "WS-BCT-STATUS NOT = '00'",
+          "condition_fields": [
+            "WS-BCT-STATUS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2200-LOAD-TO-DB2",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "SQLCODE = 0",
+          "condition_fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "SQLCODE = -803",
+          "condition_fields": [
+            "SQLCODE"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2300-CHECK-COMMIT",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-COMMIT-COUNT >= WS-COMMIT-THRESHOLD",
+          "condition_fields": [
+            "WS-COMMIT-COUNT",
+            "WS-COMMIT-THRESHOLD"
+          ]
+        }
+      ]
+    }
+  ],
+  "loops": [],
+  "dead_code_confirmed": [],
+  "unresolvable_paths": [],
+  "trace_issues": [],
+  "program_narrative": "HISTLD00 is a COBOL program that orchestrates business processes. It processes input data through multiple stages, performing validation, transformation, and output operations. The program includes error handling and data integrity checks.",
+  "paragraphs": [
+    {
+      "name": "0000-MAIN",
+      "section": null,
+      "line_range": [
+        67,
+        79
+      ],
+      "pseudocode": [
+        "-- Paragraph 0000-MAIN: Core business logic",
+        "CALL 1000-initialize",
+        "CALL 2000-process",
+        "CALL 3000-terminate",
+        "SET return-code = ws-error-count",
+        "RETURN to caller"
+      ],
+      "pseudocode_text": "-- Paragraph 0000-MAIN: Core business logic\nCALL 1000-initialize\nCALL 2000-process\nCALL 3000-terminate\nSET return-code = ws-error-count\nRETURN to caller",
+      "field_references": [
+        "UNTIL",
+        "WS-ERROR-COUNT",
+        "RETURN-CODE",
+        "GOBACK",
+        "PROCESS",
+        "TERMINATE",
+        "END-OF-FILE",
+        "MAIN",
+        "INITIALIZE",
+        "MOVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1000-INITIALIZE",
+      "section": null,
+      "line_range": [
+        80,
+        85
+      ],
+      "pseudocode": [
+        "-- Paragraph 1000-INITIALIZE: Initialisation and setup",
+        "CALL 1100-open-files",
+        "CALL 1200-connect-db2",
+        "CALL 1300-init-checkpoints"
+      ],
+      "pseudocode_text": "-- Paragraph 1000-INITIALIZE: Initialisation and setup\nCALL 1100-open-files\nCALL 1200-connect-db2\nCALL 1300-init-checkpoints",
+      "field_references": [
+        "OPEN-FILES",
+        "INITIALIZE",
+        "CONNECT-DB2",
+        "INIT-CHECKPOINTS"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2000-PROCESS",
+      "section": null,
+      "line_range": [
+        86,
+        94
+      ],
+      "pseudocode": [
+        "-- Paragraph 2000-PROCESS: Main processing logic",
+        "CALL 2100-read-history",
+        "IF MORE-RECORDS THEN",
+        "CALL 2200-load-to-db2",
+        "CALL 2300-check-commit"
+      ],
+      "pseudocode_text": "-- Paragraph 2000-PROCESS: Main processing logic\nCALL 2100-read-history\nIF MORE-RECORDS THEN\nCALL 2200-load-to-db2\nCALL 2300-check-commit",
+      "field_references": [
+        "LOAD-TO-DB2",
+        "MORE-RECORDS",
+        "PROCESS",
+        "CHECK-COMMIT",
+        "READ-HISTORY",
+        "END-IF"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3000-TERMINATE",
+      "section": null,
+      "line_range": [
+        95,
+        101
+      ],
+      "pseudocode": [
+        "-- Paragraph 3000-TERMINATE: Core business logic",
+        "CALL 3100-final-commit",
+        "CALL 3200-close-files",
+        "CALL 3300-disconnect-db2",
+        "CALL 3400-display-stats"
+      ],
+      "pseudocode_text": "-- Paragraph 3000-TERMINATE: Core business logic\nCALL 3100-final-commit\nCALL 3200-close-files\nCALL 3300-disconnect-db2\nCALL 3400-display-stats",
+      "field_references": [
+        "CLOSE-FILES",
+        "DISCONNECT-DB2",
+        "TERMINATE",
+        "FINAL-COMMIT",
+        "DISPLAY-STATS"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1100-OPEN-FILES",
+      "section": null,
+      "line_range": [
+        102,
+        115
+      ],
+      "pseudocode": [
+        "-- Paragraph 1100-OPEN-FILES: Open files and resources",
+        "IF WS-TH-STATUS NOT = '00' THEN",
+        "CALL 9000-error-routine",
+        "IF WS-BCT-STATUS NOT = '00' THEN",
+        "CALL 9000-error-routine"
+      ],
+      "pseudocode_text": "-- Paragraph 1100-OPEN-FILES: Open files and resources\nIF WS-TH-STATUS NOT = '00' THEN\nCALL 9000-error-routine\nIF WS-BCT-STATUS NOT = '00' THEN\nCALL 9000-error-routine",
+      "field_references": [
+        "BATCH-CONTROL-FILE",
+        "OPEN-FILES",
+        "OPEN",
+        "WS-TH-STATUS",
+        "MOVE",
+        "WS-BCT-STATUS",
+        "ERROR-ROUTINE",
+        "INPUT",
+        "ERR-TEXT",
+        "I-O"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1200-CONNECT-DB2",
+      "section": null,
+      "line_range": [
+        116,
+        119
+      ],
+      "pseudocode": [
+        "-- Paragraph 1200-CONNECT-DB2: Core business logic",
+        "CALL connect-to-db2"
+      ],
+      "pseudocode_text": "-- Paragraph 1200-CONNECT-DB2: Core business logic\nCALL connect-to-db2",
+      "field_references": [
+        "CONNECT-DB2",
+        "CONNECT-TO-DB2"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1300-INIT-CHECKPOINTS",
+      "section": null,
+      "line_range": [
+        120,
+        133
+      ],
+      "pseudocode": [
+        "-- Paragraph 1300-INIT-CHECKPOINTS: Initialisation and setup",
+        "INITIALIZE bct-key (special value)",
+        "SET bct-job-name = histld00",
+        "READ next record from batch-control-file",
+        "CALL 9000-error-routine",
+        "SET bct-status = bct-stat-active",
+        "WRITE batch-control-record to output"
+      ],
+      "pseudocode_text": "-- Paragraph 1300-INIT-CHECKPOINTS: Initialisation and setup\nINITIALIZE bct-key (special value)\nSET bct-job-name = histld00\nREAD next record from batch-control-file\nCALL 9000-error-routine\nSET bct-status = bct-stat-active\nWRITE batch-control-record to output",
+      "field_references": [
+        "BCT-STAT-ACTIVE",
+        "BATCH-CONTROL-FILE",
+        "BCT-STATUS",
+        "HISTLD00",
+        "INVALID",
+        "REWRITE",
+        "BATCH-CONTROL-RECORD",
+        "INIT-CHECKPOINTS",
+        "KEY",
+        "ERROR-ROUTINE"
+      ],
+      "calls_made": [],
+      "complexity_score": 3,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2100-READ-HISTORY",
+      "section": null,
+      "line_range": [
+        134,
+        142
+      ],
+      "pseudocode": [
+        "-- Paragraph 2100-READ-HISTORY: Read input records",
+        "READ next record from transaction-history",
+        "INCREMENT ws-records-read BY 1"
+      ],
+      "pseudocode_text": "-- Paragraph 2100-READ-HISTORY: Read input records\nREAD next record from transaction-history\nINCREMENT ws-records-read BY 1",
+      "field_references": [
+        "WS-RECORDS-READ",
+        "ADD",
+        "SET",
+        "END-READ",
+        "END-OF-FILE",
+        "READ-HISTORY",
+        "TRANSACTION-HISTORY"
+      ],
+      "calls_made": [],
+      "complexity_score": 4,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2200-LOAD-TO-DB2",
+      "section": null,
+      "line_range": [
+        143,
+        176
+      ],
+      "pseudocode": [
+        "-- Paragraph 2200-LOAD-TO-DB2: Core business logic",
+        "SET ph-account-no = th-account-no",
+        "SET ph-portfolio-id = th-portfolio-id",
+        "SET ph-trans-date = th-trans-date",
+        "SET ph-trans-time = th-trans-time",
+        "SET ph-trans-type = th-trans-type",
+        "SET ph-security-id = th-security-id",
+        "SET ph-quantity = th-quantity",
+        "SET ph-price = th-price",
+        "SET ph-amount = th-amount",
+        "SET ph-fees = th-fees",
+        "SET ph-total-amount = th-total-amount",
+        "SET ph-cost-basis = th-cost-basis",
+        "SET ph-gain-loss = th-gain-loss",
+        "IF SQLCODE = 0 THEN",
+        "INCREMENT ws-records-written BY 1",
+        "IF SQLCODE = -803 THEN",
+        "INCREMENT ws-error-count BY 1",
+        "CALL db2-error-routine"
+      ],
+      "pseudocode_text": "-- Paragraph 2200-LOAD-TO-DB2: Core business logic\nSET ph-account-no = th-account-no\nSET ph-portfolio-id = th-portfolio-id\nSET ph-trans-date = th-trans-date\nSET ph-trans-time = th-trans-time\nSET ph-trans-type = th-trans-type\nSET ph-security-id = th-security-id\nSET ph-quantity = th-quantity\nSET ph-price = th-price\nSET ph-amount = th-amount\nSET ph-fees = th-fees\nSET ph-total-amount = th-total-amount\nSET ph-cost-basis = th-cost-basis\nSET ph-gain-loss = th-gain-loss\nIF SQLCODE = 0 THEN\nINCREMENT ws-records-written BY 1\nIF SQLCODE = -803 THEN\nINCREMENT ws-error-count BY 1\nCALL db2-error-routine",
+      "field_references": [
+        "PH-TRANS-TIME",
+        "WS-ERROR-COUNT",
+        "PH-FEES",
+        "PH-COST-BASIS",
+        "ADD",
+        "PH-SECURITY-ID",
+        "PH-QUANTITY",
+        "PH-TOTAL-AMOUNT",
+        "PH-GAIN-LOSS",
+        "POSHIST"
+      ],
+      "calls_made": [],
+      "complexity_score": 4,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2300-CHECK-COMMIT",
+      "section": null,
+      "line_range": [
+        177,
+        190
+      ],
+      "pseudocode": [
+        "-- Paragraph 2300-CHECK-COMMIT: Core business logic",
+        "INCREMENT ws-commit-count BY 1",
+        "IF WS-COMMIT-COUNT >= WS-COMMIT-THRESHOLD THEN",
+        "SET ws-commit-count = 0",
+        "CALL 2310-update-checkpoint"
+      ],
+      "pseudocode_text": "-- Paragraph 2300-CHECK-COMMIT: Core business logic\nINCREMENT ws-commit-count BY 1\nIF WS-COMMIT-COUNT >= WS-COMMIT-THRESHOLD THEN\nSET ws-commit-count = 0\nCALL 2310-update-checkpoint",
+      "field_references": [
+        "UPDATE-CHECKPOINT",
+        "END-EXEC",
+        "WS-COMMIT-THRESHOLD",
+        "EXEC",
+        "SQL",
+        "WORK",
+        "WS-COMMIT-COUNT",
+        "COMMIT",
+        "ADD",
+        "CHECK-COMMIT"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2310-UPDATE-CHECKPOINT",
+      "section": null,
+      "line_range": [
+        191,
+        201
+      ],
+      "pseudocode": [
+        "-- Paragraph 2310-UPDATE-CHECKPOINT: Core business logic",
+        "SET bct-records-read = ws-records-read",
+        "SET bct-records-written = ws-records-written",
+        "WRITE batch-control-record to output",
+        "CALL 9000-error-routine"
+      ],
+      "pseudocode_text": "-- Paragraph 2310-UPDATE-CHECKPOINT: Core business logic\nSET bct-records-read = ws-records-read\nSET bct-records-written = ws-records-written\nWRITE batch-control-record to output\nCALL 9000-error-routine",
+      "field_references": [
+        "REWRITE",
+        "UPDATE-CHECKPOINT",
+        "WS-RECORDS-READ",
+        "BCT-RECORDS-READ",
+        "INVALID",
+        "END-REWRITE",
+        "WS-RECORDS-WRITTEN",
+        "BATCH-CONTROL-RECORD",
+        "BCT-RECORDS-WRITTEN",
+        "KEY"
+      ],
+      "calls_made": [],
+      "complexity_score": 4,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3100-FINAL-COMMIT",
+      "section": null,
+      "line_range": [
+        202,
+        209
+      ],
+      "pseudocode": [
+        "-- Paragraph 3100-FINAL-COMMIT: Core business logic",
+        "CALL 2310-update-checkpoint"
+      ],
+      "pseudocode_text": "-- Paragraph 3100-FINAL-COMMIT: Core business logic\nCALL 2310-update-checkpoint",
+      "field_references": [
+        "UPDATE-CHECKPOINT",
+        "END-EXEC",
+        "EXEC",
+        "SQL",
+        "WORK",
+        "COMMIT",
+        "FINAL-COMMIT"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3200-CLOSE-FILES",
+      "section": null,
+      "line_range": [
+        210,
+        214
+      ],
+      "pseudocode": [
+        "-- Paragraph 3200-CLOSE-FILES: Close files and cleanup",
+        "CLOSE transaction-history"
+      ],
+      "pseudocode_text": "-- Paragraph 3200-CLOSE-FILES: Close files and cleanup\nCLOSE transaction-history",
+      "field_references": [
+        "CLOSE",
+        "BATCH-CONTROL-FILE",
+        "CLOSE-FILES",
+        "TRANSACTION-HISTORY"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3300-DISCONNECT-DB2",
+      "section": null,
+      "line_range": [
+        215,
+        218
+      ],
+      "pseudocode": [
+        "-- Paragraph 3300-DISCONNECT-DB2: Core business logic",
+        "CALL disconnect-from-db2"
+      ],
+      "pseudocode_text": "-- Paragraph 3300-DISCONNECT-DB2: Core business logic\nCALL disconnect-from-db2",
+      "field_references": [
+        "DISCONNECT-FROM-DB2",
+        "DISCONNECT-DB2"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3400-DISPLAY-STATS",
+      "section": null,
+      "line_range": [
+        219,
+        225
+      ],
+      "pseudocode": [
+        "-- Paragraph 3400-DISPLAY-STATS: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph 3400-DISPLAY-STATS: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "WS-RECORDS-READ",
+        "HISTLD00",
+        "DISPLAY",
+        "WS-RECORDS-WRITTEN",
+        "WS-ERROR-COUNT",
+        "DISPLAY-STATS"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "9000-ERROR-ROUTINE",
+      "section": null,
+      "line_range": [
+        226,
+        233
+      ],
+      "pseudocode": [
+        "-- Paragraph 9000-ERROR-ROUTINE: Error handling",
+        "SET err-program = histld00",
+        "CALL ERRPROC"
+      ],
+      "pseudocode_text": "-- Paragraph 9000-ERROR-ROUTINE: Error handling\nSET err-program = histld00\nCALL ERRPROC",
+      "field_references": [
+        "HISTLD00",
+        "END-EXEC",
+        "EXEC",
+        "USING",
+        "SQL",
+        "WORK",
+        "ERR-MESSAGE",
+        "ROLLBACK",
+        "ERROR-ROUTINE",
+        "ERR-PROGRAM"
+      ],
+      "calls_made": [
+        "ERRPROC"
+      ],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    }
+  ],
+  "unresolved_statements": [],
+  "pseudocode_issues": []
 }

@@ -1,154 +1,118 @@
-﻿{
-    "record_name":  "PORTTEST_WS",
-    "source_type":  "program_ws",
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTTEST.cbl",
-    "fields":  [
-                   {
-                       "line":  30,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-VARIABLES",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  31,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-FILE-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  32,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "0",
-                       "name":  "WS-RECORD-COUNT",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  33,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "100",
-                       "name":  "WS-MAX-RECORDS",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  34,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-CURRENT-DATE",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  36,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-TEST-VALUES",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  37,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ICT",
-                       "name":  "WS-CLIENT-TYPES",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  38,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ACS",
-                       "name":  "WS-STATUS-TYPES",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  39,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "TEST",
-                       "name":  "WS-NAME-PREFIX",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  41,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-SUBSCRIPTS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  42,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TYPE-SUB",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  43,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-STATUS-SUB",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   }
-               ],
-    "issues":  [
-
-               ]
+{
+  "id": "PORTTEST_WS",
+  "source_type": "program_ws",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTTEST.cbl",
+  "used_by_programs": [
+    "PORTTEST"
+  ],
+  "total_fields": 13,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "COPY_ERRHAND",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "ERRHAND",
+      "line": 28,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-VARIABLES",
+      "pic": null,
+      "type": "GROUP",
+      "line": 30,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-FILE-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 31,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-RECORD-COUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 32,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-MAX-RECORDS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 33,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-CURRENT-DATE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 34,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-TEST-VALUES",
+      "pic": null,
+      "type": "GROUP",
+      "line": 36,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-CLIENT-TYPES",
+      "pic": null,
+      "type": "GROUP",
+      "line": 37,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-STATUS-TYPES",
+      "pic": null,
+      "type": "GROUP",
+      "line": 38,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-NAME-PREFIX",
+      "pic": null,
+      "type": "GROUP",
+      "line": 39,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-SUBSCRIPTS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 41,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TYPE-SUB",
+      "pic": null,
+      "type": "GROUP",
+      "line": 42,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-STATUS-SUB",
+      "pic": null,
+      "type": "GROUP",
+      "line": 43,
+      "children": []
+    }
+  ],
+  "layout_issues": []
 }

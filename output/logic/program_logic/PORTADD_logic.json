@@ -1,41 +1,214 @@
-﻿{
-    "paragraphs":  [
-                       {
-                           "name":  "0000-MAIN",
-                           "line_range":  [
-                                              76,
-                                              76
-                                          ]
-                       },
-                       {
-                           "name":  "1000-INITIALIZE",
-                           "line_range":  [
-                                              86,
-                                              86
-                                          ]
-                       },
-                       {
-                           "name":  "2000-PROCESS",
-                           "line_range":  [
-                                              104,
-                                              104
-                                          ]
-                       },
-                       {
-                           "name":  "2100-VALIDATE-AND-ADD",
-                           "line_range":  [
-                                              113,
-                                              113
-                                          ]
-                       },
-                       {
-                           "name":  "3000-TERMINATE",
-                           "line_range":  [
-                                              139,
-                                              139
-                                          ]
-                       }
-                   ],
-    "source_file":  "src\\programs\\portfolio\\PORTADD.cbl",
-    "program_id":  "PORTADD"
+{
+  "program_id": "PORTADD",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTADD.cbl",
+  "processing_timestamp": "2026-05-03T18:35:21.103242Z",
+  "execution_traces": [
+    {
+      "entry_point": "0000-MAIN",
+      "entry_type": "procedure_entry",
+      "steps": [
+        {
+          "step": 1,
+          "paragraph": "0000-MAIN",
+          "action": "PARAGRAPH",
+          "target": null,
+          "condition": null,
+          "line": 76
+        }
+      ]
+    }
+  ],
+  "branch_map": [
+    {
+      "paragraph": "1000-INITIALIZE",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "NOT WS-SUCCESS-STATUS OR",
+          "condition_fields": [
+            "WS-SUCCESS-STATUS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2100-VALIDATE-AND-ADD",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "PORT-ID EQUAL SPACES OR",
+          "condition_fields": [
+            "PORT-ID"
+          ]
+        },
+        {
+          "type": "EVALUATE",
+          "subject": "TRUE"
+        }
+      ]
+    }
+  ],
+  "loops": [],
+  "dead_code_confirmed": [],
+  "unresolvable_paths": [],
+  "trace_issues": [],
+  "program_narrative": "PORTADD is a COBOL program that orchestrates business processes. It processes input data through multiple stages, performing validation, transformation, and output operations. The program includes error handling and data integrity checks.",
+  "paragraphs": [
+    {
+      "name": "0000-MAIN",
+      "section": null,
+      "line_range": [
+        76,
+        85
+      ],
+      "pseudocode": [
+        "-- Paragraph 0000-MAIN: Core business logic",
+        "CALL 1000-initialize",
+        "CALL 2000-process",
+        "CALL 3000-terminate"
+      ],
+      "pseudocode_text": "-- Paragraph 0000-MAIN: Core business logic\nCALL 1000-initialize\nCALL 2000-process\nCALL 3000-terminate",
+      "field_references": [
+        "UNTIL",
+        "GOBACK",
+        "PROCESS",
+        "TERMINATE",
+        "END-OF-FILE",
+        "MAIN",
+        "INITIALIZE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1000-INITIALIZE",
+      "section": null,
+      "line_range": [
+        86,
+        103
+      ],
+      "pseudocode": [
+        "-- Paragraph 1000-INITIALIZE: Initialisation and setup",
+        "IF NOT WS-SUCCESS-STATUS OR THEN",
+        "SET ws-return-code = ws-error",
+        "CALL 3000-terminate"
+      ],
+      "pseudocode_text": "-- Paragraph 1000-INITIALIZE: Initialisation and setup\nIF NOT WS-SUCCESS-STATUS OR THEN\nSET ws-return-code = ws-error\nCALL 3000-terminate",
+      "field_references": [
+        "INITIALIZE",
+        "WS-INPUT-STATUS",
+        "WS-RETURN-CODE",
+        "TERMINATE",
+        "INPUT-FILE",
+        "OPEN",
+        "YYYYMMDD",
+        "DISPLAY",
+        "PORT",
+        "ACCEPT"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2000-PROCESS",
+      "section": null,
+      "line_range": [
+        104,
+        112
+      ],
+      "pseudocode": [
+        "-- Paragraph 2000-PROCESS: Main processing logic",
+        "READ next record from input-file INTO port-record",
+        "CALL 2100-validate-and-add"
+      ],
+      "pseudocode_text": "-- Paragraph 2000-PROCESS: Main processing logic\nREAD next record from input-file INTO port-record\nCALL 2100-validate-and-add",
+      "field_references": [
+        "PORT-RECORD",
+        "SET",
+        "PROCESS",
+        "END-READ",
+        "VALIDATE-AND-ADD",
+        "END-OF-FILE",
+        "INPUT-FILE"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2100-VALIDATE-AND-ADD",
+      "section": null,
+      "line_range": [
+        113,
+        138
+      ],
+      "pseudocode": [
+        "-- Paragraph 2100-VALIDATE-AND-ADD: Validation logic",
+        "IF PORT-ID EQUAL SPACES OR THEN",
+        "INCREMENT ws-error-count BY 1",
+        "SET port-create-date = ws-current-date",
+        "SET port-last-maint = ws-current-date",
+        "WRITE port-record to output",
+        "EVALUATE (TRUE)",
+        "INCREMENT ws-add-count BY 1",
+        "INCREMENT ws-dup-count BY 1",
+        "INCREMENT ws-error-count BY 1",
+        "WRITE error to output"
+      ],
+      "pseudocode_text": "-- Paragraph 2100-VALIDATE-AND-ADD: Validation logic\nIF PORT-ID EQUAL SPACES OR THEN\nINCREMENT ws-error-count BY 1\nSET port-create-date = ws-current-date\nSET port-last-maint = ws-current-date\nWRITE port-record to output\nEVALUATE (TRUE)\nINCREMENT ws-add-count BY 1\nINCREMENT ws-dup-count BY 1\nINCREMENT ws-error-count BY 1\nWRITE error to output",
+      "field_references": [
+        "WS-ERROR-COUNT",
+        "ADD",
+        "WS-ADD-COUNT",
+        "VALIDATE-AND-ADD",
+        "A",
+        "DISPLAY",
+        "PORT-CREATE-DATE",
+        "WS-DUP-COUNT",
+        "WS-CURRENT-DATE",
+        "END-IF"
+      ],
+      "calls_made": [],
+      "complexity_score": 10,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3000-TERMINATE",
+      "section": null,
+      "line_range": [
+        139,
+        148
+      ],
+      "pseudocode": [
+        "-- Paragraph 3000-TERMINATE: Core business logic",
+        "CLOSE portfolio-file",
+        "SET return-code = ws-return-code"
+      ],
+      "pseudocode_text": "-- Paragraph 3000-TERMINATE: Core business logic\nCLOSE portfolio-file\nSET return-code = ws-return-code",
+      "field_references": [
+        "DISPLAY",
+        "WS-ERROR-COUNT",
+        "PORTFOLIO-FILE",
+        "WS-ADD-COUNT",
+        "RETURN-CODE",
+        "WS-DUP-COUNT",
+        "WS-RETURN-CODE",
+        "TERMINATE",
+        "CLOSE",
+        "MOVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    }
+  ],
+  "unresolved_statements": [],
+  "pseudocode_issues": []
 }

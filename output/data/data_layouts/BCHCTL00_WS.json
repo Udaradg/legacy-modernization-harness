@@ -1,272 +1,127 @@
-﻿{
-    "record_name": "BCHCTL00_WS",
-    "source_type": "program_ws",
-    "source_file": "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\BCHCTL00.cbl",
-    "fields": [
-        {
-            "line": 33,
-            "type": "UNKNOWN",
-            "is_condition": false,
-            "redefines": null,
-            "level": 1,
-            "value": null,
-            "name": "WS-FILE-STATUS",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 34,
-            "type": "STRING",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": null,
-            "name": "WS-BCT-STATUS",
-            "pic": "X(",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 36,
-            "type": "UNKNOWN",
-            "is_condition": false,
-            "redefines": null,
-            "level": 1,
-            "value": null,
-            "name": "WS-WORK-AREAS",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 37,
-            "type": "STRING",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": null,
-            "name": "WS-CURRENT-TIME",
-            "pic": "X(",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 38,
-            "type": "STRING",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": null,
-            "name": "WS-PREREQ-MET",
-            "pic": "X(",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 39,
-            "type": "UNKNOWN",
-            "is_condition": true,
-            "redefines": null,
-            "level": 88,
-            "value": "Y",
-            "name": "PREREQS-SATISFIED",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 40,
-            "type": "UNKNOWN",
-            "is_condition": true,
-            "redefines": null,
-            "level": 88,
-            "value": "N",
-            "name": "PREREQS-PENDING",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 41,
-            "type": "STRING",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": null,
-            "name": "WS-PROCESS-MODE",
-            "pic": "X(",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 42,
-            "type": "UNKNOWN",
-            "is_condition": true,
-            "redefines": null,
-            "level": 88,
-            "value": "I",
-            "name": "MODE-INITIALIZE",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 43,
-            "type": "UNKNOWN",
-            "is_condition": true,
-            "redefines": null,
-            "level": 88,
-            "value": "C",
-            "name": "MODE-CHECK-PREREQ",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 44,
-            "type": "UNKNOWN",
-            "is_condition": true,
-            "redefines": null,
-            "level": 88,
-            "value": "U",
-            "name": "MODE-UPDATE-STATUS",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 45,
-            "type": "UNKNOWN",
-            "is_condition": true,
-            "redefines": null,
-            "level": 88,
-            "value": "F",
-            "name": "MODE-FINALIZE",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 48,
-            "type": "UNKNOWN",
-            "is_condition": false,
-            "redefines": null,
-            "level": 1,
-            "value": null,
-            "name": "LS-CONTROL-REQUEST",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 49,
-            "type": "STRING",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": null,
-            "name": "LS-FUNCTION",
-            "pic": "X(",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 50,
-            "type": "UNKNOWN",
-            "is_condition": true,
-            "redefines": null,
-            "level": 88,
-            "value": "INIT",
-            "name": "FUNC-INIT",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 51,
-            "type": "UNKNOWN",
-            "is_condition": true,
-            "redefines": null,
-            "level": 88,
-            "value": "CHEK",
-            "name": "FUNC-CHEK",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 52,
-            "type": "UNKNOWN",
-            "is_condition": true,
-            "redefines": null,
-            "level": 88,
-            "value": "UPDT",
-            "name": "FUNC-UPDT",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 53,
-            "type": "UNKNOWN",
-            "is_condition": true,
-            "redefines": null,
-            "level": 88,
-            "value": "TERM",
-            "name": "FUNC-TERM",
-            "pic": null,
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 54,
-            "type": "STRING",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": null,
-            "name": "LS-JOB-NAME",
-            "pic": "X(",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 55,
-            "type": "STRING",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": null,
-            "name": "LS-PROCESS-DATE",
-            "pic": "X(",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 56,
-            "type": "INTEGER",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": null,
-            "name": "LS-SEQUENCE-NO",
-            "pic": "9(",
-            "length": 0,
-            "occurs": null
-        },
-        {
-            "line": 57,
-            "type": "SIGNED_INTEGER",
-            "is_condition": false,
-            "redefines": null,
-            "level": 5,
-            "value": null,
-            "name": "LS-RETURN-CODE",
-            "pic": "S9(",
-            "length": 0,
-            "occurs": null
-        }
-    ],
-    "issues": []
+{
+  "id": "BCHCTL00_WS",
+  "source_type": "program_ws",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\BCHCTL00.cbl",
+  "used_by_programs": [
+    "BCHCTL00"
+  ],
+  "total_fields": 14,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "COPY_BCHCON",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "BCHCON",
+      "line": 30,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "COPY_ERRHAND",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "ERRHAND",
+      "line": 31,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-FILE-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 33,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-BCT-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 34,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-WORK-AREAS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 36,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-CURRENT-TIME",
+      "pic": null,
+      "type": "GROUP",
+      "line": 37,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PREREQ-MET",
+      "pic": null,
+      "type": "GROUP",
+      "line": 38,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "PREREQS-SATISFIED",
+      "pic": null,
+      "type": "GROUP",
+      "line": 39,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "PREREQS-PENDING",
+      "pic": null,
+      "type": "GROUP",
+      "line": 40,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PROCESS-MODE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 41,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "MODE-INITIALIZE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 42,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "MODE-CHECK-PREREQ",
+      "pic": null,
+      "type": "GROUP",
+      "line": 43,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "MODE-UPDATE-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 44,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "MODE-FINALIZE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 45,
+      "children": []
+    }
+  ],
+  "layout_issues": []
 }

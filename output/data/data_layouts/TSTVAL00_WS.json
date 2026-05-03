@@ -1,694 +1,423 @@
-﻿{
-    "record_name":  "TSTVAL00_WS",
-    "source_type":  "program_ws",
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\test\\TSTVAL00.cbl",
-    "fields":  [
-                   {
-                       "line":  45,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "TEST-CASE-RECORD",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  46,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "TEST-ID",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  47,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "TEST-TYPE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  48,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "TEST-DESCRIPTION",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  49,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "TEST-PARAMETERS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  54,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "EXPECTED-RECORD",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  59,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "ACTUAL-RECORD",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  64,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "REPORT-RECORD",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  70,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-FILE-STATUS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  71,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TEST-STATUS",
-                       "pic":  "XX.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  72,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-EXP-STATUS",
-                       "pic":  "XX.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  73,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-ACT-STATUS",
-                       "pic":  "XX.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  74,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-RPT-STATUS",
-                       "pic":  "XX.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  76,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-TEST-TYPES",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  77,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "FUNCTIONAL",
-                       "name":  "WS-FUNCTIONAL",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  78,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "INTEGRATE",
-                       "name":  "WS-INTEGRATION",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  79,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "PERFORM",
-                       "name":  "WS-PERFORMANCE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  80,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ERROR",
-                       "name":  "WS-ERROR",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  82,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-PROCESSING-FLAGS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  83,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "N",
-                       "name":  "WS-END-OF-TESTS",
-                       "pic":  "X",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  84,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "Y",
-                       "name":  "END-OF-TESTS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  85,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "N",
-                       "name":  "WS-TEST-PASSED",
-                       "pic":  "X",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  86,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "Y",
-                       "name":  "TEST-PASSED",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  88,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-TEST-METRICS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  89,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-TOTAL-TESTS",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  90,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-TESTS-PASSED",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  91,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-TESTS-FAILED",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  92,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-START-TIME",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  93,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-END-TIME",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  94,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-ELAPSED-TIME",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  96,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-REPORT-HEADERS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  97,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-HEADER1",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  98,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "ALL",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  99,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-HEADER2",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  100,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "SPACES",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  101,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  103,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "SPACES",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  105,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-TEST-DETAIL",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  106,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TEST-ID-OUT",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  107,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "SPACES",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  108,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TEST-TYPE-OUT",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  109,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "SPACES",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  110,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TEST-DESC-OUT",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  111,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "SPACES",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  112,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TEST-STATUS-OUT",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  113,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "SPACES",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  115,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-SUMMARY-LINE",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  116,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "TOTAL TESTS:",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  117,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TOTAL-OUT",
-                       "pic":  "ZZ,ZZ9.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  118,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "PASSED:",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  119,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-PASSED-OUT",
-                       "pic":  "ZZ,ZZ9.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  120,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "FAILED:",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  121,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-FAILED-OUT",
-                       "pic":  "ZZ,ZZ9.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  122,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "SUCCESS:",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  123,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-SUCCESS-RATE",
-                       "pic":  "ZZ9.99.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  124,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "%",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  125,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "SPACES",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   }
-               ],
-    "issues":  [
-
-               ]
+{
+  "id": "TSTVAL00_WS",
+  "source_type": "program_ws",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\test\\TSTVAL00.cbl",
+  "used_by_programs": [
+    "TSTVAL00"
+  ],
+  "total_fields": 51,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "COPY_RTNCODE",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "RTNCODE",
+      "line": 67,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "COPY_ERRHAND",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "ERRHAND",
+      "line": 68,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-FILE-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 70,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TEST-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 71,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-EXP-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 72,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ACT-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 73,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-RPT-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 74,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-TEST-TYPES",
+      "pic": null,
+      "type": "GROUP",
+      "line": 76,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-FUNCTIONAL",
+      "pic": null,
+      "type": "GROUP",
+      "line": 77,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-INTEGRATION",
+      "pic": null,
+      "type": "GROUP",
+      "line": 78,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PERFORMANCE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 79,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ERROR",
+      "pic": null,
+      "type": "GROUP",
+      "line": 80,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-PROCESSING-FLAGS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 82,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-END-OF-TESTS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 83,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "END-OF-TESTS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 84,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TEST-PASSED",
+      "pic": null,
+      "type": "GROUP",
+      "line": 85,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "TEST-PASSED",
+      "pic": null,
+      "type": "GROUP",
+      "line": 86,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-TEST-METRICS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 88,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TOTAL-TESTS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 89,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TESTS-PASSED",
+      "pic": null,
+      "type": "GROUP",
+      "line": 90,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TESTS-FAILED",
+      "pic": null,
+      "type": "GROUP",
+      "line": 91,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-START-TIME",
+      "pic": null,
+      "type": "GROUP",
+      "line": 92,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-END-TIME",
+      "pic": null,
+      "type": "GROUP",
+      "line": 93,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ELAPSED-TIME",
+      "pic": null,
+      "type": "GROUP",
+      "line": 94,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-REPORT-HEADERS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 96,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-HEADER1",
+      "pic": null,
+      "type": "GROUP",
+      "line": 97,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-97",
+      "pic": null,
+      "type": "GROUP",
+      "line": 98,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-HEADER2",
+      "pic": null,
+      "type": "GROUP",
+      "line": 99,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-99",
+      "pic": null,
+      "type": "GROUP",
+      "line": 100,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-100",
+      "pic": null,
+      "type": "GROUP",
+      "line": 101,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "FILLER-102",
+      "pic": null,
+      "type": "GROUP",
+      "line": 103,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-TEST-DETAIL",
+      "pic": null,
+      "type": "GROUP",
+      "line": 105,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TEST-ID-OUT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 106,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "FILLER-106",
+      "pic": null,
+      "type": "GROUP",
+      "line": 107,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TEST-TYPE-OUT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 108,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "FILLER-108",
+      "pic": null,
+      "type": "GROUP",
+      "line": 109,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TEST-DESC-OUT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 110,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "FILLER-110",
+      "pic": null,
+      "type": "GROUP",
+      "line": 111,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TEST-STATUS-OUT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 112,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "FILLER-112",
+      "pic": null,
+      "type": "GROUP",
+      "line": 113,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-SUMMARY-LINE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 115,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "FILLER-115",
+      "pic": null,
+      "type": "GROUP",
+      "line": 116,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TOTAL-OUT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 117,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "FILLER-117",
+      "pic": null,
+      "type": "GROUP",
+      "line": 118,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PASSED-OUT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 119,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "FILLER-119",
+      "pic": null,
+      "type": "GROUP",
+      "line": 120,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-FAILED-OUT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 121,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "FILLER-121",
+      "pic": null,
+      "type": "GROUP",
+      "line": 122,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-SUCCESS-RATE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 123,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "FILLER-123",
+      "pic": null,
+      "type": "GROUP",
+      "line": 124,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "FILLER-124",
+      "pic": null,
+      "type": "GROUP",
+      "line": 125,
+      "children": []
+    }
+  ],
+  "layout_issues": []
 }

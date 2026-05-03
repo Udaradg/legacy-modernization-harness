@@ -1,141 +1,1000 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "BCHCTL",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "PRCSEQ",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "BCHCON",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "ERRHAND",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  302,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RCVPRC00.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  71,
-                           "name":  "0000-MAIN",
-                           "start_line":  71
-                       },
-                       {
-                           "end_line":  88,
-                           "name":  "1000-INITIALIZE-RECOVERY",
-                           "start_line":  88
-                       },
-                       {
-                           "end_line":  94,
-                           "name":  "2000-PROCESS-RECOVERY",
-                           "start_line":  94
-                       },
-                       {
-                           "end_line":  105,
-                           "name":  "3000-TERMINATE-RECOVERY",
-                           "start_line":  105
-                       },
-                       {
-                           "end_line":  110,
-                           "name":  "9000-ERROR-ROUTINE",
-                           "start_line":  110
-                       },
-                       {
-                           "end_line":  118,
-                           "name":  "1100-OPEN-FILES",
-                           "start_line":  118
-                       },
-                       {
-                           "end_line":  132,
-                           "name":  "1200-VALIDATE-REQUEST",
-                           "start_line":  132
-                       },
-                       {
-                           "end_line":  149,
-                           "name":  "1300-SET-RECOVERY-MODE",
-                           "start_line":  149
-                       },
-                       {
-                           "end_line":  159,
-                           "name":  "2100-RECOVER-PROCESS",
-                           "start_line":  159
-                       },
-                       {
-                           "end_line":  173,
-                           "name":  "2110-DETERMINE-ACTION",
-                           "start_line":  173
-                       },
-                       {
-                           "end_line":  193,
-                           "name":  "2120-EXECUTE-RECOVERY",
-                           "start_line":  193
-                       },
-                       {
-                           "end_line":  204,
-                           "name":  "2121-RESTART-PROCESS",
-                           "start_line":  204
-                       },
-                       {
-                           "end_line":  217,
-                           "name":  "2122-BYPASS-PROCESS",
-                           "start_line":  217
-                       },
-                       {
-                           "end_line":  229,
-                           "name":  "2123-TERMINATE-PROCESS",
-                           "start_line":  229
-                       },
-                       {
-                           "end_line":  241,
-                           "name":  "2200-RECOVER-SEQUENCE",
-                           "start_line":  241
-                       },
-                       {
-                           "end_line":  263,
-                           "name":  "2300-RECOVER-ALL",
-                           "start_line":  263
-                       },
-                       {
-                           "end_line":  283,
-                           "name":  "3100-UPDATE-FINAL-STATUS",
-                           "start_line":  283
-                       },
-                       {
-                           "end_line":  293,
-                           "name":  "3200-CLOSE-FILES",
-                           "start_line":  293
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  30,
-                                          "start_line":  10
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  302,
-                                        "start_line":  70
-                                    },
-                      "DATA":  {
-                                   "end_line":  69,
-                                   "start_line":  31
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  9,
-                                             "start_line":  7
-                                         }
-                  },
-    "program_id":  "RCVPRC00",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "RCVPRC00",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RCVPRC00.cbl",
+    "total_lines": 302
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 7,
+    "end_line": 9,
+    "program_id": "RCVPRC00"
+  },
+  "data_division": {
+    "start_line": 31,
+    "end_line": 69,
+    "file_section": {
+      "entries": [
+        {
+          "type": "FD",
+          "file_name": "BATCH-CONTROL-FILE",
+          "line": 33,
+          "end_line": 35,
+          "recording_mode": null,
+          "record_contains": null,
+          "block_contains": null
+        },
+        {
+          "type": "FD",
+          "file_name": "PROCESS-SEQ-FILE",
+          "line": 36,
+          "end_line": 38,
+          "recording_mode": null,
+          "record_contains": null,
+          "block_contains": null
+        }
+      ],
+      "start_line": 32
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "type": "copy_stub",
+          "copybook": "BCHCON",
+          "library": null,
+          "line": 40,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "type": "copy_stub",
+          "copybook": "ERRHAND",
+          "library": null,
+          "line": 41,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "level": 1,
+          "name": "WS-FILE-STATUS",
+          "line": 43,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-BCT-STATUS",
+          "line": 44,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-PSR-STATUS",
+          "line": 45,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-WORK-AREAS",
+          "line": 47,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-CURRENT-TIME",
+          "line": 48,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-RECOVERY-MODE",
+          "line": 49,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-RECOVER-PROCESS",
+          "line": 50,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'P'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-RECOVER-SEQUENCE",
+          "line": 51,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'S'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-RECOVER-ALL",
+          "line": 52,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'A'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-RECOVERY-ACTION",
+          "line": 53,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-ACTION-RESTART",
+          "line": 54,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'R'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-ACTION-BYPASS",
+          "line": 55,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'B'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-ACTION-TERMINATE",
+          "line": 56,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'T'",
+          "children": []
+        }
+      ],
+      "start_line": 39
+    },
+    "linkage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "LS-RECOVERY-REQUEST",
+          "line": 59,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-FUNCTION",
+          "line": 60,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "FUNC-INIT",
+          "line": 61,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'INIT'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "FUNC-RECV",
+          "line": 62,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'RECV'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "FUNC-TERM",
+          "line": 63,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'TERM'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-PROCESS-DATE",
+          "line": 64,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-PROCESS-ID",
+          "line": 65,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-RECOVERY-TYPE",
+          "line": 66,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-RECOVERY-PARM",
+          "line": 67,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-RETURN-CODE",
+          "line": 68,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 58
+    }
+  },
+  "procedure_division": {
+    "start_line": 70,
+    "end_line": 302,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 71,
+        "end_line": 87,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-INITIALIZE-RECOVERY",
+        "section": null,
+        "start_line": 88,
+        "end_line": 93,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-PROCESS-RECOVERY",
+        "section": null,
+        "start_line": 94,
+        "end_line": 104,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-TERMINATE-RECOVERY",
+        "section": null,
+        "start_line": 105,
+        "end_line": 109,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "9000-ERROR-ROUTINE",
+        "section": null,
+        "start_line": 110,
+        "end_line": 117,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1100-OPEN-FILES",
+        "section": null,
+        "start_line": 118,
+        "end_line": 131,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1200-VALIDATE-REQUEST",
+        "section": null,
+        "start_line": 132,
+        "end_line": 148,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1300-SET-RECOVERY-MODE",
+        "section": null,
+        "start_line": 149,
+        "end_line": 158,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2100-RECOVER-PROCESS",
+        "section": null,
+        "start_line": 159,
+        "end_line": 172,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2110-DETERMINE-ACTION",
+        "section": null,
+        "start_line": 173,
+        "end_line": 192,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2120-EXECUTE-RECOVERY",
+        "section": null,
+        "start_line": 193,
+        "end_line": 203,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2121-RESTART-PROCESS",
+        "section": null,
+        "start_line": 204,
+        "end_line": 216,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2122-BYPASS-PROCESS",
+        "section": null,
+        "start_line": 217,
+        "end_line": 228,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2123-TERMINATE-PROCESS",
+        "section": null,
+        "start_line": 229,
+        "end_line": 240,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2200-RECOVER-SEQUENCE",
+        "section": null,
+        "start_line": 241,
+        "end_line": 262,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2300-RECOVER-ALL",
+        "section": null,
+        "start_line": 263,
+        "end_line": 282,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3100-UPDATE-FINAL-STATUS",
+        "section": null,
+        "start_line": 283,
+        "end_line": 292,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3200-CLOSE-FILES",
+        "section": null,
+        "start_line": 293,
+        "end_line": 302,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 85
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 71,
+        "end_line": 87,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-INITIALIZE-RECOVERY",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 88,
+        "end_line": 93,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-PROCESS-RECOVERY",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 94,
+        "end_line": 104,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-TERMINATE-RECOVERY",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 105,
+        "end_line": 109,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "9000-ERROR-ROUTINE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 110,
+        "end_line": 117,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1100-OPEN-FILES",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 118,
+        "end_line": 131,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1200-VALIDATE-REQUEST",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 132,
+        "end_line": 148,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1300-SET-RECOVERY-MODE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 149,
+        "end_line": 158,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2100-RECOVER-PROCESS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 159,
+        "end_line": 172,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2110-DETERMINE-ACTION",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 173,
+        "end_line": 192,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2120-EXECUTE-RECOVERY",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 193,
+        "end_line": 203,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2121-RESTART-PROCESS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 204,
+        "end_line": 216,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2122-BYPASS-PROCESS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 217,
+        "end_line": 228,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2123-TERMINATE-PROCESS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 229,
+        "end_line": 240,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2200-RECOVER-SEQUENCE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 241,
+        "end_line": 262,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2300-RECOVER-ALL",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 263,
+        "end_line": 282,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3100-UPDATE-FINAL-STATUS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 283,
+        "end_line": 292,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3200-CLOSE-FILES",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 293,
+        "end_line": 302,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 74,
+        "unstructured": false,
+        "to": "1000-INITIALIZE-RECOVERY"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 76,
+        "unstructured": false,
+        "to": "2000-PROCESS-RECOVERY"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 78,
+        "unstructured": false,
+        "to": "3000-TERMINATE-RECOVERY"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 81,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "1000-INITIALIZE-RECOVERY",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 89,
+        "unstructured": false,
+        "to": "1100-OPEN-FILES"
+      },
+      {
+        "from": "1000-INITIALIZE-RECOVERY",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 90,
+        "unstructured": false,
+        "to": "1200-VALIDATE-REQUEST"
+      },
+      {
+        "from": "1000-INITIALIZE-RECOVERY",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 91,
+        "unstructured": false,
+        "to": "1300-SET-RECOVERY-MODE"
+      },
+      {
+        "from": "2000-PROCESS-RECOVERY",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 97,
+        "unstructured": false,
+        "to": "2100-RECOVER-PROCESS"
+      },
+      {
+        "from": "2000-PROCESS-RECOVERY",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 99,
+        "unstructured": false,
+        "to": "2200-RECOVER-SEQUENCE"
+      },
+      {
+        "from": "2000-PROCESS-RECOVERY",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 101,
+        "unstructured": false,
+        "to": "2300-RECOVER-ALL"
+      },
+      {
+        "from": "3000-TERMINATE-RECOVERY",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 106,
+        "unstructured": false,
+        "to": "3100-UPDATE-FINAL-STATUS"
+      },
+      {
+        "from": "3000-TERMINATE-RECOVERY",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 107,
+        "unstructured": false,
+        "to": "3200-CLOSE-FILES"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 122,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 128,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "1200-VALIDATE-REQUEST",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 135,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "1200-VALIDATE-REQUEST",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 145,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "1300-SET-RECOVERY-MODE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 155,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2100-RECOVER-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 166,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2100-RECOVER-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 169,
+        "unstructured": false,
+        "to": "2110-DETERMINE-ACTION"
+      },
+      {
+        "from": "2100-RECOVER-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 170,
+        "unstructured": false,
+        "to": "2120-EXECUTE-RECOVERY"
+      },
+      {
+        "from": "2110-DETERMINE-ACTION",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 179,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2120-EXECUTE-RECOVERY",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 196,
+        "unstructured": false,
+        "to": "2121-RESTART-PROCESS"
+      },
+      {
+        "from": "2120-EXECUTE-RECOVERY",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 198,
+        "unstructured": false,
+        "to": "2122-BYPASS-PROCESS"
+      },
+      {
+        "from": "2120-EXECUTE-RECOVERY",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 200,
+        "unstructured": false,
+        "to": "2123-TERMINATE-PROCESS"
+      },
+      {
+        "from": "2121-RESTART-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 213,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2122-BYPASS-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 225,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2123-TERMINATE-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 237,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2200-RECOVER-SEQUENCE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 248,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2200-RECOVER-SEQUENCE",
+        "type": "PERFORM_INLINE",
+        "resolved": true,
+        "source_line": 251,
+        "unstructured": false,
+        "to": "2200-RECOVER-SEQUENCE",
+        "inline": true
+      },
+      {
+        "from": "2200-RECOVER-SEQUENCE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 257,
+        "unstructured": false,
+        "to": "2100-RECOVER-PROCESS"
+      },
+      {
+        "from": "2300-RECOVER-ALL",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 269,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2300-RECOVER-ALL",
+        "type": "PERFORM_INLINE",
+        "resolved": true,
+        "source_line": 272,
+        "unstructured": false,
+        "to": "2300-RECOVER-ALL",
+        "inline": true
+      },
+      {
+        "from": "2300-RECOVER-ALL",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 278,
+        "unstructured": false,
+        "to": "2100-RECOVER-PROCESS"
+      },
+      {
+        "from": "3200-CLOSE-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 300,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      }
+    ],
+    "dead_code_candidates": [],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

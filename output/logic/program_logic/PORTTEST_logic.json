@@ -1,62 +1,292 @@
-﻿{
-    "paragraphs":  [
-                       {
-                           "name":  "0000-MAIN",
-                           "line_range":  [
-                                              46,
-                                              46
-                                          ]
-                       },
-                       {
-                           "name":  "1000-INITIALIZE",
-                           "line_range":  [
-                                              54,
-                                              54
-                                          ]
-                       },
-                       {
-                           "name":  "2000-GENERATE-RECORDS",
-                           "line_range":  [
-                                              65,
-                                              65
-                                          ]
-                       },
-                       {
-                           "name":  "2100-GENERATE-KEY",
-                           "line_range":  [
-                                              82,
-                                              82
-                                          ]
-                       },
-                       {
-                           "name":  "2200-GENERATE-CLIENT-INFO",
-                           "line_range":  [
-                                              91,
-                                              91
-                                          ]
-                       },
-                       {
-                           "name":  "2300-GENERATE-PORTFOLIO-INFO",
-                           "line_range":  [
-                                              99,
-                                              99
-                                          ]
-                       },
-                       {
-                           "name":  "2400-GENERATE-FINANCIAL-INFO",
-                           "line_range":  [
-                                              107,
-                                              107
-                                          ]
-                       },
-                       {
-                           "name":  "3000-TERMINATE",
-                           "line_range":  [
-                                              115,
-                                              115
-                                          ]
-                       }
-                   ],
-    "source_file":  "src\\programs\\portfolio\\PORTTEST.cbl",
-    "program_id":  "PORTTEST"
+{
+  "program_id": "PORTTEST",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTTEST.cbl",
+  "processing_timestamp": "2026-05-03T18:35:21.137380Z",
+  "execution_traces": [
+    {
+      "entry_point": "0000-MAIN",
+      "entry_type": "procedure_entry",
+      "steps": [
+        {
+          "step": 1,
+          "paragraph": "0000-MAIN",
+          "action": "PARAGRAPH",
+          "target": null,
+          "condition": null,
+          "line": 46
+        }
+      ]
+    }
+  ],
+  "branch_map": [
+    {
+      "paragraph": "1000-INITIALIZE",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-FILE-STATUS NOT = '00'",
+          "condition_fields": [
+            "WS-FILE-STATUS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2000-GENERATE-RECORDS",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-FILE-STATUS = '00'",
+          "condition_fields": [
+            "WS-FILE-STATUS"
+          ]
+        }
+      ]
+    }
+  ],
+  "loops": [],
+  "dead_code_confirmed": [],
+  "unresolvable_paths": [],
+  "trace_issues": [],
+  "program_narrative": "PORTTEST is a COBOL program that orchestrates business processes. It processes input data through multiple stages, performing validation, transformation, and output operations. The program includes error handling and data integrity checks.",
+  "paragraphs": [
+    {
+      "name": "0000-MAIN",
+      "section": null,
+      "line_range": [
+        46,
+        53
+      ],
+      "pseudocode": [
+        "-- Paragraph 0000-MAIN: Core business logic",
+        "CALL 1000-initialize",
+        "CALL 2000-generate-records",
+        "CALL 3000-terminate",
+        "RETURN to caller"
+      ],
+      "pseudocode_text": "-- Paragraph 0000-MAIN: Core business logic\nCALL 1000-initialize\nCALL 2000-generate-records\nCALL 3000-terminate\nRETURN to caller",
+      "field_references": [
+        "UNTIL",
+        "WS-RECORD-COUNT",
+        "GOBACK",
+        "TERMINATE",
+        "WS-MAX-RECORDS",
+        "MAIN",
+        "INITIALIZE",
+        "GENERATE-RECORDS"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1000-INITIALIZE",
+      "section": null,
+      "line_range": [
+        54,
+        64
+      ],
+      "pseudocode": [
+        "-- Paragraph 1000-INITIALIZE: Initialisation and setup",
+        "IF WS-FILE-STATUS NOT = '00' THEN",
+        "CALL 3000-terminate",
+        "RETURN to caller"
+      ],
+      "pseudocode_text": "-- Paragraph 1000-INITIALIZE: Initialisation and setup\nIF WS-FILE-STATUS NOT = '00' THEN\nCALL 3000-terminate\nRETURN to caller",
+      "field_references": [
+        "OPEN",
+        "TEST-FILE",
+        "YYYYMMDD",
+        "DATE",
+        "OUTPUT",
+        "DISPLAY",
+        "WS-FILE-STATUS",
+        "GOBACK",
+        "ACCEPT",
+        "END-IF"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2000-GENERATE-RECORDS",
+      "section": null,
+      "line_range": [
+        65,
+        81
+      ],
+      "pseudocode": [
+        "-- Paragraph 2000-GENERATE-RECORDS: Core business logic",
+        "CALL 2100-generate-key",
+        "CALL 2200-generate-client-info",
+        "CALL 2300-generate-portfolio-info",
+        "CALL 2400-generate-financial-info",
+        "WRITE port-record to output",
+        "IF WS-FILE-STATUS = '00' THEN",
+        "INCREMENT ws-record-count BY 1"
+      ],
+      "pseudocode_text": "-- Paragraph 2000-GENERATE-RECORDS: Core business logic\nCALL 2100-generate-key\nCALL 2200-generate-client-info\nCALL 2300-generate-portfolio-info\nCALL 2400-generate-financial-info\nWRITE port-record to output\nIF WS-FILE-STATUS = '00' THEN\nINCREMENT ws-record-count BY 1",
+      "field_references": [
+        "DISPLAY",
+        "WS-RECORD-COUNT",
+        "PORT-RECORD",
+        "GENERATE-KEY",
+        "GENERATE-CLIENT-INFO",
+        "GENERATE-FINANCIAL-INFO",
+        "WS-FILE-STATUS",
+        "ADD",
+        "END-IF",
+        "GENERATE-PORTFOLIO-INFO"
+      ],
+      "calls_made": [],
+      "complexity_score": 3,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2100-GENERATE-KEY",
+      "section": null,
+      "line_range": [
+        82,
+        90
+      ],
+      "pseudocode": [
+        "-- Paragraph 2100-GENERATE-KEY: Core business logic",
+        "COMPUTE PORT-ACCOUNT-NO = WS-RECORD-COUNT + 1000000000"
+      ],
+      "pseudocode_text": "-- Paragraph 2100-GENERATE-KEY: Core business logic\nCOMPUTE PORT-ACCOUNT-NO = WS-RECORD-COUNT + 1000000000",
+      "field_references": [
+        "COMPUTE",
+        "PORT-ACCOUNT-NO",
+        "SIZE",
+        "PORT-ID",
+        "DELIMITED",
+        "RANDOM",
+        "STRING",
+        "PORT",
+        "WS-RECORD-COUNT",
+        "GENERATE-KEY"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2200-GENERATE-CLIENT-INFO",
+      "section": null,
+      "line_range": [
+        91,
+        98
+      ],
+      "pseudocode": [
+        "-- Paragraph 2200-GENERATE-CLIENT-INFO: Core business logic",
+        "SET port-client-type = ws-client-types(ws-type-sub:1)"
+      ],
+      "pseudocode_text": "-- Paragraph 2200-GENERATE-CLIENT-INFO: Core business logic\nSET port-client-type = ws-client-types(ws-type-sub:1)",
+      "field_references": [
+        "SIZE",
+        "DELIMITED",
+        "STRING",
+        "PORT-CLIENT-TYPE",
+        "WS-RECORD-COUNT",
+        "WS-NAME-PREFIX",
+        "GENERATE-CLIENT-INFO",
+        "PORT-CLIENT-NAME",
+        "WS-CLIENT-TYPES",
+        "WS-TYPE-SUB"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2300-GENERATE-PORTFOLIO-INFO",
+      "section": null,
+      "line_range": [
+        99,
+        106
+      ],
+      "pseudocode": [
+        "-- Paragraph 2300-GENERATE-PORTFOLIO-INFO: Core business logic",
+        "SET port-create-date = ws-current-date",
+        "SET port-last-maint = ws-current-date",
+        "COMPUTE WS-STATUS-SUB = FUNCTION RANDOM * 3 + 1",
+        "SET port-status = ws-status-types(ws-status-sub:1)"
+      ],
+      "pseudocode_text": "-- Paragraph 2300-GENERATE-PORTFOLIO-INFO: Core business logic\nSET port-create-date = ws-current-date\nSET port-last-maint = ws-current-date\nCOMPUTE WS-STATUS-SUB = FUNCTION RANDOM * 3 + 1\nSET port-status = ws-status-types(ws-status-sub:1)",
+      "field_references": [
+        "COMPUTE",
+        "PORT-LAST-MAINT",
+        "RANDOM",
+        "FUNCTION",
+        "PORT-CREATE-DATE",
+        "WS-STATUS-SUB",
+        "WS-STATUS-TYPES",
+        "GENERATE-PORTFOLIO-INFO",
+        "WS-CURRENT-DATE",
+        "PORT-STATUS"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2400-GENERATE-FINANCIAL-INFO",
+      "section": null,
+      "line_range": [
+        107,
+        114
+      ],
+      "pseudocode": [
+        "-- Paragraph 2400-GENERATE-FINANCIAL-INFO: Core business logic",
+        "COMPUTE PORT-TOTAL-VALUE =",
+        "COMPUTE PORT-CASH-BALANCE ="
+      ],
+      "pseudocode_text": "-- Paragraph 2400-GENERATE-FINANCIAL-INFO: Core business logic\nCOMPUTE PORT-TOTAL-VALUE =\nCOMPUTE PORT-CASH-BALANCE =",
+      "field_references": [
+        "COMPUTE",
+        "RANDOM",
+        "PORT-TOTAL-VALUE",
+        "FUNCTION",
+        "GENERATE-FINANCIAL-INFO",
+        "PORT-CASH-BALANCE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3000-TERMINATE",
+      "section": null,
+      "line_range": [
+        115,
+        119
+      ],
+      "pseudocode": [
+        "-- Paragraph 3000-TERMINATE: Core business logic",
+        "CLOSE test-file"
+      ],
+      "pseudocode_text": "-- Paragraph 3000-TERMINATE: Core business logic\nCLOSE test-file",
+      "field_references": [
+        "DISPLAY",
+        "WS-RECORD-COUNT",
+        "TERMINATE",
+        "CLOSE",
+        "TEST-FILE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    }
+  ],
+  "unresolved_statements": [],
+  "pseudocode_issues": []
 }

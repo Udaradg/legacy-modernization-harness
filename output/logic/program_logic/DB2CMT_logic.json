@@ -1,76 +1,407 @@
-﻿{
-    "paragraphs":  [
-                       {
-                           "name":  "0000-MAIN",
-                           "line_range":  [
-                                              53,
-                                              53
-                                          ]
-                       },
-                       {
-                           "name":  "1000-INITIALIZE",
-                           "line_range":  [
-                                              75,
-                                              75
-                                          ]
-                       },
-                       {
-                           "name":  "2000-COMMIT",
-                           "line_range":  [
-                                              80,
-                                              80
-                                          ]
-                       },
-                       {
-                           "name":  "2100-ISSUE-COMMIT",
-                           "line_range":  [
-                                              87,
-                                              87
-                                          ]
-                       },
-                       {
-                           "name":  "3000-ROLLBACK",
-                           "line_range":  [
-                                              103,
-                                              103
-                                          ]
-                       },
-                       {
-                           "name":  "4000-SAVEPOINT",
-                           "line_range":  [
-                                              119,
-                                              119
-                                          ]
-                       },
-                       {
-                           "name":  "5000-RESTORE",
-                           "line_range":  [
-                                              137,
-                                              137
-                                          ]
-                       },
-                       {
-                           "name":  "6000-STATISTICS",
-                           "line_range":  [
-                                              155,
-                                              155
-                                          ]
-                       },
-                       {
-                           "name":  "9000-ERROR-ROUTINE",
-                           "line_range":  [
-                                              162,
-                                              162
-                                          ]
-                       },
-                       {
-                           "name":  "9100-LOG-ERROR",
-                           "line_range":  [
-                                              168,
-                                              168
-                                          ]
-                       }
-                   ],
-    "source_file":  "src\\programs\\common\\DB2CMT.cbl",
-    "program_id":  "DB2CMT"
+{
+  "program_id": "DB2CMT",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\DB2CMT.cbl",
+  "processing_timestamp": "2026-05-03T18:35:20.988025Z",
+  "execution_traces": [
+    {
+      "entry_point": "0000-MAIN",
+      "entry_type": "procedure_entry",
+      "steps": [
+        {
+          "step": 1,
+          "paragraph": "0000-MAIN",
+          "action": "PARAGRAPH",
+          "target": null,
+          "condition": null,
+          "line": 53
+        }
+      ]
+    }
+  ],
+  "branch_map": [
+    {
+      "paragraph": "0000-MAIN",
+      "branches": [
+        {
+          "type": "EVALUATE",
+          "subject": "TRUE"
+        }
+      ]
+    },
+    {
+      "paragraph": "2000-COMMIT",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "LS-RECORDS-PROC >= LS-COMMIT-FREQ",
+          "condition_fields": [
+            "LS-RECORDS-PROC",
+            "LS-COMMIT-FREQ"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2100-ISSUE-COMMIT",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "SQLCODE = 0",
+          "condition_fields": [
+            "SQLCODE"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "3000-ROLLBACK",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "SQLCODE = 0",
+          "condition_fields": [
+            "SQLCODE"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "4000-SAVEPOINT",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "SQLCODE = 0",
+          "condition_fields": [
+            "SQLCODE"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "5000-RESTORE",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "SQLCODE = 0",
+          "condition_fields": [
+            "SQLCODE"
+          ]
+        }
+      ]
+    }
+  ],
+  "loops": [],
+  "dead_code_confirmed": [],
+  "unresolvable_paths": [],
+  "trace_issues": [],
+  "program_narrative": "DB2CMT is a COBOL program that orchestrates business processes. It processes input data through multiple stages, performing validation, transformation, and output operations. The program includes error handling and data integrity checks.",
+  "paragraphs": [
+    {
+      "name": "0000-MAIN",
+      "section": null,
+      "line_range": [
+        53,
+        74
+      ],
+      "pseudocode": [
+        "-- Paragraph 0000-MAIN: Core business logic",
+        "EVALUATE (TRUE)",
+        "CALL 1000-initialize",
+        "CALL 2000-commit",
+        "CALL 3000-rollback",
+        "CALL 4000-savepoint",
+        "CALL 5000-restore",
+        "CALL 6000-statistics",
+        "CALL 9000-error-routine",
+        "RETURN to caller"
+      ],
+      "pseudocode_text": "-- Paragraph 0000-MAIN: Core business logic\nEVALUATE (TRUE)\nCALL 1000-initialize\nCALL 2000-commit\nCALL 3000-rollback\nCALL 4000-savepoint\nCALL 5000-restore\nCALL 6000-statistics\nCALL 9000-error-routine\nRETURN to caller",
+      "field_references": [
+        "INITIALIZE",
+        "COMMIT",
+        "SAVEPOINT",
+        "ERROR-ROUTINE",
+        "FUNC-REST",
+        "FUNC-SAVE",
+        "FUNC-CMIT",
+        "RESTORE",
+        "FUNC-RBACK",
+        "GOBACK"
+      ],
+      "calls_made": [],
+      "complexity_score": 10,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1000-INITIALIZE",
+      "section": null,
+      "line_range": [
+        75,
+        79
+      ],
+      "pseudocode": [
+        "-- Paragraph 1000-INITIALIZE: Initialisation and setup",
+        "SET ls-return-code = 0"
+      ],
+      "pseudocode_text": "-- Paragraph 1000-INITIALIZE: Initialisation and setup\nSET ls-return-code = 0",
+      "field_references": [
+        "WS-COMMIT-STATS",
+        "LS-RETURN-CODE",
+        "INITIALIZE",
+        "MOVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2000-COMMIT",
+      "section": null,
+      "line_range": [
+        80,
+        86
+      ],
+      "pseudocode": [
+        "-- Paragraph 2000-COMMIT: Core business logic",
+        "IF LS-RECORDS-PROC >= LS-COMMIT-FREQ THEN",
+        "CALL 2100-issue-commit"
+      ],
+      "pseudocode_text": "-- Paragraph 2000-COMMIT: Core business logic\nIF LS-RECORDS-PROC >= LS-COMMIT-FREQ THEN\nCALL 2100-issue-commit",
+      "field_references": [
+        "LS-COMMIT-FREQ",
+        "COMMIT",
+        "ISSUE-COMMIT",
+        "LS-RECORDS-PROC",
+        "END-IF",
+        "LS-FORCE-COMMIT"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2100-ISSUE-COMMIT",
+      "section": null,
+      "line_range": [
+        87,
+        102
+      ],
+      "pseudocode": [
+        "-- Paragraph 2100-ISSUE-COMMIT: Core business logic",
+        "IF SQLCODE = 0 THEN",
+        "INCREMENT ws-commit-count BY 1",
+        "SET ls-return-code = 0",
+        "SET ls-sqlcode = sqlcode",
+        "SET ls-return-code = 8",
+        "CALL 9100-log-error"
+      ],
+      "pseudocode_text": "-- Paragraph 2100-ISSUE-COMMIT: Core business logic\nIF SQLCODE = 0 THEN\nINCREMENT ws-commit-count BY 1\nSET ls-return-code = 0\nSET ls-sqlcode = sqlcode\nSET ls-return-code = 8\nCALL 9100-log-error",
+      "field_references": [
+        "END-EXEC",
+        "EXEC",
+        "LS-ERROR-MSG",
+        "SQL",
+        "WORK",
+        "COMMIT",
+        "WS-COMMIT-COUNT",
+        "ADD",
+        "LOG-ERROR",
+        "LS-RETURN-CODE"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3000-ROLLBACK",
+      "section": null,
+      "line_range": [
+        103,
+        118
+      ],
+      "pseudocode": [
+        "-- Paragraph 3000-ROLLBACK: Core business logic",
+        "IF SQLCODE = 0 THEN",
+        "INCREMENT ws-rollback-count BY 1",
+        "SET ls-return-code = 0",
+        "SET ls-sqlcode = sqlcode",
+        "SET ls-return-code = 8",
+        "CALL 9100-log-error"
+      ],
+      "pseudocode_text": "-- Paragraph 3000-ROLLBACK: Core business logic\nIF SQLCODE = 0 THEN\nINCREMENT ws-rollback-count BY 1\nSET ls-return-code = 0\nSET ls-sqlcode = sqlcode\nSET ls-return-code = 8\nCALL 9100-log-error",
+      "field_references": [
+        "END-EXEC",
+        "EXEC",
+        "LS-ERROR-MSG",
+        "SQL",
+        "WORK",
+        "ROLLBACK",
+        "ADD",
+        "LOG-ERROR",
+        "LS-RETURN-CODE",
+        "LS-SQLCODE"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "4000-SAVEPOINT",
+      "section": null,
+      "line_range": [
+        119,
+        136
+      ],
+      "pseudocode": [
+        "-- Paragraph 4000-SAVEPOINT: Core business logic",
+        "SET ws-savepoint-id = ls-savepoint-name",
+        "IF SQLCODE = 0 THEN",
+        "INCREMENT ws-savepoint-count BY 1",
+        "SET ls-return-code = 0",
+        "SET ls-sqlcode = sqlcode",
+        "SET ls-return-code = 8",
+        "CALL 9100-log-error"
+      ],
+      "pseudocode_text": "-- Paragraph 4000-SAVEPOINT: Core business logic\nSET ws-savepoint-id = ls-savepoint-name\nIF SQLCODE = 0 THEN\nINCREMENT ws-savepoint-count BY 1\nSET ls-return-code = 0\nSET ls-sqlcode = sqlcode\nSET ls-return-code = 8\nCALL 9100-log-error",
+      "field_references": [
+        "SAVEPOINT",
+        "ADD",
+        "ON",
+        "LS-SQLCODE",
+        "LS-SAVEPOINT-NAME",
+        "END-EXEC",
+        "END-IF",
+        "EXEC",
+        "RETAIN",
+        "LS-RETURN-CODE"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "5000-RESTORE",
+      "section": null,
+      "line_range": [
+        137,
+        154
+      ],
+      "pseudocode": [
+        "-- Paragraph 5000-RESTORE: Core business logic",
+        "SET ws-savepoint-id = ls-savepoint-name",
+        "IF SQLCODE = 0 THEN",
+        "INCREMENT ws-rollback-count BY 1",
+        "SET ls-return-code = 0",
+        "SET ls-sqlcode = sqlcode",
+        "SET ls-return-code = 8",
+        "CALL 9100-log-error"
+      ],
+      "pseudocode_text": "-- Paragraph 5000-RESTORE: Core business logic\nSET ws-savepoint-id = ls-savepoint-name\nIF SQLCODE = 0 THEN\nINCREMENT ws-rollback-count BY 1\nSET ls-return-code = 0\nSET ls-sqlcode = sqlcode\nSET ls-return-code = 8\nCALL 9100-log-error",
+      "field_references": [
+        "LS-SAVEPOINT-NAME",
+        "END-EXEC",
+        "EXEC",
+        "LS-ERROR-MSG",
+        "SQL",
+        "ROLLBACK",
+        "SAVEPOINT",
+        "ADD",
+        "LOG-ERROR",
+        "LS-RETURN-CODE"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "6000-STATISTICS",
+      "section": null,
+      "line_range": [
+        155,
+        161
+      ],
+      "pseudocode": [
+        "-- Paragraph 6000-STATISTICS: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph 6000-STATISTICS: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "WS-SAVEPOINT-COUNT",
+        "DISPLAY",
+        "DB2",
+        "WS-COMMIT-COUNT",
+        "STATISTICS",
+        "WS-ROLLBACK-COUNT"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "9000-ERROR-ROUTINE",
+      "section": null,
+      "line_range": [
+        162,
+        167
+      ],
+      "pseudocode": [
+        "-- Paragraph 9000-ERROR-ROUTINE: Error handling",
+        "SET err-program = db2cmt",
+        "SET ls-return-code = 12",
+        "CALL ERRPROC"
+      ],
+      "pseudocode_text": "-- Paragraph 9000-ERROR-ROUTINE: Error handling\nSET err-program = db2cmt\nSET ls-return-code = 12\nCALL ERRPROC",
+      "field_references": [
+        "USING",
+        "ERR-MESSAGE",
+        "ERROR-ROUTINE",
+        "DB2CMT",
+        "LS-RETURN-CODE",
+        "ERR-PROGRAM",
+        "ERRPROC",
+        "MOVE"
+      ],
+      "calls_made": [
+        "ERRPROC"
+      ],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "9100-LOG-ERROR",
+      "section": null,
+      "line_range": [
+        168,
+        170
+      ],
+      "pseudocode": [
+        "-- Paragraph 9100-LOG-ERROR: Error handling",
+        "CALL DB2ERR"
+      ],
+      "pseudocode_text": "-- Paragraph 9100-LOG-ERROR: Error handling\nCALL DB2ERR",
+      "field_references": [
+        "USING",
+        "LOG-ERROR",
+        "DB2ERR",
+        "LS-ERROR-INFO"
+      ],
+      "calls_made": [
+        "DB2ERR"
+      ],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    }
+  ],
+  "unresolved_statements": [],
+  "pseudocode_issues": []
 }

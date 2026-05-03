@@ -1,48 +1,230 @@
-﻿{
-    "paragraphs":  [
-                       {
-                           "name":  "0000-MAIN",
-                           "line_range":  [
-                                              48,
-                                              48
-                                          ]
-                       },
-                       {
-                           "name":  "1000-INITIALIZE",
-                           "line_range":  [
-                                              55,
-                                              55
-                                          ]
-                       },
-                       {
-                           "name":  "2000-PROCESS-ERROR",
-                           "line_range":  [
-                                              65,
-                                              65
-                                          ]
-                       },
-                       {
-                           "name":  "2100-WRITE-LOG",
-                           "line_range":  [
-                                              83,
-                                              83
-                                          ]
-                       },
-                       {
-                           "name":  "2200-DISPLAY-ERROR",
-                           "line_range":  [
-                                              93,
-                                              93
-                                          ]
-                       },
-                       {
-                           "name":  "3000-TERMINATE",
-                           "line_range":  [
-                                              105,
-                                              105
-                                          ]
-                       }
-                   ],
-    "source_file":  "src\\programs\\common\\ERRPROC.cbl",
-    "program_id":  "ERRPROC"
+{
+  "program_id": "ERRPROC",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\ERRPROC.cbl",
+  "processing_timestamp": "2026-05-03T18:35:21.015698Z",
+  "execution_traces": [
+    {
+      "entry_point": "0000-MAIN",
+      "entry_type": "procedure_entry",
+      "steps": [
+        {
+          "step": 1,
+          "paragraph": "0000-MAIN",
+          "action": "PARAGRAPH",
+          "target": null,
+          "condition": null,
+          "line": 48
+        }
+      ]
+    }
+  ],
+  "branch_map": [
+    {
+      "paragraph": "1000-INITIALIZE",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-LOG-STATUS NOT = '00'",
+          "condition_fields": [
+            "WS-LOG-STATUS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2100-WRITE-LOG",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-LOG-STATUS NOT = '00'",
+          "condition_fields": [
+            "WS-LOG-STATUS"
+          ]
+        }
+      ]
+    }
+  ],
+  "loops": [],
+  "dead_code_confirmed": [],
+  "unresolvable_paths": [],
+  "trace_issues": [],
+  "program_narrative": "ERRPROC is a COBOL program that orchestrates business processes. It processes input data through multiple stages, performing validation, transformation, and output operations. The program includes error handling and data integrity checks.",
+  "paragraphs": [
+    {
+      "name": "0000-MAIN",
+      "section": null,
+      "line_range": [
+        48,
+        54
+      ],
+      "pseudocode": [
+        "-- Paragraph 0000-MAIN: Core business logic",
+        "CALL 1000-initialize",
+        "CALL 2000-process-error",
+        "CALL 3000-terminate",
+        "RETURN to caller"
+      ],
+      "pseudocode_text": "-- Paragraph 0000-MAIN: Core business logic\nCALL 1000-initialize\nCALL 2000-process-error\nCALL 3000-terminate\nRETURN to caller",
+      "field_references": [
+        "MAIN",
+        "PROCESS-ERROR",
+        "TERMINATE",
+        "GOBACK",
+        "INITIALIZE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1000-INITIALIZE",
+      "section": null,
+      "line_range": [
+        55,
+        64
+      ],
+      "pseudocode": [
+        "-- Paragraph 1000-INITIALIZE: Initialisation and setup",
+        "IF WS-LOG-STATUS NOT = '00' THEN"
+      ],
+      "pseudocode_text": "-- Paragraph 1000-INITIALIZE: Initialisation and setup\nIF WS-LOG-STATUS NOT = '00' THEN",
+      "field_references": [
+        "WS-WORK-AREAS",
+        "OPEN",
+        "DISPLAY",
+        "EXTEND",
+        "WS-FORMATTED-TIME",
+        "TIME",
+        "STAMP",
+        "ACCEPT",
+        "WS-LOG-STATUS",
+        "END-IF"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2000-PROCESS-ERROR",
+      "section": null,
+      "line_range": [
+        65,
+        82
+      ],
+      "pseudocode": [
+        "-- Paragraph 2000-PROCESS-ERROR: Main processing logic",
+        "SET err-timestamp = ws-formatted-time",
+        "SET err-program = ls-program-id",
+        "SET err-category = ls-category",
+        "SET err-code = ls-error-code",
+        "SET err-severity = ls-severity",
+        "SET err-text = ls-error-text",
+        "SET err-details = ls-error-details",
+        "CALL 2100-write-log",
+        "CALL 2200-display-error",
+        "SET ls-return-code = ls-severity"
+      ],
+      "pseudocode_text": "-- Paragraph 2000-PROCESS-ERROR: Main processing logic\nSET err-timestamp = ws-formatted-time\nSET err-program = ls-program-id\nSET err-category = ls-category\nSET err-code = ls-error-code\nSET err-severity = ls-severity\nSET err-text = ls-error-text\nSET err-details = ls-error-details\nCALL 2100-write-log\nCALL 2200-display-error\nSET ls-return-code = ls-severity",
+      "field_references": [
+        "LS-ERROR-CODE",
+        "WS-FORMATTED-TIME",
+        "LS-CATEGORY",
+        "ERR-SEVERITY",
+        "LS-ERROR-DETAILS",
+        "ERR-PROGRAM",
+        "ERR-CODE",
+        "LS-SEVERITY",
+        "ERR-TIMESTAMP",
+        "LS-ERROR-TEXT"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2100-WRITE-LOG",
+      "section": null,
+      "line_range": [
+        83,
+        92
+      ],
+      "pseudocode": [
+        "-- Paragraph 2100-WRITE-LOG: Write output records",
+        "SET log-data = err-message",
+        "WRITE error-log-record to output",
+        "IF WS-LOG-STATUS NOT = '00' THEN"
+      ],
+      "pseudocode_text": "-- Paragraph 2100-WRITE-LOG: Write output records\nSET log-data = err-message\nWRITE error-log-record to output\nIF WS-LOG-STATUS NOT = '00' THEN",
+      "field_references": [
+        "DISPLAY",
+        "ERR-MESSAGE",
+        "WRITE-LOG",
+        "WS-LOG-STATUS",
+        "END-IF",
+        "LOG-DATA",
+        "MOVE",
+        "ERROR-LOG-RECORD"
+      ],
+      "calls_made": [],
+      "complexity_score": 3,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2200-DISPLAY-ERROR",
+      "section": null,
+      "line_range": [
+        93,
+        104
+      ],
+      "pseudocode": [
+        "-- Paragraph 2200-DISPLAY-ERROR: Error handling",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph 2200-DISPLAY-ERROR: Error handling\n-- [paragraph logic]",
+      "field_references": [
+        "ERR-TIMESTAMP",
+        "DETAILS",
+        "ERR-CATEGORY",
+        "DISPLAY",
+        "PROGRAM",
+        "CODE",
+        "SEVERITY",
+        "ERR-SEVERITY",
+        "MESSAGE",
+        "ERR-DETAILS"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3000-TERMINATE",
+      "section": null,
+      "line_range": [
+        105,
+        107
+      ],
+      "pseudocode": [
+        "-- Paragraph 3000-TERMINATE: Core business logic",
+        "CLOSE error-log"
+      ],
+      "pseudocode_text": "-- Paragraph 3000-TERMINATE: Core business logic\nCLOSE error-log",
+      "field_references": [
+        "CLOSE",
+        "ERROR-LOG",
+        "TERMINATE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    }
+  ],
+  "unresolved_statements": [],
+  "pseudocode_issues": []
 }

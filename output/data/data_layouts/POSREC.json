@@ -1,226 +1,365 @@
-﻿{
-    "record_name":  "POSREC",
-    "source_type":  "copybook",
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\copybook\\common\\POSREC.cpy",
-    "fields":  [
-                   {
-                       "line":  6,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "POSITION-RECORD",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  7,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "POS-KEY",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  8,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "POS-PORTFOLIO-ID",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  9,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "POS-DATE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  10,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "POS-INVESTMENT-ID",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  11,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "POS-DATA",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  12,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "POS-QUANTITY",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  13,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "POS-COST-BASIS",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  14,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "POS-MARKET-VALUE",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  15,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "POS-CURRENCY",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  16,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "POS-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  17,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "A",
-                       "name":  "POS-STATUS-ACTIVE",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  18,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "C",
-                       "name":  "POS-STATUS-CLOSED",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  19,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "P",
-                       "name":  "POS-STATUS-PEND",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  20,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "POS-AUDIT",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  21,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "POS-LAST-MAINT-DATE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  22,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "POS-LAST-MAINT-USER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  23,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "POS-FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   }
-               ],
-    "issues":  [
-
-               ]
+{
+  "id": "POSREC",
+  "source_type": "copybook",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\copybook\\common\\POSREC.cpy",
+  "used_by_programs": [
+    "INQPORT"
+  ],
+  "total_fields": 18,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "POSITION-RECORD",
+      "pic": null,
+      "pic_parsed": null,
+      "type": "GROUP",
+      "storage_type": "DISPLAY",
+      "bytes": 0,
+      "redefines": null,
+      "occurs": null,
+      "value": null,
+      "line": 6,
+      "children": [
+        {
+          "level": 5,
+          "name": "POS-KEY",
+          "pic": null,
+          "pic_parsed": null,
+          "type": "GROUP",
+          "storage_type": "DISPLAY",
+          "bytes": 0,
+          "redefines": null,
+          "occurs": null,
+          "value": null,
+          "line": 7,
+          "children": [
+            {
+              "level": 10,
+              "name": "POS-PORTFOLIO-ID",
+              "pic": "X(",
+              "pic_parsed": {
+                "raw": "X(",
+                "normalized_type": "STRING",
+                "length": 1,
+                "decimal_places": 0,
+                "signed": false,
+                "storage_type": "DISPLAY"
+              },
+              "type": "ELEMENTARY",
+              "storage_type": "DISPLAY",
+              "bytes": 1,
+              "redefines": null,
+              "occurs": null,
+              "value": null,
+              "line": 8,
+              "children": [],
+              "is_filler": false
+            },
+            {
+              "level": 10,
+              "name": "POS-DATE",
+              "pic": "X(",
+              "pic_parsed": {
+                "raw": "X(",
+                "normalized_type": "STRING",
+                "length": 1,
+                "decimal_places": 0,
+                "signed": false,
+                "storage_type": "DISPLAY"
+              },
+              "type": "ELEMENTARY",
+              "storage_type": "DISPLAY",
+              "bytes": 1,
+              "redefines": null,
+              "occurs": null,
+              "value": null,
+              "line": 9,
+              "children": [],
+              "is_filler": false
+            },
+            {
+              "level": 10,
+              "name": "POS-INVESTMENT-ID",
+              "pic": "X(",
+              "pic_parsed": {
+                "raw": "X(",
+                "normalized_type": "STRING",
+                "length": 1,
+                "decimal_places": 0,
+                "signed": false,
+                "storage_type": "DISPLAY"
+              },
+              "type": "ELEMENTARY",
+              "storage_type": "DISPLAY",
+              "bytes": 1,
+              "redefines": null,
+              "occurs": null,
+              "value": null,
+              "line": 10,
+              "children": [],
+              "is_filler": false
+            }
+          ],
+          "is_filler": false
+        },
+        {
+          "level": 5,
+          "name": "POS-DATA",
+          "pic": null,
+          "pic_parsed": null,
+          "type": "GROUP",
+          "storage_type": "DISPLAY",
+          "bytes": 0,
+          "redefines": null,
+          "occurs": null,
+          "value": null,
+          "line": 11,
+          "children": [
+            {
+              "level": 10,
+              "name": "POS-QUANTITY",
+              "pic": "S9(",
+              "pic_parsed": {
+                "raw": "S9(",
+                "normalized_type": "SIGNED_INTEGER",
+                "length": 1,
+                "decimal_places": 0,
+                "signed": true,
+                "storage_type": "DISPLAY"
+              },
+              "type": "ELEMENTARY",
+              "storage_type": "DISPLAY",
+              "bytes": 1,
+              "redefines": null,
+              "occurs": null,
+              "value": null,
+              "line": 12,
+              "children": [],
+              "is_filler": false
+            },
+            {
+              "level": 10,
+              "name": "POS-COST-BASIS",
+              "pic": "S9(",
+              "pic_parsed": {
+                "raw": "S9(",
+                "normalized_type": "SIGNED_INTEGER",
+                "length": 1,
+                "decimal_places": 0,
+                "signed": true,
+                "storage_type": "DISPLAY"
+              },
+              "type": "ELEMENTARY",
+              "storage_type": "DISPLAY",
+              "bytes": 1,
+              "redefines": null,
+              "occurs": null,
+              "value": null,
+              "line": 13,
+              "children": [],
+              "is_filler": false
+            },
+            {
+              "level": 10,
+              "name": "POS-MARKET-VALUE",
+              "pic": "S9(",
+              "pic_parsed": {
+                "raw": "S9(",
+                "normalized_type": "SIGNED_INTEGER",
+                "length": 1,
+                "decimal_places": 0,
+                "signed": true,
+                "storage_type": "DISPLAY"
+              },
+              "type": "ELEMENTARY",
+              "storage_type": "DISPLAY",
+              "bytes": 1,
+              "redefines": null,
+              "occurs": null,
+              "value": null,
+              "line": 14,
+              "children": [],
+              "is_filler": false
+            },
+            {
+              "level": 10,
+              "name": "POS-CURRENCY",
+              "pic": "X(",
+              "pic_parsed": {
+                "raw": "X(",
+                "normalized_type": "STRING",
+                "length": 1,
+                "decimal_places": 0,
+                "signed": false,
+                "storage_type": "DISPLAY"
+              },
+              "type": "ELEMENTARY",
+              "storage_type": "DISPLAY",
+              "bytes": 1,
+              "redefines": null,
+              "occurs": null,
+              "value": null,
+              "line": 15,
+              "children": [],
+              "is_filler": false
+            },
+            {
+              "level": 10,
+              "name": "POS-STATUS",
+              "pic": "X(",
+              "pic_parsed": {
+                "raw": "X(",
+                "normalized_type": "STRING",
+                "length": 1,
+                "decimal_places": 0,
+                "signed": false,
+                "storage_type": "DISPLAY"
+              },
+              "type": "ELEMENTARY",
+              "storage_type": "DISPLAY",
+              "bytes": 1,
+              "redefines": null,
+              "occurs": null,
+              "value": null,
+              "line": 16,
+              "children": [
+                {
+                  "level": 88,
+                  "name": "POS-STATUS-ACTIVE",
+                  "pic": null,
+                  "pic_parsed": null,
+                  "type": "CONDITION",
+                  "storage_type": "DISPLAY",
+                  "bytes": 0,
+                  "redefines": null,
+                  "occurs": null,
+                  "value": "'A'.",
+                  "line": 17,
+                  "children": [],
+                  "is_filler": false
+                },
+                {
+                  "level": 88,
+                  "name": "POS-STATUS-CLOSED",
+                  "pic": null,
+                  "pic_parsed": null,
+                  "type": "CONDITION",
+                  "storage_type": "DISPLAY",
+                  "bytes": 0,
+                  "redefines": null,
+                  "occurs": null,
+                  "value": "'C'.",
+                  "line": 18,
+                  "children": [],
+                  "is_filler": false
+                },
+                {
+                  "level": 88,
+                  "name": "POS-STATUS-PEND",
+                  "pic": null,
+                  "pic_parsed": null,
+                  "type": "CONDITION",
+                  "storage_type": "DISPLAY",
+                  "bytes": 0,
+                  "redefines": null,
+                  "occurs": null,
+                  "value": "'P'.",
+                  "line": 19,
+                  "children": [],
+                  "is_filler": false
+                }
+              ],
+              "is_filler": false
+            }
+          ],
+          "is_filler": false
+        },
+        {
+          "level": 5,
+          "name": "POS-AUDIT",
+          "pic": null,
+          "pic_parsed": null,
+          "type": "GROUP",
+          "storage_type": "DISPLAY",
+          "bytes": 0,
+          "redefines": null,
+          "occurs": null,
+          "value": null,
+          "line": 20,
+          "children": [
+            {
+              "level": 10,
+              "name": "POS-LAST-MAINT-DATE",
+              "pic": "X(",
+              "pic_parsed": {
+                "raw": "X(",
+                "normalized_type": "STRING",
+                "length": 1,
+                "decimal_places": 0,
+                "signed": false,
+                "storage_type": "DISPLAY"
+              },
+              "type": "ELEMENTARY",
+              "storage_type": "DISPLAY",
+              "bytes": 1,
+              "redefines": null,
+              "occurs": null,
+              "value": null,
+              "line": 21,
+              "children": [],
+              "is_filler": false
+            },
+            {
+              "level": 10,
+              "name": "POS-LAST-MAINT-USER",
+              "pic": "X(",
+              "pic_parsed": {
+                "raw": "X(",
+                "normalized_type": "STRING",
+                "length": 1,
+                "decimal_places": 0,
+                "signed": false,
+                "storage_type": "DISPLAY"
+              },
+              "type": "ELEMENTARY",
+              "storage_type": "DISPLAY",
+              "bytes": 1,
+              "redefines": null,
+              "occurs": null,
+              "value": null,
+              "line": 22,
+              "children": [],
+              "is_filler": false
+            }
+          ],
+          "is_filler": false
+        },
+        {
+          "level": 5,
+          "name": "POS-FILLER",
+          "pic": "X(",
+          "pic_parsed": {
+            "raw": "X(",
+            "normalized_type": "STRING",
+            "length": 1,
+            "decimal_places": 0,
+            "signed": false,
+            "storage_type": "DISPLAY"
+          },
+          "type": "ELEMENTARY",
+          "storage_type": "DISPLAY",
+          "bytes": 1,
+          "redefines": null,
+          "occurs": null,
+          "value": null,
+          "line": 23,
+          "children": [],
+          "is_filler": false
+        }
+      ],
+      "is_filler": false
+    }
+  ],
+  "layout_issues": []
 }

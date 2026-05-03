@@ -1,89 +1,495 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "ERRHND",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  120,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\DB2ONLN.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  54,
-                           "name":  "P100-PROCESS-CONNECT",
-                           "start_line":  54
-                       },
-                       {
-                           "end_line":  63,
-                           "name":  "P100-EXIT",
-                           "start_line":  63
-                       },
-                       {
-                           "end_line":  66,
-                           "name":  "P110-ESTABLISH-CONNECTION",
-                           "start_line":  66
-                       },
-                       {
-                           "end_line":  80,
-                           "name":  "P110-EXIT",
-                           "start_line":  80
-                       },
-                       {
-                           "end_line":  83,
-                           "name":  "P120-GENERATE-TOKEN",
-                           "start_line":  83
-                       },
-                       {
-                           "end_line":  88,
-                           "name":  "P120-EXIT",
-                           "start_line":  88
-                       },
-                       {
-                           "end_line":  91,
-                           "name":  "P200-PROCESS-DISCONNECT",
-                           "start_line":  91
-                       },
-                       {
-                           "end_line":  102,
-                           "name":  "P200-EXIT",
-                           "start_line":  102
-                       },
-                       {
-                           "end_line":  105,
-                           "name":  "P300-CHECK-STATUS",
-                           "start_line":  105
-                       },
-                       {
-                           "end_line":  119,
-                           "name":  "P300-EXIT",
-                           "start_line":  119
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  12,
-                                          "start_line":  11
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  120,
-                                        "start_line":  39
-                                    },
-                      "DATA":  {
-                                   "end_line":  38,
-                                   "start_line":  13
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  10,
-                                             "start_line":  1
-                                         }
-                  },
-    "program_id":  "DB2ONLN",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "DB2ONLN",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\DB2ONLN.cbl",
+    "total_lines": 120
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 1,
+    "end_line": 10,
+    "program_id": "DB2ONLN"
+  },
+  "data_division": {
+    "start_line": 13,
+    "end_line": 38,
+    "file_section": {
+      "entries": []
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "WS-DB2-AREA",
+          "line": 15,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-POOL-STATS",
+          "line": 18,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-TOTAL-CONNECTIONS",
+          "line": 19,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "0",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ACTIVE-CONNECTIONS",
+          "line": 20,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "0",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-AVAILABLE-CONNECTIONS",
+          "line": 21,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "0",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-MAX-CONNECTIONS",
+          "line": 22,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "100",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-ERROR-AREA",
+          "line": 24,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 14
+    },
+    "linkage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "DB2-REQUEST-AREA",
+          "line": 28,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "DB2-REQUEST-TYPE",
+          "line": 29,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "DB2-CONNECT",
+          "line": 30,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'C'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "DB2-DISCONNECT",
+          "line": 31,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'D'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "DB2-STATUS",
+          "line": 32,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'S'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "DB2-RESPONSE-CODE",
+          "line": 33,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "DB2-CONNECTION-TOKEN",
+          "line": 34,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "DB2-ERROR-INFO",
+          "line": 35,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "DB2-SQLCODE",
+          "line": 36,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "DB2-ERROR-MSG",
+          "line": 37,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 27
+    }
+  },
+  "procedure_division": {
+    "start_line": 39,
+    "end_line": 120,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "P100-PROCESS-CONNECT",
+        "section": null,
+        "start_line": 54,
+        "end_line": 62,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "P100-EXIT",
+        "section": null,
+        "start_line": 63,
+        "end_line": 65,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P110-ESTABLISH-CONNECTION",
+        "section": null,
+        "start_line": 66,
+        "end_line": 79,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P110-EXIT",
+        "section": null,
+        "start_line": 80,
+        "end_line": 82,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P120-GENERATE-TOKEN",
+        "section": null,
+        "start_line": 83,
+        "end_line": 87,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P120-EXIT",
+        "section": null,
+        "start_line": 88,
+        "end_line": 90,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P200-PROCESS-DISCONNECT",
+        "section": null,
+        "start_line": 91,
+        "end_line": 101,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P200-EXIT",
+        "section": null,
+        "start_line": 102,
+        "end_line": 104,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P300-CHECK-STATUS",
+        "section": null,
+        "start_line": 105,
+        "end_line": 107,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 108,
+        "end_line": 118,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P300-EXIT",
+        "section": null,
+        "start_line": 119,
+        "end_line": 120,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": []
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "P100-PROCESS-CONNECT"
+    ],
+    "terminal_nodes": [],
+    "nodes": [
+      {
+        "id": "P100-PROCESS-CONNECT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 54,
+        "end_line": 62,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P100-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 63,
+        "end_line": 65,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P110-ESTABLISH-CONNECTION",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 66,
+        "end_line": 79,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P110-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 80,
+        "end_line": 82,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P120-GENERATE-TOKEN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 83,
+        "end_line": 87,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P120-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 88,
+        "end_line": 90,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P200-PROCESS-DISCONNECT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 91,
+        "end_line": 101,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P200-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 102,
+        "end_line": 104,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P300-CHECK-STATUS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 105,
+        "end_line": 107,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 108,
+        "end_line": 118,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P300-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 119,
+        "end_line": 120,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "P100-PROCESS-CONNECT",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 56,
+        "unstructured": false,
+        "to": "P110-ESTABLISH-CONNECTION"
+      },
+      {
+        "from": "P110-ESTABLISH-CONNECTION",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 73,
+        "unstructured": false,
+        "to": "P120-GENERATE-TOKEN"
+      }
+    ],
+    "dead_code_candidates": [
+      "P100-EXIT",
+      "P110-EXIT",
+      "P120-EXIT",
+      "P200-PROCESS-DISCONNECT",
+      "P200-EXIT",
+      "P300-CHECK-STATUS",
+      "END-EXEC",
+      "P300-EXIT"
+    ],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

@@ -1,68 +1,453 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "PORTFLIO",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "PORTFLIO",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  148,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTADD.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  76,
-                           "name":  "0000-MAIN",
-                           "start_line":  76
-                       },
-                       {
-                           "end_line":  86,
-                           "name":  "1000-INITIALIZE",
-                           "start_line":  86
-                       },
-                       {
-                           "end_line":  104,
-                           "name":  "2000-PROCESS",
-                           "start_line":  104
-                       },
-                       {
-                           "end_line":  113,
-                           "name":  "2100-VALIDATE-AND-ADD",
-                           "start_line":  113
-                       },
-                       {
-                           "end_line":  139,
-                           "name":  "3000-TERMINATE",
-                           "start_line":  139
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  33,
-                                          "start_line":  15
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  148,
-                                        "start_line":  75
-                                    },
-                      "DATA":  {
-                                   "end_line":  74,
-                                   "start_line":  34
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  14,
-                                             "start_line":  12
-                                         }
-                  },
-    "program_id":  "PORTADD",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "PORTADD",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTADD.cbl",
+    "total_lines": 148
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 12,
+    "end_line": 14,
+    "program_id": "PORTADD"
+  },
+  "data_division": {
+    "start_line": 34,
+    "end_line": 74,
+    "file_section": {
+      "entries": [
+        {
+          "type": "FD",
+          "file_name": "PORTFOLIO-FILE",
+          "line": 36,
+          "end_line": 38,
+          "recording_mode": null,
+          "record_contains": null,
+          "block_contains": null
+        },
+        {
+          "type": "FD",
+          "file_name": "INPUT-FILE",
+          "line": 39,
+          "end_line": 41,
+          "recording_mode": null,
+          "record_contains": null,
+          "block_contains": null
+        }
+      ],
+      "start_line": 35
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "WS-CONSTANTS",
+          "line": 46,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-PROGRAM-NAME",
+          "line": 47,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'PORTADD  '",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-SUCCESS",
+          "line": 48,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ERROR",
+          "line": 49,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-SWITCHES",
+          "line": 51,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-FILE-STATUS",
+          "line": 52,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-SUCCESS-STATUS",
+          "line": 53,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'00'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-DUP-STATUS",
+          "line": 54,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'22'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-EOF-STATUS",
+          "line": 55,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'10'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-INPUT-STATUS",
+          "line": 57,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-INPUT-SUCCESS",
+          "line": 58,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'00'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-INPUT-EOF",
+          "line": 59,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'10'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-END-OF-FILE-SW",
+          "line": 61,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "END-OF-FILE",
+          "line": 62,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Y'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "NOT-END-OF-FILE",
+          "line": 63,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-WORK-AREAS",
+          "line": 68,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ADD-COUNT",
+          "line": 69,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ZERO",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ERROR-COUNT",
+          "line": 70,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ZERO",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DUP-COUNT",
+          "line": 71,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ZERO",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-RETURN-CODE",
+          "line": 72,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-CURRENT-DATE",
+          "line": 73,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 42
+    },
+    "linkage_section": {
+      "entries": []
+    }
+  },
+  "procedure_division": {
+    "start_line": 75,
+    "end_line": 148,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 76,
+        "end_line": 85,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-INITIALIZE",
+        "section": null,
+        "start_line": 86,
+        "end_line": 103,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-PROCESS",
+        "section": null,
+        "start_line": 104,
+        "end_line": 112,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2100-VALIDATE-AND-ADD",
+        "section": null,
+        "start_line": 113,
+        "end_line": 138,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-TERMINATE",
+        "section": null,
+        "start_line": 139,
+        "end_line": 148,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 84
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 76,
+        "end_line": 85,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-INITIALIZE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 86,
+        "end_line": 103,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-PROCESS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 104,
+        "end_line": 112,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2100-VALIDATE-AND-ADD",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 113,
+        "end_line": 138,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-TERMINATE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 139,
+        "end_line": 148,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 77,
+        "unstructured": false,
+        "to": "1000-INITIALIZE"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 79,
+        "unstructured": false,
+        "to": "2000-PROCESS"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 82,
+        "unstructured": false,
+        "to": "3000-TERMINATE"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 100,
+        "unstructured": false,
+        "to": "3000-TERMINATE"
+      },
+      {
+        "from": "2000-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 109,
+        "unstructured": false,
+        "to": "2100-VALIDATE-AND-ADD"
+      }
+    ],
+    "dead_code_candidates": [],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

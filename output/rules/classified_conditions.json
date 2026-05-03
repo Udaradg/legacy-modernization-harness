@@ -1,0 +1,2497 @@
+{
+  "meta": {
+    "generated_at": "2026-05-03T18:38:47.166910Z",
+    "agent_version": "5_rules@1.0",
+    "source_artifacts": [
+      "logic_artifact.json",
+      "data_artifact.json"
+    ],
+    "conditions_classified": 192,
+    "high_signal_conditions": 192
+  },
+  "classified_conditions": [
+    {
+      "condition_text": "WS-FILE-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-FILE-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "AUDPROC",
+      "paragraph": "1000-INITIALIZE",
+      "source_paragraph": "1000-INITIALIZE"
+    },
+    {
+      "condition_text": "WS-FILE-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-FILE-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "AUDPROC",
+      "paragraph": "2000-PROCESS-AUDIT",
+      "source_paragraph": "2000-PROCESS-AUDIT"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "BCHCTL00",
+      "paragraph": "0000-MAIN",
+      "source_paragraph": "0000-MAIN"
+    },
+    {
+      "condition_text": "PREREQS-SATISFIED",
+      "condition_fields": [
+        "PREREQS-SATISFIED"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "BCHCTL00",
+      "paragraph": "2000-CHECK-PREREQUISITES",
+      "source_paragraph": "2000-CHECK-PREREQUISITES"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "CKPRST",
+      "paragraph": "RETURN-STATUS",
+      "source_paragraph": "RETURN-STATUS"
+    },
+    {
+      "condition_text": "USE-ARRAY-FETCH",
+      "condition_fields": [
+        "USE-ARRAY-FETCH"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "CURSMGR",
+      "paragraph": "P100-DECLARE-CURSOR",
+      "source_paragraph": "P100-DECLARE-CURSOR"
+    },
+    {
+      "condition_text": "SQLCODE NOT = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "CURSMGR",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "CURSMGR",
+      "paragraph": "P200-OPEN-CURSOR",
+      "source_paragraph": "P200-OPEN-CURSOR"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "DB2CMT",
+      "paragraph": "0000-MAIN",
+      "source_paragraph": "0000-MAIN"
+    },
+    {
+      "condition_text": "LS-RECORDS-PROC >= LS-COMMIT-FREQ",
+      "condition_fields": [
+        "LS-RECORDS-PROC",
+        "LS-COMMIT-FREQ"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "DB2CMT",
+      "paragraph": "2000-COMMIT",
+      "source_paragraph": "2000-COMMIT"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2CMT",
+      "paragraph": "2100-ISSUE-COMMIT",
+      "source_paragraph": "2100-ISSUE-COMMIT"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2CMT",
+      "paragraph": "3000-ROLLBACK",
+      "source_paragraph": "3000-ROLLBACK"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2CMT",
+      "paragraph": "4000-SAVEPOINT",
+      "source_paragraph": "4000-SAVEPOINT"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2CMT",
+      "paragraph": "5000-RESTORE",
+      "source_paragraph": "5000-RESTORE"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "DB2CONN",
+      "paragraph": "0000-MAIN",
+      "source_paragraph": "0000-MAIN"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2CONN",
+      "paragraph": "1000-CONNECT",
+      "source_paragraph": "1000-CONNECT"
+    },
+    {
+      "condition_text": "WS-RETRY-COUNT < WS-MAX-RETRIES",
+      "condition_fields": [
+        "WS-RETRY-COUNT",
+        "WS-MAX-RETRIES"
+      ],
+      "branch_type": "IF",
+      "category": "LIMIT_CHECK",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "DB2CONN",
+      "paragraph": "1000-CONNECT",
+      "source_paragraph": "1000-CONNECT"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "DB2CONN",
+      "paragraph": "1100-HANDLE-CONN-ERROR",
+      "source_paragraph": "1100-HANDLE-CONN-ERROR"
+    },
+    {
+      "condition_text": "WS-CONNECTED",
+      "condition_fields": [
+        "WS-CONNECTED"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "DB2CONN",
+      "paragraph": "2000-DISCONNECT",
+      "source_paragraph": "2000-DISCONNECT"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2CONN",
+      "paragraph": "2000-DISCONNECT",
+      "source_paragraph": "2000-DISCONNECT"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2CONN",
+      "paragraph": "3000-CHECK-STATUS",
+      "source_paragraph": "3000-CHECK-STATUS"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "DB2ERR",
+      "paragraph": "0000-MAIN",
+      "source_paragraph": "0000-MAIN"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "DB2ERR",
+      "paragraph": "1100-SET-SEVERITY",
+      "source_paragraph": "1100-SET-SEVERITY"
+    },
+    {
+      "condition_text": "LS-SQLCODE < 0",
+      "condition_fields": [
+        "LS-SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2ERR",
+      "paragraph": "1100-SET-SEVERITY",
+      "source_paragraph": "1100-SET-SEVERITY"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2ERR",
+      "paragraph": "1200-INSERT-ERROR",
+      "source_paragraph": "1200-INSERT-ERROR"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "DB2ERR",
+      "paragraph": "2000-DIAGNOSE-ERROR",
+      "source_paragraph": "2000-DIAGNOSE-ERROR"
+    },
+    {
+      "condition_text": "LS-SQLCODE < 0",
+      "condition_fields": [
+        "LS-SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2ERR",
+      "paragraph": "2000-DIAGNOSE-ERROR",
+      "source_paragraph": "2000-DIAGNOSE-ERROR"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2ERR",
+      "paragraph": "3000-RETRIEVE-ERROR",
+      "source_paragraph": "3000-RETRIEVE-ERROR"
+    },
+    {
+      "condition_text": "WS-ACTIVE-CONNECTIONS < WS-MAX-CONNECTIONS",
+      "condition_fields": [
+        "WS-ACTIVE-CONNECTIONS",
+        "WS-MAX-CONNECTIONS"
+      ],
+      "branch_type": "IF",
+      "category": "LIMIT_CHECK",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "DB2ONLN",
+      "paragraph": "P100-PROCESS-CONNECT",
+      "source_paragraph": "P100-PROCESS-CONNECT"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2ONLN",
+      "paragraph": "P110-ESTABLISH-CONNECTION",
+      "source_paragraph": "P110-ESTABLISH-CONNECTION"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2ONLN",
+      "paragraph": "P200-PROCESS-DISCONNECT",
+      "source_paragraph": "P200-PROCESS-DISCONNECT"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2ONLN",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "RECV-SUCCESS",
+      "condition_fields": [
+        "RECV-SUCCESS"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "DB2RECV",
+      "paragraph": "P100-RECOVER-CONNECTION",
+      "source_paragraph": "P100-RECOVER-CONNECTION"
+    },
+    {
+      "condition_text": "WS-RETRY-COUNT >= WS-MAX-RETRIES",
+      "condition_fields": [
+        "WS-RETRY-COUNT",
+        "WS-MAX-RETRIES"
+      ],
+      "branch_type": "IF",
+      "category": "LIMIT_CHECK",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "DB2RECV",
+      "paragraph": "END-PERFORM",
+      "source_paragraph": "END-PERFORM"
+    },
+    {
+      "condition_text": "DB2-RESPONSE-CODE OF WS-DB2-REQUEST = 0",
+      "condition_fields": [
+        "OF",
+        "WS-DB2-REQUEST",
+        "DB2-RESPONSE-CODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2RECV",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2RECV",
+      "paragraph": "P200-RECOVER-TRANSACTION",
+      "source_paragraph": "P200-RECOVER-TRANSACTION"
+    },
+    {
+      "condition_text": "ERR-CONTINUE",
+      "condition_fields": [
+        "ERR-CONTINUE"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "CONDITION_NAME",
+      "signal_strength": 5,
+      "program_id": "DB2RECV",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "DB2STAT",
+      "paragraph": "0000-MAIN",
+      "source_paragraph": "0000-MAIN"
+    },
+    {
+      "condition_text": "SQLCODE NOT = 0 AND SQLCODE NOT = -601",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "MULTI_CONDITION",
+      "signal_strength": 4,
+      "program_id": "DB2STAT",
+      "paragraph": "1100-CREATE-STATS-TABLE",
+      "source_paragraph": "1100-CREATE-STATS-TABLE"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2STAT",
+      "paragraph": "1200-INSERT-INITIAL",
+      "source_paragraph": "1200-INSERT-INITIAL"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2STAT",
+      "paragraph": "2000-UPDATE-STATS",
+      "source_paragraph": "2000-UPDATE-STATS"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2STAT",
+      "paragraph": "3000-TERMINATE",
+      "source_paragraph": "3000-TERMINATE"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "DB2STAT",
+      "paragraph": "4000-DISPLAY-STATS",
+      "source_paragraph": "4000-DISPLAY-STATS"
+    },
+    {
+      "condition_text": "ERR-TRACE-ID = SPACES",
+      "condition_fields": [
+        "ERR-TRACE-ID"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 2,
+      "program_id": "ERRHNDL",
+      "paragraph": "P100-INIT-ERROR-HANDLER",
+      "source_paragraph": "P100-INIT-ERROR-HANDLER"
+    },
+    {
+      "condition_text": "SQLCODE NOT = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "ERRHNDL",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "ERRHNDL",
+      "paragraph": "P400-DETERMINE-ACTION",
+      "source_paragraph": "P400-DETERMINE-ACTION"
+    },
+    {
+      "condition_text": "WS-LOG-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-LOG-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "ERRPROC",
+      "paragraph": "1000-INITIALIZE",
+      "source_paragraph": "1000-INITIALIZE"
+    },
+    {
+      "condition_text": "WS-LOG-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-LOG-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "ERRPROC",
+      "paragraph": "2100-WRITE-LOG",
+      "source_paragraph": "2100-WRITE-LOG"
+    },
+    {
+      "condition_text": "MORE-RECORDS",
+      "condition_fields": [
+        "MORE-RECORDS"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "HISTLD00",
+      "paragraph": "2000-PROCESS",
+      "source_paragraph": "2000-PROCESS"
+    },
+    {
+      "condition_text": "WS-TH-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-TH-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "HISTLD00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-BCT-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-BCT-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "HISTLD00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "HISTLD00",
+      "paragraph": "2200-LOAD-TO-DB2",
+      "source_paragraph": "2200-LOAD-TO-DB2"
+    },
+    {
+      "condition_text": "SQLCODE = -803",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "HISTLD00",
+      "paragraph": "2200-LOAD-TO-DB2",
+      "source_paragraph": "2200-LOAD-TO-DB2"
+    },
+    {
+      "condition_text": "WS-COMMIT-COUNT >= WS-COMMIT-THRESHOLD",
+      "condition_fields": [
+        "WS-COMMIT-COUNT",
+        "WS-COMMIT-THRESHOLD"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "HISTLD00",
+      "paragraph": "2300-CHECK-COMMIT",
+      "source_paragraph": "2300-CHECK-COMMIT"
+    },
+    {
+      "condition_text": "DB2-RESPONSE-CODE NOT = 0",
+      "condition_fields": [
+        "DB2-RESPONSE-CODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "INQHIST",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "RECV-SUCCESS",
+      "condition_fields": [
+        "RECV-SUCCESS"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "INQHIST",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "CURS-RESPONSE-CODE = 0",
+      "condition_fields": [
+        "CURS-RESPONSE-CODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "INQHIST",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "CURS-RESPONSE-CODE = 0",
+      "condition_fields": [
+        "CURS-RESPONSE-CODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "INQHIST",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "CURS-RESPONSE-CODE >= 0",
+      "condition_fields": [
+        "CURS-RESPONSE-CODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "INQHIST",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "INQONLN",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "SEC-RESPONSE-CODE NOT = 0",
+      "condition_fields": [
+        "SEC-RESPONSE-CODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "INQONLN",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "ERR-ABEND",
+      "condition_fields": [
+        "ERR-ABEND"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "CONDITION_NAME",
+      "signal_strength": 5,
+      "program_id": "INQONLN",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "SEC-RESPONSE-CODE = 0",
+      "condition_fields": [
+        "SEC-RESPONSE-CODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "INQONLN",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "SEC-RESPONSE-CODE = 0",
+      "condition_fields": [
+        "SEC-RESPONSE-CODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "INQONLN",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "WS-RESPONSE-CODE = DFHRESP(NORMAL)",
+      "condition_fields": [
+        "WS-RESPONSE-CODE",
+        "NORMAL",
+        "DFHRESP"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "INQPORT",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "NOT WS-SUCCESS-STATUS OR",
+      "condition_fields": [
+        "WS-SUCCESS-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PORTADD",
+      "paragraph": "1000-INITIALIZE",
+      "source_paragraph": "1000-INITIALIZE"
+    },
+    {
+      "condition_text": "PORT-ID EQUAL SPACES OR",
+      "condition_fields": [
+        "PORT-ID"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 2,
+      "program_id": "PORTADD",
+      "paragraph": "2100-VALIDATE-AND-ADD",
+      "source_paragraph": "2100-VALIDATE-AND-ADD"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTADD",
+      "paragraph": "2100-VALIDATE-AND-ADD",
+      "source_paragraph": "2100-VALIDATE-AND-ADD"
+    },
+    {
+      "condition_text": "NOT WS-SUCCESS-STATUS OR",
+      "condition_fields": [
+        "WS-SUCCESS-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PORTDEL",
+      "paragraph": "1000-INITIALIZE",
+      "source_paragraph": "1000-INITIALIZE"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTDEL",
+      "paragraph": "2100-PROCESS-DELETE",
+      "source_paragraph": "2100-PROCESS-DELETE"
+    },
+    {
+      "condition_text": "WS-SUCCESS-STATUS",
+      "condition_fields": [
+        "WS-SUCCESS-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PORTDEL",
+      "paragraph": "2200-DELETE-RECORD",
+      "source_paragraph": "2200-DELETE-RECORD"
+    },
+    {
+      "condition_text": "NOT WS-AUD-SUCCESS",
+      "condition_fields": [
+        "WS-AUD-SUCCESS"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTDEL",
+      "paragraph": "2300-WRITE-AUDIT",
+      "source_paragraph": "2300-WRITE-AUDIT"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTMSTR",
+      "paragraph": "0000-MAIN",
+      "source_paragraph": "0000-MAIN"
+    },
+    {
+      "condition_text": "NOT PORT-SUCCESS",
+      "condition_fields": [
+        "PORT-SUCCESS"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTMSTR",
+      "paragraph": "1000-INITIALIZE",
+      "source_paragraph": "1000-INITIALIZE"
+    },
+    {
+      "condition_text": "WS-RETURN-CODE NOT = WS-SUCCESS",
+      "condition_fields": [
+        "WS-SUCCESS",
+        "WS-RETURN-CODE"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PORTMSTR",
+      "paragraph": "2000-CREATE-PORTFOLIO",
+      "source_paragraph": "2000-CREATE-PORTFOLIO"
+    },
+    {
+      "condition_text": "PORT-DUP-KEY",
+      "condition_fields": [
+        "PORT-DUP-KEY"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTMSTR",
+      "paragraph": "2000-CREATE-PORTFOLIO",
+      "source_paragraph": "2000-CREATE-PORTFOLIO"
+    },
+    {
+      "condition_text": "NOT PORT-SUCCESS",
+      "condition_fields": [
+        "PORT-SUCCESS"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTMSTR",
+      "paragraph": "2000-CREATE-PORTFOLIO",
+      "source_paragraph": "2000-CREATE-PORTFOLIO"
+    },
+    {
+      "condition_text": "PORT-ID(1:4) NOT = 'PORT'",
+      "condition_fields": [
+        "PORT",
+        "PORT-ID"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTMSTR",
+      "paragraph": "2100-VALIDATE-PORTFOLIO",
+      "source_paragraph": "2100-VALIDATE-PORTFOLIO"
+    },
+    {
+      "condition_text": "PORT-NAME = SPACES",
+      "condition_fields": [
+        "PORT-NAME"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 2,
+      "program_id": "PORTMSTR",
+      "paragraph": "2100-VALIDATE-PORTFOLIO",
+      "source_paragraph": "2100-VALIDATE-PORTFOLIO"
+    },
+    {
+      "condition_text": "NOT VALID-STATUS",
+      "condition_fields": [
+        "VALID-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PORTMSTR",
+      "paragraph": "2100-VALIDATE-PORTFOLIO",
+      "source_paragraph": "2100-VALIDATE-PORTFOLIO"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTMSTR",
+      "paragraph": "3000-READ-PORTFOLIO",
+      "source_paragraph": "3000-READ-PORTFOLIO"
+    },
+    {
+      "condition_text": "WS-RETURN-CODE NOT = WS-SUCCESS",
+      "condition_fields": [
+        "WS-SUCCESS",
+        "WS-RETURN-CODE"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PORTMSTR",
+      "paragraph": "4000-UPDATE-PORTFOLIO",
+      "source_paragraph": "4000-UPDATE-PORTFOLIO"
+    },
+    {
+      "condition_text": "PORT-NOT-FOUND",
+      "condition_fields": [
+        "PORT-NOT-FOUND"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTMSTR",
+      "paragraph": "4000-UPDATE-PORTFOLIO",
+      "source_paragraph": "4000-UPDATE-PORTFOLIO"
+    },
+    {
+      "condition_text": "NOT PORT-SUCCESS",
+      "condition_fields": [
+        "PORT-SUCCESS"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTMSTR",
+      "paragraph": "4000-UPDATE-PORTFOLIO",
+      "source_paragraph": "4000-UPDATE-PORTFOLIO"
+    },
+    {
+      "condition_text": "PORT-NOT-FOUND",
+      "condition_fields": [
+        "PORT-NOT-FOUND"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTMSTR",
+      "paragraph": "5000-DELETE-PORTFOLIO",
+      "source_paragraph": "5000-DELETE-PORTFOLIO"
+    },
+    {
+      "condition_text": "NOT PORT-SUCCESS",
+      "condition_fields": [
+        "PORT-SUCCESS"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTMSTR",
+      "paragraph": "5000-DELETE-PORTFOLIO",
+      "source_paragraph": "5000-DELETE-PORTFOLIO"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTMSTR",
+      "paragraph": "2100-HANDLE-VSAM-ERROR",
+      "source_paragraph": "2100-HANDLE-VSAM-ERROR"
+    },
+    {
+      "condition_text": "NOT WS-SUCCESS-STATUS",
+      "condition_fields": [
+        "WS-SUCCESS-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PORTREAD",
+      "paragraph": "1000-INITIALIZE",
+      "source_paragraph": "1000-INITIALIZE"
+    },
+    {
+      "condition_text": "WS-FILE-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-FILE-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PORTTEST",
+      "paragraph": "1000-INITIALIZE",
+      "source_paragraph": "1000-INITIALIZE"
+    },
+    {
+      "condition_text": "WS-FILE-STATUS = '00'",
+      "condition_fields": [
+        "WS-FILE-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PORTTEST",
+      "paragraph": "2000-GENERATE-RECORDS",
+      "source_paragraph": "2000-GENERATE-RECORDS"
+    },
+    {
+      "condition_text": "WS-TRAN-STATUS = '00'",
+      "condition_fields": [
+        "WS-TRAN-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PORTTRAN",
+      "paragraph": "0000-MAIN",
+      "source_paragraph": "0000-MAIN"
+    },
+    {
+      "condition_text": "WS-TRAN-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-TRAN-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PORTTRAN",
+      "paragraph": "1000-INITIALIZE",
+      "source_paragraph": "1000-INITIALIZE"
+    },
+    {
+      "condition_text": "WS-PORT-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-PORT-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PORTTRAN",
+      "paragraph": "1000-INITIALIZE",
+      "source_paragraph": "1000-INITIALIZE"
+    },
+    {
+      "condition_text": "ERR-TEXT = SPACES",
+      "condition_fields": [
+        "ERR-TEXT"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 2,
+      "program_id": "PORTTRAN",
+      "paragraph": "2100-VALIDATE-TRANSACTION",
+      "source_paragraph": "2100-VALIDATE-TRANSACTION"
+    },
+    {
+      "condition_text": "ERR-TEXT = SPACES",
+      "condition_fields": [
+        "ERR-TEXT"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 2,
+      "program_id": "PORTTRAN",
+      "paragraph": "2100-VALIDATE-TRANSACTION",
+      "source_paragraph": "2100-VALIDATE-TRANSACTION"
+    },
+    {
+      "condition_text": "ERR-TEXT = SPACES",
+      "condition_fields": [
+        "ERR-TEXT"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 2,
+      "program_id": "PORTTRAN",
+      "paragraph": "2100-VALIDATE-TRANSACTION",
+      "source_paragraph": "2100-VALIDATE-TRANSACTION"
+    },
+    {
+      "condition_text": "TRN-PORTFOLIO-ID = SPACES",
+      "condition_fields": [
+        "TRN-PORTFOLIO-ID"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 2,
+      "program_id": "PORTTRAN",
+      "paragraph": "2110-CHECK-PORTFOLIO",
+      "source_paragraph": "2110-CHECK-PORTFOLIO"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTTRAN",
+      "paragraph": "2120-CHECK-TRANSACTION-TYPE",
+      "source_paragraph": "2120-CHECK-TRANSACTION-TYPE"
+    },
+    {
+      "condition_text": "TRN-QUANTITY <= ZERO",
+      "condition_fields": [
+        "ZERO",
+        "TRN-QUANTITY"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTTRAN",
+      "paragraph": "2130-CHECK-AMOUNTS",
+      "source_paragraph": "2130-CHECK-AMOUNTS"
+    },
+    {
+      "condition_text": "TRN-PRICE <= ZERO AND TRN-TYPE NOT = 'TR'",
+      "condition_fields": [
+        "TRN-PRICE",
+        "TR",
+        "TRN-TYPE",
+        "ZERO"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "MULTI_CONDITION",
+      "signal_strength": 4,
+      "program_id": "PORTTRAN",
+      "paragraph": "2130-CHECK-AMOUNTS",
+      "source_paragraph": "2130-CHECK-AMOUNTS"
+    },
+    {
+      "condition_text": "TRN-AMOUNT <= ZERO AND TRN-TYPE NOT = 'TR'",
+      "condition_fields": [
+        "TRN-AMOUNT",
+        "TR",
+        "ZERO",
+        "TRN-TYPE"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "MULTI_CONDITION",
+      "signal_strength": 4,
+      "program_id": "PORTTRAN",
+      "paragraph": "2130-CHECK-AMOUNTS",
+      "source_paragraph": "2130-CHECK-AMOUNTS"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTTRAN",
+      "paragraph": "2200-UPDATE-POSITIONS",
+      "source_paragraph": "2200-UPDATE-POSITIONS"
+    },
+    {
+      "condition_text": "PORT-TOTAL-UNITS < TRN-QUANTITY",
+      "condition_fields": [
+        "TRN-QUANTITY",
+        "PORT-TOTAL-UNITS"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTTRAN",
+      "paragraph": "2220-PROCESS-SELL",
+      "source_paragraph": "2220-PROCESS-SELL"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTTRAN",
+      "paragraph": "2300-UPDATE-AUDIT-TRAIL",
+      "source_paragraph": "2300-UPDATE-AUDIT-TRAIL"
+    },
+    {
+      "condition_text": "WS-PORT-STATUS = '00'",
+      "condition_fields": [
+        "WS-PORT-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PORTTRAN",
+      "paragraph": "2300-UPDATE-AUDIT-TRAIL",
+      "source_paragraph": "2300-UPDATE-AUDIT-TRAIL"
+    },
+    {
+      "condition_text": "RETURN-CODE NOT = ZERO",
+      "condition_fields": [
+        "ZERO",
+        "RETURN-CODE"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 3,
+      "program_id": "PORTTRAN",
+      "paragraph": "2310-WRITE-AUDIT-RECORD",
+      "source_paragraph": "2310-WRITE-AUDIT-RECORD"
+    },
+    {
+      "condition_text": "NOT WS-SUCCESS-STATUS OR",
+      "condition_fields": [
+        "WS-SUCCESS-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PORTUPDT",
+      "paragraph": "1000-INITIALIZE",
+      "source_paragraph": "1000-INITIALIZE"
+    },
+    {
+      "condition_text": "WS-SUCCESS-STATUS",
+      "condition_fields": [
+        "WS-SUCCESS-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PORTUPDT",
+      "paragraph": "2100-PROCESS-UPDATE",
+      "source_paragraph": "2100-PROCESS-UPDATE"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTUPDT",
+      "paragraph": "2200-APPLY-UPDATE",
+      "source_paragraph": "2200-APPLY-UPDATE"
+    },
+    {
+      "condition_text": "WS-SUCCESS-STATUS",
+      "condition_fields": [
+        "WS-SUCCESS-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PORTUPDT",
+      "paragraph": "2200-APPLY-UPDATE",
+      "source_paragraph": "2200-APPLY-UPDATE"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTVALD",
+      "paragraph": "0000-MAIN",
+      "source_paragraph": "0000-MAIN"
+    },
+    {
+      "condition_text": "LS-INPUT-VALUE(1:4) NOT = VAL-ID-PREFIX",
+      "condition_fields": [
+        "LS-INPUT-VALUE",
+        "VAL-ID-PREFIX"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTVALD",
+      "paragraph": "1000-VALIDATE-ID",
+      "source_paragraph": "1000-VALIDATE-ID"
+    },
+    {
+      "condition_text": "VAL-NUMERIC-CHECK IS NOT NUMERIC",
+      "condition_fields": [
+        "NUMERIC",
+        "VAL-NUMERIC-CHECK"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTVALD",
+      "paragraph": "1000-VALIDATE-ID",
+      "source_paragraph": "1000-VALIDATE-ID"
+    },
+    {
+      "condition_text": "LS-INPUT-VALUE IS NOT NUMERIC",
+      "condition_fields": [
+        "NUMERIC",
+        "LS-INPUT-VALUE"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTVALD",
+      "paragraph": "2000-VALIDATE-ACCOUNT",
+      "source_paragraph": "2000-VALIDATE-ACCOUNT"
+    },
+    {
+      "condition_text": "LS-INPUT-VALUE NOT = 'STK'",
+      "condition_fields": [
+        "LS-INPUT-VALUE",
+        "STK"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTVALD",
+      "paragraph": "3000-VALIDATE-TYPE",
+      "source_paragraph": "3000-VALIDATE-TYPE"
+    },
+    {
+      "condition_text": "VAL-TEMP-NUM < VAL-MIN-AMOUNT",
+      "condition_fields": [
+        "VAL-TEMP-NUM",
+        "VAL-MIN-AMOUNT"
+      ],
+      "branch_type": "IF",
+      "category": "LIMIT_CHECK",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PORTVALD",
+      "paragraph": "4000-VALIDATE-AMOUNT",
+      "source_paragraph": "4000-VALIDATE-AMOUNT"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PRCSEQ00",
+      "paragraph": "0000-MAIN",
+      "source_paragraph": "0000-MAIN"
+    },
+    {
+      "condition_text": "LS-RETURN-CODE = ZERO",
+      "condition_fields": [
+        "ZERO",
+        "LS-RETURN-CODE"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 3,
+      "program_id": "PRCSEQ00",
+      "paragraph": "2000-GET-NEXT-PROCESS",
+      "source_paragraph": "2000-GET-NEXT-PROCESS"
+    },
+    {
+      "condition_text": "WS-PSR-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-PSR-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PRCSEQ00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-BCT-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-BCT-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PRCSEQ00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "PSR-TYPE = LS-SEQUENCE-TYPE",
+      "condition_fields": [
+        "PSR-TYPE",
+        "LS-SEQUENCE-TYPE"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 4,
+      "program_id": "PRCSEQ00",
+      "paragraph": "1200-BUILD-SEQUENCE",
+      "source_paragraph": "1200-BUILD-SEQUENCE"
+    },
+    {
+      "condition_text": "WS-PROC-STATUS(WS-SEQUENCE-IX) = BCT-STAT-READY",
+      "condition_fields": [
+        "BCT-STAT-READY",
+        "WS-SEQUENCE-IX",
+        "WS-PROC-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PRCSEQ00",
+      "paragraph": "2100-FIND-NEXT-READY",
+      "source_paragraph": "2100-FIND-NEXT-READY"
+    },
+    {
+      "condition_text": "WS-SEQUENCE-IX > WS-PROCESS-COUNT",
+      "condition_fields": [
+        "WS-SEQUENCE-IX",
+        "WS-PROCESS-COUNT"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PRCSEQ00",
+      "paragraph": "2100-FIND-NEXT-READY",
+      "source_paragraph": "2100-FIND-NEXT-READY"
+    },
+    {
+      "condition_text": "LS-RETURN-CODE NOT = ZERO",
+      "condition_fields": [
+        "ZERO",
+        "LS-RETURN-CODE"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 3,
+      "program_id": "PRCSEQ00",
+      "paragraph": "2200-CHECK-DEPENDENCIES",
+      "source_paragraph": "2200-CHECK-DEPENDENCIES"
+    },
+    {
+      "condition_text": "NOT BCT-STATUS-DONE",
+      "condition_fields": [
+        "BCT-STATUS-DONE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "CONDITION_NAME",
+      "signal_strength": 5,
+      "program_id": "PRCSEQ00",
+      "paragraph": "2210-CHECK-DEP-STATUS",
+      "source_paragraph": "2210-CHECK-DEP-STATUS"
+    },
+    {
+      "condition_text": "PSR-DEP-HARD(WS-SUB)",
+      "condition_fields": [
+        "WS-SUB",
+        "PSR-DEP-HARD"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "CONDITION_NAME",
+      "signal_strength": 5,
+      "program_id": "PRCSEQ00",
+      "paragraph": "2210-CHECK-DEP-STATUS",
+      "source_paragraph": "2210-CHECK-DEP-STATUS"
+    },
+    {
+      "condition_text": "BCT-RETURN-CODE > PSR-DEP-RC(WS-SUB)",
+      "condition_fields": [
+        "BCT-RETURN-CODE",
+        "WS-SUB",
+        "PSR-DEP-RC"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PRCSEQ00",
+      "paragraph": "2210-CHECK-DEP-STATUS",
+      "source_paragraph": "2210-CHECK-DEP-STATUS"
+    },
+    {
+      "condition_text": "WS-PROC-ID(WS-SEQUENCE-IX) = BCT-JOB-NAME",
+      "condition_fields": [
+        "WS-PROC-ID",
+        "WS-SEQUENCE-IX",
+        "BCT-JOB-NAME"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PRCSEQ00",
+      "paragraph": "3200-UPDATE-SEQUENCE-TABLE",
+      "source_paragraph": "3200-UPDATE-SEQUENCE-TABLE"
+    },
+    {
+      "condition_text": "WS-PROC-STATUS(WS-SEQUENCE-IX) = BCT-STAT-ACTIVE",
+      "condition_fields": [
+        "WS-SEQUENCE-IX",
+        "BCT-STAT-ACTIVE",
+        "WS-PROC-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PRCSEQ00",
+      "paragraph": "3300-CHECK-COMPLETION",
+      "source_paragraph": "3300-CHECK-COMPLETION"
+    },
+    {
+      "condition_text": "WS-PROC-STATUS(WS-SEQUENCE-IX) = BCT-STAT-ERROR",
+      "condition_fields": [
+        "BCT-STAT-ERROR",
+        "WS-SEQUENCE-IX",
+        "WS-PROC-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 4,
+      "program_id": "PRCSEQ00",
+      "paragraph": "3300-CHECK-COMPLETION",
+      "source_paragraph": "3300-CHECK-COMPLETION"
+    },
+    {
+      "condition_text": "WS-ERROR-COUNT > ZERO",
+      "condition_fields": [
+        "WS-ERROR-COUNT",
+        "ZERO"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PRCSEQ00",
+      "paragraph": "4100-CHECK-FINAL-STATUS",
+      "source_paragraph": "4100-CHECK-FINAL-STATUS"
+    },
+    {
+      "condition_text": "WS-ACTIVE-COUNT > ZERO",
+      "condition_fields": [
+        "ZERO",
+        "WS-ACTIVE-COUNT"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "PRCSEQ00",
+      "paragraph": "4100-CHECK-FINAL-STATUS",
+      "source_paragraph": "4100-CHECK-FINAL-STATUS"
+    },
+    {
+      "condition_text": "WS-PSR-STATUS NOT = '00' OR",
+      "condition_fields": [
+        "WS-PSR-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "PRCSEQ00",
+      "paragraph": "4200-CLOSE-FILES",
+      "source_paragraph": "4200-CLOSE-FILES"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "RCVPRC00",
+      "paragraph": "0000-MAIN",
+      "source_paragraph": "0000-MAIN"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "RCVPRC00",
+      "paragraph": "2000-PROCESS-RECOVERY",
+      "source_paragraph": "2000-PROCESS-RECOVERY"
+    },
+    {
+      "condition_text": "WS-BCT-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-BCT-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "RCVPRC00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-PSR-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-PSR-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "RCVPRC00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "LS-PROCESS-DATE = SPACES",
+      "condition_fields": [
+        "LS-PROCESS-DATE"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 2,
+      "program_id": "RCVPRC00",
+      "paragraph": "1200-VALIDATE-REQUEST",
+      "source_paragraph": "1200-VALIDATE-REQUEST"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "RCVPRC00",
+      "paragraph": "1200-VALIDATE-REQUEST",
+      "source_paragraph": "1200-VALIDATE-REQUEST"
+    },
+    {
+      "condition_text": "WS-RECOVER-PROCESS AND LS-PROCESS-ID = SPACES",
+      "condition_fields": [
+        "LS-PROCESS-ID",
+        "WS-RECOVER-PROCESS"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "MULTI_CONDITION",
+      "signal_strength": 3,
+      "program_id": "RCVPRC00",
+      "paragraph": "1300-SET-RECOVERY-MODE",
+      "source_paragraph": "1300-SET-RECOVERY-MODE"
+    },
+    {
+      "condition_text": "PSR-RESTARTABLE",
+      "condition_fields": [
+        "PSR-RESTARTABLE"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "CONDITION_NAME",
+      "signal_strength": 5,
+      "program_id": "RCVPRC00",
+      "paragraph": "2110-DETERMINE-ACTION",
+      "source_paragraph": "2110-DETERMINE-ACTION"
+    },
+    {
+      "condition_text": "BCT-RESTART-COUNT > BCT-MAX-RESTARTS",
+      "condition_fields": [
+        "BCT-MAX-RESTARTS",
+        "BCT-RESTART-COUNT"
+      ],
+      "branch_type": "IF",
+      "category": "LIMIT_CHECK",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "RCVPRC00",
+      "paragraph": "2110-DETERMINE-ACTION",
+      "source_paragraph": "2110-DETERMINE-ACTION"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "RCVPRC00",
+      "paragraph": "2120-EXECUTE-RECOVERY",
+      "source_paragraph": "2120-EXECUTE-RECOVERY"
+    },
+    {
+      "condition_text": "BCT-PROCESS-DATE = LS-PROCESS-DATE",
+      "condition_fields": [
+        "BCT-PROCESS-DATE",
+        "LS-PROCESS-DATE"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "RCVPRC00",
+      "paragraph": "2200-RECOVER-SEQUENCE",
+      "source_paragraph": "2200-RECOVER-SEQUENCE"
+    },
+    {
+      "condition_text": "LS-RETURN-CODE = ZERO",
+      "condition_fields": [
+        "ZERO",
+        "LS-RETURN-CODE"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 3,
+      "program_id": "RCVPRC00",
+      "paragraph": "3100-UPDATE-FINAL-STATUS",
+      "source_paragraph": "3100-UPDATE-FINAL-STATUS"
+    },
+    {
+      "condition_text": "WS-BCT-STATUS NOT = '00' OR",
+      "condition_fields": [
+        "WS-BCT-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "RCVPRC00",
+      "paragraph": "3200-CLOSE-FILES",
+      "source_paragraph": "3200-CLOSE-FILES"
+    },
+    {
+      "condition_text": "WS-AUDIT-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-AUDIT-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "RPTAUD00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-ERROR-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-ERROR-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "RPTAUD00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-REPORT-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-REPORT-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "RPTAUD00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-POSITION-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-POSITION-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "RPTPOS00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-TRAN-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-TRAN-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "RPTPOS00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-REPORT-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-REPORT-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "RPTPOS00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-DB2-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-DB2-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "RPTSTA00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-BCH-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-BCH-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "RPTSTA00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-REPORT-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-REPORT-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "RPTSTA00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-REPORT-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-REPORT-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "RTNANA00",
+      "paragraph": "P100-INIT-PROGRAM",
+      "source_paragraph": "P100-INIT-PROGRAM"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "RTNANA00",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "RC-NEW-CODE > RC-HIGHEST-CODE",
+      "condition_fields": [
+        "RC-NEW-CODE",
+        "RC-HIGHEST-CODE"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 4,
+      "program_id": "RTNCDE00",
+      "paragraph": "P200-SET-RETURN-CODE",
+      "source_paragraph": "P200-SET-RETURN-CODE"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "RTNCDE00",
+      "paragraph": "P200-SET-RETURN-CODE",
+      "source_paragraph": "P200-SET-RETURN-CODE"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "RTNCDE00",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "RTNCDE00",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "SEC-RESPONSE-CODE = DFHRESP(NORMAL)",
+      "condition_fields": [
+        "NORMAL",
+        "SEC-RESPONSE-CODE",
+        "DFHRESP"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "SECMGR",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "SEC-USER-ID = WS-USER-ID",
+      "condition_fields": [
+        "SEC-USER-ID",
+        "WS-USER-ID"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "SECMGR",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "SECMGR",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "WS-DB2-AREA > 0",
+      "condition_fields": [
+        "WS-DB2-AREA"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "SECMGR",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "SQLCODE = 0",
+      "condition_fields": [
+        "SQLCODE"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "SECMGR",
+      "paragraph": "END-EXEC",
+      "source_paragraph": "END-EXEC"
+    },
+    {
+      "condition_text": "WS-CFG-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-CFG-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "TSTGEN00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-PORT-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-PORT-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "TSTGEN00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-TRAN-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-TRAN-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "TSTGEN00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-RAND-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-RAND-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "TSTGEN00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "TSTGEN00",
+      "paragraph": "2100-GENERATE-TEST-DATA",
+      "source_paragraph": "2100-GENERATE-TEST-DATA"
+    },
+    {
+      "condition_text": "WS-ERROR-COUNT > 100",
+      "condition_fields": [
+        "WS-ERROR-COUNT"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "TSTGEN00",
+      "paragraph": "9999-ERROR-HANDLER",
+      "source_paragraph": "9999-ERROR-HANDLER"
+    },
+    {
+      "condition_text": "WS-TEST-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-TEST-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "TSTVAL00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-EXP-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-EXP-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "TSTVAL00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-ACT-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-ACT-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "TSTVAL00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-RPT-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-RPT-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "TSTVAL00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "TSTVAL00",
+      "paragraph": "2100-EXECUTE-TEST",
+      "source_paragraph": "2100-EXECUTE-TEST"
+    },
+    {
+      "condition_text": "WS-CTL-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-CTL-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "UTLMNT00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-ARCH-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-ARCH-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "UTLMNT00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-REPORT-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-REPORT-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "UTLMNT00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "UTLMNT00",
+      "paragraph": "2100-PROCESS-FUNCTION",
+      "source_paragraph": "2100-PROCESS-FUNCTION"
+    },
+    {
+      "condition_text": "WS-ERROR-COUNT > 100",
+      "condition_fields": [
+        "WS-ERROR-COUNT"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "UTLMNT00",
+      "paragraph": "9999-ERROR-HANDLER",
+      "source_paragraph": "9999-ERROR-HANDLER"
+    },
+    {
+      "condition_text": "WS-CFG-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-CFG-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "UTLMON00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-LOG-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-LOG-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "UTLMON00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-ALERT-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-ALERT-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "UTLMON00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-DB2-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-DB2-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "UTLMON00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "THRESHOLD-MET",
+      "condition_fields": [
+        "THRESHOLD-MET"
+      ],
+      "branch_type": "IF",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "UTLMON00",
+      "paragraph": "2400-GENERATE-ALERTS",
+      "source_paragraph": "2400-GENERATE-ALERTS"
+    },
+    {
+      "condition_text": "WS-VAL-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-VAL-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "UTLVAL00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-POS-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-POS-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "UTLVAL00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-TRAN-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-TRAN-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "UTLVAL00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "WS-RPT-STATUS NOT = '00'",
+      "condition_fields": [
+        "WS-RPT-STATUS"
+      ],
+      "branch_type": "IF",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "program_id": "UTLVAL00",
+      "paragraph": "1100-OPEN-FILES",
+      "source_paragraph": "1100-OPEN-FILES"
+    },
+    {
+      "condition_text": "",
+      "condition_fields": [],
+      "branch_type": "EVALUATE",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "program_id": "UTLVAL00",
+      "paragraph": "2100-PROCESS-VALIDATION",
+      "source_paragraph": "2100-PROCESS-VALIDATION"
+    }
+  ]
+}

@@ -1,107 +1,1194 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "DB2STAT",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "RTNCODE",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "ERRHAND",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  221,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\utility\\UTLMON00.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  128,
-                           "name":  "0000-MAIN",
-                           "start_line":  128
-                       },
-                       {
-                           "end_line":  134,
-                           "name":  "1000-INITIALIZE",
-                           "start_line":  134
-                       },
-                       {
-                           "end_line":  139,
-                           "name":  "1100-OPEN-FILES",
-                           "start_line":  139
-                       },
-                       {
-                           "end_line":  168,
-                           "name":  "1200-INIT-PROCESSING",
-                           "start_line":  168
-                       },
-                       {
-                           "end_line":  171,
-                           "name":  "1300-READ-CONFIG",
-                           "start_line":  171
-                       },
-                       {
-                           "end_line":  181,
-                           "name":  "2000-PROCESS",
-                           "start_line":  181
-                       },
-                       {
-                           "end_line":  189,
-                           "name":  "2100-COLLECT-METRICS",
-                           "start_line":  189
-                       },
-                       {
-                           "end_line":  195,
-                           "name":  "2200-CHECK-THRESHOLDS",
-                           "start_line":  195
-                       },
-                       {
-                           "end_line":  201,
-                           "name":  "2300-LOG-STATUS",
-                           "start_line":  201
-                       },
-                       {
-                           "end_line":  206,
-                           "name":  "2400-GENERATE-ALERTS",
-                           "start_line":  206
-                       },
-                       {
-                           "end_line":  212,
-                           "name":  "3000-CLEANUP",
-                           "start_line":  212
-                       },
-                       {
-                           "end_line":  218,
-                           "name":  "9999-ERROR-HANDLER",
-                           "start_line":  218
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  40,
-                                          "start_line":  14
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  221,
-                                        "start_line":  127
-                                    },
-                      "DATA":  {
-                                   "end_line":  126,
-                                   "start_line":  41
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  13,
-                                             "start_line":  1
-                                         }
-                  },
-    "program_id":  "UTLMON00",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "UTLMON00",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\utility\\UTLMON00.cbl",
+    "total_lines": 221
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 1,
+    "end_line": 13,
+    "program_id": "UTLMON00",
+    "author": "CLAUDE.",
+    "date_written": "2024-04-09."
+  },
+  "data_division": {
+    "start_line": 41,
+    "end_line": 126,
+    "file_section": {
+      "entries": [
+        {
+          "type": "FD",
+          "file_name": "MONITOR-CONFIG",
+          "line": 45,
+          "end_line": 54,
+          "recording_mode": "F",
+          "record_contains": null,
+          "block_contains": "0"
+        },
+        {
+          "type": "FD",
+          "file_name": "MONITOR-LOG",
+          "line": 55,
+          "end_line": 64,
+          "recording_mode": "F",
+          "record_contains": null,
+          "block_contains": "0"
+        },
+        {
+          "type": "FD",
+          "file_name": "ALERT-FILE",
+          "line": 65,
+          "end_line": 73,
+          "recording_mode": "F",
+          "record_contains": null,
+          "block_contains": "0"
+        }
+      ],
+      "start_line": 42
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "type": "copy_stub",
+          "copybook": "RTNCODE",
+          "library": null,
+          "line": 75,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "type": "copy_stub",
+          "copybook": "ERRHAND",
+          "library": null,
+          "line": 76,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "level": 1,
+          "name": "WS-FILE-STATUS",
+          "line": 78,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-CFG-STATUS",
+          "line": 79,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-LOG-STATUS",
+          "line": 80,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ALERT-STATUS",
+          "line": 81,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DB2-STATUS",
+          "line": 82,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-RESOURCE-TYPES",
+          "line": 84,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-CPU",
+          "line": 85,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'CPU'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-MEMORY",
+          "line": 86,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'MEMORY'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DASD",
+          "line": 87,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'DASD'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DB2",
+          "line": 88,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'DB2'",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-THRESHOLD-TYPES",
+          "line": 90,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-UTILIZATION",
+          "line": 91,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'UTIL'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-RESPONSE",
+          "line": 92,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'RESPONSE'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-QUEUE",
+          "line": 93,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'QUEUE'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ERROR",
+          "line": 94,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'ERROR'",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-ALERT-LEVELS",
+          "line": 96,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-INFO",
+          "line": 97,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'INFO'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-WARNING",
+          "line": 98,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'WARNING'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-CRITICAL",
+          "line": 99,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'CRITICAL'",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-PROCESSING-FLAGS",
+          "line": 101,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-END-OF-CONFIG",
+          "line": 102,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "END-OF-CONFIG",
+          "line": 103,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Y'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-THRESHOLD-MET",
+          "line": 104,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "THRESHOLD-MET",
+          "line": 105,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Y'",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-CURRENT-METRICS",
+          "line": 107,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-CPU-UTIL",
+          "line": 108,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-MEMORY-UTIL",
+          "line": 109,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DASD-UTIL",
+          "line": 110,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DB2-UTIL",
+          "line": 111,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DB2-RESP",
+          "line": 112,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DB2-QUEUE",
+          "line": 113,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DB2-ERRORS",
+          "line": 114,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-TIMESTAMP",
+          "line": 116,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DATE",
+          "line": 117,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-YEAR",
+          "line": 118,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-MONTH",
+          "line": 119,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-DAY",
+          "line": 120,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-TIME",
+          "line": 121,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-HOUR",
+          "line": 122,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-MINUTE",
+          "line": 123,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-SECOND",
+          "line": 124,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-HUNDREDTH",
+          "line": 125,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 74
+    },
+    "linkage_section": {
+      "entries": []
+    }
+  },
+  "procedure_division": {
+    "start_line": 127,
+    "end_line": 221,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 128,
+        "end_line": 133,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-INITIALIZE",
+        "section": null,
+        "start_line": 134,
+        "end_line": 138,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1100-OPEN-FILES",
+        "section": null,
+        "start_line": 139,
+        "end_line": 167,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1200-INIT-PROCESSING",
+        "section": null,
+        "start_line": 168,
+        "end_line": 170,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1300-READ-CONFIG",
+        "section": null,
+        "start_line": 171,
+        "end_line": 178,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-PERFORM",
+        "section": null,
+        "start_line": 179,
+        "end_line": 180,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-PROCESS",
+        "section": null,
+        "start_line": 181,
+        "end_line": 188,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2100-COLLECT-METRICS",
+        "section": null,
+        "start_line": 189,
+        "end_line": 194,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2200-CHECK-THRESHOLDS",
+        "section": null,
+        "start_line": 195,
+        "end_line": 200,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2300-LOG-STATUS",
+        "section": null,
+        "start_line": 201,
+        "end_line": 205,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2400-GENERATE-ALERTS",
+        "section": null,
+        "start_line": 206,
+        "end_line": 211,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-CLEANUP",
+        "section": null,
+        "start_line": 212,
+        "end_line": 215,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "DB2-STATS",
+        "section": null,
+        "start_line": 216,
+        "end_line": 217,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "9999-ERROR-HANDLER",
+        "section": null,
+        "start_line": 218,
+        "end_line": 221,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 132
+      },
+      {
+        "type": "GOBACK",
+        "line": 221
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN",
+      "9999-ERROR-HANDLER"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 128,
+        "end_line": 133,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-INITIALIZE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 134,
+        "end_line": 138,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1100-OPEN-FILES",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 139,
+        "end_line": 167,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1200-INIT-PROCESSING",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 168,
+        "end_line": 170,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1300-READ-CONFIG",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 171,
+        "end_line": 178,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-PERFORM",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 179,
+        "end_line": 180,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-PROCESS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 181,
+        "end_line": 188,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2100-COLLECT-METRICS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 189,
+        "end_line": 194,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2200-CHECK-THRESHOLDS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 195,
+        "end_line": 200,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2300-LOG-STATUS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 201,
+        "end_line": 205,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2400-GENERATE-ALERTS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 206,
+        "end_line": 211,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-CLEANUP",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 212,
+        "end_line": 215,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "DB2-STATS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 216,
+        "end_line": 217,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "9999-ERROR-HANDLER",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 218,
+        "end_line": 221,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 129,
+        "unstructured": false,
+        "to": "1000-INITIALIZE"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_UNTIL",
+        "resolved": true,
+        "source_line": 130,
+        "unstructured": false,
+        "to": "2000-PROCESS",
+        "condition_text": ""
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 131,
+        "unstructured": false,
+        "to": "3000-CLEANUP"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 135,
+        "unstructured": false,
+        "to": "1100-OPEN-FILES"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 136,
+        "unstructured": false,
+        "to": "1200-INIT-PROCESSING"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 137,
+        "unstructured": false,
+        "to": "1300-READ-CONFIG"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 144,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 151,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 158,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 165,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "1300-READ-CONFIG",
+        "type": "PERFORM_INLINE",
+        "resolved": true,
+        "source_line": 172,
+        "unstructured": false,
+        "to": "1300-READ-CONFIG",
+        "inline": true
+      },
+      {
+        "from": "1300-READ-CONFIG",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 177,
+        "unstructured": false,
+        "to": "1310-STORE-CONFIG"
+      },
+      {
+        "from": "2000-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 182,
+        "unstructured": false,
+        "to": "2100-COLLECT-METRICS"
+      },
+      {
+        "from": "2000-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 183,
+        "unstructured": false,
+        "to": "2200-CHECK-THRESHOLDS"
+      },
+      {
+        "from": "2000-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 184,
+        "unstructured": false,
+        "to": "2300-LOG-STATUS"
+      },
+      {
+        "from": "2000-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 185,
+        "unstructured": false,
+        "to": "2400-GENERATE-ALERTS"
+      },
+      {
+        "from": "2000-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 187,
+        "unstructured": false,
+        "to": "1200-INIT-PROCESSING"
+      },
+      {
+        "from": "2100-COLLECT-METRICS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 190,
+        "unstructured": false,
+        "to": "2110-GET-CPU-METRICS"
+      },
+      {
+        "from": "2100-COLLECT-METRICS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 191,
+        "unstructured": false,
+        "to": "2120-GET-MEMORY-METRICS"
+      },
+      {
+        "from": "2100-COLLECT-METRICS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 192,
+        "unstructured": false,
+        "to": "2130-GET-DASD-METRICS"
+      },
+      {
+        "from": "2100-COLLECT-METRICS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 193,
+        "unstructured": false,
+        "to": "2140-GET-DB2-METRICS"
+      },
+      {
+        "from": "2200-CHECK-THRESHOLDS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 196,
+        "unstructured": false,
+        "to": "2210-CHECK-UTILIZATION"
+      },
+      {
+        "from": "2200-CHECK-THRESHOLDS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 197,
+        "unstructured": false,
+        "to": "2220-CHECK-RESPONSE"
+      },
+      {
+        "from": "2200-CHECK-THRESHOLDS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 198,
+        "unstructured": false,
+        "to": "2230-CHECK-QUEUES"
+      },
+      {
+        "from": "2200-CHECK-THRESHOLDS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 199,
+        "unstructured": false,
+        "to": "2240-CHECK-ERRORS"
+      },
+      {
+        "from": "2300-LOG-STATUS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 203,
+        "unstructured": false,
+        "to": "2310-LOG-RESOURCES"
+      },
+      {
+        "from": "2300-LOG-STATUS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 204,
+        "unstructured": false,
+        "to": "2320-LOG-PERFORMANCE"
+      },
+      {
+        "from": "2400-GENERATE-ALERTS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 208,
+        "unstructured": false,
+        "to": "2410-FORMAT-ALERT"
+      },
+      {
+        "from": "2400-GENERATE-ALERTS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 209,
+        "unstructured": false,
+        "to": "2420-WRITE-ALERT"
+      }
+    ],
+    "dead_code_candidates": [
+      "END-PERFORM",
+      "DB2-STATS"
+    ],
+    "unstructured_constructs": [],
+    "cfg_issues": [
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "1300-READ-CONFIG",
+        "target": "1310-STORE-CONFIG",
+        "message": "Control transfer target '1310-STORE-CONFIG' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2100-COLLECT-METRICS",
+        "target": "2110-GET-CPU-METRICS",
+        "message": "Control transfer target '2110-GET-CPU-METRICS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2100-COLLECT-METRICS",
+        "target": "2120-GET-MEMORY-METRICS",
+        "message": "Control transfer target '2120-GET-MEMORY-METRICS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2100-COLLECT-METRICS",
+        "target": "2130-GET-DASD-METRICS",
+        "message": "Control transfer target '2130-GET-DASD-METRICS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2100-COLLECT-METRICS",
+        "target": "2140-GET-DB2-METRICS",
+        "message": "Control transfer target '2140-GET-DB2-METRICS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2200-CHECK-THRESHOLDS",
+        "target": "2210-CHECK-UTILIZATION",
+        "message": "Control transfer target '2210-CHECK-UTILIZATION' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2200-CHECK-THRESHOLDS",
+        "target": "2220-CHECK-RESPONSE",
+        "message": "Control transfer target '2220-CHECK-RESPONSE' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2200-CHECK-THRESHOLDS",
+        "target": "2230-CHECK-QUEUES",
+        "message": "Control transfer target '2230-CHECK-QUEUES' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2200-CHECK-THRESHOLDS",
+        "target": "2240-CHECK-ERRORS",
+        "message": "Control transfer target '2240-CHECK-ERRORS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2300-LOG-STATUS",
+        "target": "2310-LOG-RESOURCES",
+        "message": "Control transfer target '2310-LOG-RESOURCES' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2300-LOG-STATUS",
+        "target": "2320-LOG-PERFORMANCE",
+        "message": "Control transfer target '2320-LOG-PERFORMANCE' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2400-GENERATE-ALERTS",
+        "target": "2410-FORMAT-ALERT",
+        "message": "Control transfer target '2410-FORMAT-ALERT' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2400-GENERATE-ALERTS",
+        "target": "2420-WRITE-ALERT",
+        "message": "Control transfer target '2420-WRITE-ALERT' not found in paragraph list"
+      }
+    ]
+  }
 }

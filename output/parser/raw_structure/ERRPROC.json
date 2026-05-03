@@ -1,69 +1,365 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "ERRHAND",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  107,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\ERRPROC.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  48,
-                           "name":  "0000-MAIN",
-                           "start_line":  48
-                       },
-                       {
-                           "end_line":  55,
-                           "name":  "1000-INITIALIZE",
-                           "start_line":  55
-                       },
-                       {
-                           "end_line":  65,
-                           "name":  "2000-PROCESS-ERROR",
-                           "start_line":  65
-                       },
-                       {
-                           "end_line":  83,
-                           "name":  "2100-WRITE-LOG",
-                           "start_line":  83
-                       },
-                       {
-                           "end_line":  93,
-                           "name":  "2200-DISPLAY-ERROR",
-                           "start_line":  93
-                       },
-                       {
-                           "end_line":  105,
-                           "name":  "3000-TERMINATE",
-                           "start_line":  105
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  21,
-                                          "start_line":  10
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  107,
-                                        "start_line":  47
-                                    },
-                      "DATA":  {
-                                   "end_line":  46,
-                                   "start_line":  22
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  9,
-                                             "start_line":  7
-                                         }
-                  },
-    "program_id":  "ERRPROC",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "ERRPROC",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\ERRPROC.cbl",
+    "total_lines": 107
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 7,
+    "end_line": 9,
+    "program_id": "ERRPROC"
+  },
+  "data_division": {
+    "start_line": 22,
+    "end_line": 46,
+    "file_section": {
+      "entries": [
+        {
+          "type": "FD",
+          "file_name": "ERROR-LOG",
+          "line": 24,
+          "end_line": 29,
+          "recording_mode": "F",
+          "record_contains": null,
+          "block_contains": "0"
+        }
+      ],
+      "start_line": 23
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "type": "copy_stub",
+          "copybook": "ERRHAND",
+          "library": null,
+          "line": 31,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "level": 1,
+          "name": "WS-WORK-AREAS",
+          "line": 33,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-LOG-STATUS",
+          "line": 34,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-FORMATTED-TIME",
+          "line": 35,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 30
+    },
+    "linkage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "LS-ERROR-REQUEST",
+          "line": 38,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-PROGRAM-ID",
+          "line": 39,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-CATEGORY",
+          "line": 40,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-ERROR-CODE",
+          "line": 41,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-SEVERITY",
+          "line": 42,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-ERROR-TEXT",
+          "line": 43,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-ERROR-DETAILS",
+          "line": 44,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-RETURN-CODE",
+          "line": 45,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 37
+    }
+  },
+  "procedure_division": {
+    "start_line": 47,
+    "end_line": 107,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 48,
+        "end_line": 54,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-INITIALIZE",
+        "section": null,
+        "start_line": 55,
+        "end_line": 64,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-PROCESS-ERROR",
+        "section": null,
+        "start_line": 65,
+        "end_line": 82,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2100-WRITE-LOG",
+        "section": null,
+        "start_line": 83,
+        "end_line": 92,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2200-DISPLAY-ERROR",
+        "section": null,
+        "start_line": 93,
+        "end_line": 104,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-TERMINATE",
+        "section": null,
+        "start_line": 105,
+        "end_line": 107,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 52
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 48,
+        "end_line": 54,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-INITIALIZE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 55,
+        "end_line": 64,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-PROCESS-ERROR",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 65,
+        "end_line": 82,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2100-WRITE-LOG",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 83,
+        "end_line": 92,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2200-DISPLAY-ERROR",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 93,
+        "end_line": 104,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-TERMINATE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 105,
+        "end_line": 107,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 49,
+        "unstructured": false,
+        "to": "1000-INITIALIZE"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 50,
+        "unstructured": false,
+        "to": "2000-PROCESS-ERROR"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 51,
+        "unstructured": false,
+        "to": "3000-TERMINATE"
+      },
+      {
+        "from": "2000-PROCESS-ERROR",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 77,
+        "unstructured": false,
+        "to": "2100-WRITE-LOG"
+      },
+      {
+        "from": "2000-PROCESS-ERROR",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 78,
+        "unstructured": false,
+        "to": "2200-DISPLAY-ERROR"
+      }
+    ],
+    "dead_code_candidates": [],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

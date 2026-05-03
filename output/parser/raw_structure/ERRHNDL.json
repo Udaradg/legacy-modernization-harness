@@ -1,44 +1,381 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "ERRHND",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "ERRHND",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  118,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\ERRHNDL.cbl",
-    "paragraphs":  [
-
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  12,
-                                          "start_line":  11
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  118,
-                                        "start_line":  37
-                                    },
-                      "DATA":  {
-                                   "end_line":  36,
-                                   "start_line":  13
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  10,
-                                             "start_line":  1
-                                         }
-                  },
-    "program_id":  "ERRHNDL",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "ERRHNDL",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\ERRHNDL.cbl",
+    "total_lines": 118
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 1,
+    "end_line": 10,
+    "program_id": "ERRHNDL"
+  },
+  "data_division": {
+    "start_line": 13,
+    "end_line": 36,
+    "file_section": {
+      "entries": []
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "WS-ERROR-AREA",
+          "line": 15,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-DB2-AREA",
+          "line": 18,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-ERRLOG-RECORD",
+          "line": 21,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LOG-TIMESTAMP",
+          "line": 23,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LOG-PROGRAM",
+          "line": 24,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LOG-PARAGRAPH",
+          "line": 25,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LOG-SQLCODE",
+          "line": 26,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LOG-CICS-RESP",
+          "line": 27,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LOG-SEVERITY",
+          "line": 28,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LOG-MESSAGE",
+          "line": 29,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LOG-TRACE-ID",
+          "line": 30,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 14
+    },
+    "linkage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "DFHCOMMAREA",
+          "line": 34,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 33
+    }
+  },
+  "procedure_division": {
+    "start_line": 37,
+    "end_line": 118,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "P100-INIT-ERROR-HANDLER",
+        "section": null,
+        "start_line": 52,
+        "end_line": 59,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "P100-EXIT",
+        "section": null,
+        "start_line": 60,
+        "end_line": 62,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P200-LOG-ERROR",
+        "section": null,
+        "start_line": 63,
+        "end_line": 82,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 83,
+        "end_line": 88,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P200-EXIT",
+        "section": null,
+        "start_line": 89,
+        "end_line": 91,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P300-FORMAT-MESSAGE",
+        "section": null,
+        "start_line": 92,
+        "end_line": 100,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P300-EXIT",
+        "section": null,
+        "start_line": 101,
+        "end_line": 103,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P400-DETERMINE-ACTION",
+        "section": null,
+        "start_line": 104,
+        "end_line": 116,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P400-EXIT",
+        "section": null,
+        "start_line": 117,
+        "end_line": 118,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": []
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "P100-INIT-ERROR-HANDLER"
+    ],
+    "terminal_nodes": [],
+    "nodes": [
+      {
+        "id": "P100-INIT-ERROR-HANDLER",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 52,
+        "end_line": 59,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P100-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 60,
+        "end_line": 62,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P200-LOG-ERROR",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 63,
+        "end_line": 82,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 83,
+        "end_line": 88,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P200-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 89,
+        "end_line": 91,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P300-FORMAT-MESSAGE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 92,
+        "end_line": 100,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P300-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 101,
+        "end_line": 103,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P400-DETERMINE-ACTION",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 104,
+        "end_line": 116,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P400-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 117,
+        "end_line": 118,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [],
+    "dead_code_candidates": [
+      "P100-EXIT",
+      "P200-LOG-ERROR",
+      "END-EXEC",
+      "P200-EXIT",
+      "P300-FORMAT-MESSAGE",
+      "P300-EXIT",
+      "P400-DETERMINE-ACTION",
+      "P400-EXIT"
+    ],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

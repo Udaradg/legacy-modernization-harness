@@ -1,20 +1,21 @@
-﻿{
-    "record_name": "CKPRST_WS",
-    "source_type": "program_ws",
-    "source_file": "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\CKPRST.cbl",
-    "fields": [
-        {
-            "line": 20,
-            "type": "STRING",
-            "is_condition": false,
-            "redefines": null,
-            "level": 1,
-            "value": null,
-            "name": "WS-FILE-STATUS",
-            "pic": "X(",
-            "length": 0,
-            "occurs": null
-        }
-    ],
-    "issues": []
+{
+  "id": "CKPRST_WS",
+  "source_type": "program_ws",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\CKPRST.cbl",
+  "used_by_programs": [
+    "CKPRST"
+  ],
+  "total_fields": 1,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "WS-FILE-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 20,
+      "children": []
+    }
+  ],
+  "layout_issues": []
 }

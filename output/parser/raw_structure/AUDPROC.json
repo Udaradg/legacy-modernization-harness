@@ -1,55 +1,389 @@
-﻿{
-    "data_items": [
-        {
-            "name": "AUDITLOG",
-            "type": "copy"
-        }
-    ],
-    "total_lines": 96,
-    "source_file": "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\AUDPROC.cbl",
-    "paragraphs": [
-        {
-            "end_line": 52,
-            "name": "0000-MAIN",
-            "start_line": 52
-        },
-        {
-            "end_line": 59,
-            "name": "1000-INITIALIZE",
-            "start_line": 59
-        },
-        {
-            "end_line": 71,
-            "name": "2000-PROCESS-AUDIT",
-            "start_line": 71
-        },
-        {
-            "end_line": 94,
-            "name": "3000-TERMINATE",
-            "start_line": 94
-        }
-    ],
-    "divisions": {
-        "ENVIRONMENT": {
-            "end_line": 21,
-            "start_line": 10
-        },
-        "PROCEDURE": {
-            "end_line": 96,
-            "start_line": 51
-        },
-        "DATA": {
-            "end_line": 50,
-            "start_line": 22
-        },
-        "IDENTIFICATION": {
-            "end_line": 9,
-            "start_line": 7
-        }
-    },
+{
+  "meta": {
     "program_id": "AUDPROC",
-    "control_flow": {
-        "perform_edges": [],
-        "goto_edges": []
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\AUDPROC.cbl",
+    "total_lines": 96
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 7,
+    "end_line": 9,
+    "program_id": "AUDPROC"
+  },
+  "data_division": {
+    "start_line": 22,
+    "end_line": 50,
+    "file_section": {
+      "entries": [
+        {
+          "type": "FD",
+          "file_name": "AUDIT-FILE",
+          "line": 24,
+          "end_line": 28,
+          "recording_mode": "F",
+          "record_contains": null,
+          "block_contains": "0"
+        }
+      ],
+      "start_line": 23
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "WS-FILE-STATUS",
+          "line": 30,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-FORMATTED-TIME",
+          "line": 31,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 29
+    },
+    "linkage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "LS-AUDIT-REQUEST",
+          "line": 34,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-SYSTEM-INFO",
+          "line": 35,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "LS-SYSTEM-ID",
+          "line": 36,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "LS-USER-ID",
+          "line": 37,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "LS-PROGRAM",
+          "line": 38,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "LS-TERMINAL",
+          "line": 39,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-TYPE",
+          "line": 40,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-ACTION",
+          "line": 41,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-STATUS",
+          "line": 42,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-KEY-INFO",
+          "line": 43,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "LS-PORT-ID",
+          "line": 44,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "LS-ACCT-NO",
+          "line": 45,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-BEFORE-IMAGE",
+          "line": 46,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-AFTER-IMAGE",
+          "line": 47,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-MESSAGE",
+          "line": 48,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-RETURN-CODE",
+          "line": 49,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 33
     }
+  },
+  "procedure_division": {
+    "start_line": 51,
+    "end_line": 96,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 52,
+        "end_line": 58,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-INITIALIZE",
+        "section": null,
+        "start_line": 59,
+        "end_line": 70,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-PROCESS-AUDIT",
+        "section": null,
+        "start_line": 71,
+        "end_line": 93,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-TERMINATE",
+        "section": null,
+        "start_line": 94,
+        "end_line": 96,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 56
+      },
+      {
+        "type": "GOBACK",
+        "line": 67
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN",
+      "1000-INITIALIZE"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 52,
+        "end_line": 58,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-INITIALIZE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 59,
+        "end_line": 70,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-PROCESS-AUDIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 71,
+        "end_line": 93,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-TERMINATE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 94,
+        "end_line": 96,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 53,
+        "unstructured": false,
+        "to": "1000-INITIALIZE"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 54,
+        "unstructured": false,
+        "to": "2000-PROCESS-AUDIT"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 55,
+        "unstructured": false,
+        "to": "3000-TERMINATE"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 66,
+        "unstructured": false,
+        "to": "3000-TERMINATE"
+      }
+    ],
+    "dead_code_candidates": [],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

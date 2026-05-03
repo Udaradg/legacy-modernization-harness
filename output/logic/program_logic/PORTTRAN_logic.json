@@ -1,118 +1,714 @@
-﻿{
-    "paragraphs":  [
-                       {
-                           "name":  "0000-MAIN",
-                           "line_range":  [
-                                              60,
-                                              60
-                                          ]
-                       },
-                       {
-                           "name":  "1000-INITIALIZE",
-                           "line_range":  [
-                                              74,
-                                              74
-                                          ]
-                       },
-                       {
-                           "name":  "2000-PROCESS-TRANSACTIONS",
-                           "line_range":  [
-                                              92,
-                                              92
-                                          ]
-                       },
-                       {
-                           "name":  "2100-VALIDATE-TRANSACTION",
-                           "line_range":  [
-                                              102,
-                                              102
-                                          ]
-                       },
-                       {
-                           "name":  "2110-CHECK-PORTFOLIO",
-                           "line_range":  [
-                                              120,
-                                              120
-                                          ]
-                       },
-                       {
-                           "name":  "2120-CHECK-TRANSACTION-TYPE",
-                           "line_range":  [
-                                              136,
-                                              136
-                                          ]
-                       },
-                       {
-                           "name":  "2130-CHECK-AMOUNTS",
-                           "line_range":  [
-                                              151,
-                                              151
-                                          ]
-                       },
-                       {
-                           "name":  "2200-UPDATE-POSITIONS",
-                           "line_range":  [
-                                              167,
-                                              167
-                                          ]
-                       },
-                       {
-                           "name":  "2210-PROCESS-BUY",
-                           "line_range":  [
-                                              182,
-                                              182
-                                          ]
-                       },
-                       {
-                           "name":  "2220-PROCESS-SELL",
-                           "line_range":  [
-                                              201,
-                                              201
-                                          ]
-                       },
-                       {
-                           "name":  "2230-PROCESS-TRANSFER",
-                           "line_range":  [
-                                              226,
-                                              226
-                                          ]
-                       },
-                       {
-                           "name":  "2240-PROCESS-FEE",
-                           "line_range":  [
-                                              231,
-                                              231
-                                          ]
-                       },
-                       {
-                           "name":  "2300-UPDATE-AUDIT-TRAIL",
-                           "line_range":  [
-                                              249,
-                                              249
-                                          ]
-                       },
-                       {
-                           "name":  "2310-WRITE-AUDIT-RECORD",
-                           "line_range":  [
-                                              292,
-                                              292
-                                          ]
-                       },
-                       {
-                           "name":  "3000-TERMINATE",
-                           "line_range":  [
-                                              302,
-                                              302
-                                          ]
-                       },
-                       {
-                           "name":  "9000-ERROR-ROUTINE",
-                           "line_range":  [
-                                              311,
-                                              311
-                                          ]
-                       }
-                   ],
-    "source_file":  "src\\programs\\portfolio\\PORTTRAN.cbl",
-    "program_id":  "PORTTRAN"
+{
+  "program_id": "PORTTRAN",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTTRAN.cbl",
+  "processing_timestamp": "2026-05-03T18:35:21.147200Z",
+  "execution_traces": [
+    {
+      "entry_point": "0000-MAIN",
+      "entry_type": "procedure_entry",
+      "steps": [
+        {
+          "step": 1,
+          "paragraph": "0000-MAIN",
+          "action": "PARAGRAPH",
+          "target": null,
+          "condition": null,
+          "line": 60
+        }
+      ]
+    }
+  ],
+  "branch_map": [
+    {
+      "paragraph": "0000-MAIN",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-TRAN-STATUS = '00'",
+          "condition_fields": [
+            "WS-TRAN-STATUS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "1000-INITIALIZE",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-TRAN-STATUS NOT = '00'",
+          "condition_fields": [
+            "WS-TRAN-STATUS"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "WS-PORT-STATUS NOT = '00'",
+          "condition_fields": [
+            "WS-PORT-STATUS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2100-VALIDATE-TRANSACTION",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "ERR-TEXT = SPACES",
+          "condition_fields": [
+            "ERR-TEXT"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "ERR-TEXT = SPACES",
+          "condition_fields": [
+            "ERR-TEXT"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "ERR-TEXT = SPACES",
+          "condition_fields": [
+            "ERR-TEXT"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2110-CHECK-PORTFOLIO",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "TRN-PORTFOLIO-ID = SPACES",
+          "condition_fields": [
+            "TRN-PORTFOLIO-ID"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2120-CHECK-TRANSACTION-TYPE",
+      "branches": [
+        {
+          "type": "EVALUATE",
+          "subject": "TRN-TYPE"
+        }
+      ]
+    },
+    {
+      "paragraph": "2130-CHECK-AMOUNTS",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "TRN-QUANTITY <= ZERO",
+          "condition_fields": [
+            "ZERO",
+            "TRN-QUANTITY"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "TRN-PRICE <= ZERO AND TRN-TYPE NOT = 'TR'",
+          "condition_fields": [
+            "TRN-PRICE",
+            "TR",
+            "TRN-TYPE",
+            "ZERO"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "TRN-AMOUNT <= ZERO AND TRN-TYPE NOT = 'TR'",
+          "condition_fields": [
+            "TRN-AMOUNT",
+            "TR",
+            "ZERO",
+            "TRN-TYPE"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2200-UPDATE-POSITIONS",
+      "branches": [
+        {
+          "type": "EVALUATE",
+          "subject": "TRN-TYPE"
+        }
+      ]
+    },
+    {
+      "paragraph": "2220-PROCESS-SELL",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "PORT-TOTAL-UNITS < TRN-QUANTITY",
+          "condition_fields": [
+            "TRN-QUANTITY",
+            "PORT-TOTAL-UNITS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2300-UPDATE-AUDIT-TRAIL",
+      "branches": [
+        {
+          "type": "EVALUATE",
+          "subject": "TRN-TYPE"
+        },
+        {
+          "type": "IF",
+          "condition_text": "WS-PORT-STATUS = '00'",
+          "condition_fields": [
+            "WS-PORT-STATUS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2310-WRITE-AUDIT-RECORD",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "RETURN-CODE NOT = ZERO",
+          "condition_fields": [
+            "ZERO",
+            "RETURN-CODE"
+          ]
+        }
+      ]
+    }
+  ],
+  "loops": [],
+  "dead_code_confirmed": [
+    "2200-UPDATE-POSITIONS"
+  ],
+  "unresolvable_paths": [],
+  "trace_issues": [],
+  "program_narrative": "PORTTRAN is a COBOL program that orchestrates business processes. It processes input data through multiple stages, performing validation, transformation, and output operations. The program includes error handling and data integrity checks.",
+  "paragraphs": [
+    {
+      "name": "0000-MAIN",
+      "section": null,
+      "line_range": [
+        60,
+        73
+      ],
+      "pseudocode": [
+        "-- Paragraph 0000-MAIN: Core business logic",
+        "CALL 1000-initialize",
+        "IF WS-TRAN-STATUS = '00' THEN",
+        "CALL 2000-process-transactions",
+        "CALL 3000-terminate",
+        "RETURN to caller"
+      ],
+      "pseudocode_text": "-- Paragraph 0000-MAIN: Core business logic\nCALL 1000-initialize\nIF WS-TRAN-STATUS = '00' THEN\nCALL 2000-process-transactions\nCALL 3000-terminate\nRETURN to caller",
+      "field_references": [
+        "PROCESS-TRANSACTIONS",
+        "UNTIL",
+        "WS-ERROR-COUNT",
+        "GOBACK",
+        "WS-TRAN-STATUS",
+        "END-IF",
+        "TERMINATE",
+        "END-OF-FILE",
+        "MAIN",
+        "INITIALIZE"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1000-INITIALIZE",
+      "section": null,
+      "line_range": [
+        74,
+        91
+      ],
+      "pseudocode": [
+        "-- Paragraph 1000-INITIALIZE: Initialisation and setup",
+        "IF WS-TRAN-STATUS NOT = '00' THEN",
+        "CALL 9000-error-routine",
+        "IF WS-PORT-STATUS NOT = '00' THEN",
+        "CALL 9000-error-routine"
+      ],
+      "pseudocode_text": "-- Paragraph 1000-INITIALIZE: Initialisation and setup\nIF WS-TRAN-STATUS NOT = '00' THEN\nCALL 9000-error-routine\nIF WS-PORT-STATUS NOT = '00' THEN\nCALL 9000-error-routine",
+      "field_references": [
+        "INITIALIZE",
+        "WS-PORT-STATUS",
+        "OPEN",
+        "MORE-RECORDS",
+        "PORTFOLIO-FILE",
+        "ERROR-ROUTINE",
+        "TRANSACTION-FILE",
+        "SET",
+        "WS-COUNTERS",
+        "INPUT"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2000-PROCESS-TRANSACTIONS",
+      "section": null,
+      "line_range": [
+        92,
+        101
+      ],
+      "pseudocode": [
+        "-- Paragraph 2000-PROCESS-TRANSACTIONS: Main processing logic",
+        "READ next record from transaction-file",
+        "INCREMENT ws-read-count BY 1",
+        "CALL 2100-validate-transaction"
+      ],
+      "pseudocode_text": "-- Paragraph 2000-PROCESS-TRANSACTIONS: Main processing logic\nREAD next record from transaction-file\nINCREMENT ws-read-count BY 1\nCALL 2100-validate-transaction",
+      "field_references": [
+        "PROCESS-TRANSACTIONS",
+        "VALIDATE-TRANSACTION",
+        "ADD",
+        "TRANSACTION-FILE",
+        "SET",
+        "WS-READ-COUNT",
+        "END-READ",
+        "END-OF-FILE"
+      ],
+      "calls_made": [],
+      "complexity_score": 3,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2100-VALIDATE-TRANSACTION",
+      "section": null,
+      "line_range": [
+        102,
+        119
+      ],
+      "pseudocode": [
+        "-- Paragraph 2100-VALIDATE-TRANSACTION: Validation logic",
+        "INITIALIZE err-text (special value)",
+        "CALL 2110-check-portfolio",
+        "IF ERR-TEXT = SPACES THEN",
+        "CALL 2120-check-transaction-type",
+        "IF ERR-TEXT = SPACES THEN",
+        "CALL 2130-check-amounts",
+        "IF ERR-TEXT = SPACES THEN",
+        "INCREMENT ws-process-count BY 1",
+        "CALL 9000-error-routine"
+      ],
+      "pseudocode_text": "-- Paragraph 2100-VALIDATE-TRANSACTION: Validation logic\nINITIALIZE err-text (special value)\nCALL 2110-check-portfolio\nIF ERR-TEXT = SPACES THEN\nCALL 2120-check-transaction-type\nIF ERR-TEXT = SPACES THEN\nCALL 2130-check-amounts\nIF ERR-TEXT = SPACES THEN\nINCREMENT ws-process-count BY 1\nCALL 9000-error-routine",
+      "field_references": [
+        "VALIDATE-TRANSACTION",
+        "WS-PROCESS-COUNT",
+        "ADD",
+        "ERROR-ROUTINE",
+        "CHECK-TRANSACTION-TYPE",
+        "END-IF",
+        "CHECK-AMOUNTS",
+        "ERR-TEXT",
+        "CHECK-PORTFOLIO",
+        "MOVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 4,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2110-CHECK-PORTFOLIO",
+      "section": null,
+      "line_range": [
+        120,
+        135
+      ],
+      "pseudocode": [
+        "-- Paragraph 2110-CHECK-PORTFOLIO: Core business logic",
+        "IF TRN-PORTFOLIO-ID = SPACES THEN",
+        "SET port-id = trn-portfolio-id",
+        "READ next record from portfolio-file"
+      ],
+      "pseudocode_text": "-- Paragraph 2110-CHECK-PORTFOLIO: Core business logic\nIF TRN-PORTFOLIO-ID = SPACES THEN\nSET port-id = trn-portfolio-id\nREAD next record from portfolio-file",
+      "field_references": [
+        "SIZE",
+        "PORT-ID",
+        "INVALID",
+        "DELIMITED",
+        "ID",
+        "STRING",
+        "TRN-PORTFOLIO-ID",
+        "PARAGRAPH",
+        "PORTFOLIO-FILE",
+        "KEY"
+      ],
+      "calls_made": [],
+      "complexity_score": 3,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2120-CHECK-TRANSACTION-TYPE",
+      "section": null,
+      "line_range": [
+        136,
+        150
+      ],
+      "pseudocode": [
+        "-- Paragraph 2120-CHECK-TRANSACTION-TYPE: Core business logic",
+        "EVALUATE (TRN-TYPE)"
+      ],
+      "pseudocode_text": "-- Paragraph 2120-CHECK-TRANSACTION-TYPE: Core business logic\nEVALUATE (TRN-TYPE)",
+      "field_references": [
+        "SIZE",
+        "BU",
+        "DELIMITED",
+        "TR",
+        "OTHER",
+        "STRING",
+        "END-EVALUATE",
+        "CHECK-TRANSACTION-TYPE",
+        "CONTINUE",
+        "SL"
+      ],
+      "calls_made": [],
+      "complexity_score": 9,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2130-CHECK-AMOUNTS",
+      "section": null,
+      "line_range": [
+        151,
+        166
+      ],
+      "pseudocode": [
+        "-- Paragraph 2130-CHECK-AMOUNTS: Core business logic",
+        "IF TRN-QUANTITY <= ZERO THEN",
+        "IF TRN-PRICE <= ZERO AND TRN-TYPE NOT = 'TR' THEN",
+        "IF TRN-AMOUNT <= ZERO AND TRN-TYPE NOT = 'TR' THEN"
+      ],
+      "pseudocode_text": "-- Paragraph 2130-CHECK-AMOUNTS: Core business logic\nIF TRN-QUANTITY <= ZERO THEN\nIF TRN-PRICE <= ZERO AND TRN-TYPE NOT = 'TR' THEN\nIF TRN-AMOUNT <= ZERO AND TRN-TYPE NOT = 'TR' THEN",
+      "field_references": [
+        "TRN-AMOUNT",
+        "TRN-PRICE",
+        "TRN-QUANTITY",
+        "TR",
+        "ERR-TEXT",
+        "PARAGRAPH",
+        "CHECK-AMOUNTS",
+        "TRN-TYPE",
+        "ZERO",
+        "END-IF"
+      ],
+      "calls_made": [],
+      "complexity_score": 3,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2200-UPDATE-POSITIONS",
+      "section": null,
+      "line_range": [
+        167,
+        181
+      ],
+      "pseudocode": [
+        "-- Paragraph 2200-UPDATE-POSITIONS: Core business logic",
+        "EVALUATE (TRN-TYPE)",
+        "CALL 2210-process-buy",
+        "CALL 2220-process-sell",
+        "CALL 2230-process-transfer",
+        "CALL 2240-process-fee",
+        "CALL 2300-update-audit-trail"
+      ],
+      "pseudocode_text": "-- Paragraph 2200-UPDATE-POSITIONS: Core business logic\nEVALUATE (TRN-TYPE)\nCALL 2210-process-buy\nCALL 2220-process-sell\nCALL 2230-process-transfer\nCALL 2240-process-fee\nCALL 2300-update-audit-trail",
+      "field_references": [
+        "UPDATE-AUDIT-TRAIL",
+        "PROCESS-SELL",
+        "BU",
+        "PROCESS-BUY",
+        "TR",
+        "PROCESS-FEE",
+        "END-EVALUATE",
+        "SL",
+        "PROCESS-TRANSFER",
+        "FE"
+      ],
+      "calls_made": [],
+      "complexity_score": 8,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2210-PROCESS-BUY",
+      "section": null,
+      "line_range": [
+        182,
+        200
+      ],
+      "pseudocode": [
+        "-- Paragraph 2210-PROCESS-BUY: Main processing logic",
+        "SET port-id = trn-portfolio-id",
+        "READ next record from portfolio-file",
+        "CALL 9000-error-routine",
+        "INCREMENT port-total-units BY trn-quantity",
+        "INCREMENT port-total-cost BY trn-amount",
+        "WRITE portfolio-record to output",
+        "CALL 9000-error-routine"
+      ],
+      "pseudocode_text": "-- Paragraph 2210-PROCESS-BUY: Main processing logic\nSET port-id = trn-portfolio-id\nREAD next record from portfolio-file\nCALL 9000-error-routine\nINCREMENT port-total-units BY trn-quantity\nINCREMENT port-total-cost BY trn-amount\nWRITE portfolio-record to output\nCALL 9000-error-routine",
+      "field_references": [
+        "TRN-PORTFOLIO-ID",
+        "ERROR-ROUTINE",
+        "ADD",
+        "TRN-AMOUNT",
+        "PROCESS-BUY",
+        "KEY",
+        "PORTFOLIO-RECORD",
+        "EXIT",
+        "REWRITE",
+        "INVALID"
+      ],
+      "calls_made": [],
+      "complexity_score": 4,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2220-PROCESS-SELL",
+      "section": null,
+      "line_range": [
+        201,
+        225
+      ],
+      "pseudocode": [
+        "-- Paragraph 2220-PROCESS-SELL: Main processing logic",
+        "SET port-id = trn-portfolio-id",
+        "READ next record from portfolio-file",
+        "CALL 9000-error-routine",
+        "IF PORT-TOTAL-UNITS < TRN-QUANTITY THEN",
+        "CALL 9000-error-routine",
+        "DECREMENT port-total-units BY trn-quantity",
+        "DECREMENT port-total-cost BY trn-amount",
+        "WRITE portfolio-record to output",
+        "CALL 9000-error-routine"
+      ],
+      "pseudocode_text": "-- Paragraph 2220-PROCESS-SELL: Main processing logic\nSET port-id = trn-portfolio-id\nREAD next record from portfolio-file\nCALL 9000-error-routine\nIF PORT-TOTAL-UNITS < TRN-QUANTITY THEN\nCALL 9000-error-routine\nDECREMENT port-total-units BY trn-quantity\nDECREMENT port-total-cost BY trn-amount\nWRITE portfolio-record to output\nCALL 9000-error-routine",
+      "field_references": [
+        "SUBTRACT",
+        "TRN-PORTFOLIO-ID",
+        "ERROR-ROUTINE",
+        "TRN-AMOUNT",
+        "PROCESS-SELL",
+        "KEY",
+        "END-IF",
+        "PORTFOLIO-RECORD",
+        "EXIT",
+        "REWRITE"
+      ],
+      "calls_made": [],
+      "complexity_score": 5,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2230-PROCESS-TRANSFER",
+      "section": null,
+      "line_range": [
+        226,
+        230
+      ],
+      "pseudocode": [
+        "-- Paragraph 2230-PROCESS-TRANSFER: Main processing logic",
+        "CALL 9000-error-routine"
+      ],
+      "pseudocode_text": "-- Paragraph 2230-PROCESS-TRANSFER: Main processing logic\nCALL 9000-error-routine",
+      "field_references": [
+        "ERR-TEXT",
+        "PROCESS-TRANSFER",
+        "MOVE",
+        "ERROR-ROUTINE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2240-PROCESS-FEE",
+      "section": null,
+      "line_range": [
+        231,
+        248
+      ],
+      "pseudocode": [
+        "-- Paragraph 2240-PROCESS-FEE: Main processing logic",
+        "SET port-id = trn-portfolio-id",
+        "READ next record from portfolio-file",
+        "CALL 9000-error-routine",
+        "DECREMENT port-total-cost BY trn-amount",
+        "WRITE portfolio-record to output",
+        "CALL 9000-error-routine"
+      ],
+      "pseudocode_text": "-- Paragraph 2240-PROCESS-FEE: Main processing logic\nSET port-id = trn-portfolio-id\nREAD next record from portfolio-file\nCALL 9000-error-routine\nDECREMENT port-total-cost BY trn-amount\nWRITE portfolio-record to output\nCALL 9000-error-routine",
+      "field_references": [
+        "TRN-AMOUNT",
+        "REWRITE",
+        "PORT-ID",
+        "INVALID",
+        "END-REWRITE",
+        "PROCESS-FEE",
+        "SUBTRACT",
+        "TRN-PORTFOLIO-ID",
+        "PORTFOLIO-FILE",
+        "KEY"
+      ],
+      "calls_made": [],
+      "complexity_score": 4,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2300-UPDATE-AUDIT-TRAIL",
+      "section": null,
+      "line_range": [
+        249,
+        291
+      ],
+      "pseudocode": [
+        "-- Paragraph 2300-UPDATE-AUDIT-TRAIL: Core business logic",
+        "SET aud-program = porttran",
+        "SET aud-type = tran",
+        "EVALUATE (TRN-TYPE)",
+        "IF WS-PORT-STATUS = '00' THEN",
+        "SET aud-status = succ",
+        "SET aud-status = fail",
+        "SET aud-portfolio-id = trn-portfolio-id",
+        "SET aud-account-no = port-account-no",
+        "SET aud-before-image = port-record",
+        "CALL 2310-write-audit-record"
+      ],
+      "pseudocode_text": "-- Paragraph 2300-UPDATE-AUDIT-TRAIL: Core business logic\nSET aud-program = porttran\nSET aud-type = tran\nEVALUATE (TRN-TYPE)\nIF WS-PORT-STATUS = '00' THEN\nSET aud-status = succ\nSET aud-status = fail\nSET aud-portfolio-id = trn-portfolio-id\nSET aud-account-no = port-account-no\nSET aud-before-image = port-record\nCALL 2310-write-audit-record",
+      "field_references": [
+        "STRING",
+        "AUD-USER-ID",
+        "TRN-PORTFOLIO-ID",
+        "TRAN",
+        "AUD-BEFORE-IMAGE",
+        "AUD-TIMESTAMP",
+        "FE",
+        "AUD-MESSAGE",
+        "TRN-TYPE",
+        "AUD-ACTION"
+      ],
+      "calls_made": [],
+      "complexity_score": 10,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2310-WRITE-AUDIT-RECORD",
+      "section": null,
+      "line_range": [
+        292,
+        301
+      ],
+      "pseudocode": [
+        "-- Paragraph 2310-WRITE-AUDIT-RECORD: Write output records",
+        "CALL AUDPROC",
+        "IF RETURN-CODE NOT = ZERO THEN",
+        "CALL 9000-error-routine"
+      ],
+      "pseudocode_text": "-- Paragraph 2310-WRITE-AUDIT-RECORD: Write output records\nCALL AUDPROC\nIF RETURN-CODE NOT = ZERO THEN\nCALL 9000-error-routine",
+      "field_references": [
+        "USING",
+        "ERR-TEXT",
+        "AUDIT-RECORD",
+        "RETURN-CODE",
+        "AUDPROC",
+        "ERROR-ROUTINE",
+        "ZERO",
+        "END-IF",
+        "MOVE",
+        "WRITE-AUDIT-RECORD"
+      ],
+      "calls_made": [
+        "AUDPROC",
+        "the"
+      ],
+      "complexity_score": 4,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3000-TERMINATE",
+      "section": null,
+      "line_range": [
+        302,
+        310
+      ],
+      "pseudocode": [
+        "-- Paragraph 3000-TERMINATE: Core business logic",
+        "CLOSE transaction-file"
+      ],
+      "pseudocode_text": "-- Paragraph 3000-TERMINATE: Core business logic\nCLOSE transaction-file",
+      "field_references": [
+        "DISPLAY",
+        "WS-ERROR-COUNT",
+        "WS-PROCESS-COUNT",
+        "PORTFOLIO-FILE",
+        "WS-READ-COUNT",
+        "TRANSACTION-FILE",
+        "TERMINATE",
+        "CLOSE"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "9000-ERROR-ROUTINE",
+      "section": null,
+      "line_range": [
+        311,
+        317
+      ],
+      "pseudocode": [
+        "-- Paragraph 9000-ERROR-ROUTINE: Error handling",
+        "INCREMENT ws-error-count BY 1",
+        "SET err-category = err-cat-proc",
+        "SET err-program = porttran",
+        "CALL ERRPROC"
+      ],
+      "pseudocode_text": "-- Paragraph 9000-ERROR-ROUTINE: Error handling\nINCREMENT ws-error-count BY 1\nSET err-category = err-cat-proc\nSET err-program = porttran\nCALL ERRPROC",
+      "field_references": [
+        "MOVE",
+        "ERR-CATEGORY",
+        "WS-ERROR-COUNT",
+        "USING",
+        "ERR-MESSAGE",
+        "ADD",
+        "ERROR-ROUTINE",
+        "PORTTRAN",
+        "ERR-PROGRAM",
+        "ERRPROC"
+      ],
+      "calls_made": [
+        "ERRPROC"
+      ],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    }
+  ],
+  "unresolved_statements": [],
+  "pseudocode_issues": []
 }

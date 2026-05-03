@@ -1,130 +1,201 @@
-﻿{
-    "record_name":  "DB2REQ",
-    "source_type":  "copybook",
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\copybook\\online\\DB2REQ.cpy",
-    "fields":  [
-                   {
-                       "line":  4,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "DB2-REQUEST-AREA",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  5,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "DB2-REQUEST-TYPE",
-                       "pic":  "X.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  6,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "C",
-                       "name":  "DB2-CONNECT",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  7,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "D",
-                       "name":  "DB2-DISCONNECT",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  8,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "S",
-                       "name":  "DB2-STATUS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  9,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "DB2-RESPONSE-CODE",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  10,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "DB2-CONNECTION-TOKEN",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  11,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "DB2-ERROR-INFO",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  12,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "DB2-SQLCODE",
-                       "pic":  "S9(9)",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  13,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "DB2-ERROR-MSG",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   }
-               ],
-    "issues":  [
-
-               ]
+{
+  "id": "DB2REQ",
+  "source_type": "copybook",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\copybook\\online\\DB2REQ.cpy",
+  "used_by_programs": [
+    "DB2RECV"
+  ],
+  "total_fields": 10,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "DB2-REQUEST-AREA",
+      "pic": null,
+      "pic_parsed": null,
+      "type": "GROUP",
+      "storage_type": "DISPLAY",
+      "bytes": 0,
+      "redefines": null,
+      "occurs": null,
+      "value": null,
+      "line": 4,
+      "children": [
+        {
+          "level": 5,
+          "name": "DB2-REQUEST-TYPE",
+          "pic": "X.",
+          "pic_parsed": {
+            "raw": "X.",
+            "normalized_type": "STRING",
+            "length": 1,
+            "decimal_places": 0,
+            "signed": false,
+            "storage_type": "DISPLAY"
+          },
+          "type": "ELEMENTARY",
+          "storage_type": "DISPLAY",
+          "bytes": 1,
+          "redefines": null,
+          "occurs": null,
+          "value": null,
+          "line": 5,
+          "children": [
+            {
+              "level": 88,
+              "name": "DB2-CONNECT",
+              "pic": null,
+              "pic_parsed": null,
+              "type": "CONDITION",
+              "storage_type": "DISPLAY",
+              "bytes": 0,
+              "redefines": null,
+              "occurs": null,
+              "value": "'C'.",
+              "line": 6,
+              "children": [],
+              "is_filler": false
+            },
+            {
+              "level": 88,
+              "name": "DB2-DISCONNECT",
+              "pic": null,
+              "pic_parsed": null,
+              "type": "CONDITION",
+              "storage_type": "DISPLAY",
+              "bytes": 0,
+              "redefines": null,
+              "occurs": null,
+              "value": "'D'.",
+              "line": 7,
+              "children": [],
+              "is_filler": false
+            },
+            {
+              "level": 88,
+              "name": "DB2-STATUS",
+              "pic": null,
+              "pic_parsed": null,
+              "type": "CONDITION",
+              "storage_type": "DISPLAY",
+              "bytes": 0,
+              "redefines": null,
+              "occurs": null,
+              "value": "'S'.",
+              "line": 8,
+              "children": [],
+              "is_filler": false
+            }
+          ],
+          "is_filler": false
+        },
+        {
+          "level": 5,
+          "name": "DB2-RESPONSE-CODE",
+          "pic": "S9(",
+          "pic_parsed": {
+            "raw": "S9(",
+            "normalized_type": "SIGNED_INTEGER",
+            "length": 1,
+            "decimal_places": 0,
+            "signed": true,
+            "storage_type": "DISPLAY"
+          },
+          "type": "ELEMENTARY",
+          "storage_type": "DISPLAY",
+          "bytes": 1,
+          "redefines": null,
+          "occurs": null,
+          "value": null,
+          "line": 9,
+          "children": [],
+          "is_filler": false
+        },
+        {
+          "level": 5,
+          "name": "DB2-CONNECTION-TOKEN",
+          "pic": "X(",
+          "pic_parsed": {
+            "raw": "X(",
+            "normalized_type": "STRING",
+            "length": 1,
+            "decimal_places": 0,
+            "signed": false,
+            "storage_type": "DISPLAY"
+          },
+          "type": "ELEMENTARY",
+          "storage_type": "DISPLAY",
+          "bytes": 1,
+          "redefines": null,
+          "occurs": null,
+          "value": null,
+          "line": 10,
+          "children": [],
+          "is_filler": false
+        },
+        {
+          "level": 5,
+          "name": "DB2-ERROR-INFO",
+          "pic": null,
+          "pic_parsed": null,
+          "type": "GROUP",
+          "storage_type": "DISPLAY",
+          "bytes": 0,
+          "redefines": null,
+          "occurs": null,
+          "value": null,
+          "line": 11,
+          "children": [
+            {
+              "level": 10,
+              "name": "DB2-SQLCODE",
+              "pic": "S9(9)",
+              "pic_parsed": {
+                "raw": "S9(9)",
+                "normalized_type": "SIGNED_INTEGER",
+                "length": 9,
+                "decimal_places": 0,
+                "signed": true,
+                "storage_type": "DISPLAY"
+              },
+              "type": "ELEMENTARY",
+              "storage_type": "DISPLAY",
+              "bytes": 9,
+              "redefines": null,
+              "occurs": null,
+              "value": null,
+              "line": 12,
+              "children": [],
+              "is_filler": false
+            },
+            {
+              "level": 10,
+              "name": "DB2-ERROR-MSG",
+              "pic": "X(",
+              "pic_parsed": {
+                "raw": "X(",
+                "normalized_type": "STRING",
+                "length": 1,
+                "decimal_places": 0,
+                "signed": false,
+                "storage_type": "DISPLAY"
+              },
+              "type": "ELEMENTARY",
+              "storage_type": "DISPLAY",
+              "bytes": 1,
+              "redefines": null,
+              "occurs": null,
+              "value": null,
+              "line": 13,
+              "children": [],
+              "is_filler": false
+            }
+          ],
+          "is_filler": false
+        }
+      ],
+      "is_filler": false
+    }
+  ],
+  "layout_issues": []
 }

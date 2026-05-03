@@ -1,83 +1,552 @@
-﻿{
-    "paragraphs":  [
-                       {
-                           "name":  "0000-MAIN",
-                           "line_range":  [
-                                              83,
-                                              83
-                                          ]
-                       },
-                       {
-                           "name":  "1000-INITIALIZE",
-                           "line_range":  [
-                                              103,
-                                              103
-                                          ]
-                       },
-                       {
-                           "name":  "2000-CREATE-PORTFOLIO",
-                           "line_range":  [
-                                              115,
-                                              115
-                                          ]
-                       },
-                       {
-                           "name":  "2100-VALIDATE-PORTFOLIO",
-                           "line_range":  [
-                                              138,
-                                              138
-                                          ]
-                       },
-                       {
-                           "name":  "3000-READ-PORTFOLIO",
-                           "line_range":  [
-                                              163,
-                                              163
-                                          ]
-                       },
-                       {
-                           "name":  "4000-UPDATE-PORTFOLIO",
-                           "line_range":  [
-                                              183,
-                                              183
-                                          ]
-                       },
-                       {
-                           "name":  "5000-DELETE-PORTFOLIO",
-                           "line_range":  [
-                                              209,
-                                              209
-                                          ]
-                       },
-                       {
-                           "name":  "6000-TERMINATE",
-                           "line_range":  [
-                                              228,
-                                              228
-                                          ]
-                       },
-                       {
-                           "name":  "9000-ERROR",
-                           "line_range":  [
-                                              234,
-                                              234
-                                          ]
-                       },
-                       {
-                           "name":  "2100-HANDLE-VSAM-ERROR",
-                           "line_range":  [
-                                              243,
-                                              243
-                                          ]
-                       },
-                       {
-                           "name":  "2100-LOG-PORTFOLIO-UPDATE",
-                           "line_range":  [
-                                              268,
-                                              268
-                                          ]
-                       }
-                   ],
-    "source_file":  "src\\programs\\portfolio\\PORTMSTR.cbl",
-    "program_id":  "PORTMSTR"
+{
+  "program_id": "PORTMSTR",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTMSTR.cbl",
+  "processing_timestamp": "2026-05-03T18:35:21.122758Z",
+  "execution_traces": [
+    {
+      "entry_point": "0000-MAIN",
+      "entry_type": "procedure_entry",
+      "steps": [
+        {
+          "step": 1,
+          "paragraph": "0000-MAIN",
+          "action": "PARAGRAPH",
+          "target": null,
+          "condition": null,
+          "line": 83
+        }
+      ]
+    }
+  ],
+  "branch_map": [
+    {
+      "paragraph": "0000-MAIN",
+      "branches": [
+        {
+          "type": "EVALUATE",
+          "subject": "TRUE"
+        }
+      ]
+    },
+    {
+      "paragraph": "1000-INITIALIZE",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "NOT PORT-SUCCESS",
+          "condition_fields": [
+            "PORT-SUCCESS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2000-CREATE-PORTFOLIO",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-RETURN-CODE NOT = WS-SUCCESS",
+          "condition_fields": [
+            "WS-SUCCESS",
+            "WS-RETURN-CODE"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "PORT-DUP-KEY",
+          "condition_fields": [
+            "PORT-DUP-KEY"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "NOT PORT-SUCCESS",
+          "condition_fields": [
+            "PORT-SUCCESS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2100-VALIDATE-PORTFOLIO",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "PORT-ID(1:4) NOT = 'PORT'",
+          "condition_fields": [
+            "PORT",
+            "PORT-ID"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "PORT-NAME = SPACES",
+          "condition_fields": [
+            "PORT-NAME"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "NOT VALID-STATUS",
+          "condition_fields": [
+            "VALID-STATUS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "3000-READ-PORTFOLIO",
+      "branches": [
+        {
+          "type": "EVALUATE",
+          "subject": "TRUE"
+        }
+      ]
+    },
+    {
+      "paragraph": "4000-UPDATE-PORTFOLIO",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-RETURN-CODE NOT = WS-SUCCESS",
+          "condition_fields": [
+            "WS-SUCCESS",
+            "WS-RETURN-CODE"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "PORT-NOT-FOUND",
+          "condition_fields": [
+            "PORT-NOT-FOUND"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "NOT PORT-SUCCESS",
+          "condition_fields": [
+            "PORT-SUCCESS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "5000-DELETE-PORTFOLIO",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "PORT-NOT-FOUND",
+          "condition_fields": [
+            "PORT-NOT-FOUND"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "NOT PORT-SUCCESS",
+          "condition_fields": [
+            "PORT-SUCCESS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2100-HANDLE-VSAM-ERROR",
+      "branches": [
+        {
+          "type": "EVALUATE",
+          "subject": "WS-FILE-STATUS"
+        }
+      ]
+    }
+  ],
+  "loops": [],
+  "dead_code_confirmed": [
+    "2100-HANDLE-VSAM-ERROR"
+  ],
+  "unresolvable_paths": [],
+  "trace_issues": [],
+  "program_narrative": "PORTMSTR is a COBOL program that orchestrates business processes. It processes input data through multiple stages, performing validation, transformation, and output operations. The program includes error handling and data integrity checks.",
+  "paragraphs": [
+    {
+      "name": "0000-MAIN",
+      "section": null,
+      "line_range": [
+        83,
+        102
+      ],
+      "pseudocode": [
+        "-- Paragraph 0000-MAIN: Core business logic",
+        "CALL 1000-initialize",
+        "EVALUATE (TRUE)",
+        "CALL 2000-create-portfolio",
+        "CALL 3000-read-portfolio",
+        "CALL 4000-update-portfolio",
+        "CALL 5000-delete-portfolio",
+        "CALL 9000-error",
+        "CALL 6000-terminate"
+      ],
+      "pseudocode_text": "-- Paragraph 0000-MAIN: Core business logic\nCALL 1000-initialize\nEVALUATE (TRUE)\nCALL 2000-create-portfolio\nCALL 3000-read-portfolio\nCALL 4000-update-portfolio\nCALL 5000-delete-portfolio\nCALL 9000-error\nCALL 6000-terminate",
+      "field_references": [
+        "UPDATE-PORTFOLIO",
+        "READ-PORT",
+        "CREATE-PORT",
+        "DELETE-PORTFOLIO",
+        "OTHER",
+        "END-EVALUATE",
+        "UPDATE-PORT",
+        "GOBACK",
+        "ERROR",
+        "TERMINATE"
+      ],
+      "calls_made": [],
+      "complexity_score": 10,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1000-INITIALIZE",
+      "section": null,
+      "line_range": [
+        103,
+        114
+      ],
+      "pseudocode": [
+        "-- Paragraph 1000-INITIALIZE: Initialisation and setup",
+        "IF NOT PORT-SUCCESS THEN",
+        "CALL 9000-error"
+      ],
+      "pseudocode_text": "-- Paragraph 1000-INITIALIZE: Initialisation and setup\nIF NOT PORT-SUCCESS THEN\nCALL 9000-error",
+      "field_references": [
+        "WS-WORK-AREAS",
+        "INITIALIZE",
+        "OPEN",
+        "YYYYMMDD",
+        "DATE",
+        "PORTFOLIO-FILE",
+        "ERROR",
+        "PORT-SUCCESS",
+        "END-IF",
+        "ACCEPT"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2000-CREATE-PORTFOLIO",
+      "section": null,
+      "line_range": [
+        115,
+        137
+      ],
+      "pseudocode": [
+        "-- Paragraph 2000-CREATE-PORTFOLIO: Core business logic",
+        "SET portfolio-record = ls-portfolio",
+        "CALL 2100-validate-portfolio",
+        "IF WS-RETURN-CODE NOT = WS-SUCCESS THEN",
+        "CALL 9000-error",
+        "WRITE portfolio-record to output",
+        "IF PORT-DUP-KEY THEN",
+        "CALL 9000-error",
+        "IF NOT PORT-SUCCESS THEN",
+        "CALL 9000-error"
+      ],
+      "pseudocode_text": "-- Paragraph 2000-CREATE-PORTFOLIO: Core business logic\nSET portfolio-record = ls-portfolio\nCALL 2100-validate-portfolio\nIF WS-RETURN-CODE NOT = WS-SUCCESS THEN\nCALL 9000-error\nWRITE portfolio-record to output\nIF PORT-DUP-KEY THEN\nCALL 9000-error\nIF NOT PORT-SUCCESS THEN\nCALL 9000-error",
+      "field_references": [
+        "ID",
+        "WS-SUCCESS",
+        "VALIDATE-PORTFOLIO",
+        "WS-RETURN-CODE",
+        "ERROR",
+        "LS-PORTFOLIO",
+        "END-IF",
+        "PORT-SUCCESS",
+        "CREATE-PORTFOLIO",
+        "WS-ERROR-TEXT"
+      ],
+      "calls_made": [],
+      "complexity_score": 4,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2100-VALIDATE-PORTFOLIO",
+      "section": null,
+      "line_range": [
+        138,
+        162
+      ],
+      "pseudocode": [
+        "-- Paragraph 2100-VALIDATE-PORTFOLIO: Validation logic",
+        "IF PORT-ID(1:4) NOT = 'PORT' THEN",
+        "SET ws-return-code = ws-error",
+        "IF PORT-NAME = SPACES THEN",
+        "SET ws-return-code = ws-error",
+        "SET ws-valid-status = port-status",
+        "IF NOT VALID-STATUS THEN",
+        "SET ws-return-code = ws-error"
+      ],
+      "pseudocode_text": "-- Paragraph 2100-VALIDATE-PORTFOLIO: Validation logic\nIF PORT-ID(1:4) NOT = 'PORT' THEN\nSET ws-return-code = ws-error\nIF PORT-NAME = SPACES THEN\nSET ws-return-code = ws-error\nSET ws-valid-status = port-status\nIF NOT VALID-STATUS THEN\nSET ws-return-code = ws-error",
+      "field_references": [
+        "NUMERIC",
+        "PORT-NAME",
+        "PORT-ID",
+        "WS-VALID-STATUS",
+        "ID",
+        "VALIDATE-PORTFOLIO",
+        "PORT",
+        "VALID-STATUS",
+        "PARAGRAPH",
+        "WS-RETURN-CODE"
+      ],
+      "calls_made": [],
+      "complexity_score": 3,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3000-READ-PORTFOLIO",
+      "section": null,
+      "line_range": [
+        163,
+        182
+      ],
+      "pseudocode": [
+        "-- Paragraph 3000-READ-PORTFOLIO: Read input records",
+        "SET portfolio-record = ls-portfolio",
+        "READ next record from portfolio-file",
+        "EVALUATE (TRUE)",
+        "SET ls-portfolio = portfolio-record",
+        "CALL 9000-error",
+        "CALL 9000-error"
+      ],
+      "pseudocode_text": "-- Paragraph 3000-READ-PORTFOLIO: Read input records\nSET portfolio-record = ls-portfolio\nREAD next record from portfolio-file\nEVALUATE (TRUE)\nSET ls-portfolio = portfolio-record\nCALL 9000-error\nCALL 9000-error",
+      "field_references": [
+        "OTHER",
+        "END-EVALUATE",
+        "PORTFOLIO-FILE",
+        "PORT-NOT-FOUND",
+        "PORT-SUCCESS",
+        "LS-PORTFOLIO",
+        "ERROR",
+        "WS-ERROR-TEXT",
+        "PORTFOLIO-RECORD",
+        "MOVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 10,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "4000-UPDATE-PORTFOLIO",
+      "section": null,
+      "line_range": [
+        183,
+        208
+      ],
+      "pseudocode": [
+        "-- Paragraph 4000-UPDATE-PORTFOLIO: Core business logic",
+        "SET portfolio-record = ls-portfolio",
+        "CALL 2100-validate-portfolio",
+        "IF WS-RETURN-CODE NOT = WS-SUCCESS THEN",
+        "CALL 9000-error",
+        "WRITE portfolio-record to output",
+        "IF PORT-NOT-FOUND THEN",
+        "CALL 9000-error",
+        "IF NOT PORT-SUCCESS THEN",
+        "CALL 9000-error",
+        "CALL 2100-log-portfolio-update"
+      ],
+      "pseudocode_text": "-- Paragraph 4000-UPDATE-PORTFOLIO: Core business logic\nSET portfolio-record = ls-portfolio\nCALL 2100-validate-portfolio\nIF WS-RETURN-CODE NOT = WS-SUCCESS THEN\nCALL 9000-error\nWRITE portfolio-record to output\nIF PORT-NOT-FOUND THEN\nCALL 9000-error\nIF NOT PORT-SUCCESS THEN\nCALL 9000-error\nCALL 2100-log-portfolio-update",
+      "field_references": [
+        "REWRITE",
+        "UPDATE-PORTFOLIO",
+        "WS-SUCCESS",
+        "VALIDATE-PORTFOLIO",
+        "LOG-PORTFOLIO-UPDATE",
+        "WS-RETURN-CODE",
+        "ERROR",
+        "LS-PORTFOLIO",
+        "END-IF",
+        "PORT-NOT-FOUND"
+      ],
+      "calls_made": [],
+      "complexity_score": 4,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "5000-DELETE-PORTFOLIO",
+      "section": null,
+      "line_range": [
+        209,
+        227
+      ],
+      "pseudocode": [
+        "-- Paragraph 5000-DELETE-PORTFOLIO: Core business logic",
+        "SET portfolio-record = ls-portfolio",
+        "IF PORT-NOT-FOUND THEN",
+        "CALL 9000-error",
+        "IF NOT PORT-SUCCESS THEN",
+        "CALL 9000-error"
+      ],
+      "pseudocode_text": "-- Paragraph 5000-DELETE-PORTFOLIO: Core business logic\nSET portfolio-record = ls-portfolio\nIF PORT-NOT-FOUND THEN\nCALL 9000-error\nIF NOT PORT-SUCCESS THEN\nCALL 9000-error",
+      "field_references": [
+        "DELETE",
+        "DELETE-PORTFOLIO",
+        "PORTFOLIO-FILE",
+        "PORT-NOT-FOUND",
+        "ERROR",
+        "LS-PORTFOLIO",
+        "END-IF",
+        "PORT-SUCCESS",
+        "WS-ERROR-TEXT",
+        "PORTFOLIO-RECORD"
+      ],
+      "calls_made": [],
+      "complexity_score": 5,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "6000-TERMINATE",
+      "section": null,
+      "line_range": [
+        228,
+        233
+      ],
+      "pseudocode": [
+        "-- Paragraph 6000-TERMINATE: Core business logic",
+        "CLOSE portfolio-file",
+        "SET ls-return-code = ws-return-code"
+      ],
+      "pseudocode_text": "-- Paragraph 6000-TERMINATE: Core business logic\nCLOSE portfolio-file\nSET ls-return-code = ws-return-code",
+      "field_references": [
+        "PORTFOLIO-FILE",
+        "WS-RETURN-CODE",
+        "LS-RETURN-CODE",
+        "TERMINATE",
+        "CLOSE",
+        "MOVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "9000-ERROR",
+      "section": null,
+      "line_range": [
+        234,
+        242
+      ],
+      "pseudocode": [
+        "-- Paragraph 9000-ERROR: Error handling",
+        "SET ws-return-code = ws-error",
+        "CALL 6000-terminate",
+        "RETURN to caller"
+      ],
+      "pseudocode_text": "-- Paragraph 9000-ERROR: Error handling\nSET ws-return-code = ws-error\nCALL 6000-terminate\nRETURN to caller",
+      "field_references": [
+        "GOBACK",
+        "ERROR",
+        "WS-RETURN-CODE",
+        "TERMINATE",
+        "WS-ERROR",
+        "MOVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2100-HANDLE-VSAM-ERROR",
+      "section": null,
+      "line_range": [
+        243,
+        267
+      ],
+      "pseudocode": [
+        "-- Paragraph 2100-HANDLE-VSAM-ERROR: Error handling",
+        "SET ls-program-id = portmstr",
+        "SET ls-category = err-cat-vsam",
+        "SET ls-error-code = ws-file-status",
+        "EVALUATE (WS-FILE-STATUS)",
+        "SET ls-severity = err-warning",
+        "SET ls-error-text = err-vsam-22",
+        "SET ls-severity = err-warning",
+        "SET ls-error-text = err-vsam-23",
+        "SET ls-severity = err-error",
+        "SET ls-error-text = err-other",
+        "SET ls-error-details = port-key",
+        "CALL ERRPROC"
+      ],
+      "pseudocode_text": "-- Paragraph 2100-HANDLE-VSAM-ERROR: Error handling\nSET ls-program-id = portmstr\nSET ls-category = err-cat-vsam\nSET ls-error-code = ws-file-status\nEVALUATE (WS-FILE-STATUS)\nSET ls-severity = err-warning\nSET ls-error-text = err-vsam-22\nSET ls-severity = err-warning\nSET ls-error-text = err-vsam-23\nSET ls-severity = err-error\nSET ls-error-text = err-other\nSET ls-error-details = port-key\nCALL ERRPROC",
+      "field_references": [
+        "LS-ERROR-CODE",
+        "USING",
+        "ERR-VSAM-DUPKEY",
+        "HANDLE-VSAM-ERROR",
+        "LS-CATEGORY",
+        "ERR-WARNING",
+        "ERR-VSAM-23",
+        "LS-ERROR-DETAILS",
+        "ERR-CAT-VSAM",
+        "LS-SEVERITY"
+      ],
+      "calls_made": [
+        "ERRPROC"
+      ],
+      "complexity_score": 8,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2100-LOG-PORTFOLIO-UPDATE",
+      "section": null,
+      "line_range": [
+        268,
+        288
+      ],
+      "pseudocode": [
+        "-- Paragraph 2100-LOG-PORTFOLIO-UPDATE: Core business logic",
+        "SET ls-system-id = portfolio",
+        "SET ls-user-id = userid",
+        "SET ls-program = portmstr",
+        "SET ls-terminal = terminal-id",
+        "SET ls-type = tran",
+        "SET ls-status = succ",
+        "SET ls-port-id = port-id",
+        "SET ls-acct-no = port-account-no",
+        "SET ls-before-image = ws-before-image",
+        "SET ls-after-image = port-record",
+        "CALL AUDPROC"
+      ],
+      "pseudocode_text": "-- Paragraph 2100-LOG-PORTFOLIO-UPDATE: Core business logic\nSET ls-system-id = portfolio\nSET ls-user-id = userid\nSET ls-program = portmstr\nSET ls-terminal = terminal-id\nSET ls-type = tran\nSET ls-status = succ\nSET ls-port-id = port-id\nSET ls-acct-no = port-account-no\nSET ls-before-image = ws-before-image\nSET ls-after-image = port-record\nCALL AUDPROC",
+      "field_references": [
+        "LS-USER-ID",
+        "USING",
+        "TRAN",
+        "TERMINAL-ID",
+        "LS-AUDIT-REQUEST",
+        "WS-BEFORE-IMAGE",
+        "LS-SYSTEM-ID",
+        "LS-ACTION",
+        "LS-PROGRAM",
+        "LS-MESSAGE"
+      ],
+      "calls_made": [
+        "AUDPROC"
+      ],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    }
+  ],
+  "unresolved_statements": [],
+  "pseudocode_issues": []
 }

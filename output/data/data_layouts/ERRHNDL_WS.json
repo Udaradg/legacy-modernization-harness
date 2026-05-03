@@ -1,106 +1,101 @@
-﻿{
-    "record_name":  "ERRHNDL_WS",
-    "source_type":  "program_ws",
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\ERRHNDL.cbl",
-    "fields":  [
-                   {
-                       "line":  23,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "LOG-TIMESTAMP",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  24,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "LOG-PROGRAM",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  25,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "LOG-PARAGRAPH",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  26,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "LOG-SQLCODE",
-                       "pic":  "S9(9)",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  27,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "LOG-CICS-RESP",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  28,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "LOG-SEVERITY",
-                       "pic":  "X.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  29,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "LOG-MESSAGE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  30,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "LOG-TRACE-ID",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   }
-               ],
-    "issues":  [
-
-               ]
+{
+  "id": "ERRHNDL_WS",
+  "source_type": "program_ws",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\ERRHNDL.cbl",
+  "used_by_programs": [
+    "ERRHNDL"
+  ],
+  "total_fields": 11,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "WS-ERROR-AREA",
+      "pic": null,
+      "type": "GROUP",
+      "line": 15,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-DB2-AREA",
+      "pic": null,
+      "type": "GROUP",
+      "line": 18,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-ERRLOG-RECORD",
+      "pic": null,
+      "type": "GROUP",
+      "line": 21,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "LOG-TIMESTAMP",
+      "pic": null,
+      "type": "GROUP",
+      "line": 23,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "LOG-PROGRAM",
+      "pic": null,
+      "type": "GROUP",
+      "line": 24,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "LOG-PARAGRAPH",
+      "pic": null,
+      "type": "GROUP",
+      "line": 25,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "LOG-SQLCODE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 26,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "LOG-CICS-RESP",
+      "pic": null,
+      "type": "GROUP",
+      "line": 27,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "LOG-SEVERITY",
+      "pic": null,
+      "type": "GROUP",
+      "line": 28,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "LOG-MESSAGE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 29,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "LOG-TRACE-ID",
+      "pic": null,
+      "type": "GROUP",
+      "line": 30,
+      "children": []
+    }
+  ],
+  "layout_issues": []
 }

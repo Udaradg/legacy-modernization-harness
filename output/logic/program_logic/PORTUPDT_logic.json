@@ -1,48 +1,257 @@
-﻿{
-    "paragraphs":  [
-                       {
-                           "name":  "0000-MAIN",
-                           "line_range":  [
-                                              83,
-                                              83
-                                          ]
-                       },
-                       {
-                           "name":  "1000-INITIALIZE",
-                           "line_range":  [
-                                              93,
-                                              93
-                                          ]
-                       },
-                       {
-                           "name":  "2000-PROCESS",
-                           "line_range":  [
-                                              109,
-                                              109
-                                          ]
-                       },
-                       {
-                           "name":  "2100-PROCESS-UPDATE",
-                           "line_range":  [
-                                              118,
-                                              118
-                                          ]
-                       },
-                       {
-                           "name":  "2200-APPLY-UPDATE",
-                           "line_range":  [
-                                              131,
-                                              131
-                                          ]
-                       },
-                       {
-                           "name":  "3000-TERMINATE",
-                           "line_range":  [
-                                              152,
-                                              152
-                                          ]
-                       }
-                   ],
-    "source_file":  "src\\programs\\portfolio\\PORTUPDT.cbl",
-    "program_id":  "PORTUPDT"
+{
+  "program_id": "PORTUPDT",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTUPDT.cbl",
+  "processing_timestamp": "2026-05-03T18:35:21.155769Z",
+  "execution_traces": [
+    {
+      "entry_point": "0000-MAIN",
+      "entry_type": "procedure_entry",
+      "steps": [
+        {
+          "step": 1,
+          "paragraph": "0000-MAIN",
+          "action": "PARAGRAPH",
+          "target": null,
+          "condition": null,
+          "line": 83
+        }
+      ]
+    }
+  ],
+  "branch_map": [
+    {
+      "paragraph": "1000-INITIALIZE",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "NOT WS-SUCCESS-STATUS OR",
+          "condition_fields": [
+            "WS-SUCCESS-STATUS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2100-PROCESS-UPDATE",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-SUCCESS-STATUS",
+          "condition_fields": [
+            "WS-SUCCESS-STATUS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2200-APPLY-UPDATE",
+      "branches": [
+        {
+          "type": "EVALUATE",
+          "subject": "TRUE"
+        },
+        {
+          "type": "IF",
+          "condition_text": "WS-SUCCESS-STATUS",
+          "condition_fields": [
+            "WS-SUCCESS-STATUS"
+          ]
+        }
+      ]
+    }
+  ],
+  "loops": [],
+  "dead_code_confirmed": [],
+  "unresolvable_paths": [],
+  "trace_issues": [],
+  "program_narrative": "PORTUPDT is a COBOL program that orchestrates business processes. It processes input data through multiple stages, performing validation, transformation, and output operations. The program includes error handling and data integrity checks.",
+  "paragraphs": [
+    {
+      "name": "0000-MAIN",
+      "section": null,
+      "line_range": [
+        83,
+        92
+      ],
+      "pseudocode": [
+        "-- Paragraph 0000-MAIN: Core business logic",
+        "CALL 1000-initialize",
+        "CALL 2000-process",
+        "CALL 3000-terminate"
+      ],
+      "pseudocode_text": "-- Paragraph 0000-MAIN: Core business logic\nCALL 1000-initialize\nCALL 2000-process\nCALL 3000-terminate",
+      "field_references": [
+        "UNTIL",
+        "GOBACK",
+        "PROCESS",
+        "TERMINATE",
+        "END-OF-FILE",
+        "MAIN",
+        "INITIALIZE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1000-INITIALIZE",
+      "section": null,
+      "line_range": [
+        93,
+        108
+      ],
+      "pseudocode": [
+        "-- Paragraph 1000-INITIALIZE: Initialisation and setup",
+        "IF NOT WS-SUCCESS-STATUS OR THEN",
+        "SET ws-return-code = ws-error",
+        "CALL 3000-terminate"
+      ],
+      "pseudocode_text": "-- Paragraph 1000-INITIALIZE: Initialisation and setup\nIF NOT WS-SUCCESS-STATUS OR THEN\nSET ws-return-code = ws-error\nCALL 3000-terminate",
+      "field_references": [
+        "WS-RETURN-CODE",
+        "UPDATE-FILE",
+        "TERMINATE",
+        "OPEN",
+        "DISPLAY",
+        "PORT",
+        "WS-FILE-STATUS",
+        "WS-UPDT-SUCCESS",
+        "END-IF",
+        "I-O"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2000-PROCESS",
+      "section": null,
+      "line_range": [
+        109,
+        117
+      ],
+      "pseudocode": [
+        "-- Paragraph 2000-PROCESS: Main processing logic",
+        "READ next record from update-file",
+        "CALL 2100-process-update"
+      ],
+      "pseudocode_text": "-- Paragraph 2000-PROCESS: Main processing logic\nREAD next record from update-file\nCALL 2100-process-update",
+      "field_references": [
+        "PROCESS-UPDATE",
+        "SET",
+        "PROCESS",
+        "UPDATE-FILE",
+        "END-READ",
+        "END-OF-FILE"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2100-PROCESS-UPDATE",
+      "section": null,
+      "line_range": [
+        118,
+        130
+      ],
+      "pseudocode": [
+        "-- Paragraph 2100-PROCESS-UPDATE: Main processing logic",
+        "SET port-key = updt-key",
+        "READ next record from portfolio-file",
+        "IF WS-SUCCESS-STATUS THEN",
+        "CALL 2200-apply-update",
+        "INCREMENT ws-error-count BY 1"
+      ],
+      "pseudocode_text": "-- Paragraph 2100-PROCESS-UPDATE: Main processing logic\nSET port-key = updt-key\nREAD next record from portfolio-file\nIF WS-SUCCESS-STATUS THEN\nCALL 2200-apply-update\nINCREMENT ws-error-count BY 1",
+      "field_references": [
+        "WS-ERROR-COUNT",
+        "DISPLAY",
+        "PORTFOLIO-FILE",
+        "ADD",
+        "PROCESS-UPDATE",
+        "UPDT-KEY",
+        "WS-SUCCESS-STATUS",
+        "APPLY-UPDATE",
+        "PORT-KEY",
+        "END-IF"
+      ],
+      "calls_made": [],
+      "complexity_score": 3,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2200-APPLY-UPDATE",
+      "section": null,
+      "line_range": [
+        131,
+        151
+      ],
+      "pseudocode": [
+        "-- Paragraph 2200-APPLY-UPDATE: Core business logic",
+        "EVALUATE (TRUE)",
+        "SET port-status = updt-new-value",
+        "SET port-client-name = updt-new-value",
+        "SET ws-numeric-work = updt-new-value",
+        "SET port-total-value = ws-numeric-work",
+        "WRITE port-record to output",
+        "IF WS-SUCCESS-STATUS THEN",
+        "INCREMENT ws-update-count BY 1",
+        "INCREMENT ws-error-count BY 1"
+      ],
+      "pseudocode_text": "-- Paragraph 2200-APPLY-UPDATE: Core business logic\nEVALUATE (TRUE)\nSET port-status = updt-new-value\nSET port-client-name = updt-new-value\nSET ws-numeric-work = updt-new-value\nSET port-total-value = ws-numeric-work\nWRITE port-record to output\nIF WS-SUCCESS-STATUS THEN\nINCREMENT ws-update-count BY 1\nINCREMENT ws-error-count BY 1",
+      "field_references": [
+        "WS-ERROR-COUNT",
+        "ADD",
+        "UPDT-STATUS",
+        "UPDT-NAME",
+        "PORT-TOTAL-VALUE",
+        "DISPLAY",
+        "END-IF",
+        "REWRITE",
+        "WS-NUMERIC-WORK",
+        "WS-UPDATE-COUNT"
+      ],
+      "calls_made": [],
+      "complexity_score": 10,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3000-TERMINATE",
+      "section": null,
+      "line_range": [
+        152,
+        160
+      ],
+      "pseudocode": [
+        "-- Paragraph 3000-TERMINATE: Core business logic",
+        "CLOSE portfolio-file",
+        "SET return-code = ws-return-code"
+      ],
+      "pseudocode_text": "-- Paragraph 3000-TERMINATE: Core business logic\nCLOSE portfolio-file\nSET return-code = ws-return-code",
+      "field_references": [
+        "DISPLAY",
+        "WS-ERROR-COUNT",
+        "WS-UPDATE-COUNT",
+        "PORTFOLIO-FILE",
+        "RETURN-CODE",
+        "WS-RETURN-CODE",
+        "UPDATE-FILE",
+        "TERMINATE",
+        "CLOSE",
+        "MOVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    }
+  ],
+  "unresolved_statements": [],
+  "pseudocode_issues": []
 }

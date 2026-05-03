@@ -1,77 +1,432 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "SQLCA",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "DBPROC",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "ERRHAND",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  154,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\DB2CONN.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  47,
-                           "name":  "0000-MAIN",
-                           "start_line":  47
-                       },
-                       {
-                           "end_line":  63,
-                           "name":  "1000-CONNECT",
-                           "start_line":  63
-                       },
-                       {
-                           "end_line":  91,
-                           "name":  "1100-HANDLE-CONN-ERROR",
-                           "start_line":  91
-                       },
-                       {
-                           "end_line":  109,
-                           "name":  "2000-DISCONNECT",
-                           "start_line":  109
-                       },
-                       {
-                           "end_line":  131,
-                           "name":  "3000-CHECK-STATUS",
-                           "start_line":  131
-                       },
-                       {
-                           "end_line":  150,
-                           "name":  "9000-ERROR-ROUTINE",
-                           "start_line":  150
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  14,
-                                          "start_line":  10
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  154,
-                                        "start_line":  46
-                                    },
-                      "DATA":  {
-                                   "end_line":  45,
-                                   "start_line":  15
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  9,
-                                             "start_line":  7
-                                         }
-                  },
-    "program_id":  "DB2CONN",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "DB2CONN",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\DB2CONN.cbl",
+    "total_lines": 154
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 7,
+    "end_line": 9,
+    "program_id": "DB2CONN"
+  },
+  "data_division": {
+    "start_line": 15,
+    "end_line": 45,
+    "file_section": {
+      "entries": []
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "WS-DB-NAME",
+          "line": 18,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-PLAN-NAME",
+          "line": 19,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-CONNECTION-STATE",
+          "line": 26,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-CONNECTED",
+          "line": 27,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Y'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-DISCONNECTED",
+          "line": 28,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-RETRY-COUNT",
+          "line": 30,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "0",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-MAX-RETRIES",
+          "line": 31,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "3",
+          "children": []
+        }
+      ],
+      "start_line": 16
+    },
+    "linkage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "LS-DB2-REQUEST",
+          "line": 34,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-FUNCTION",
+          "line": 35,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "FUNC-CONN",
+          "line": 36,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'CONN'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "FUNC-DISC",
+          "line": 37,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'DISC'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "FUNC-STAT",
+          "line": 38,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'STAT'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-DB-NAME",
+          "line": 39,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-PLAN-NAME",
+          "line": 40,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-RETURN-CODE",
+          "line": 41,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-ERROR-INFO",
+          "line": 42,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "LS-SQLCODE",
+          "line": 43,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "LS-ERROR-MSG",
+          "line": 44,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 33
+    }
+  },
+  "procedure_division": {
+    "start_line": 46,
+    "end_line": 154,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 47,
+        "end_line": 62,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-CONNECT",
+        "section": null,
+        "start_line": 63,
+        "end_line": 90,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1100-HANDLE-CONN-ERROR",
+        "section": null,
+        "start_line": 91,
+        "end_line": 108,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-DISCONNECT",
+        "section": null,
+        "start_line": 109,
+        "end_line": 130,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-CHECK-STATUS",
+        "section": null,
+        "start_line": 131,
+        "end_line": 149,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "9000-ERROR-ROUTINE",
+        "section": null,
+        "start_line": 150,
+        "end_line": 154,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 60
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 47,
+        "end_line": 62,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-CONNECT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 63,
+        "end_line": 90,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1100-HANDLE-CONN-ERROR",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 91,
+        "end_line": 108,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-DISCONNECT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 109,
+        "end_line": 130,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-CHECK-STATUS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 131,
+        "end_line": 149,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "9000-ERROR-ROUTINE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 150,
+        "end_line": 154,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 50,
+        "unstructured": false,
+        "to": "1000-CONNECT"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 52,
+        "unstructured": false,
+        "to": "2000-DISCONNECT"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 54,
+        "unstructured": false,
+        "to": "3000-CHECK-STATUS"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 57,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "1000-CONNECT",
+        "type": "PERFORM_INLINE",
+        "resolved": true,
+        "source_line": 69,
+        "unstructured": false,
+        "to": "1000-CONNECT",
+        "inline": true
+      },
+      {
+        "from": "1000-CONNECT",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 81,
+        "unstructured": false,
+        "to": "1100-HANDLE-CONN-ERROR"
+      }
+    ],
+    "dead_code_candidates": [],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

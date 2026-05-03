@@ -1,190 +1,133 @@
-﻿{
-    "record_name":  "PORTREAD_WS",
-    "source_type":  "program_ws",
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTREAD.cbl",
-    "fields":  [
-                   {
-                       "line":  38,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-CONSTANTS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  39,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "PORTREAD",
-                       "name":  "WS-PROGRAM-NAME",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  40,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "+0",
-                       "name":  "WS-SUCCESS",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  41,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "+8",
-                       "name":  "WS-ERROR",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  43,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-SWITCHES",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  44,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-FILE-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  45,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "00",
-                       "name":  "WS-SUCCESS-STATUS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  46,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "10",
-                       "name":  "WS-EOF-STATUS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  47,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "23",
-                       "name":  "WS-REC-NOT-FND",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  49,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "N",
-                       "name":  "WS-END-OF-FILE-SW",
-                       "pic":  "X",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  50,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "Y",
-                       "name":  "END-OF-FILE",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  51,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "N",
-                       "name":  "NOT-END-OF-FILE",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  56,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-WORK-AREAS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  57,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-RECORD-COUNT",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  58,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "+0",
-                       "name":  "WS-RETURN-CODE",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   }
-               ],
-    "issues":  [
-
-               ]
+{
+  "id": "PORTREAD_WS",
+  "source_type": "program_ws",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTREAD.cbl",
+  "used_by_programs": [
+    "PORTREAD"
+  ],
+  "total_fields": 15,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "WS-CONSTANTS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 38,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PROGRAM-NAME",
+      "pic": null,
+      "type": "GROUP",
+      "line": 39,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-SUCCESS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 40,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ERROR",
+      "pic": null,
+      "type": "GROUP",
+      "line": 41,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-SWITCHES",
+      "pic": null,
+      "type": "GROUP",
+      "line": 43,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-FILE-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 44,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "WS-SUCCESS-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 45,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "WS-EOF-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 46,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "WS-REC-NOT-FND",
+      "pic": null,
+      "type": "GROUP",
+      "line": 47,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-END-OF-FILE-SW",
+      "pic": null,
+      "type": "GROUP",
+      "line": 49,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "END-OF-FILE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 50,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "NOT-END-OF-FILE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 51,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-WORK-AREAS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 56,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-RECORD-COUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 57,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-RETURN-CODE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 58,
+      "children": []
+    }
+  ],
+  "layout_issues": []
 }

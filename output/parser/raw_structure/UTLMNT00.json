@@ -1,103 +1,935 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "RTNCODE",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "ERRHAND",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  182,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\utility\\UTLMNT00.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  87,
-                           "name":  "0000-MAIN",
-                           "start_line":  87
-                       },
-                       {
-                           "end_line":  93,
-                           "name":  "1000-INITIALIZE",
-                           "start_line":  93
-                       },
-                       {
-                           "end_line":  97,
-                           "name":  "1100-OPEN-FILES",
-                           "start_line":  97
-                       },
-                       {
-                           "end_line":  119,
-                           "name":  "1200-INIT-PROCESSING",
-                           "start_line":  119
-                       },
-                       {
-                           "end_line":  122,
-                           "name":  "2000-PROCESS",
-                           "start_line":  122
-                       },
-                       {
-                           "end_line":  132,
-                           "name":  "2100-PROCESS-FUNCTION",
-                           "start_line":  132
-                       },
-                       {
-                           "end_line":  148,
-                           "name":  "2200-ARCHIVE-PROCESS",
-                           "start_line":  148
-                       },
-                       {
-                           "end_line":  154,
-                           "name":  "2300-CLEANUP-PROCESS",
-                           "start_line":  154
-                       },
-                       {
-                           "end_line":  160,
-                           "name":  "2400-REORG-PROCESS",
-                           "start_line":  160
-                       },
-                       {
-                           "end_line":  166,
-                           "name":  "2500-ANALYZE-PROCESS",
-                           "start_line":  166
-                       },
-                       {
-                           "end_line":  171,
-                           "name":  "3000-CLEANUP",
-                           "start_line":  171
-                       },
-                       {
-                           "end_line":  176,
-                           "name":  "9999-ERROR-HANDLER",
-                           "start_line":  176
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  34,
-                                          "start_line":  14
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  182,
-                                        "start_line":  86
-                                    },
-                      "DATA":  {
-                                   "end_line":  85,
-                                   "start_line":  35
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  13,
-                                             "start_line":  1
-                                         }
-                  },
-    "program_id":  "UTLMNT00",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "UTLMNT00",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\utility\\UTLMNT00.cbl",
+    "total_lines": 182
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 1,
+    "end_line": 13,
+    "program_id": "UTLMNT00",
+    "author": "CLAUDE.",
+    "date_written": "2024-04-09."
+  },
+  "data_division": {
+    "start_line": 35,
+    "end_line": 85,
+    "file_section": {
+      "entries": [
+        {
+          "type": "FD",
+          "file_name": "CONTROL-FILE",
+          "line": 37,
+          "end_line": 44,
+          "recording_mode": "F",
+          "record_contains": null,
+          "block_contains": "0"
+        },
+        {
+          "type": "FD",
+          "file_name": "ARCHIVE-FILE",
+          "line": 45,
+          "end_line": 49,
+          "recording_mode": "V",
+          "record_contains": null,
+          "block_contains": "0"
+        },
+        {
+          "type": "FD",
+          "file_name": "REPORT-FILE",
+          "line": 50,
+          "end_line": 54,
+          "recording_mode": "F",
+          "record_contains": null,
+          "block_contains": "0"
+        }
+      ],
+      "start_line": 36
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "type": "copy_stub",
+          "copybook": "RTNCODE",
+          "library": null,
+          "line": 56,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "type": "copy_stub",
+          "copybook": "ERRHAND",
+          "library": null,
+          "line": 57,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "level": 1,
+          "name": "WS-FILE-STATUS",
+          "line": 59,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-CTL-STATUS",
+          "line": 60,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ARCH-STATUS",
+          "line": 61,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-REPORT-STATUS",
+          "line": 62,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-PROCESSING-FLAGS",
+          "line": 64,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-END-OF-CTL",
+          "line": 65,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "END-OF-CONTROL",
+          "line": 66,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Y'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-FUNCTION-FLAG",
+          "line": 67,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "VALID-FUNCTION",
+          "line": 68,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Y'",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-FUNCTIONS",
+          "line": 70,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ARCHIVE",
+          "line": 71,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'ARCHIVE'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-CLEANUP",
+          "line": 72,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'CLEANUP'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-REORG",
+          "line": 73,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'REORG'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ANALYZE",
+          "line": 74,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'ANALYZE'",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-COUNTERS",
+          "line": 76,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-RECORDS-READ",
+          "line": 77,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ZERO",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-RECORDS-WRITTEN",
+          "line": 78,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ZERO",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ERROR-COUNT",
+          "line": 79,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ZERO",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-VSAM-CONTROL",
+          "line": 81,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-VSAM-NAME",
+          "line": 82,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-VSAM-FUNCTION",
+          "line": 83,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-VSAM-STATUS",
+          "line": 84,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 55
+    },
+    "linkage_section": {
+      "entries": []
+    }
+  },
+  "procedure_division": {
+    "start_line": 86,
+    "end_line": 182,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 87,
+        "end_line": 92,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-INITIALIZE",
+        "section": null,
+        "start_line": 93,
+        "end_line": 96,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1100-OPEN-FILES",
+        "section": null,
+        "start_line": 97,
+        "end_line": 118,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1200-INIT-PROCESSING",
+        "section": null,
+        "start_line": 119,
+        "end_line": 121,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-PROCESS",
+        "section": null,
+        "start_line": 122,
+        "end_line": 129,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-PERFORM",
+        "section": null,
+        "start_line": 130,
+        "end_line": 131,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2100-PROCESS-FUNCTION",
+        "section": null,
+        "start_line": 132,
+        "end_line": 147,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2200-ARCHIVE-PROCESS",
+        "section": null,
+        "start_line": 148,
+        "end_line": 153,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2300-CLEANUP-PROCESS",
+        "section": null,
+        "start_line": 154,
+        "end_line": 159,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2400-REORG-PROCESS",
+        "section": null,
+        "start_line": 160,
+        "end_line": 165,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2500-ANALYZE-PROCESS",
+        "section": null,
+        "start_line": 166,
+        "end_line": 170,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-CLEANUP",
+        "section": null,
+        "start_line": 171,
+        "end_line": 173,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "REPORT-FILE",
+        "section": null,
+        "start_line": 174,
+        "end_line": 175,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "9999-ERROR-HANDLER",
+        "section": null,
+        "start_line": 176,
+        "end_line": 182,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 91
+      },
+      {
+        "type": "GOBACK",
+        "line": 181
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN",
+      "9999-ERROR-HANDLER"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 87,
+        "end_line": 92,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-INITIALIZE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 93,
+        "end_line": 96,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1100-OPEN-FILES",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 97,
+        "end_line": 118,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1200-INIT-PROCESSING",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 119,
+        "end_line": 121,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-PROCESS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 122,
+        "end_line": 129,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-PERFORM",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 130,
+        "end_line": 131,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2100-PROCESS-FUNCTION",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 132,
+        "end_line": 147,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2200-ARCHIVE-PROCESS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 148,
+        "end_line": 153,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2300-CLEANUP-PROCESS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 154,
+        "end_line": 159,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2400-REORG-PROCESS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 160,
+        "end_line": 165,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2500-ANALYZE-PROCESS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 166,
+        "end_line": 170,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-CLEANUP",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 171,
+        "end_line": 173,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "REPORT-FILE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 174,
+        "end_line": 175,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "9999-ERROR-HANDLER",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 176,
+        "end_line": 182,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 88,
+        "unstructured": false,
+        "to": "1000-INITIALIZE"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 89,
+        "unstructured": false,
+        "to": "2000-PROCESS"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 90,
+        "unstructured": false,
+        "to": "3000-CLEANUP"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 94,
+        "unstructured": false,
+        "to": "1100-OPEN-FILES"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 95,
+        "unstructured": false,
+        "to": "1200-INIT-PROCESSING"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 102,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 109,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 116,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "2000-PROCESS",
+        "type": "PERFORM_INLINE",
+        "resolved": true,
+        "source_line": 123,
+        "unstructured": false,
+        "to": "2000-PROCESS",
+        "inline": true
+      },
+      {
+        "from": "2000-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 128,
+        "unstructured": false,
+        "to": "2100-PROCESS-FUNCTION"
+      },
+      {
+        "from": "2100-PROCESS-FUNCTION",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 135,
+        "unstructured": false,
+        "to": "2200-ARCHIVE-PROCESS"
+      },
+      {
+        "from": "2100-PROCESS-FUNCTION",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 137,
+        "unstructured": false,
+        "to": "2300-CLEANUP-PROCESS"
+      },
+      {
+        "from": "2100-PROCESS-FUNCTION",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 139,
+        "unstructured": false,
+        "to": "2400-REORG-PROCESS"
+      },
+      {
+        "from": "2100-PROCESS-FUNCTION",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 141,
+        "unstructured": false,
+        "to": "2500-ANALYZE-PROCESS"
+      },
+      {
+        "from": "2100-PROCESS-FUNCTION",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 145,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "2200-ARCHIVE-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 150,
+        "unstructured": false,
+        "to": "2210-OPEN-VSAM"
+      },
+      {
+        "from": "2200-ARCHIVE-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 151,
+        "unstructured": false,
+        "to": "2220-ARCHIVE-RECORDS"
+      },
+      {
+        "from": "2200-ARCHIVE-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 152,
+        "unstructured": false,
+        "to": "2230-CLOSE-VSAM"
+      },
+      {
+        "from": "2300-CLEANUP-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 156,
+        "unstructured": false,
+        "to": "2310-ANALYZE-SPACE"
+      },
+      {
+        "from": "2300-CLEANUP-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 157,
+        "unstructured": false,
+        "to": "2320-DELETE-OLD"
+      },
+      {
+        "from": "2300-CLEANUP-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 158,
+        "unstructured": false,
+        "to": "2330-UPDATE-CATALOG"
+      },
+      {
+        "from": "2400-REORG-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 162,
+        "unstructured": false,
+        "to": "2410-EXPORT-DATA"
+      },
+      {
+        "from": "2400-REORG-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 163,
+        "unstructured": false,
+        "to": "2420-DELETE-DEFINE"
+      },
+      {
+        "from": "2400-REORG-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 164,
+        "unstructured": false,
+        "to": "2430-IMPORT-DATA"
+      },
+      {
+        "from": "2500-ANALYZE-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 168,
+        "unstructured": false,
+        "to": "2510-COLLECT-STATS"
+      },
+      {
+        "from": "2500-ANALYZE-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 169,
+        "unstructured": false,
+        "to": "2520-GENERATE-REPORT"
+      }
+    ],
+    "dead_code_candidates": [
+      "END-PERFORM",
+      "REPORT-FILE"
+    ],
+    "unstructured_constructs": [],
+    "cfg_issues": [
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2200-ARCHIVE-PROCESS",
+        "target": "2210-OPEN-VSAM",
+        "message": "Control transfer target '2210-OPEN-VSAM' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2200-ARCHIVE-PROCESS",
+        "target": "2220-ARCHIVE-RECORDS",
+        "message": "Control transfer target '2220-ARCHIVE-RECORDS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2200-ARCHIVE-PROCESS",
+        "target": "2230-CLOSE-VSAM",
+        "message": "Control transfer target '2230-CLOSE-VSAM' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2300-CLEANUP-PROCESS",
+        "target": "2310-ANALYZE-SPACE",
+        "message": "Control transfer target '2310-ANALYZE-SPACE' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2300-CLEANUP-PROCESS",
+        "target": "2320-DELETE-OLD",
+        "message": "Control transfer target '2320-DELETE-OLD' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2300-CLEANUP-PROCESS",
+        "target": "2330-UPDATE-CATALOG",
+        "message": "Control transfer target '2330-UPDATE-CATALOG' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2400-REORG-PROCESS",
+        "target": "2410-EXPORT-DATA",
+        "message": "Control transfer target '2410-EXPORT-DATA' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2400-REORG-PROCESS",
+        "target": "2420-DELETE-DEFINE",
+        "message": "Control transfer target '2420-DELETE-DEFINE' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2400-REORG-PROCESS",
+        "target": "2430-IMPORT-DATA",
+        "message": "Control transfer target '2430-IMPORT-DATA' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2500-ANALYZE-PROCESS",
+        "target": "2510-COLLECT-STATS",
+        "message": "Control transfer target '2510-COLLECT-STATS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2500-ANALYZE-PROCESS",
+        "target": "2520-GENERATE-REPORT",
+        "message": "Control transfer target '2520-GENERATE-REPORT' not found in paragraph list"
+      }
+    ]
+  }
 }

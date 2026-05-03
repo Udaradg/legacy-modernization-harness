@@ -86,22 +86,12 @@ Output                : ./output/final_report/brd.md
 
 ## Constraints
 
-- Do not invent content. Every statement in the BRD must trace to at
-  least one artifact. If something is inferred, say so explicitly and
-  cite the source artifact and confidence level.
-- Never omit a gap, unresolved reference, or SME flag from the BRD.
-  The gaps register is as important as the business rules catalogue —
-  it tells stakeholders what the pipeline could not resolve.
-- Write for a non-technical audience. Avoid COBOL terminology in the
-  body text. When a COBOL concept must be mentioned, explain it in
-  plain English immediately after.
-- Pseudocode blocks from the Logic Agent may appear in appendices
-  but must never appear in the main BRD chapters without a plain-
-  English description accompanying them.
-- Every diagram embedded in the BRD must have a caption and a brief
-  (1–3 sentence) description of what it shows.
-- Confidence levels must be visible wherever relevant — do not hide
-  low-confidence content, but always label it clearly.
+- Do not invent content. Every statement in the BRD must trace to at least one artifact. If something is inferred, say so explicitly and cite the source artifact and confidence level.
+- Never omit a gap, unresolved reference, or SME flag from the BRD. The gaps register is as important as the business rules catalogue — it tells stakeholders what the pipeline could not resolve.
+- Write for a non-technical audience. Avoid COBOL terminology in the body text. When a COBOL concept must be mentioned, explain it in plain English immediately after.
+- Pseudocode blocks from the Logic Agent may appear in appendices but must never appear in the main BRD chapters without a plain-English description accompanying them.
+- Every diagram embedded in the BRD must have a caption and a brief (1–3 sentence) description of what it shows.
+- Confidence levels must be visible wherever relevant — do not hide low-confidence content, but always label it clearly.
 
 ---
 

@@ -1,154 +1,267 @@
-﻿{
-    "record_name":  "DBPROC",
-    "source_type":  "copybook",
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\copybook\\db2\\DBPROC.cpy",
-    "fields":  [
-                   {
-                       "line":  10,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "DB2-ERROR-HANDLING",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  11,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "DB2-ERROR-MESSAGE",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  12,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "SQLCODE:",
-                       "name":  "FILLER",
-                       "pic":  "X(9)",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  13,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "DB2-SQLCODE-TXT",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  14,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "STATE:",
-                       "name":  "FILLER",
-                       "pic":  "X(9)",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  15,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "DB2-STATE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  16,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  "ERROR:",
-                       "name":  "FILLER",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  17,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "DB2-ERROR-TEXT",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  18,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "DB2-SAVE-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  19,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "0",
-                       "name":  "DB2-RETRY-COUNT",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  20,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "3",
-                       "name":  "DB2-MAX-RETRIES",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  21,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "100",
-                       "name":  "DB2-RETRY-WAIT",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   }
-               ],
-    "issues":  [
-
-               ]
+{
+  "id": "DBPROC",
+  "source_type": "copybook",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\copybook\\db2\\DBPROC.cpy",
+  "used_by_programs": [
+    "DB2CMT",
+    "DB2CONN",
+    "DB2ERR"
+  ],
+  "total_fields": 12,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "DB2-ERROR-HANDLING",
+      "pic": null,
+      "pic_parsed": null,
+      "type": "GROUP",
+      "storage_type": "DISPLAY",
+      "bytes": 0,
+      "redefines": null,
+      "occurs": null,
+      "value": null,
+      "line": 10,
+      "children": [
+        {
+          "level": 5,
+          "name": "DB2-ERROR-MESSAGE",
+          "pic": null,
+          "pic_parsed": null,
+          "type": "GROUP",
+          "storage_type": "DISPLAY",
+          "bytes": 0,
+          "redefines": null,
+          "occurs": null,
+          "value": null,
+          "line": 11,
+          "children": [
+            {
+              "level": 10,
+              "name": "FILLER_0012",
+              "pic": "X(9)",
+              "pic_parsed": {
+                "raw": "X(9)",
+                "normalized_type": "STRING",
+                "length": 9,
+                "decimal_places": 0,
+                "signed": false,
+                "storage_type": "DISPLAY"
+              },
+              "type": "ELEMENTARY",
+              "storage_type": "DISPLAY",
+              "bytes": 9,
+              "redefines": null,
+              "occurs": null,
+              "value": "'SQLCODE",
+              "line": 12,
+              "children": [],
+              "is_filler": true
+            },
+            {
+              "level": 10,
+              "name": "DB2-SQLCODE-TXT",
+              "pic": "X(",
+              "pic_parsed": {
+                "raw": "X(",
+                "normalized_type": "STRING",
+                "length": 1,
+                "decimal_places": 0,
+                "signed": false,
+                "storage_type": "DISPLAY"
+              },
+              "type": "ELEMENTARY",
+              "storage_type": "DISPLAY",
+              "bytes": 1,
+              "redefines": null,
+              "occurs": null,
+              "value": null,
+              "line": 13,
+              "children": [],
+              "is_filler": false
+            },
+            {
+              "level": 10,
+              "name": "FILLER_0014",
+              "pic": "X(9)",
+              "pic_parsed": {
+                "raw": "X(9)",
+                "normalized_type": "STRING",
+                "length": 9,
+                "decimal_places": 0,
+                "signed": false,
+                "storage_type": "DISPLAY"
+              },
+              "type": "ELEMENTARY",
+              "storage_type": "DISPLAY",
+              "bytes": 9,
+              "redefines": null,
+              "occurs": null,
+              "value": "'",
+              "line": 14,
+              "children": [],
+              "is_filler": true
+            },
+            {
+              "level": 10,
+              "name": "DB2-STATE",
+              "pic": "X(",
+              "pic_parsed": {
+                "raw": "X(",
+                "normalized_type": "STRING",
+                "length": 1,
+                "decimal_places": 0,
+                "signed": false,
+                "storage_type": "DISPLAY"
+              },
+              "type": "ELEMENTARY",
+              "storage_type": "DISPLAY",
+              "bytes": 1,
+              "redefines": null,
+              "occurs": null,
+              "value": null,
+              "line": 15,
+              "children": [],
+              "is_filler": false
+            },
+            {
+              "level": 10,
+              "name": "FILLER_0016",
+              "pic": "X(",
+              "pic_parsed": {
+                "raw": "X(",
+                "normalized_type": "STRING",
+                "length": 1,
+                "decimal_places": 0,
+                "signed": false,
+                "storage_type": "DISPLAY"
+              },
+              "type": "ELEMENTARY",
+              "storage_type": "DISPLAY",
+              "bytes": 1,
+              "redefines": null,
+              "occurs": null,
+              "value": "'",
+              "line": 16,
+              "children": [],
+              "is_filler": true
+            },
+            {
+              "level": 10,
+              "name": "DB2-ERROR-TEXT",
+              "pic": "X(",
+              "pic_parsed": {
+                "raw": "X(",
+                "normalized_type": "STRING",
+                "length": 1,
+                "decimal_places": 0,
+                "signed": false,
+                "storage_type": "DISPLAY"
+              },
+              "type": "ELEMENTARY",
+              "storage_type": "DISPLAY",
+              "bytes": 1,
+              "redefines": null,
+              "occurs": null,
+              "value": null,
+              "line": 17,
+              "children": [],
+              "is_filler": false
+            }
+          ],
+          "is_filler": false
+        },
+        {
+          "level": 5,
+          "name": "DB2-SAVE-STATUS",
+          "pic": "X(",
+          "pic_parsed": {
+            "raw": "X(",
+            "normalized_type": "STRING",
+            "length": 1,
+            "decimal_places": 0,
+            "signed": false,
+            "storage_type": "DISPLAY"
+          },
+          "type": "ELEMENTARY",
+          "storage_type": "DISPLAY",
+          "bytes": 1,
+          "redefines": null,
+          "occurs": null,
+          "value": null,
+          "line": 18,
+          "children": [],
+          "is_filler": false
+        },
+        {
+          "level": 5,
+          "name": "DB2-RETRY-COUNT",
+          "pic": "S9(",
+          "pic_parsed": {
+            "raw": "S9(",
+            "normalized_type": "SIGNED_INTEGER",
+            "length": 1,
+            "decimal_places": 0,
+            "signed": true,
+            "storage_type": "DISPLAY"
+          },
+          "type": "ELEMENTARY",
+          "storage_type": "DISPLAY",
+          "bytes": 1,
+          "redefines": null,
+          "occurs": null,
+          "value": "0.",
+          "line": 19,
+          "children": [],
+          "is_filler": false
+        },
+        {
+          "level": 5,
+          "name": "DB2-MAX-RETRIES",
+          "pic": "S9(",
+          "pic_parsed": {
+            "raw": "S9(",
+            "normalized_type": "SIGNED_INTEGER",
+            "length": 1,
+            "decimal_places": 0,
+            "signed": true,
+            "storage_type": "DISPLAY"
+          },
+          "type": "ELEMENTARY",
+          "storage_type": "DISPLAY",
+          "bytes": 1,
+          "redefines": null,
+          "occurs": null,
+          "value": "3.",
+          "line": 20,
+          "children": [],
+          "is_filler": false
+        },
+        {
+          "level": 5,
+          "name": "DB2-RETRY-WAIT",
+          "pic": "S9(",
+          "pic_parsed": {
+            "raw": "S9(",
+            "normalized_type": "SIGNED_INTEGER",
+            "length": 1,
+            "decimal_places": 0,
+            "signed": true,
+            "storage_type": "DISPLAY"
+          },
+          "type": "ELEMENTARY",
+          "storage_type": "DISPLAY",
+          "bytes": 1,
+          "redefines": null,
+          "occurs": null,
+          "value": "100.",
+          "line": 21,
+          "children": [],
+          "is_filler": false
+        }
+      ],
+      "is_filler": false
+    }
+  ],
+  "layout_issues": []
 }

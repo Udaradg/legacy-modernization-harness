@@ -1,303 +1,3267 @@
-﻿{
-    "statistics": {
-        "duplicates_merged": 0,
-        "total_branches_examined": 382,
-        "total_conditions_classified": 382,
-        "low_confidence_rules": 5,
-        "total_rule_sets": 10,
-        "total_rules": 15
-    },
-    "category_breakdown": {
-        "OTHER": 274,
-        "ROUTING": 31,
-        "CALCULATION": 3,
-        "ERROR_HANDLING": 39,
-        "VALIDATION": 35
-    },
-    "rule_sets": [
-        {
-            "name": "Account validation rules",
-            "rule_set_id": "RS-001",
-            "rule_ids": [],
-            "description": "Account validation rules for business process control",
-            "rule_count": 0,
-            "primary_programs": []
-        },
-        {
-            "name": "Transaction validation rules",
-            "rule_set_id": "RS-002",
-            "rule_ids": [],
-            "description": "Transaction validation rules for business process control",
-            "rule_count": 0,
-            "primary_programs": []
-        },
-        {
-            "name": "Credit limit rules",
-            "rule_set_id": "RS-003",
-            "rule_ids": [],
-            "description": "Credit limit rules for business process control",
-            "rule_count": 0,
-            "primary_programs": []
-        },
-        {
-            "name": "Card management rules",
-            "rule_set_id": "RS-004",
-            "rule_ids": [],
-            "description": "Card management rules for business process control",
-            "rule_count": 0,
-            "primary_programs": []
-        },
-        {
-            "name": "Authentication rules",
-            "rule_set_id": "RS-005",
-            "rule_ids": [],
-            "description": "Authentication rules for business process control",
-            "rule_count": 0,
-            "primary_programs": []
-        },
-        {
-            "name": "Transaction routing rules",
-            "rule_set_id": "RS-006",
-            "rule_ids": [],
-            "description": "Transaction routing rules for business process control",
-            "rule_count": 0,
-            "primary_programs": []
-        },
-        {
-            "name": "Compliance reporting rules",
-            "rule_set_id": "RS-007",
-            "rule_ids": [],
-            "description": "Compliance reporting rules for business process control",
-            "rule_count": 0,
-            "primary_programs": []
-        },
-        {
-            "name": "Error recovery rules",
-            "rule_set_id": "RS-008",
-            "rule_ids": [],
-            "description": "Error recovery rules for business process control",
-            "rule_count": 0,
-            "primary_programs": []
-        },
-        {
-            "name": "Data integrity rules",
-            "rule_set_id": "RS-009",
-            "rule_ids": [],
-            "description": "Data integrity rules for business process control",
-            "rule_count": 0,
-            "primary_programs": []
-        },
-        {
-            "name": "System control rules",
-            "rule_set_id": "RS-010",
-            "rule_ids": [],
-            "description": "System control rules for business process control",
-            "rule_count": 0,
-            "primary_programs": []
-        }
+{
+  "meta": {
+    "generated_at": "2026-05-03T18:38:47.201348Z",
+    "agent_version": "5_rules@1.0",
+    "source_artifacts": [
+      "classified_conditions.json",
+      "data_artifact.json"
     ],
-    "business_rules": [
+    "total_rules": 90,
+    "high_confidence_rules": 11,
+    "duplicated_rules": 17
+  },
+  "rules": [
+    {
+      "rule_id": "RULE-HANDLE-WS-FILE-STATUS-IS-00",
+      "rule_name": "Handle WS FILE STATUS is 00",
+      "description": "Handle WS FILE STATUS is 00. When WS-FILE-STATUS NOT = '00', the system applies this rule. Implemented in program AUDPROC, paragraph 1000-INITIALIZE.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
         {
-            "rule_set_id": "RS-001",
-            "name": " other rule #0",
-            "source_programs": [
-                "BCHCTL00"
-            ],
-            "requires_sme_review": false,
-            "category": "OTHER",
-            "is_duplicated": false,
-            "rule_id": "BR-001",
-            "confidence": "confirmed",
-            "signal_strength": 5
+          "program_id": "AUDPROC",
+          "paragraph": "1000-INITIALIZE",
+          "condition_text": "WS-FILE-STATUS NOT = '00'",
+          "fields": [
+            "WS-FILE-STATUS"
+          ]
         },
         {
-            "rule_set_id": "RS-001",
-            "name": " other rule #1",
-            "source_programs": [
-                "CKPRST"
-            ],
-            "requires_sme_review": false,
-            "category": "OTHER",
-            "is_duplicated": false,
-            "rule_id": "BR-002",
-            "confidence": "high",
-            "signal_strength": 4
+          "program_id": "AUDPROC",
+          "paragraph": "2000-PROCESS-AUDIT",
+          "condition_text": "WS-FILE-STATUS NOT = '00'",
+          "fields": [
+            "WS-FILE-STATUS"
+          ]
         },
         {
-            "rule_set_id": "RS-001",
-            "name": " other rule #2",
-            "source_programs": [
-                "HISTLD00"
-            ],
-            "requires_sme_review": true,
-            "category": "OTHER",
-            "is_duplicated": false,
-            "rule_id": "BR-003",
-            "confidence": "medium",
-            "signal_strength": 3
+          "program_id": "PORTTEST",
+          "paragraph": "1000-INITIALIZE",
+          "condition_text": "WS-FILE-STATUS NOT = '00'",
+          "fields": [
+            "WS-FILE-STATUS"
+          ]
         },
         {
-            "rule_set_id": "RS-001",
-            "name": "Route routing rule #0",
-            "source_programs": [
-                "BCHCTL00"
-            ],
-            "requires_sme_review": false,
-            "category": "ROUTING",
-            "is_duplicated": false,
-            "rule_id": "BR-004",
-            "confidence": "confirmed",
-            "signal_strength": 5
-        },
-        {
-            "rule_set_id": "RS-001",
-            "name": "Route routing rule #1",
-            "source_programs": [
-                "CKPRST"
-            ],
-            "requires_sme_review": false,
-            "category": "ROUTING",
-            "is_duplicated": false,
-            "rule_id": "BR-005",
-            "confidence": "high",
-            "signal_strength": 4
-        },
-        {
-            "rule_set_id": "RS-001",
-            "name": "Route routing rule #2",
-            "source_programs": [
-                "HISTLD00"
-            ],
-            "requires_sme_review": true,
-            "category": "ROUTING",
-            "is_duplicated": false,
-            "rule_id": "BR-006",
-            "confidence": "medium",
-            "signal_strength": 3
-        },
-        {
-            "rule_set_id": "RS-001",
-            "name": "Calculate calculation rule #0",
-            "source_programs": [
-                "BCHCTL00"
-            ],
-            "requires_sme_review": false,
-            "category": "CALCULATION",
-            "is_duplicated": false,
-            "rule_id": "BR-007",
-            "confidence": "confirmed",
-            "signal_strength": 5
-        },
-        {
-            "rule_set_id": "RS-001",
-            "name": "Calculate calculation rule #1",
-            "source_programs": [
-                "CKPRST"
-            ],
-            "requires_sme_review": false,
-            "category": "CALCULATION",
-            "is_duplicated": false,
-            "rule_id": "BR-008",
-            "confidence": "high",
-            "signal_strength": 4
-        },
-        {
-            "rule_set_id": "RS-001",
-            "name": "Calculate calculation rule #2",
-            "source_programs": [
-                "HISTLD00"
-            ],
-            "requires_sme_review": true,
-            "category": "CALCULATION",
-            "is_duplicated": false,
-            "rule_id": "BR-009",
-            "confidence": "medium",
-            "signal_strength": 3
-        },
-        {
-            "rule_set_id": "RS-001",
-            "name": "Handle error_handling rule #0",
-            "source_programs": [
-                "BCHCTL00"
-            ],
-            "requires_sme_review": false,
-            "category": "ERROR_HANDLING",
-            "is_duplicated": false,
-            "rule_id": "BR-010",
-            "confidence": "confirmed",
-            "signal_strength": 5
-        },
-        {
-            "rule_set_id": "RS-001",
-            "name": "Handle error_handling rule #1",
-            "source_programs": [
-                "CKPRST"
-            ],
-            "requires_sme_review": false,
-            "category": "ERROR_HANDLING",
-            "is_duplicated": false,
-            "rule_id": "BR-011",
-            "confidence": "high",
-            "signal_strength": 4
-        },
-        {
-            "rule_set_id": "RS-001",
-            "name": "Handle error_handling rule #2",
-            "source_programs": [
-                "HISTLD00"
-            ],
-            "requires_sme_review": true,
-            "category": "ERROR_HANDLING",
-            "is_duplicated": false,
-            "rule_id": "BR-012",
-            "confidence": "medium",
-            "signal_strength": 3
-        },
-        {
-            "rule_set_id": "RS-001",
-            "name": "Validate validation rule #0",
-            "source_programs": [
-                "BCHCTL00"
-            ],
-            "requires_sme_review": false,
-            "category": "VALIDATION",
-            "is_duplicated": false,
-            "rule_id": "BR-013",
-            "confidence": "confirmed",
-            "signal_strength": 5
-        },
-        {
-            "rule_set_id": "RS-001",
-            "name": "Validate validation rule #1",
-            "source_programs": [
-                "CKPRST"
-            ],
-            "requires_sme_review": false,
-            "category": "VALIDATION",
-            "is_duplicated": false,
-            "rule_id": "BR-014",
-            "confidence": "high",
-            "signal_strength": 4
-        },
-        {
-            "rule_set_id": "RS-001",
-            "name": "Validate validation rule #2",
-            "source_programs": [
-                "HISTLD00"
-            ],
-            "requires_sme_review": true,
-            "category": "VALIDATION",
-            "is_duplicated": false,
-            "rule_id": "BR-015",
-            "confidence": "medium",
-            "signal_strength": 3
+          "program_id": "PORTTEST",
+          "paragraph": "2000-GENERATE-RECORDS",
+          "condition_text": "WS-FILE-STATUS = '00'",
+          "fields": [
+            "WS-FILE-STATUS"
+          ]
         }
-    ],
-    "meta": {
-        "generated_at": "2026-05-03T10:15:50.5971777-05:00",
-        "logic_source": "2026-05-03T10:02:22.5504164-05:00",
-        "agent_version": "5_rules@1.0",
-        "data_source": null,
-        "repo_root": "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness"
+      ],
+      "is_duplicated": true,
+      "implemented_in_programs": [
+        "AUDPROC",
+        "PORTTEST"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate value has required value",
+      "description": "Validate value has required value. When , the system applies this rule. Implemented in program BCHCTL00, paragraph 0000-MAIN.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "BCHCTL00",
+          "paragraph": "0000-MAIN",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "CKPRST",
+          "paragraph": "RETURN-STATUS",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "DB2CMT",
+          "paragraph": "0000-MAIN",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "DB2CONN",
+          "paragraph": "0000-MAIN",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "DB2ERR",
+          "paragraph": "0000-MAIN",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "DB2ERR",
+          "paragraph": "1100-SET-SEVERITY",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "DB2STAT",
+          "paragraph": "0000-MAIN",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "ERRHNDL",
+          "paragraph": "P400-DETERMINE-ACTION",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "INQONLN",
+          "paragraph": "END-EXEC",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "PORTADD",
+          "paragraph": "2100-VALIDATE-AND-ADD",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "PORTDEL",
+          "paragraph": "2100-PROCESS-DELETE",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "PORTMSTR",
+          "paragraph": "0000-MAIN",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "PORTMSTR",
+          "paragraph": "3000-READ-PORTFOLIO",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "PORTTRAN",
+          "paragraph": "2120-CHECK-TRANSACTION-TYPE",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "PORTTRAN",
+          "paragraph": "2200-UPDATE-POSITIONS",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "PORTTRAN",
+          "paragraph": "2300-UPDATE-AUDIT-TRAIL",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "PORTUPDT",
+          "paragraph": "2200-APPLY-UPDATE",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "PORTVALD",
+          "paragraph": "0000-MAIN",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "PRCSEQ00",
+          "paragraph": "0000-MAIN",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "RCVPRC00",
+          "paragraph": "0000-MAIN",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "RCVPRC00",
+          "paragraph": "2000-PROCESS-RECOVERY",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "RCVPRC00",
+          "paragraph": "1200-VALIDATE-REQUEST",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "RCVPRC00",
+          "paragraph": "2120-EXECUTE-RECOVERY",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "RTNCDE00",
+          "paragraph": "P200-SET-RETURN-CODE",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "SECMGR",
+          "paragraph": "END-EXEC",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "TSTGEN00",
+          "paragraph": "2100-GENERATE-TEST-DATA",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "TSTVAL00",
+          "paragraph": "2100-EXECUTE-TEST",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "UTLMNT00",
+          "paragraph": "2100-PROCESS-FUNCTION",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "UTLVAL00",
+          "paragraph": "2100-PROCESS-VALIDATION",
+          "condition_text": "",
+          "fields": []
+        }
+      ],
+      "is_duplicated": true,
+      "implemented_in_programs": [
+        "BCHCTL00",
+        "CKPRST",
+        "DB2CMT",
+        "DB2CONN",
+        "DB2ERR",
+        "DB2STAT",
+        "ERRHNDL",
+        "INQONLN",
+        "PORTADD",
+        "PORTDEL",
+        "PORTMSTR",
+        "PORTTRAN",
+        "PORTUPDT",
+        "PORTVALD",
+        "PRCSEQ00",
+        "RCVPRC00",
+        "RTNCDE00",
+        "SECMGR",
+        "TSTGEN00",
+        "TSTVAL00",
+        "UTLMNT00",
+        "UTLVAL00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-PREREQS-SATISFIED-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate PREREQS SATISFIED has required value",
+      "description": "Validate PREREQS SATISFIED has required value. When PREREQS-SATISFIED, the system applies this rule. Implemented in program BCHCTL00, paragraph 2000-CHECK-PREREQUISITES.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "BCHCTL00",
+          "paragraph": "2000-CHECK-PREREQUISITES",
+          "condition_text": "PREREQS-SATISFIED",
+          "fields": [
+            "PREREQS-SATISFIED"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "BCHCTL00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-USE-ARRAY-FETCH-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate USE ARRAY FETCH has required value",
+      "description": "Validate USE ARRAY FETCH has required value. When USE-ARRAY-FETCH, the system applies this rule. Implemented in program CURSMGR, paragraph P100-DECLARE-CURSOR.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "CURSMGR",
+          "paragraph": "P100-DECLARE-CURSOR",
+          "condition_text": "USE-ARRAY-FETCH",
+          "fields": [
+            "USE-ARRAY-FETCH"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "CURSMGR"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-SQLCODE-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Handle SQLCODE equals specified value",
+      "description": "Handle SQLCODE equals specified value. When SQLCODE NOT = 0, the system applies this rule. Implemented in program CURSMGR, paragraph END-EXEC.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "CURSMGR",
+          "paragraph": "END-EXEC",
+          "condition_text": "SQLCODE NOT = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "CURSMGR",
+          "paragraph": "P200-OPEN-CURSOR",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "DB2CMT",
+          "paragraph": "2100-ISSUE-COMMIT",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "DB2CMT",
+          "paragraph": "3000-ROLLBACK",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "DB2CMT",
+          "paragraph": "4000-SAVEPOINT",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "DB2CMT",
+          "paragraph": "5000-RESTORE",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "DB2CONN",
+          "paragraph": "1000-CONNECT",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "DB2CONN",
+          "paragraph": "2000-DISCONNECT",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "DB2CONN",
+          "paragraph": "3000-CHECK-STATUS",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "DB2ERR",
+          "paragraph": "1200-INSERT-ERROR",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "DB2ERR",
+          "paragraph": "3000-RETRIEVE-ERROR",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "DB2ONLN",
+          "paragraph": "P110-ESTABLISH-CONNECTION",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "DB2ONLN",
+          "paragraph": "P200-PROCESS-DISCONNECT",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "DB2ONLN",
+          "paragraph": "END-EXEC",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "DB2RECV",
+          "paragraph": "P200-RECOVER-TRANSACTION",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "DB2STAT",
+          "paragraph": "1200-INSERT-INITIAL",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "DB2STAT",
+          "paragraph": "2000-UPDATE-STATS",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "DB2STAT",
+          "paragraph": "3000-TERMINATE",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "DB2STAT",
+          "paragraph": "4000-DISPLAY-STATS",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "ERRHNDL",
+          "paragraph": "END-EXEC",
+          "condition_text": "SQLCODE NOT = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "HISTLD00",
+          "paragraph": "2200-LOAD-TO-DB2",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "HISTLD00",
+          "paragraph": "2200-LOAD-TO-DB2",
+          "condition_text": "SQLCODE = -803",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "RTNANA00",
+          "paragraph": "END-EXEC",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "RTNCDE00",
+          "paragraph": "END-EXEC",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "RTNCDE00",
+          "paragraph": "END-EXEC",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        },
+        {
+          "program_id": "SECMGR",
+          "paragraph": "END-EXEC",
+          "condition_text": "SQLCODE = 0",
+          "fields": [
+            "SQLCODE"
+          ]
+        }
+      ],
+      "is_duplicated": true,
+      "implemented_in_programs": [
+        "CURSMGR",
+        "DB2CMT",
+        "DB2CONN",
+        "DB2ERR",
+        "DB2ONLN",
+        "DB2RECV",
+        "DB2STAT",
+        "ERRHNDL",
+        "HISTLD00",
+        "RTNANA00",
+        "RTNCDE00",
+        "SECMGR"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-LS-RECORDS-PROC-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Validate LS RECORDS PROC equals specified value",
+      "description": "Validate LS RECORDS PROC equals specified value. When LS-RECORDS-PROC >= LS-COMMIT-FREQ, the system applies this rule. Implemented in program DB2CMT, paragraph 2000-COMMIT.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "DB2CMT",
+          "paragraph": "2000-COMMIT",
+          "condition_text": "LS-RECORDS-PROC >= LS-COMMIT-FREQ",
+          "fields": [
+            "LS-RECORDS-PROC",
+            "LS-COMMIT-FREQ"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "DB2CMT"
+      ]
+    },
+    {
+      "rule_id": "RULE-ENFORCE-WS-RETRY-COUNT-HAS-REQUIRED-VALUE",
+      "rule_name": "Enforce WS RETRY COUNT has required value",
+      "description": "Enforce WS RETRY COUNT has required value. When WS-RETRY-COUNT < WS-MAX-RETRIES, the system applies this rule. Implemented in program DB2CONN, paragraph 1000-CONNECT.",
+      "category": "LIMIT_CHECK",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "DB2CONN",
+          "paragraph": "1000-CONNECT",
+          "condition_text": "WS-RETRY-COUNT < WS-MAX-RETRIES",
+          "fields": [
+            "WS-RETRY-COUNT",
+            "WS-MAX-RETRIES"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "DB2CONN"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-VALUE-HAS-REQUIRED-VALUE",
+      "rule_name": "Handle value has required value",
+      "description": "Handle value has required value. When , the system applies this rule. Implemented in program DB2CONN, paragraph 1100-HANDLE-CONN-ERROR.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "DB2CONN",
+          "paragraph": "1100-HANDLE-CONN-ERROR",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "DB2ERR",
+          "paragraph": "2000-DIAGNOSE-ERROR",
+          "condition_text": "",
+          "fields": []
+        },
+        {
+          "program_id": "PORTMSTR",
+          "paragraph": "2100-HANDLE-VSAM-ERROR",
+          "condition_text": "",
+          "fields": []
+        }
+      ],
+      "is_duplicated": true,
+      "implemented_in_programs": [
+        "DB2CONN",
+        "DB2ERR",
+        "PORTMSTR"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-WS-CONNECTED-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate WS CONNECTED has required value",
+      "description": "Validate WS CONNECTED has required value. When WS-CONNECTED, the system applies this rule. Implemented in program DB2CONN, paragraph 2000-DISCONNECT.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "DB2CONN",
+          "paragraph": "2000-DISCONNECT",
+          "condition_text": "WS-CONNECTED",
+          "fields": [
+            "WS-CONNECTED"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "DB2CONN"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-LS-SQLCODE-HAS-REQUIRED-VALUE",
+      "rule_name": "Handle LS SQLCODE has required value",
+      "description": "Handle LS SQLCODE has required value. When LS-SQLCODE < 0, the system applies this rule. Implemented in program DB2ERR, paragraph 1100-SET-SEVERITY.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "DB2ERR",
+          "paragraph": "1100-SET-SEVERITY",
+          "condition_text": "LS-SQLCODE < 0",
+          "fields": [
+            "LS-SQLCODE"
+          ]
+        },
+        {
+          "program_id": "DB2ERR",
+          "paragraph": "2000-DIAGNOSE-ERROR",
+          "condition_text": "LS-SQLCODE < 0",
+          "fields": [
+            "LS-SQLCODE"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "DB2ERR"
+      ]
+    },
+    {
+      "rule_id": "RULE-ENFORCE-WS-ACTIVE-CONNECTIONS-HAS-REQUIRED-VALUE",
+      "rule_name": "Enforce WS ACTIVE CONNECTIONS has required value",
+      "description": "Enforce WS ACTIVE CONNECTIONS has required value. When WS-ACTIVE-CONNECTIONS < WS-MAX-CONNECTIONS, the system applies this rule. Implemented in program DB2ONLN, paragraph P100-PROCESS-CONNECT.",
+      "category": "LIMIT_CHECK",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "DB2ONLN",
+          "paragraph": "P100-PROCESS-CONNECT",
+          "condition_text": "WS-ACTIVE-CONNECTIONS < WS-MAX-CONNECTIONS",
+          "fields": [
+            "WS-ACTIVE-CONNECTIONS",
+            "WS-MAX-CONNECTIONS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "DB2ONLN"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-RECV-SUCCESS-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate RECV Success has required value",
+      "description": "Validate RECV Success has required value. When RECV-SUCCESS, the system applies this rule. Implemented in program DB2RECV, paragraph P100-RECOVER-CONNECTION.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "DB2RECV",
+          "paragraph": "P100-RECOVER-CONNECTION",
+          "condition_text": "RECV-SUCCESS",
+          "fields": [
+            "RECV-SUCCESS"
+          ]
+        },
+        {
+          "program_id": "INQHIST",
+          "paragraph": "END-EXEC",
+          "condition_text": "RECV-SUCCESS",
+          "fields": [
+            "RECV-SUCCESS"
+          ]
+        }
+      ],
+      "is_duplicated": true,
+      "implemented_in_programs": [
+        "DB2RECV",
+        "INQHIST"
+      ]
+    },
+    {
+      "rule_id": "RULE-ENFORCE-WS-RETRY-COUNT-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Enforce WS RETRY COUNT equals specified value",
+      "description": "Enforce WS RETRY COUNT equals specified value. When WS-RETRY-COUNT >= WS-MAX-RETRIES, the system applies this rule. Implemented in program DB2RECV, paragraph END-PERFORM.",
+      "category": "LIMIT_CHECK",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "DB2RECV",
+          "paragraph": "END-PERFORM",
+          "condition_text": "WS-RETRY-COUNT >= WS-MAX-RETRIES",
+          "fields": [
+            "WS-RETRY-COUNT",
+            "WS-MAX-RETRIES"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "DB2RECV"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-OF-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Handle OF equals specified value",
+      "description": "Handle OF equals specified value. When DB2-RESPONSE-CODE OF WS-DB2-REQUEST = 0, the system applies this rule. Implemented in program DB2RECV, paragraph END-EXEC.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "DB2RECV",
+          "paragraph": "END-EXEC",
+          "condition_text": "DB2-RESPONSE-CODE OF WS-DB2-REQUEST = 0",
+          "fields": [
+            "OF",
+            "WS-DB2-REQUEST",
+            "DB2-RESPONSE-CODE"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "DB2RECV"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-ERROR-CONTINUE-ERROR-CONTINUE",
+      "rule_name": "Validate Error CONTINUE error continue",
+      "description": "Validate Error CONTINUE error continue. When ERR-CONTINUE, the system applies this rule. Implemented in program DB2RECV, paragraph END-EXEC.",
+      "category": "VALIDATION",
+      "pattern": "CONDITION_NAME",
+      "signal_strength": 5,
+      "confidence": "high",
+      "sources": [
+        {
+          "program_id": "DB2RECV",
+          "paragraph": "END-EXEC",
+          "condition_text": "ERR-CONTINUE",
+          "fields": [
+            "ERR-CONTINUE"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "DB2RECV"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-SQLCODE-MEETS-CRITERIA",
+      "rule_name": "Handle SQLCODE meets criteria",
+      "description": "Handle SQLCODE meets criteria. When SQLCODE NOT = 0 AND SQLCODE NOT = -601, the system applies this rule. Implemented in program DB2STAT, paragraph 1100-CREATE-STATS-TABLE.",
+      "category": "ERROR_HANDLING",
+      "pattern": "MULTI_CONDITION",
+      "signal_strength": 4,
+      "confidence": "high",
+      "sources": [
+        {
+          "program_id": "DB2STAT",
+          "paragraph": "1100-CREATE-STATS-TABLE",
+          "condition_text": "SQLCODE NOT = 0 AND SQLCODE NOT = -601",
+          "fields": [
+            "SQLCODE"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "DB2STAT"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-ERROR-TRACE-ID-IS-NOT-ZERO-OR-EMPTY",
+      "rule_name": "Handle Error TRACE ID is not zero or empty",
+      "description": "Handle Error TRACE ID is not zero or empty. When ERR-TRACE-ID = SPACES, the system applies this rule. Implemented in program ERRHNDL, paragraph P100-INIT-ERROR-HANDLER.",
+      "category": "ERROR_HANDLING",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "ERRHNDL",
+          "paragraph": "P100-INIT-ERROR-HANDLER",
+          "condition_text": "ERR-TRACE-ID = SPACES",
+          "fields": [
+            "ERR-TRACE-ID"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "ERRHNDL"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-LOG-STATUS-IS-00",
+      "rule_name": "Handle WS LOG STATUS is 00",
+      "description": "Handle WS LOG STATUS is 00. When WS-LOG-STATUS NOT = '00', the system applies this rule. Implemented in program ERRPROC, paragraph 1000-INITIALIZE.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "ERRPROC",
+          "paragraph": "1000-INITIALIZE",
+          "condition_text": "WS-LOG-STATUS NOT = '00'",
+          "fields": [
+            "WS-LOG-STATUS"
+          ]
+        },
+        {
+          "program_id": "ERRPROC",
+          "paragraph": "2100-WRITE-LOG",
+          "condition_text": "WS-LOG-STATUS NOT = '00'",
+          "fields": [
+            "WS-LOG-STATUS"
+          ]
+        },
+        {
+          "program_id": "UTLMON00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-LOG-STATUS NOT = '00'",
+          "fields": [
+            "WS-LOG-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": true,
+      "implemented_in_programs": [
+        "ERRPROC",
+        "UTLMON00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-MORE-RECORDS-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate MORE RECORDS has required value",
+      "description": "Validate MORE RECORDS has required value. When MORE-RECORDS, the system applies this rule. Implemented in program HISTLD00, paragraph 2000-PROCESS.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "HISTLD00",
+          "paragraph": "2000-PROCESS",
+          "condition_text": "MORE-RECORDS",
+          "fields": [
+            "MORE-RECORDS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "HISTLD00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-TH-STATUS-IS-00",
+      "rule_name": "Handle WS TH STATUS is 00",
+      "description": "Handle WS TH STATUS is 00. When WS-TH-STATUS NOT = '00', the system applies this rule. Implemented in program HISTLD00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "HISTLD00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-TH-STATUS NOT = '00'",
+          "fields": [
+            "WS-TH-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "HISTLD00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-BCT-STATUS-IS-00",
+      "rule_name": "Handle WS BCT STATUS is 00",
+      "description": "Handle WS BCT STATUS is 00. When WS-BCT-STATUS NOT = '00', the system applies this rule. Implemented in program HISTLD00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "HISTLD00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-BCT-STATUS NOT = '00'",
+          "fields": [
+            "WS-BCT-STATUS"
+          ]
+        },
+        {
+          "program_id": "PRCSEQ00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-BCT-STATUS NOT = '00'",
+          "fields": [
+            "WS-BCT-STATUS"
+          ]
+        },
+        {
+          "program_id": "RCVPRC00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-BCT-STATUS NOT = '00'",
+          "fields": [
+            "WS-BCT-STATUS"
+          ]
+        },
+        {
+          "program_id": "RCVPRC00",
+          "paragraph": "3200-CLOSE-FILES",
+          "condition_text": "WS-BCT-STATUS NOT = '00' OR",
+          "fields": [
+            "WS-BCT-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": true,
+      "implemented_in_programs": [
+        "HISTLD00",
+        "PRCSEQ00",
+        "RCVPRC00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-WS-COMMIT-COUNT-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Validate WS COMMIT COUNT equals specified value",
+      "description": "Validate WS COMMIT COUNT equals specified value. When WS-COMMIT-COUNT >= WS-COMMIT-THRESHOLD, the system applies this rule. Implemented in program HISTLD00, paragraph 2300-CHECK-COMMIT.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "HISTLD00",
+          "paragraph": "2300-CHECK-COMMIT",
+          "condition_text": "WS-COMMIT-COUNT >= WS-COMMIT-THRESHOLD",
+          "fields": [
+            "WS-COMMIT-COUNT",
+            "WS-COMMIT-THRESHOLD"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "HISTLD00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-DB2-RESPONSE-CODE-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Handle DB2 RESPONSE Code equals specified value",
+      "description": "Handle DB2 RESPONSE Code equals specified value. When DB2-RESPONSE-CODE NOT = 0, the system applies this rule. Implemented in program INQHIST, paragraph END-EXEC.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "INQHIST",
+          "paragraph": "END-EXEC",
+          "condition_text": "DB2-RESPONSE-CODE NOT = 0",
+          "fields": [
+            "DB2-RESPONSE-CODE"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "INQHIST"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-CURS-RESPONSE-CODE-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Handle CURS RESPONSE Code equals specified value",
+      "description": "Handle CURS RESPONSE Code equals specified value. When CURS-RESPONSE-CODE = 0, the system applies this rule. Implemented in program INQHIST, paragraph END-EXEC.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "INQHIST",
+          "paragraph": "END-EXEC",
+          "condition_text": "CURS-RESPONSE-CODE = 0",
+          "fields": [
+            "CURS-RESPONSE-CODE"
+          ]
+        },
+        {
+          "program_id": "INQHIST",
+          "paragraph": "END-EXEC",
+          "condition_text": "CURS-RESPONSE-CODE = 0",
+          "fields": [
+            "CURS-RESPONSE-CODE"
+          ]
+        },
+        {
+          "program_id": "INQHIST",
+          "paragraph": "END-EXEC",
+          "condition_text": "CURS-RESPONSE-CODE >= 0",
+          "fields": [
+            "CURS-RESPONSE-CODE"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "INQHIST"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-SEC-RESPONSE-CODE-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Handle SEC RESPONSE Code equals specified value",
+      "description": "Handle SEC RESPONSE Code equals specified value. When SEC-RESPONSE-CODE NOT = 0, the system applies this rule. Implemented in program INQONLN, paragraph END-EXEC.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "INQONLN",
+          "paragraph": "END-EXEC",
+          "condition_text": "SEC-RESPONSE-CODE NOT = 0",
+          "fields": [
+            "SEC-RESPONSE-CODE"
+          ]
+        },
+        {
+          "program_id": "INQONLN",
+          "paragraph": "END-EXEC",
+          "condition_text": "SEC-RESPONSE-CODE = 0",
+          "fields": [
+            "SEC-RESPONSE-CODE"
+          ]
+        },
+        {
+          "program_id": "INQONLN",
+          "paragraph": "END-EXEC",
+          "condition_text": "SEC-RESPONSE-CODE = 0",
+          "fields": [
+            "SEC-RESPONSE-CODE"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "INQONLN"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-ERROR-ABEND-ERROR-ABEND",
+      "rule_name": "Validate Error ABEND error abend",
+      "description": "Validate Error ABEND error abend. When ERR-ABEND, the system applies this rule. Implemented in program INQONLN, paragraph END-EXEC.",
+      "category": "VALIDATION",
+      "pattern": "CONDITION_NAME",
+      "signal_strength": 5,
+      "confidence": "high",
+      "sources": [
+        {
+          "program_id": "INQONLN",
+          "paragraph": "END-EXEC",
+          "condition_text": "ERR-ABEND",
+          "fields": [
+            "ERR-ABEND"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "INQONLN"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-RESPONSE-CODE-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Handle WS RESPONSE Code equals specified value",
+      "description": "Handle WS RESPONSE Code equals specified value. When WS-RESPONSE-CODE = DFHRESP(NORMAL), the system applies this rule. Implemented in program INQPORT, paragraph END-EXEC.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "INQPORT",
+          "paragraph": "END-EXEC",
+          "condition_text": "WS-RESPONSE-CODE = DFHRESP(NORMAL)",
+          "fields": [
+            "WS-RESPONSE-CODE",
+            "NORMAL",
+            "DFHRESP"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "INQPORT"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-SUCCESS-STATUS-HAS-REQUIRED-VALUE",
+      "rule_name": "Handle WS Success STATUS has required value",
+      "description": "Handle WS Success STATUS has required value. When NOT WS-SUCCESS-STATUS OR, the system applies this rule. Implemented in program PORTADD, paragraph 1000-INITIALIZE.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTADD",
+          "paragraph": "1000-INITIALIZE",
+          "condition_text": "NOT WS-SUCCESS-STATUS OR",
+          "fields": [
+            "WS-SUCCESS-STATUS"
+          ]
+        },
+        {
+          "program_id": "PORTDEL",
+          "paragraph": "1000-INITIALIZE",
+          "condition_text": "NOT WS-SUCCESS-STATUS OR",
+          "fields": [
+            "WS-SUCCESS-STATUS"
+          ]
+        },
+        {
+          "program_id": "PORTDEL",
+          "paragraph": "2200-DELETE-RECORD",
+          "condition_text": "WS-SUCCESS-STATUS",
+          "fields": [
+            "WS-SUCCESS-STATUS"
+          ]
+        },
+        {
+          "program_id": "PORTREAD",
+          "paragraph": "1000-INITIALIZE",
+          "condition_text": "NOT WS-SUCCESS-STATUS",
+          "fields": [
+            "WS-SUCCESS-STATUS"
+          ]
+        },
+        {
+          "program_id": "PORTUPDT",
+          "paragraph": "1000-INITIALIZE",
+          "condition_text": "NOT WS-SUCCESS-STATUS OR",
+          "fields": [
+            "WS-SUCCESS-STATUS"
+          ]
+        },
+        {
+          "program_id": "PORTUPDT",
+          "paragraph": "2100-PROCESS-UPDATE",
+          "condition_text": "WS-SUCCESS-STATUS",
+          "fields": [
+            "WS-SUCCESS-STATUS"
+          ]
+        },
+        {
+          "program_id": "PORTUPDT",
+          "paragraph": "2200-APPLY-UPDATE",
+          "condition_text": "WS-SUCCESS-STATUS",
+          "fields": [
+            "WS-SUCCESS-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": true,
+      "implemented_in_programs": [
+        "PORTADD",
+        "PORTDEL",
+        "PORTREAD",
+        "PORTUPDT"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-PORT-ID-IS-NOT-ZERO-OR-EMPTY",
+      "rule_name": "Validate PORT ID is not zero or empty",
+      "description": "Validate PORT ID is not zero or empty. When PORT-ID EQUAL SPACES OR, the system applies this rule. Implemented in program PORTADD, paragraph 2100-VALIDATE-AND-ADD.",
+      "category": "VALIDATION",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTADD",
+          "paragraph": "2100-VALIDATE-AND-ADD",
+          "condition_text": "PORT-ID EQUAL SPACES OR",
+          "fields": [
+            "PORT-ID"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTADD"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-WS-AUD-SUCCESS-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate WS AUD Success has required value",
+      "description": "Validate WS AUD Success has required value. When NOT WS-AUD-SUCCESS, the system applies this rule. Implemented in program PORTDEL, paragraph 2300-WRITE-AUDIT.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTDEL",
+          "paragraph": "2300-WRITE-AUDIT",
+          "condition_text": "NOT WS-AUD-SUCCESS",
+          "fields": [
+            "WS-AUD-SUCCESS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTDEL"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-PORT-SUCCESS-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate PORT Success has required value",
+      "description": "Validate PORT Success has required value. When NOT PORT-SUCCESS, the system applies this rule. Implemented in program PORTMSTR, paragraph 1000-INITIALIZE.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTMSTR",
+          "paragraph": "1000-INITIALIZE",
+          "condition_text": "NOT PORT-SUCCESS",
+          "fields": [
+            "PORT-SUCCESS"
+          ]
+        },
+        {
+          "program_id": "PORTMSTR",
+          "paragraph": "2000-CREATE-PORTFOLIO",
+          "condition_text": "NOT PORT-SUCCESS",
+          "fields": [
+            "PORT-SUCCESS"
+          ]
+        },
+        {
+          "program_id": "PORTMSTR",
+          "paragraph": "4000-UPDATE-PORTFOLIO",
+          "condition_text": "NOT PORT-SUCCESS",
+          "fields": [
+            "PORT-SUCCESS"
+          ]
+        },
+        {
+          "program_id": "PORTMSTR",
+          "paragraph": "5000-DELETE-PORTFOLIO",
+          "condition_text": "NOT PORT-SUCCESS",
+          "fields": [
+            "PORT-SUCCESS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTMSTR"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-WS-SUCCESS-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Validate WS Success equals specified value",
+      "description": "Validate WS Success equals specified value. When WS-RETURN-CODE NOT = WS-SUCCESS, the system applies this rule. Implemented in program PORTMSTR, paragraph 2000-CREATE-PORTFOLIO.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTMSTR",
+          "paragraph": "2000-CREATE-PORTFOLIO",
+          "condition_text": "WS-RETURN-CODE NOT = WS-SUCCESS",
+          "fields": [
+            "WS-SUCCESS",
+            "WS-RETURN-CODE"
+          ]
+        },
+        {
+          "program_id": "PORTMSTR",
+          "paragraph": "4000-UPDATE-PORTFOLIO",
+          "condition_text": "WS-RETURN-CODE NOT = WS-SUCCESS",
+          "fields": [
+            "WS-SUCCESS",
+            "WS-RETURN-CODE"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTMSTR"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-PORT-DUP-KEY-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate PORT DUP KEY has required value",
+      "description": "Validate PORT DUP KEY has required value. When PORT-DUP-KEY, the system applies this rule. Implemented in program PORTMSTR, paragraph 2000-CREATE-PORTFOLIO.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTMSTR",
+          "paragraph": "2000-CREATE-PORTFOLIO",
+          "condition_text": "PORT-DUP-KEY",
+          "fields": [
+            "PORT-DUP-KEY"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTMSTR"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-PORT-IS-PORT",
+      "rule_name": "Validate PORT is PORT",
+      "description": "Validate PORT is PORT. When PORT-ID(1:4) NOT = 'PORT', the system applies this rule. Implemented in program PORTMSTR, paragraph 2100-VALIDATE-PORTFOLIO.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTMSTR",
+          "paragraph": "2100-VALIDATE-PORTFOLIO",
+          "condition_text": "PORT-ID(1:4) NOT = 'PORT'",
+          "fields": [
+            "PORT",
+            "PORT-ID"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTMSTR"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-PORT-NAME-IS-NOT-ZERO-OR-EMPTY",
+      "rule_name": "Validate PORT NAME is not zero or empty",
+      "description": "Validate PORT NAME is not zero or empty. When PORT-NAME = SPACES, the system applies this rule. Implemented in program PORTMSTR, paragraph 2100-VALIDATE-PORTFOLIO.",
+      "category": "VALIDATION",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTMSTR",
+          "paragraph": "2100-VALIDATE-PORTFOLIO",
+          "condition_text": "PORT-NAME = SPACES",
+          "fields": [
+            "PORT-NAME"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTMSTR"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-VALID-STATUS-HAS-REQUIRED-VALUE",
+      "rule_name": "Handle VALID STATUS has required value",
+      "description": "Handle VALID STATUS has required value. When NOT VALID-STATUS, the system applies this rule. Implemented in program PORTMSTR, paragraph 2100-VALIDATE-PORTFOLIO.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTMSTR",
+          "paragraph": "2100-VALIDATE-PORTFOLIO",
+          "condition_text": "NOT VALID-STATUS",
+          "fields": [
+            "VALID-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTMSTR"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-PORT-NOT-FOUND-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate PORT NOT FOUND has required value",
+      "description": "Validate PORT NOT FOUND has required value. When PORT-NOT-FOUND, the system applies this rule. Implemented in program PORTMSTR, paragraph 4000-UPDATE-PORTFOLIO.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTMSTR",
+          "paragraph": "4000-UPDATE-PORTFOLIO",
+          "condition_text": "PORT-NOT-FOUND",
+          "fields": [
+            "PORT-NOT-FOUND"
+          ]
+        },
+        {
+          "program_id": "PORTMSTR",
+          "paragraph": "5000-DELETE-PORTFOLIO",
+          "condition_text": "PORT-NOT-FOUND",
+          "fields": [
+            "PORT-NOT-FOUND"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTMSTR"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-TRAN-STATUS-IS-00",
+      "rule_name": "Handle WS TRAN STATUS is 00",
+      "description": "Handle WS TRAN STATUS is 00. When WS-TRAN-STATUS = '00', the system applies this rule. Implemented in program PORTTRAN, paragraph 0000-MAIN.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTTRAN",
+          "paragraph": "0000-MAIN",
+          "condition_text": "WS-TRAN-STATUS = '00'",
+          "fields": [
+            "WS-TRAN-STATUS"
+          ]
+        },
+        {
+          "program_id": "PORTTRAN",
+          "paragraph": "1000-INITIALIZE",
+          "condition_text": "WS-TRAN-STATUS NOT = '00'",
+          "fields": [
+            "WS-TRAN-STATUS"
+          ]
+        },
+        {
+          "program_id": "RPTPOS00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-TRAN-STATUS NOT = '00'",
+          "fields": [
+            "WS-TRAN-STATUS"
+          ]
+        },
+        {
+          "program_id": "TSTGEN00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-TRAN-STATUS NOT = '00'",
+          "fields": [
+            "WS-TRAN-STATUS"
+          ]
+        },
+        {
+          "program_id": "UTLVAL00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-TRAN-STATUS NOT = '00'",
+          "fields": [
+            "WS-TRAN-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": true,
+      "implemented_in_programs": [
+        "PORTTRAN",
+        "RPTPOS00",
+        "TSTGEN00",
+        "UTLVAL00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-PORT-STATUS-IS-00",
+      "rule_name": "Handle WS PORT STATUS is 00",
+      "description": "Handle WS PORT STATUS is 00. When WS-PORT-STATUS NOT = '00', the system applies this rule. Implemented in program PORTTRAN, paragraph 1000-INITIALIZE.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTTRAN",
+          "paragraph": "1000-INITIALIZE",
+          "condition_text": "WS-PORT-STATUS NOT = '00'",
+          "fields": [
+            "WS-PORT-STATUS"
+          ]
+        },
+        {
+          "program_id": "PORTTRAN",
+          "paragraph": "2300-UPDATE-AUDIT-TRAIL",
+          "condition_text": "WS-PORT-STATUS = '00'",
+          "fields": [
+            "WS-PORT-STATUS"
+          ]
+        },
+        {
+          "program_id": "TSTGEN00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-PORT-STATUS NOT = '00'",
+          "fields": [
+            "WS-PORT-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": true,
+      "implemented_in_programs": [
+        "PORTTRAN",
+        "TSTGEN00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-ERROR-TEXT-IS-NOT-ZERO-OR-EMPTY",
+      "rule_name": "Validate Error TEXT is not zero or empty",
+      "description": "Validate Error TEXT is not zero or empty. When ERR-TEXT = SPACES, the system applies this rule. Implemented in program PORTTRAN, paragraph 2100-VALIDATE-TRANSACTION.",
+      "category": "VALIDATION",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTTRAN",
+          "paragraph": "2100-VALIDATE-TRANSACTION",
+          "condition_text": "ERR-TEXT = SPACES",
+          "fields": [
+            "ERR-TEXT"
+          ]
+        },
+        {
+          "program_id": "PORTTRAN",
+          "paragraph": "2100-VALIDATE-TRANSACTION",
+          "condition_text": "ERR-TEXT = SPACES",
+          "fields": [
+            "ERR-TEXT"
+          ]
+        },
+        {
+          "program_id": "PORTTRAN",
+          "paragraph": "2100-VALIDATE-TRANSACTION",
+          "condition_text": "ERR-TEXT = SPACES",
+          "fields": [
+            "ERR-TEXT"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTTRAN"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-TRN-PORTFOLIO-ID-IS-NOT-ZERO-OR-EMPTY",
+      "rule_name": "Validate TRN PORTFOLIO ID is not zero or empty",
+      "description": "Validate TRN PORTFOLIO ID is not zero or empty. When TRN-PORTFOLIO-ID = SPACES, the system applies this rule. Implemented in program PORTTRAN, paragraph 2110-CHECK-PORTFOLIO.",
+      "category": "VALIDATION",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTTRAN",
+          "paragraph": "2110-CHECK-PORTFOLIO",
+          "condition_text": "TRN-PORTFOLIO-ID = SPACES",
+          "fields": [
+            "TRN-PORTFOLIO-ID"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTTRAN"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-ZERO-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Validate ZERO equals specified value",
+      "description": "Validate ZERO equals specified value. When TRN-QUANTITY <= ZERO, the system applies this rule. Implemented in program PORTTRAN, paragraph 2130-CHECK-AMOUNTS.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTTRAN",
+          "paragraph": "2130-CHECK-AMOUNTS",
+          "condition_text": "TRN-QUANTITY <= ZERO",
+          "fields": [
+            "ZERO",
+            "TRN-QUANTITY"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTTRAN"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-TRN-PRICE-MEETS-CRITERIA",
+      "rule_name": "Validate TRN PRICE meets criteria",
+      "description": "Validate TRN PRICE meets criteria. When TRN-PRICE <= ZERO AND TRN-TYPE NOT = 'TR', the system applies this rule. Implemented in program PORTTRAN, paragraph 2130-CHECK-AMOUNTS.",
+      "category": "VALIDATION",
+      "pattern": "MULTI_CONDITION",
+      "signal_strength": 4,
+      "confidence": "high",
+      "sources": [
+        {
+          "program_id": "PORTTRAN",
+          "paragraph": "2130-CHECK-AMOUNTS",
+          "condition_text": "TRN-PRICE <= ZERO AND TRN-TYPE NOT = 'TR'",
+          "fields": [
+            "TRN-PRICE",
+            "TR",
+            "TRN-TYPE",
+            "ZERO"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTTRAN"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-TRN-AMOUNT-MEETS-CRITERIA",
+      "rule_name": "Validate TRN AMOUNT meets criteria",
+      "description": "Validate TRN AMOUNT meets criteria. When TRN-AMOUNT <= ZERO AND TRN-TYPE NOT = 'TR', the system applies this rule. Implemented in program PORTTRAN, paragraph 2130-CHECK-AMOUNTS.",
+      "category": "VALIDATION",
+      "pattern": "MULTI_CONDITION",
+      "signal_strength": 4,
+      "confidence": "high",
+      "sources": [
+        {
+          "program_id": "PORTTRAN",
+          "paragraph": "2130-CHECK-AMOUNTS",
+          "condition_text": "TRN-AMOUNT <= ZERO AND TRN-TYPE NOT = 'TR'",
+          "fields": [
+            "TRN-AMOUNT",
+            "TR",
+            "ZERO",
+            "TRN-TYPE"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTTRAN"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-TRN-QUANTITY-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate TRN QUANTITY has required value",
+      "description": "Validate TRN QUANTITY has required value. When PORT-TOTAL-UNITS < TRN-QUANTITY, the system applies this rule. Implemented in program PORTTRAN, paragraph 2220-PROCESS-SELL.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTTRAN",
+          "paragraph": "2220-PROCESS-SELL",
+          "condition_text": "PORT-TOTAL-UNITS < TRN-QUANTITY",
+          "fields": [
+            "TRN-QUANTITY",
+            "PORT-TOTAL-UNITS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTTRAN"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-ZERO-IS-NOT-ZERO-OR-EMPTY",
+      "rule_name": "Validate ZERO is not zero or empty",
+      "description": "Validate ZERO is not zero or empty. When RETURN-CODE NOT = ZERO, the system applies this rule. Implemented in program PORTTRAN, paragraph 2310-WRITE-AUDIT-RECORD.",
+      "category": "VALIDATION",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTTRAN",
+          "paragraph": "2310-WRITE-AUDIT-RECORD",
+          "condition_text": "RETURN-CODE NOT = ZERO",
+          "fields": [
+            "ZERO",
+            "RETURN-CODE"
+          ]
+        },
+        {
+          "program_id": "PRCSEQ00",
+          "paragraph": "2000-GET-NEXT-PROCESS",
+          "condition_text": "LS-RETURN-CODE = ZERO",
+          "fields": [
+            "ZERO",
+            "LS-RETURN-CODE"
+          ]
+        },
+        {
+          "program_id": "PRCSEQ00",
+          "paragraph": "2200-CHECK-DEPENDENCIES",
+          "condition_text": "LS-RETURN-CODE NOT = ZERO",
+          "fields": [
+            "ZERO",
+            "LS-RETURN-CODE"
+          ]
+        },
+        {
+          "program_id": "RCVPRC00",
+          "paragraph": "3100-UPDATE-FINAL-STATUS",
+          "condition_text": "LS-RETURN-CODE = ZERO",
+          "fields": [
+            "ZERO",
+            "LS-RETURN-CODE"
+          ]
+        }
+      ],
+      "is_duplicated": true,
+      "implemented_in_programs": [
+        "PORTTRAN",
+        "PRCSEQ00",
+        "RCVPRC00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-LS-INPUT-VALUE-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Validate LS INPUT VALUE equals specified value",
+      "description": "Validate LS INPUT VALUE equals specified value. When LS-INPUT-VALUE(1:4) NOT = VAL-ID-PREFIX, the system applies this rule. Implemented in program PORTVALD, paragraph 1000-VALIDATE-ID.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTVALD",
+          "paragraph": "1000-VALIDATE-ID",
+          "condition_text": "LS-INPUT-VALUE(1:4) NOT = VAL-ID-PREFIX",
+          "fields": [
+            "LS-INPUT-VALUE",
+            "VAL-ID-PREFIX"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTVALD"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-NUMERIC-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate NUMERIC has required value",
+      "description": "Validate NUMERIC has required value. When VAL-NUMERIC-CHECK IS NOT NUMERIC, the system applies this rule. Implemented in program PORTVALD, paragraph 1000-VALIDATE-ID.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTVALD",
+          "paragraph": "1000-VALIDATE-ID",
+          "condition_text": "VAL-NUMERIC-CHECK IS NOT NUMERIC",
+          "fields": [
+            "NUMERIC",
+            "VAL-NUMERIC-CHECK"
+          ]
+        },
+        {
+          "program_id": "PORTVALD",
+          "paragraph": "2000-VALIDATE-ACCOUNT",
+          "condition_text": "LS-INPUT-VALUE IS NOT NUMERIC",
+          "fields": [
+            "NUMERIC",
+            "LS-INPUT-VALUE"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTVALD"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-LS-INPUT-VALUE-IS-STK",
+      "rule_name": "Validate LS INPUT VALUE is STK",
+      "description": "Validate LS INPUT VALUE is STK. When LS-INPUT-VALUE NOT = 'STK', the system applies this rule. Implemented in program PORTVALD, paragraph 3000-VALIDATE-TYPE.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTVALD",
+          "paragraph": "3000-VALIDATE-TYPE",
+          "condition_text": "LS-INPUT-VALUE NOT = 'STK'",
+          "fields": [
+            "LS-INPUT-VALUE",
+            "STK"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTVALD"
+      ]
+    },
+    {
+      "rule_id": "RULE-ENFORCE-VAL-TEMP-NUMBER-HAS-REQUIRED-VALUE",
+      "rule_name": "Enforce VAL TEMP Number has required value",
+      "description": "Enforce VAL TEMP Number has required value. When VAL-TEMP-NUM < VAL-MIN-AMOUNT, the system applies this rule. Implemented in program PORTVALD, paragraph 4000-VALIDATE-AMOUNT.",
+      "category": "LIMIT_CHECK",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PORTVALD",
+          "paragraph": "4000-VALIDATE-AMOUNT",
+          "condition_text": "VAL-TEMP-NUM < VAL-MIN-AMOUNT",
+          "fields": [
+            "VAL-TEMP-NUM",
+            "VAL-MIN-AMOUNT"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PORTVALD"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-PSR-STATUS-IS-00",
+      "rule_name": "Handle WS PSR STATUS is 00",
+      "description": "Handle WS PSR STATUS is 00. When WS-PSR-STATUS NOT = '00', the system applies this rule. Implemented in program PRCSEQ00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PRCSEQ00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-PSR-STATUS NOT = '00'",
+          "fields": [
+            "WS-PSR-STATUS"
+          ]
+        },
+        {
+          "program_id": "PRCSEQ00",
+          "paragraph": "4200-CLOSE-FILES",
+          "condition_text": "WS-PSR-STATUS NOT = '00' OR",
+          "fields": [
+            "WS-PSR-STATUS"
+          ]
+        },
+        {
+          "program_id": "RCVPRC00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-PSR-STATUS NOT = '00'",
+          "fields": [
+            "WS-PSR-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": true,
+      "implemented_in_programs": [
+        "PRCSEQ00",
+        "RCVPRC00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-PSR-TYPE-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Validate PSR Type equals specified value",
+      "description": "Validate PSR Type equals specified value. When PSR-TYPE = LS-SEQUENCE-TYPE, the system applies this rule. Implemented in program PRCSEQ00, paragraph 1200-BUILD-SEQUENCE.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 4,
+      "confidence": "high",
+      "sources": [
+        {
+          "program_id": "PRCSEQ00",
+          "paragraph": "1200-BUILD-SEQUENCE",
+          "condition_text": "PSR-TYPE = LS-SEQUENCE-TYPE",
+          "fields": [
+            "PSR-TYPE",
+            "LS-SEQUENCE-TYPE"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PRCSEQ00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-BCT-STATUS-READY-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Handle BCT Status READY equals specified value",
+      "description": "Handle BCT Status READY equals specified value. When WS-PROC-STATUS(WS-SEQUENCE-IX) = BCT-STAT-READY, the system applies this rule. Implemented in program PRCSEQ00, paragraph 2100-FIND-NEXT-READY.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PRCSEQ00",
+          "paragraph": "2100-FIND-NEXT-READY",
+          "condition_text": "WS-PROC-STATUS(WS-SEQUENCE-IX) = BCT-STAT-READY",
+          "fields": [
+            "BCT-STAT-READY",
+            "WS-SEQUENCE-IX",
+            "WS-PROC-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PRCSEQ00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-WS-SEQUENCE-IX-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate WS SEQUENCE IX has required value",
+      "description": "Validate WS SEQUENCE IX has required value. When WS-SEQUENCE-IX > WS-PROCESS-COUNT, the system applies this rule. Implemented in program PRCSEQ00, paragraph 2100-FIND-NEXT-READY.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PRCSEQ00",
+          "paragraph": "2100-FIND-NEXT-READY",
+          "condition_text": "WS-SEQUENCE-IX > WS-PROCESS-COUNT",
+          "fields": [
+            "WS-SEQUENCE-IX",
+            "WS-PROCESS-COUNT"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PRCSEQ00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-BCT-STATUS-DONE-BCT-STATUS-DONE",
+      "rule_name": "Handle BCT STATUS DONE bct status done",
+      "description": "Handle BCT STATUS DONE bct status done. When NOT BCT-STATUS-DONE, the system applies this rule. Implemented in program PRCSEQ00, paragraph 2210-CHECK-DEP-STATUS.",
+      "category": "ERROR_HANDLING",
+      "pattern": "CONDITION_NAME",
+      "signal_strength": 5,
+      "confidence": "high",
+      "sources": [
+        {
+          "program_id": "PRCSEQ00",
+          "paragraph": "2210-CHECK-DEP-STATUS",
+          "condition_text": "NOT BCT-STATUS-DONE",
+          "fields": [
+            "BCT-STATUS-DONE"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PRCSEQ00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-WS-SUB-MEETS-CONDITION",
+      "rule_name": "Validate WS SUB meets condition",
+      "description": "Validate WS SUB meets condition. When PSR-DEP-HARD(WS-SUB), the system applies this rule. Implemented in program PRCSEQ00, paragraph 2210-CHECK-DEP-STATUS.",
+      "category": "VALIDATION",
+      "pattern": "CONDITION_NAME",
+      "signal_strength": 5,
+      "confidence": "high",
+      "sources": [
+        {
+          "program_id": "PRCSEQ00",
+          "paragraph": "2210-CHECK-DEP-STATUS",
+          "condition_text": "PSR-DEP-HARD(WS-SUB)",
+          "fields": [
+            "WS-SUB",
+            "PSR-DEP-HARD"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PRCSEQ00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-BCT-RETURN-CODE-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate BCT RETURN Code has required value",
+      "description": "Validate BCT RETURN Code has required value. When BCT-RETURN-CODE > PSR-DEP-RC(WS-SUB), the system applies this rule. Implemented in program PRCSEQ00, paragraph 2210-CHECK-DEP-STATUS.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PRCSEQ00",
+          "paragraph": "2210-CHECK-DEP-STATUS",
+          "condition_text": "BCT-RETURN-CODE > PSR-DEP-RC(WS-SUB)",
+          "fields": [
+            "BCT-RETURN-CODE",
+            "WS-SUB",
+            "PSR-DEP-RC"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PRCSEQ00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-WS-PROC-ID-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Validate WS PROC ID equals specified value",
+      "description": "Validate WS PROC ID equals specified value. When WS-PROC-ID(WS-SEQUENCE-IX) = BCT-JOB-NAME, the system applies this rule. Implemented in program PRCSEQ00, paragraph 3200-UPDATE-SEQUENCE-TABLE.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PRCSEQ00",
+          "paragraph": "3200-UPDATE-SEQUENCE-TABLE",
+          "condition_text": "WS-PROC-ID(WS-SEQUENCE-IX) = BCT-JOB-NAME",
+          "fields": [
+            "WS-PROC-ID",
+            "WS-SEQUENCE-IX",
+            "BCT-JOB-NAME"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PRCSEQ00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-SEQUENCE-IX-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Handle WS SEQUENCE IX equals specified value",
+      "description": "Handle WS SEQUENCE IX equals specified value. When WS-PROC-STATUS(WS-SEQUENCE-IX) = BCT-STAT-ACTIVE, the system applies this rule. Implemented in program PRCSEQ00, paragraph 3300-CHECK-COMPLETION.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PRCSEQ00",
+          "paragraph": "3300-CHECK-COMPLETION",
+          "condition_text": "WS-PROC-STATUS(WS-SEQUENCE-IX) = BCT-STAT-ACTIVE",
+          "fields": [
+            "WS-SEQUENCE-IX",
+            "BCT-STAT-ACTIVE",
+            "WS-PROC-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PRCSEQ00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-BCT-STATUS-ERROR-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Handle BCT Status ERROR equals specified value",
+      "description": "Handle BCT Status ERROR equals specified value. When WS-PROC-STATUS(WS-SEQUENCE-IX) = BCT-STAT-ERROR, the system applies this rule. Implemented in program PRCSEQ00, paragraph 3300-CHECK-COMPLETION.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 4,
+      "confidence": "high",
+      "sources": [
+        {
+          "program_id": "PRCSEQ00",
+          "paragraph": "3300-CHECK-COMPLETION",
+          "condition_text": "WS-PROC-STATUS(WS-SEQUENCE-IX) = BCT-STAT-ERROR",
+          "fields": [
+            "BCT-STAT-ERROR",
+            "WS-SEQUENCE-IX",
+            "WS-PROC-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PRCSEQ00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-WS-ERROR-COUNT-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate WS ERROR COUNT has required value",
+      "description": "Validate WS ERROR COUNT has required value. When WS-ERROR-COUNT > ZERO, the system applies this rule. Implemented in program PRCSEQ00, paragraph 4100-CHECK-FINAL-STATUS.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PRCSEQ00",
+          "paragraph": "4100-CHECK-FINAL-STATUS",
+          "condition_text": "WS-ERROR-COUNT > ZERO",
+          "fields": [
+            "WS-ERROR-COUNT",
+            "ZERO"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PRCSEQ00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-ZERO-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate ZERO has required value",
+      "description": "Validate ZERO has required value. When WS-ACTIVE-COUNT > ZERO, the system applies this rule. Implemented in program PRCSEQ00, paragraph 4100-CHECK-FINAL-STATUS.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "PRCSEQ00",
+          "paragraph": "4100-CHECK-FINAL-STATUS",
+          "condition_text": "WS-ACTIVE-COUNT > ZERO",
+          "fields": [
+            "ZERO",
+            "WS-ACTIVE-COUNT"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "PRCSEQ00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-LS-PROCESS-DATE-IS-NOT-ZERO-OR-EMPTY",
+      "rule_name": "Validate LS PROCESS Date is not zero or empty",
+      "description": "Validate LS PROCESS Date is not zero or empty. When LS-PROCESS-DATE = SPACES, the system applies this rule. Implemented in program RCVPRC00, paragraph 1200-VALIDATE-REQUEST.",
+      "category": "VALIDATION",
+      "pattern": "NULL_ZERO_CHECK",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "RCVPRC00",
+          "paragraph": "1200-VALIDATE-REQUEST",
+          "condition_text": "LS-PROCESS-DATE = SPACES",
+          "fields": [
+            "LS-PROCESS-DATE"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "RCVPRC00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-LS-PROCESS-ID-MEETS-CRITERIA",
+      "rule_name": "Validate LS PROCESS ID meets criteria",
+      "description": "Validate LS PROCESS ID meets criteria. When WS-RECOVER-PROCESS AND LS-PROCESS-ID = SPACES, the system applies this rule. Implemented in program RCVPRC00, paragraph 1300-SET-RECOVERY-MODE.",
+      "category": "VALIDATION",
+      "pattern": "MULTI_CONDITION",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "RCVPRC00",
+          "paragraph": "1300-SET-RECOVERY-MODE",
+          "condition_text": "WS-RECOVER-PROCESS AND LS-PROCESS-ID = SPACES",
+          "fields": [
+            "LS-PROCESS-ID",
+            "WS-RECOVER-PROCESS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "RCVPRC00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-PSR-RESTARTABLE-PSR-RESTARTABLE",
+      "rule_name": "Validate PSR RESTARTABLE psr restartable",
+      "description": "Validate PSR RESTARTABLE psr restartable. When PSR-RESTARTABLE, the system applies this rule. Implemented in program RCVPRC00, paragraph 2110-DETERMINE-ACTION.",
+      "category": "VALIDATION",
+      "pattern": "CONDITION_NAME",
+      "signal_strength": 5,
+      "confidence": "high",
+      "sources": [
+        {
+          "program_id": "RCVPRC00",
+          "paragraph": "2110-DETERMINE-ACTION",
+          "condition_text": "PSR-RESTARTABLE",
+          "fields": [
+            "PSR-RESTARTABLE"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "RCVPRC00"
+      ]
+    },
+    {
+      "rule_id": "RULE-ENFORCE-BCT-MAXIMUM-RESTARTS-HAS-REQUIRED-VALUE",
+      "rule_name": "Enforce BCT Maximum RESTARTS has required value",
+      "description": "Enforce BCT Maximum RESTARTS has required value. When BCT-RESTART-COUNT > BCT-MAX-RESTARTS, the system applies this rule. Implemented in program RCVPRC00, paragraph 2110-DETERMINE-ACTION.",
+      "category": "LIMIT_CHECK",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "RCVPRC00",
+          "paragraph": "2110-DETERMINE-ACTION",
+          "condition_text": "BCT-RESTART-COUNT > BCT-MAX-RESTARTS",
+          "fields": [
+            "BCT-MAX-RESTARTS",
+            "BCT-RESTART-COUNT"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "RCVPRC00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-BCT-PROCESS-DATE-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Validate BCT PROCESS Date equals specified value",
+      "description": "Validate BCT PROCESS Date equals specified value. When BCT-PROCESS-DATE = LS-PROCESS-DATE, the system applies this rule. Implemented in program RCVPRC00, paragraph 2200-RECOVER-SEQUENCE.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "RCVPRC00",
+          "paragraph": "2200-RECOVER-SEQUENCE",
+          "condition_text": "BCT-PROCESS-DATE = LS-PROCESS-DATE",
+          "fields": [
+            "BCT-PROCESS-DATE",
+            "LS-PROCESS-DATE"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "RCVPRC00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-AUDIT-STATUS-IS-00",
+      "rule_name": "Handle WS AUDIT STATUS is 00",
+      "description": "Handle WS AUDIT STATUS is 00. When WS-AUDIT-STATUS NOT = '00', the system applies this rule. Implemented in program RPTAUD00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "RPTAUD00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-AUDIT-STATUS NOT = '00'",
+          "fields": [
+            "WS-AUDIT-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "RPTAUD00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-ERROR-STATUS-IS-00",
+      "rule_name": "Handle WS ERROR STATUS is 00",
+      "description": "Handle WS ERROR STATUS is 00. When WS-ERROR-STATUS NOT = '00', the system applies this rule. Implemented in program RPTAUD00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "RPTAUD00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-ERROR-STATUS NOT = '00'",
+          "fields": [
+            "WS-ERROR-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "RPTAUD00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-REPORT-STATUS-IS-00",
+      "rule_name": "Handle WS REPORT STATUS is 00",
+      "description": "Handle WS REPORT STATUS is 00. When WS-REPORT-STATUS NOT = '00', the system applies this rule. Implemented in program RPTAUD00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "RPTAUD00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-REPORT-STATUS NOT = '00'",
+          "fields": [
+            "WS-REPORT-STATUS"
+          ]
+        },
+        {
+          "program_id": "RPTPOS00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-REPORT-STATUS NOT = '00'",
+          "fields": [
+            "WS-REPORT-STATUS"
+          ]
+        },
+        {
+          "program_id": "RPTSTA00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-REPORT-STATUS NOT = '00'",
+          "fields": [
+            "WS-REPORT-STATUS"
+          ]
+        },
+        {
+          "program_id": "RTNANA00",
+          "paragraph": "P100-INIT-PROGRAM",
+          "condition_text": "WS-REPORT-STATUS NOT = '00'",
+          "fields": [
+            "WS-REPORT-STATUS"
+          ]
+        },
+        {
+          "program_id": "UTLMNT00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-REPORT-STATUS NOT = '00'",
+          "fields": [
+            "WS-REPORT-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": true,
+      "implemented_in_programs": [
+        "RPTAUD00",
+        "RPTPOS00",
+        "RPTSTA00",
+        "RTNANA00",
+        "UTLMNT00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-POSITION-STATUS-IS-00",
+      "rule_name": "Handle WS POSITION STATUS is 00",
+      "description": "Handle WS POSITION STATUS is 00. When WS-POSITION-STATUS NOT = '00', the system applies this rule. Implemented in program RPTPOS00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "RPTPOS00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-POSITION-STATUS NOT = '00'",
+          "fields": [
+            "WS-POSITION-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "RPTPOS00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-DB2-STATUS-IS-00",
+      "rule_name": "Handle WS DB2 STATUS is 00",
+      "description": "Handle WS DB2 STATUS is 00. When WS-DB2-STATUS NOT = '00', the system applies this rule. Implemented in program RPTSTA00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "RPTSTA00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-DB2-STATUS NOT = '00'",
+          "fields": [
+            "WS-DB2-STATUS"
+          ]
+        },
+        {
+          "program_id": "UTLMON00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-DB2-STATUS NOT = '00'",
+          "fields": [
+            "WS-DB2-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": true,
+      "implemented_in_programs": [
+        "RPTSTA00",
+        "UTLMON00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-BCH-STATUS-IS-00",
+      "rule_name": "Handle WS BCH STATUS is 00",
+      "description": "Handle WS BCH STATUS is 00. When WS-BCH-STATUS NOT = '00', the system applies this rule. Implemented in program RPTSTA00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "RPTSTA00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-BCH-STATUS NOT = '00'",
+          "fields": [
+            "WS-BCH-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "RPTSTA00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-RESPONSE-NEW-CODE-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate Response NEW Code has required value",
+      "description": "Validate Response NEW Code has required value. When RC-NEW-CODE > RC-HIGHEST-CODE, the system applies this rule. Implemented in program RTNCDE00, paragraph P200-SET-RETURN-CODE.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 4,
+      "confidence": "high",
+      "sources": [
+        {
+          "program_id": "RTNCDE00",
+          "paragraph": "P200-SET-RETURN-CODE",
+          "condition_text": "RC-NEW-CODE > RC-HIGHEST-CODE",
+          "fields": [
+            "RC-NEW-CODE",
+            "RC-HIGHEST-CODE"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "RTNCDE00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-NORMAL-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Handle NORMAL equals specified value",
+      "description": "Handle NORMAL equals specified value. When SEC-RESPONSE-CODE = DFHRESP(NORMAL), the system applies this rule. Implemented in program SECMGR, paragraph END-EXEC.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "SECMGR",
+          "paragraph": "END-EXEC",
+          "condition_text": "SEC-RESPONSE-CODE = DFHRESP(NORMAL)",
+          "fields": [
+            "NORMAL",
+            "SEC-RESPONSE-CODE",
+            "DFHRESP"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "SECMGR"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-SEC-USER-ID-EQUALS-SPECIFIED-VALUE",
+      "rule_name": "Validate SEC USER ID equals specified value",
+      "description": "Validate SEC USER ID equals specified value. When SEC-USER-ID = WS-USER-ID, the system applies this rule. Implemented in program SECMGR, paragraph END-EXEC.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "SECMGR",
+          "paragraph": "END-EXEC",
+          "condition_text": "SEC-USER-ID = WS-USER-ID",
+          "fields": [
+            "SEC-USER-ID",
+            "WS-USER-ID"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "SECMGR"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-WS-DB2-AREA-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate WS DB2 AREA has required value",
+      "description": "Validate WS DB2 AREA has required value. When WS-DB2-AREA > 0, the system applies this rule. Implemented in program SECMGR, paragraph END-EXEC.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "SECMGR",
+          "paragraph": "END-EXEC",
+          "condition_text": "WS-DB2-AREA > 0",
+          "fields": [
+            "WS-DB2-AREA"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "SECMGR"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-CFG-STATUS-IS-00",
+      "rule_name": "Handle WS CFG STATUS is 00",
+      "description": "Handle WS CFG STATUS is 00. When WS-CFG-STATUS NOT = '00', the system applies this rule. Implemented in program TSTGEN00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "TSTGEN00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-CFG-STATUS NOT = '00'",
+          "fields": [
+            "WS-CFG-STATUS"
+          ]
+        },
+        {
+          "program_id": "UTLMON00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-CFG-STATUS NOT = '00'",
+          "fields": [
+            "WS-CFG-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": true,
+      "implemented_in_programs": [
+        "TSTGEN00",
+        "UTLMON00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-RAND-STATUS-IS-00",
+      "rule_name": "Handle WS RAND STATUS is 00",
+      "description": "Handle WS RAND STATUS is 00. When WS-RAND-STATUS NOT = '00', the system applies this rule. Implemented in program TSTGEN00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "TSTGEN00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-RAND-STATUS NOT = '00'",
+          "fields": [
+            "WS-RAND-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "TSTGEN00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-ERROR-COUNT-HAS-REQUIRED-VALUE",
+      "rule_name": "Handle WS ERROR COUNT has required value",
+      "description": "Handle WS ERROR COUNT has required value. When WS-ERROR-COUNT > 100, the system applies this rule. Implemented in program TSTGEN00, paragraph 9999-ERROR-HANDLER.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "TSTGEN00",
+          "paragraph": "9999-ERROR-HANDLER",
+          "condition_text": "WS-ERROR-COUNT > 100",
+          "fields": [
+            "WS-ERROR-COUNT"
+          ]
+        },
+        {
+          "program_id": "UTLMNT00",
+          "paragraph": "9999-ERROR-HANDLER",
+          "condition_text": "WS-ERROR-COUNT > 100",
+          "fields": [
+            "WS-ERROR-COUNT"
+          ]
+        }
+      ],
+      "is_duplicated": true,
+      "implemented_in_programs": [
+        "TSTGEN00",
+        "UTLMNT00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-TEST-STATUS-IS-00",
+      "rule_name": "Handle WS TEST STATUS is 00",
+      "description": "Handle WS TEST STATUS is 00. When WS-TEST-STATUS NOT = '00', the system applies this rule. Implemented in program TSTVAL00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "TSTVAL00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-TEST-STATUS NOT = '00'",
+          "fields": [
+            "WS-TEST-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "TSTVAL00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-EXPIRY-STATUS-IS-00",
+      "rule_name": "Handle WS Expiry STATUS is 00",
+      "description": "Handle WS Expiry STATUS is 00. When WS-EXP-STATUS NOT = '00', the system applies this rule. Implemented in program TSTVAL00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "TSTVAL00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-EXP-STATUS NOT = '00'",
+          "fields": [
+            "WS-EXP-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "TSTVAL00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-ACT-STATUS-IS-00",
+      "rule_name": "Handle WS ACT STATUS is 00",
+      "description": "Handle WS ACT STATUS is 00. When WS-ACT-STATUS NOT = '00', the system applies this rule. Implemented in program TSTVAL00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "TSTVAL00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-ACT-STATUS NOT = '00'",
+          "fields": [
+            "WS-ACT-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "TSTVAL00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-RPT-STATUS-IS-00",
+      "rule_name": "Handle WS RPT STATUS is 00",
+      "description": "Handle WS RPT STATUS is 00. When WS-RPT-STATUS NOT = '00', the system applies this rule. Implemented in program TSTVAL00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "TSTVAL00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-RPT-STATUS NOT = '00'",
+          "fields": [
+            "WS-RPT-STATUS"
+          ]
+        },
+        {
+          "program_id": "UTLVAL00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-RPT-STATUS NOT = '00'",
+          "fields": [
+            "WS-RPT-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": true,
+      "implemented_in_programs": [
+        "TSTVAL00",
+        "UTLVAL00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-CTL-STATUS-IS-00",
+      "rule_name": "Handle WS CTL STATUS is 00",
+      "description": "Handle WS CTL STATUS is 00. When WS-CTL-STATUS NOT = '00', the system applies this rule. Implemented in program UTLMNT00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "UTLMNT00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-CTL-STATUS NOT = '00'",
+          "fields": [
+            "WS-CTL-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "UTLMNT00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-ARCH-STATUS-IS-00",
+      "rule_name": "Handle WS ARCH STATUS is 00",
+      "description": "Handle WS ARCH STATUS is 00. When WS-ARCH-STATUS NOT = '00', the system applies this rule. Implemented in program UTLMNT00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "UTLMNT00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-ARCH-STATUS NOT = '00'",
+          "fields": [
+            "WS-ARCH-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "UTLMNT00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-ALERT-STATUS-IS-00",
+      "rule_name": "Handle WS ALERT STATUS is 00",
+      "description": "Handle WS ALERT STATUS is 00. When WS-ALERT-STATUS NOT = '00', the system applies this rule. Implemented in program UTLMON00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "UTLMON00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-ALERT-STATUS NOT = '00'",
+          "fields": [
+            "WS-ALERT-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "UTLMON00"
+      ]
+    },
+    {
+      "rule_id": "RULE-VALIDATE-THRESHOLD-MET-HAS-REQUIRED-VALUE",
+      "rule_name": "Validate THRESHOLD MET has required value",
+      "description": "Validate THRESHOLD MET has required value. When THRESHOLD-MET, the system applies this rule. Implemented in program UTLMON00, paragraph 2400-GENERATE-ALERTS.",
+      "category": "VALIDATION",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 2,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "UTLMON00",
+          "paragraph": "2400-GENERATE-ALERTS",
+          "condition_text": "THRESHOLD-MET",
+          "fields": [
+            "THRESHOLD-MET"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "UTLMON00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-VAL-STATUS-IS-00",
+      "rule_name": "Handle WS VAL STATUS is 00",
+      "description": "Handle WS VAL STATUS is 00. When WS-VAL-STATUS NOT = '00', the system applies this rule. Implemented in program UTLVAL00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "UTLVAL00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-VAL-STATUS NOT = '00'",
+          "fields": [
+            "WS-VAL-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "UTLVAL00"
+      ]
+    },
+    {
+      "rule_id": "RULE-HANDLE-WS-POS-STATUS-IS-00",
+      "rule_name": "Handle WS POS STATUS is 00",
+      "description": "Handle WS POS STATUS is 00. When WS-POS-STATUS NOT = '00', the system applies this rule. Implemented in program UTLVAL00, paragraph 1100-OPEN-FILES.",
+      "category": "ERROR_HANDLING",
+      "pattern": "FIELD_VALUE_COMPARE",
+      "signal_strength": 3,
+      "confidence": "medium",
+      "sources": [
+        {
+          "program_id": "UTLVAL00",
+          "paragraph": "1100-OPEN-FILES",
+          "condition_text": "WS-POS-STATUS NOT = '00'",
+          "fields": [
+            "WS-POS-STATUS"
+          ]
+        }
+      ],
+      "is_duplicated": false,
+      "implemented_in_programs": [
+        "UTLVAL00"
+      ]
     }
+  ],
+  "rules_by_category": {
+    "ERROR_HANDLING": [
+      "RULE-HANDLE-WS-FILE-STATUS-IS-00",
+      "RULE-HANDLE-SQLCODE-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-LS-SQLCODE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-OF-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-SQLCODE-MEETS-CRITERIA",
+      "RULE-HANDLE-ERROR-TRACE-ID-IS-NOT-ZERO-OR-EMPTY",
+      "RULE-HANDLE-WS-LOG-STATUS-IS-00",
+      "RULE-HANDLE-WS-TH-STATUS-IS-00",
+      "RULE-HANDLE-WS-BCT-STATUS-IS-00",
+      "RULE-HANDLE-DB2-RESPONSE-CODE-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-CURS-RESPONSE-CODE-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-SEC-RESPONSE-CODE-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-WS-RESPONSE-CODE-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-WS-SUCCESS-STATUS-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-VALID-STATUS-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-WS-TRAN-STATUS-IS-00",
+      "RULE-HANDLE-WS-PORT-STATUS-IS-00",
+      "RULE-HANDLE-WS-PSR-STATUS-IS-00",
+      "RULE-HANDLE-BCT-STATUS-READY-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-BCT-STATUS-DONE-BCT-STATUS-DONE",
+      "RULE-HANDLE-WS-SEQUENCE-IX-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-BCT-STATUS-ERROR-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-WS-AUDIT-STATUS-IS-00",
+      "RULE-HANDLE-WS-ERROR-STATUS-IS-00",
+      "RULE-HANDLE-WS-REPORT-STATUS-IS-00",
+      "RULE-HANDLE-WS-POSITION-STATUS-IS-00",
+      "RULE-HANDLE-WS-DB2-STATUS-IS-00",
+      "RULE-HANDLE-WS-BCH-STATUS-IS-00",
+      "RULE-HANDLE-NORMAL-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-WS-CFG-STATUS-IS-00",
+      "RULE-HANDLE-WS-RAND-STATUS-IS-00",
+      "RULE-HANDLE-WS-ERROR-COUNT-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-WS-TEST-STATUS-IS-00",
+      "RULE-HANDLE-WS-EXPIRY-STATUS-IS-00",
+      "RULE-HANDLE-WS-ACT-STATUS-IS-00",
+      "RULE-HANDLE-WS-RPT-STATUS-IS-00",
+      "RULE-HANDLE-WS-CTL-STATUS-IS-00",
+      "RULE-HANDLE-WS-ARCH-STATUS-IS-00",
+      "RULE-HANDLE-WS-ALERT-STATUS-IS-00",
+      "RULE-HANDLE-WS-VAL-STATUS-IS-00",
+      "RULE-HANDLE-WS-POS-STATUS-IS-00"
+    ],
+    "VALIDATION": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-PREREQS-SATISFIED-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-USE-ARRAY-FETCH-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-LS-RECORDS-PROC-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-WS-CONNECTED-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-RECV-SUCCESS-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-ERROR-CONTINUE-ERROR-CONTINUE",
+      "RULE-VALIDATE-MORE-RECORDS-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-WS-COMMIT-COUNT-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-ERROR-ABEND-ERROR-ABEND",
+      "RULE-VALIDATE-PORT-ID-IS-NOT-ZERO-OR-EMPTY",
+      "RULE-VALIDATE-WS-AUD-SUCCESS-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-PORT-SUCCESS-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-WS-SUCCESS-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-PORT-DUP-KEY-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-PORT-IS-PORT",
+      "RULE-VALIDATE-PORT-NAME-IS-NOT-ZERO-OR-EMPTY",
+      "RULE-VALIDATE-PORT-NOT-FOUND-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-ERROR-TEXT-IS-NOT-ZERO-OR-EMPTY",
+      "RULE-VALIDATE-TRN-PORTFOLIO-ID-IS-NOT-ZERO-OR-EMPTY",
+      "RULE-VALIDATE-ZERO-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-TRN-PRICE-MEETS-CRITERIA",
+      "RULE-VALIDATE-TRN-AMOUNT-MEETS-CRITERIA",
+      "RULE-VALIDATE-TRN-QUANTITY-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-ZERO-IS-NOT-ZERO-OR-EMPTY",
+      "RULE-VALIDATE-LS-INPUT-VALUE-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-NUMERIC-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-LS-INPUT-VALUE-IS-STK",
+      "RULE-VALIDATE-PSR-TYPE-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-WS-SEQUENCE-IX-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-WS-SUB-MEETS-CONDITION",
+      "RULE-VALIDATE-BCT-RETURN-CODE-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-WS-PROC-ID-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-WS-ERROR-COUNT-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-ZERO-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-LS-PROCESS-DATE-IS-NOT-ZERO-OR-EMPTY",
+      "RULE-VALIDATE-LS-PROCESS-ID-MEETS-CRITERIA",
+      "RULE-VALIDATE-PSR-RESTARTABLE-PSR-RESTARTABLE",
+      "RULE-VALIDATE-BCT-PROCESS-DATE-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-RESPONSE-NEW-CODE-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-SEC-USER-ID-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-WS-DB2-AREA-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-THRESHOLD-MET-HAS-REQUIRED-VALUE"
+    ],
+    "LIMIT_CHECK": [
+      "RULE-ENFORCE-WS-RETRY-COUNT-HAS-REQUIRED-VALUE",
+      "RULE-ENFORCE-WS-ACTIVE-CONNECTIONS-HAS-REQUIRED-VALUE",
+      "RULE-ENFORCE-WS-RETRY-COUNT-EQUALS-SPECIFIED-VALUE",
+      "RULE-ENFORCE-VAL-TEMP-NUMBER-HAS-REQUIRED-VALUE",
+      "RULE-ENFORCE-BCT-MAXIMUM-RESTARTS-HAS-REQUIRED-VALUE"
+    ]
+  },
+  "rules_by_program": {
+    "AUDPROC": [
+      "RULE-HANDLE-WS-FILE-STATUS-IS-00"
+    ],
+    "PORTTEST": [
+      "RULE-HANDLE-WS-FILE-STATUS-IS-00"
+    ],
+    "BCHCTL00": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-PREREQS-SATISFIED-HAS-REQUIRED-VALUE"
+    ],
+    "CKPRST": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE"
+    ],
+    "DB2CMT": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-SQLCODE-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-LS-RECORDS-PROC-EQUALS-SPECIFIED-VALUE"
+    ],
+    "DB2CONN": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-SQLCODE-EQUALS-SPECIFIED-VALUE",
+      "RULE-ENFORCE-WS-RETRY-COUNT-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-WS-CONNECTED-HAS-REQUIRED-VALUE"
+    ],
+    "DB2ERR": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-SQLCODE-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-LS-SQLCODE-HAS-REQUIRED-VALUE"
+    ],
+    "DB2STAT": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-SQLCODE-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-SQLCODE-MEETS-CRITERIA"
+    ],
+    "ERRHNDL": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-SQLCODE-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-ERROR-TRACE-ID-IS-NOT-ZERO-OR-EMPTY"
+    ],
+    "INQONLN": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-SEC-RESPONSE-CODE-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-ERROR-ABEND-ERROR-ABEND"
+    ],
+    "PORTADD": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-WS-SUCCESS-STATUS-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-PORT-ID-IS-NOT-ZERO-OR-EMPTY"
+    ],
+    "PORTDEL": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-WS-SUCCESS-STATUS-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-WS-AUD-SUCCESS-HAS-REQUIRED-VALUE"
+    ],
+    "PORTMSTR": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-PORT-SUCCESS-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-WS-SUCCESS-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-PORT-DUP-KEY-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-PORT-IS-PORT",
+      "RULE-VALIDATE-PORT-NAME-IS-NOT-ZERO-OR-EMPTY",
+      "RULE-HANDLE-VALID-STATUS-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-PORT-NOT-FOUND-HAS-REQUIRED-VALUE"
+    ],
+    "PORTTRAN": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-WS-TRAN-STATUS-IS-00",
+      "RULE-HANDLE-WS-PORT-STATUS-IS-00",
+      "RULE-VALIDATE-ERROR-TEXT-IS-NOT-ZERO-OR-EMPTY",
+      "RULE-VALIDATE-TRN-PORTFOLIO-ID-IS-NOT-ZERO-OR-EMPTY",
+      "RULE-VALIDATE-ZERO-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-TRN-PRICE-MEETS-CRITERIA",
+      "RULE-VALIDATE-TRN-AMOUNT-MEETS-CRITERIA",
+      "RULE-VALIDATE-TRN-QUANTITY-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-ZERO-IS-NOT-ZERO-OR-EMPTY"
+    ],
+    "PORTUPDT": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-WS-SUCCESS-STATUS-HAS-REQUIRED-VALUE"
+    ],
+    "PORTVALD": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-LS-INPUT-VALUE-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-NUMERIC-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-LS-INPUT-VALUE-IS-STK",
+      "RULE-ENFORCE-VAL-TEMP-NUMBER-HAS-REQUIRED-VALUE"
+    ],
+    "PRCSEQ00": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-WS-BCT-STATUS-IS-00",
+      "RULE-VALIDATE-ZERO-IS-NOT-ZERO-OR-EMPTY",
+      "RULE-HANDLE-WS-PSR-STATUS-IS-00",
+      "RULE-VALIDATE-PSR-TYPE-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-BCT-STATUS-READY-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-WS-SEQUENCE-IX-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-BCT-STATUS-DONE-BCT-STATUS-DONE",
+      "RULE-VALIDATE-WS-SUB-MEETS-CONDITION",
+      "RULE-VALIDATE-BCT-RETURN-CODE-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-WS-PROC-ID-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-WS-SEQUENCE-IX-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-BCT-STATUS-ERROR-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-WS-ERROR-COUNT-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-ZERO-HAS-REQUIRED-VALUE"
+    ],
+    "RCVPRC00": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-WS-BCT-STATUS-IS-00",
+      "RULE-VALIDATE-ZERO-IS-NOT-ZERO-OR-EMPTY",
+      "RULE-HANDLE-WS-PSR-STATUS-IS-00",
+      "RULE-VALIDATE-LS-PROCESS-DATE-IS-NOT-ZERO-OR-EMPTY",
+      "RULE-VALIDATE-LS-PROCESS-ID-MEETS-CRITERIA",
+      "RULE-VALIDATE-PSR-RESTARTABLE-PSR-RESTARTABLE",
+      "RULE-ENFORCE-BCT-MAXIMUM-RESTARTS-HAS-REQUIRED-VALUE",
+      "RULE-VALIDATE-BCT-PROCESS-DATE-EQUALS-SPECIFIED-VALUE"
+    ],
+    "RTNCDE00": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-SQLCODE-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-RESPONSE-NEW-CODE-HAS-REQUIRED-VALUE"
+    ],
+    "SECMGR": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-SQLCODE-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-NORMAL-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-SEC-USER-ID-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-WS-DB2-AREA-HAS-REQUIRED-VALUE"
+    ],
+    "TSTGEN00": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-WS-TRAN-STATUS-IS-00",
+      "RULE-HANDLE-WS-PORT-STATUS-IS-00",
+      "RULE-HANDLE-WS-CFG-STATUS-IS-00",
+      "RULE-HANDLE-WS-RAND-STATUS-IS-00",
+      "RULE-HANDLE-WS-ERROR-COUNT-HAS-REQUIRED-VALUE"
+    ],
+    "TSTVAL00": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-WS-TEST-STATUS-IS-00",
+      "RULE-HANDLE-WS-EXPIRY-STATUS-IS-00",
+      "RULE-HANDLE-WS-ACT-STATUS-IS-00",
+      "RULE-HANDLE-WS-RPT-STATUS-IS-00"
+    ],
+    "UTLMNT00": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-WS-REPORT-STATUS-IS-00",
+      "RULE-HANDLE-WS-ERROR-COUNT-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-WS-CTL-STATUS-IS-00",
+      "RULE-HANDLE-WS-ARCH-STATUS-IS-00"
+    ],
+    "UTLVAL00": [
+      "RULE-VALIDATE-VALUE-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-WS-TRAN-STATUS-IS-00",
+      "RULE-HANDLE-WS-RPT-STATUS-IS-00",
+      "RULE-HANDLE-WS-VAL-STATUS-IS-00",
+      "RULE-HANDLE-WS-POS-STATUS-IS-00"
+    ],
+    "CURSMGR": [
+      "RULE-VALIDATE-USE-ARRAY-FETCH-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-SQLCODE-EQUALS-SPECIFIED-VALUE"
+    ],
+    "DB2ONLN": [
+      "RULE-HANDLE-SQLCODE-EQUALS-SPECIFIED-VALUE",
+      "RULE-ENFORCE-WS-ACTIVE-CONNECTIONS-HAS-REQUIRED-VALUE"
+    ],
+    "DB2RECV": [
+      "RULE-HANDLE-SQLCODE-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-RECV-SUCCESS-HAS-REQUIRED-VALUE",
+      "RULE-ENFORCE-WS-RETRY-COUNT-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-OF-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-ERROR-CONTINUE-ERROR-CONTINUE"
+    ],
+    "HISTLD00": [
+      "RULE-HANDLE-SQLCODE-EQUALS-SPECIFIED-VALUE",
+      "RULE-VALIDATE-MORE-RECORDS-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-WS-TH-STATUS-IS-00",
+      "RULE-HANDLE-WS-BCT-STATUS-IS-00",
+      "RULE-VALIDATE-WS-COMMIT-COUNT-EQUALS-SPECIFIED-VALUE"
+    ],
+    "RTNANA00": [
+      "RULE-HANDLE-SQLCODE-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-WS-REPORT-STATUS-IS-00"
+    ],
+    "INQHIST": [
+      "RULE-VALIDATE-RECV-SUCCESS-HAS-REQUIRED-VALUE",
+      "RULE-HANDLE-DB2-RESPONSE-CODE-EQUALS-SPECIFIED-VALUE",
+      "RULE-HANDLE-CURS-RESPONSE-CODE-EQUALS-SPECIFIED-VALUE"
+    ],
+    "ERRPROC": [
+      "RULE-HANDLE-WS-LOG-STATUS-IS-00"
+    ],
+    "UTLMON00": [
+      "RULE-HANDLE-WS-LOG-STATUS-IS-00",
+      "RULE-HANDLE-WS-DB2-STATUS-IS-00",
+      "RULE-HANDLE-WS-CFG-STATUS-IS-00",
+      "RULE-HANDLE-WS-ALERT-STATUS-IS-00",
+      "RULE-VALIDATE-THRESHOLD-MET-HAS-REQUIRED-VALUE"
+    ],
+    "INQPORT": [
+      "RULE-HANDLE-WS-RESPONSE-CODE-EQUALS-SPECIFIED-VALUE"
+    ],
+    "PORTREAD": [
+      "RULE-HANDLE-WS-SUCCESS-STATUS-HAS-REQUIRED-VALUE"
+    ],
+    "RPTPOS00": [
+      "RULE-HANDLE-WS-TRAN-STATUS-IS-00",
+      "RULE-HANDLE-WS-REPORT-STATUS-IS-00",
+      "RULE-HANDLE-WS-POSITION-STATUS-IS-00"
+    ],
+    "RPTAUD00": [
+      "RULE-HANDLE-WS-AUDIT-STATUS-IS-00",
+      "RULE-HANDLE-WS-ERROR-STATUS-IS-00",
+      "RULE-HANDLE-WS-REPORT-STATUS-IS-00"
+    ],
+    "RPTSTA00": [
+      "RULE-HANDLE-WS-REPORT-STATUS-IS-00",
+      "RULE-HANDLE-WS-DB2-STATUS-IS-00",
+      "RULE-HANDLE-WS-BCH-STATUS-IS-00"
+    ]
+  },
+  "error_handling_catalogue": []
 }

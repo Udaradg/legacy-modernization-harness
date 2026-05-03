@@ -1,74 +1,542 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "PORTFLIO",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  194,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTDEL.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  101,
-                           "name":  "0000-MAIN",
-                           "start_line":  101
-                       },
-                       {
-                           "end_line":  111,
-                           "name":  "1000-INITIALIZE",
-                           "start_line":  111
-                       },
-                       {
-                           "end_line":  130,
-                           "name":  "2000-PROCESS",
-                           "start_line":  130
-                       },
-                       {
-                           "end_line":  139,
-                           "name":  "2100-PROCESS-DELETE",
-                           "start_line":  139
-                       },
-                       {
-                           "end_line":  156,
-                           "name":  "2200-DELETE-RECORD",
-                           "start_line":  156
-                       },
-                       {
-                           "end_line":  168,
-                           "name":  "2300-WRITE-AUDIT",
-                           "start_line":  168
-                       },
-                       {
-                           "end_line":  184,
-                           "name":  "3000-TERMINATE",
-                           "start_line":  184
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  38,
-                                          "start_line":  15
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  194,
-                                        "start_line":  100
-                                    },
-                      "DATA":  {
-                                   "end_line":  99,
-                                   "start_line":  39
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  14,
-                                             "start_line":  12
-                                         }
-                  },
-    "program_id":  "PORTDEL",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "PORTDEL",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTDEL.cbl",
+    "total_lines": 194
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 12,
+    "end_line": 14,
+    "program_id": "PORTDEL"
+  },
+  "data_division": {
+    "start_line": 39,
+    "end_line": 99,
+    "file_section": {
+      "entries": [
+        {
+          "type": "FD",
+          "file_name": "PORTFOLIO-FILE",
+          "line": 41,
+          "end_line": 43,
+          "recording_mode": null,
+          "record_contains": null,
+          "block_contains": null
+        },
+        {
+          "type": "FD",
+          "file_name": "DELETE-FILE",
+          "line": 44,
+          "end_line": 54,
+          "recording_mode": null,
+          "record_contains": null,
+          "block_contains": null
+        },
+        {
+          "type": "FD",
+          "file_name": "AUDIT-FILE",
+          "line": 55,
+          "end_line": 63,
+          "recording_mode": null,
+          "record_contains": null,
+          "block_contains": null
+        }
+      ],
+      "start_line": 40
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "WS-CONSTANTS",
+          "line": 68,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-PROGRAM-NAME",
+          "line": 69,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'PORTDEL  '",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-SUCCESS",
+          "line": 70,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ERROR",
+          "line": 71,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-SWITCHES",
+          "line": 73,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-FILE-STATUS",
+          "line": 74,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-SUCCESS-STATUS",
+          "line": 75,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'00'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-REC-NOT-FND",
+          "line": 76,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'23'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-EOF-STATUS",
+          "line": 77,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'10'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DEL-STATUS",
+          "line": 79,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-DEL-SUCCESS",
+          "line": 80,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'00'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-DEL-EOF",
+          "line": 81,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'10'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-AUD-STATUS",
+          "line": 83,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "WS-AUD-SUCCESS",
+          "line": 84,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'00'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-END-OF-FILE-SW",
+          "line": 86,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "END-OF-FILE",
+          "line": 87,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Y'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "NOT-END-OF-FILE",
+          "line": 88,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-WORK-AREAS",
+          "line": 93,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DELETE-COUNT",
+          "line": 94,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ZERO",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ERROR-COUNT",
+          "line": 95,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ZERO",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-NOT-FND-COUNT",
+          "line": 96,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ZERO",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-RETURN-CODE",
+          "line": 97,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-TIMESTAMP",
+          "line": 98,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 64
+    },
+    "linkage_section": {
+      "entries": []
+    }
+  },
+  "procedure_division": {
+    "start_line": 100,
+    "end_line": 194,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 101,
+        "end_line": 110,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-INITIALIZE",
+        "section": null,
+        "start_line": 111,
+        "end_line": 129,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-PROCESS",
+        "section": null,
+        "start_line": 130,
+        "end_line": 138,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2100-PROCESS-DELETE",
+        "section": null,
+        "start_line": 139,
+        "end_line": 155,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2200-DELETE-RECORD",
+        "section": null,
+        "start_line": 156,
+        "end_line": 167,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2300-WRITE-AUDIT",
+        "section": null,
+        "start_line": 168,
+        "end_line": 183,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-TERMINATE",
+        "section": null,
+        "start_line": 184,
+        "end_line": 194,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 109
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 101,
+        "end_line": 110,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-INITIALIZE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 111,
+        "end_line": 129,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-PROCESS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 130,
+        "end_line": 138,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2100-PROCESS-DELETE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 139,
+        "end_line": 155,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2200-DELETE-RECORD",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 156,
+        "end_line": 167,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2300-WRITE-AUDIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 168,
+        "end_line": 183,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-TERMINATE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 184,
+        "end_line": 194,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 102,
+        "unstructured": false,
+        "to": "1000-INITIALIZE"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 104,
+        "unstructured": false,
+        "to": "2000-PROCESS"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 107,
+        "unstructured": false,
+        "to": "3000-TERMINATE"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 126,
+        "unstructured": false,
+        "to": "3000-TERMINATE"
+      },
+      {
+        "from": "2000-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 135,
+        "unstructured": false,
+        "to": "2100-PROCESS-DELETE"
+      },
+      {
+        "from": "2100-PROCESS-DELETE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 146,
+        "unstructured": false,
+        "to": "2200-DELETE-RECORD"
+      },
+      {
+        "from": "2200-DELETE-RECORD",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 161,
+        "unstructured": false,
+        "to": "2300-WRITE-AUDIT"
+      }
+    ],
+    "dead_code_candidates": [],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

@@ -1,64 +1,303 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "PORTVAL",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  120,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTVALD.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  32,
-                           "name":  "0000-MAIN",
-                           "start_line":  32
-                       },
-                       {
-                           "end_line":  52,
-                           "name":  "1000-VALIDATE-ID",
-                           "start_line":  52
-                       },
-                       {
-                           "end_line":  73,
-                           "name":  "2000-VALIDATE-ACCOUNT",
-                           "start_line":  73
-                       },
-                       {
-                           "end_line":  88,
-                           "name":  "3000-VALIDATE-TYPE",
-                           "start_line":  88
-                       },
-                       {
-                           "end_line":  105,
-                           "name":  "4000-VALIDATE-AMOUNT",
-                           "start_line":  105
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  15,
-                                          "start_line":  11
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  120,
-                                        "start_line":  31
-                                    },
-                      "DATA":  {
-                                   "end_line":  30,
-                                   "start_line":  16
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  10,
-                                             "start_line":  8
-                                         }
-                  },
-    "program_id":  "PORTVALD",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "PORTVALD",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTVALD.cbl",
+    "total_lines": 120
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 8,
+    "end_line": 10,
+    "program_id": "PORTVALD"
+  },
+  "data_division": {
+    "start_line": 16,
+    "end_line": 30,
+    "file_section": {
+      "entries": []
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "type": "copy_stub",
+          "copybook": "PORTVAL",
+          "library": null,
+          "line": 18,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        }
+      ],
+      "start_line": 17
+    },
+    "linkage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "LS-VALIDATION-REQUEST",
+          "line": 21,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-VALIDATE-TYPE",
+          "line": 22,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "LS-VAL-ID",
+          "line": 23,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'I'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "LS-VAL-ACCT",
+          "line": 24,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'A'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "LS-VAL-TYPE",
+          "line": 25,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'T'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "LS-VAL-AMT",
+          "line": 26,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'M'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-INPUT-VALUE",
+          "line": 27,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "PIC",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-RETURN-CODE",
+          "line": 28,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-ERROR-MSG",
+          "line": 29,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 20
+    }
+  },
+  "procedure_division": {
+    "start_line": 31,
+    "end_line": 120,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 32,
+        "end_line": 51,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-VALIDATE-ID",
+        "section": null,
+        "start_line": 52,
+        "end_line": 72,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-VALIDATE-ACCOUNT",
+        "section": null,
+        "start_line": 73,
+        "end_line": 87,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-VALIDATE-TYPE",
+        "section": null,
+        "start_line": 88,
+        "end_line": 104,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "4000-VALIDATE-AMOUNT",
+        "section": null,
+        "start_line": 105,
+        "end_line": 120,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 49
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 32,
+        "end_line": 51,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-VALIDATE-ID",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 52,
+        "end_line": 72,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-VALIDATE-ACCOUNT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 73,
+        "end_line": 87,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-VALIDATE-TYPE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 88,
+        "end_line": 104,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "4000-VALIDATE-AMOUNT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 105,
+        "end_line": 120,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 37,
+        "unstructured": false,
+        "to": "1000-VALIDATE-ID"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 39,
+        "unstructured": false,
+        "to": "2000-VALIDATE-ACCOUNT"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 41,
+        "unstructured": false,
+        "to": "3000-VALIDATE-TYPE"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 43,
+        "unstructured": false,
+        "to": "4000-VALIDATE-AMOUNT"
+      }
+    ],
+    "dead_code_candidates": [],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

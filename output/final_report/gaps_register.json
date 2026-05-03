@@ -1,0 +1,279 @@
+{
+  "meta": {
+    "generated_at": "2026-05-03T14:50:00Z",
+    "agent_version": "7_synthesis@1.0",
+    "system_name": "Portfolio Management System",
+    "total_gaps": 14,
+    "by_severity": {
+      "critical": 0,
+      "high": 2,
+      "medium": 5,
+      "low": 7
+    },
+    "by_type": {
+      "UNRESOLVED_CALL": 2,
+      "UNRESOLVED_REFERENCE": 3,
+      "DEAD_CODE_CONFIRMED": 4,
+      "MEDIUM_CONFIDENCE_RULE": 1,
+      "UNCONFIRMED_RELATIONSHIP": 1,
+      "EMPTY_FILE": 1,
+      "DUPLICATE_IDENTIFIER": 2
+    }
+  },
+  "gaps": [
+    {
+      "gap_id": "GAP-001",
+      "gap_type": "UNRESOLVED_CALL",
+      "severity": "high",
+      "title": "UTLMON00 calls ILBOABN0 — external abnormal-termination service not in repository",
+      "description": "Program UTLMON00 (utility monitoring) makes a static CALL to ILBOABN0 at source line 186. ILBOABN0 is not present in the repository. It is a standard IBM z/OS Language Environment (LE) routine that triggers a controlled abnormal program termination (abend). Its behaviour is well-understood in the IBM mainframe context, but it is not documented by the pipeline.",
+      "impact": "The termination path in UTLMON00 is partially undocumented in the BRD. The program's response to irrecoverable monitoring errors is known by convention (program abend) but not confirmed by static analysis.",
+      "recommended_action": "Confirm ILBOABN0 is the IBM LE abend routine. Document the abend code it generates and whether any upstream job-control or restart logic intercepts it. Add a note to the process flow for UTLMON00.",
+      "source_program": "UTLMON00",
+      "source_paragraph": "2100-PROCESS-MONITOR",
+      "source_line": 186,
+      "detected_in": ["inventory_artifact"],
+      "related_rule_ids": [],
+      "related_gap_ids": []
+    },
+    {
+      "gap_id": "GAP-002",
+      "gap_type": "UNRESOLVED_CALL",
+      "severity": "high",
+      "title": "DB2CONN calls DELAY — external timing service not in repository",
+      "description": "Program DB2CONN (DB2 connection manager) makes a static CALL to DELAY at source line 86, inside the connection retry loop. DELAY is not present in the repository. It is believed to be an IBM system timing service used to introduce a pause between connection retry attempts.",
+      "impact": "The retry-wait logic in DB2CONN is incomplete in the BRD. The delay duration between retry attempts cannot be determined without knowing the interface of the DELAY routine.",
+      "recommended_action": "Identify the DELAY routine — it may be a site-developed utility or an IBM service. Document its calling interface, the delay duration passed, and confirm whether it is configurable at runtime.",
+      "source_program": "DB2CONN",
+      "source_paragraph": "1000-CONNECT",
+      "source_line": 86,
+      "detected_in": ["inventory_artifact"],
+      "related_rule_ids": ["RULE-ENFORCE-WS-RETRY-COUNT-HAS-REQUIRED-VALUE"],
+      "related_gap_ids": []
+    },
+    {
+      "gap_id": "GAP-003",
+      "gap_type": "UNRESOLVED_REFERENCE",
+      "severity": "medium",
+      "title": "SQL include SQLPOS not found — DB2 generated or external copybook",
+      "description": "Programs INQPORT and INQHIST reference EXEC SQL INCLUDE SQLPOS, but SQLPOS is not present in the copybook registry. This is typically a DB2-generated host-variable structure that is produced at pre-compile time from the SQL SELECT list.",
+      "impact": "The field layout of position data returned by the SQL query in INQPORT and INQHIST cannot be fully documented. Field names, types, and lengths in the position inquiry results are incomplete.",
+      "recommended_action": "Locate the SQLPOS structure in the DB2 pre-compile output or the DCLGEN library. Add it to the repository under src/copybook/db2/ and re-run the Data Agent.",
+      "source_program": "INQPORT, INQHIST",
+      "source_paragraph": "SQL INCLUDE statement",
+      "source_line": 18,
+      "detected_in": ["inventory_artifact"],
+      "related_rule_ids": [],
+      "related_gap_ids": []
+    },
+    {
+      "gap_id": "GAP-004",
+      "gap_type": "EMPTY_FILE",
+      "severity": "medium",
+      "title": "POSUPDT source file is empty — position update program has no content",
+      "description": "Program POSUPDT (position update) is registered in the inventory with a source file path of src/programs/batch/POSUPDT.cbl, but the file contains only whitespace. The program has zero paragraphs and zero lines of logic. It is unclear whether this represents a stub that was never implemented, a retired program, or a file that was accidentally emptied.",
+      "impact": "Any batch process that relies on POSUPDT to update investment positions is completely undocumented. If POSUPDT is part of the active transaction processing chain, a significant process flow is missing from the BRD.",
+      "recommended_action": "Investigate whether POSUPDT exists in a load library or a different source repository. If it is an unimplemented stub, document the intended functionality. If it was retired, confirm and flag accordingly.",
+      "source_program": "POSUPDT",
+      "source_paragraph": null,
+      "source_line": null,
+      "detected_in": ["inventory_artifact", "parser_artifact"],
+      "related_rule_ids": [],
+      "related_gap_ids": []
+    },
+    {
+      "gap_id": "GAP-005",
+      "gap_type": "UNCONFIRMED_RELATIONSHIP",
+      "severity": "medium",
+      "title": "Unconfirmed data relationship between Error Handling and Return Handling via ERROR-CODE",
+      "description": "The data model contains a heuristic-detected relationship between entity ENT-ERROR-HANDLING and ENT-RETURN-HANDLING based on the shared field ERROR-CODE. This may represent a genuine foreign-key style linkage or a coincidental field-name reuse.",
+      "impact": "The ERD shown in Chapter 4 shows this relationship but marks it as unconfirmed. If the relationship is not genuine, the ERD may imply a data coupling that does not exist in practice.",
+      "recommended_action": "Review the actual field definitions of ERROR-CODE in both structures with a data architect or DBA. Confirm whether records in one structure reference records in the other.",
+      "source_program": "Multiple",
+      "source_paragraph": null,
+      "source_line": null,
+      "detected_in": ["data_artifact"],
+      "related_rule_ids": [],
+      "related_gap_ids": []
+    },
+    {
+      "gap_id": "GAP-006",
+      "gap_type": "DEAD_CODE_CONFIRMED",
+      "severity": "medium",
+      "title": "INQONLN contains 6 confirmed unreachable exit paragraphs",
+      "description": "The Logic Agent confirmed that paragraphs P100-EXIT, P200-EXIT, P300-EXIT, P400-EXIT, P900-EXIT, and P050-EXIT in INQONLN are never reached during normal execution. These are conventional exit markers sometimes used with PERFORM THRU but not invoked directly in this program.",
+      "impact": "The flow diagrams and pseudocode for INQONLN reflect the reachable paths only. These exit paragraphs contain no logic, so no business functionality is missing. However, their presence may cause confusion during modernisation.",
+      "recommended_action": "Confirm with the development team that these exit paragraphs are intentional PERFORM THRU exit points. If so, document this convention. If the PERFORM THRU pattern is not used, mark them as safely removable during modernisation.",
+      "source_program": "INQONLN",
+      "source_paragraph": "P100-EXIT, P200-EXIT, P300-EXIT, P400-EXIT, P900-EXIT, P050-EXIT",
+      "source_line": null,
+      "detected_in": ["logic_artifact"],
+      "related_rule_ids": [],
+      "related_gap_ids": []
+    },
+    {
+      "gap_id": "GAP-007",
+      "gap_type": "DEAD_CODE_CONFIRMED",
+      "severity": "medium",
+      "title": "PORTTRAN paragraph 2200-UPDATE-POSITIONS is confirmed unreachable",
+      "description": "The Logic Agent confirmed that paragraph 2200-UPDATE-POSITIONS in PORTTRAN is never called during normal execution. This paragraph is titled to suggest it updates investment position quantities, which is a critical step in transaction processing.",
+      "impact": "If 2200-UPDATE-POSITIONS was intended to be active logic, then transaction processing may not be updating position quantities correctly. This is the most operationally significant dead code finding in the codebase.",
+      "recommended_action": "Urgently review PORTTRAN with a business analyst and developer. Confirm whether position updates are handled elsewhere (e.g., a separate POSUPDT program or a DB2 trigger), or whether this represents a genuine defect in the transaction processor.",
+      "source_program": "PORTTRAN",
+      "source_paragraph": "2200-UPDATE-POSITIONS",
+      "source_line": null,
+      "detected_in": ["logic_artifact"],
+      "related_rule_ids": [],
+      "related_gap_ids": ["GAP-004"]
+    },
+    {
+      "gap_id": "GAP-008",
+      "gap_type": "DEAD_CODE_CONFIRMED",
+      "severity": "low",
+      "title": "PORTMSTR paragraph 2100-HANDLE-VSAM-ERROR is confirmed unreachable",
+      "description": "The Logic Agent confirmed that paragraph 2100-HANDLE-VSAM-ERROR in PORTMSTR is never reached. This is a VSAM file error handler that would process VSAM status codes on portfolio file operations.",
+      "impact": "VSAM error conditions on portfolio file operations may not be handled by the intended error path. The program may route to a generic error handler instead, potentially losing file-status context.",
+      "recommended_action": "Review PORTMSTR to confirm how VSAM errors are currently handled. If a generic error handler captures these errors adequately, document this. If not, investigate whether PORTMSTR ever triggers VSAM errors in production.",
+      "source_program": "PORTMSTR",
+      "source_paragraph": "2100-HANDLE-VSAM-ERROR",
+      "source_line": null,
+      "detected_in": ["logic_artifact"],
+      "related_rule_ids": [],
+      "related_gap_ids": []
+    },
+    {
+      "gap_id": "GAP-009",
+      "gap_type": "DEAD_CODE_CONFIRMED",
+      "severity": "low",
+      "title": "RTNANA00 and RTNCDE00 each contain 11 confirmed dead code candidates",
+      "description": "The Parser Agent identified 11 dead code candidates in each of RTNANA00 (return code analysis) and RTNCDE00 (return code processing). These represent the highest dead code counts per program in the codebase.",
+      "impact": "Portions of the return code analysis and processing logic may be unreachable. This may indicate legacy code paths for retired business processes or conditional branches that can never be satisfied by current data.",
+      "recommended_action": "Review RTNANA00 and RTNCDE00 dead code candidates. Determine whether they represent legacy logic (safe to remove) or untested code paths (potentially valuable).",
+      "source_program": "RTNANA00, RTNCDE00",
+      "source_paragraph": "Multiple",
+      "source_line": null,
+      "detected_in": ["parser_artifact", "logic_artifact"],
+      "related_rule_ids": [],
+      "related_gap_ids": []
+    },
+    {
+      "gap_id": "GAP-010",
+      "gap_type": "DUPLICATE_IDENTIFIER",
+      "severity": "low",
+      "title": "Two similarly-named error copybooks ERRHAND and ERRHND may be confused",
+      "description": "The repository contains two copybooks with similar names: ERRHAND (src/copybook/common/ERRHAND.cpy) used by 6 programs including batch programs, and ERRHND (src/copybook/online/ERRHND.cpy) used by CICS online programs. Their near-identical names may cause confusion during maintenance.",
+      "impact": "Developers or automated tools may accidentally include the wrong copybook. The two structures serve different purposes — ERRHAND for batch error handling and ERRHND for CICS online error handling — but their similarities may not be obvious.",
+      "recommended_action": "Consider renaming one copybook to more clearly reflect its purpose (e.g., ERRHAND-BATCH and ERRHAND-CICS) in any modernisation effort. Document the distinction clearly.",
+      "source_program": "Multiple",
+      "source_paragraph": null,
+      "source_line": null,
+      "detected_in": ["inventory_artifact"],
+      "related_rule_ids": [],
+      "related_gap_ids": []
+    },
+    {
+      "gap_id": "GAP-011",
+      "gap_type": "DUPLICATE_IDENTIFIER",
+      "severity": "low",
+      "title": "SQLCA included as both EXEC SQL INCLUDE and COPY in two programs",
+      "description": "Programs RTNCDE00 and CURSMGR include SQLCA using both an EXEC SQL INCLUDE statement and a COPY statement. This dual inclusion may result in duplicate field definitions at pre-compile time.",
+      "impact": "Pre-compile errors may occur, or one inclusion may silently override the other. The actual SQLCA field layout used by these programs at runtime is unclear.",
+      "recommended_action": "Review the pre-compile JCL for RTNCDE00 and CURSMGR. Remove one of the duplicate inclusions. Prefer EXEC SQL INCLUDE SQLCA as it is the standard DB2 mechanism.",
+      "source_program": "RTNCDE00, CURSMGR",
+      "source_paragraph": null,
+      "source_line": null,
+      "detected_in": ["inventory_artifact"],
+      "related_rule_ids": [],
+      "related_gap_ids": []
+    },
+    {
+      "gap_id": "GAP-012",
+      "gap_type": "MEDIUM_CONFIDENCE_RULE",
+      "severity": "low",
+      "title": "79 of 90 business rules extracted at medium confidence — validation recommended",
+      "description": "The Rules Agent extracted 90 business rules. 11 are high confidence. The remaining 79 are medium confidence, meaning they were identified from branching conditions in the code but their full business purpose could not be confirmed from the source text alone. Many are infrastructure rules (file status checks, SQLCODE checks) that are well-understood, but some may represent domain-specific validation that requires expert review.",
+      "impact": "Business analysts using the BRD rules catalogue should treat medium-confidence rules as preliminary findings. They correctly describe what the code does but may not capture the full business intent behind the condition.",
+      "recommended_action": "Review the medium-confidence rules with domain experts, focusing especially on the PORTTRAN validation rules (price, amount, portfolio ID checks), the PRCSEQ00 sequencing rules, and the PORTMSTR portfolio validation rules.",
+      "source_program": "Multiple (37 programs)",
+      "source_paragraph": "Multiple",
+      "source_line": null,
+      "detected_in": ["rules_artifact"],
+      "related_rule_ids": [],
+      "related_gap_ids": []
+    },
+    {
+      "gap_id": "GAP-013",
+      "gap_type": "UNRESOLVED_REFERENCE",
+      "severity": "low",
+      "title": "COMMON copybook defined but not used by any program",
+      "description": "The COMMON copybook (src/copybook/common/COMMON.cpy) defines standard data structures for return codes, status codes, transaction types, date/time, error handling, audit fields, and currency codes — but no program in the repository includes it. This is a significant finding since COMMON appears to be the intended shared data contract for the system.",
+      "impact": "Each program may define its own local versions of common data structures rather than using a shared definition, potentially leading to inconsistencies in field names, lengths, and value conventions.",
+      "recommended_action": "Determine whether COMMON is used by programs not currently in the repository, or whether it was never adopted. If it represents the intended standard, review whether programs should be updated to use it.",
+      "source_program": "COMMON (copybook)",
+      "source_paragraph": null,
+      "source_line": null,
+      "detected_in": ["inventory_artifact", "data_artifact"],
+      "related_rule_ids": [],
+      "related_gap_ids": []
+    },
+    {
+      "gap_id": "GAP-014",
+      "gap_type": "UNRESOLVED_REFERENCE",
+      "severity": "low",
+      "title": "POSUPDT program subtypes classified as 'unknown' for 15 portfolio and common programs",
+      "description": "Fifteen programs (all portfolio programs PORTADD, PORTDEL, PORTMSTR, PORTREAD, PORTTEST, PORTTRAN, PORTUPDT, PORTVALD and all common programs AUDPROC, DB2CMT, DB2CONN, DB2ERR, DB2STAT, ERRPROC) have subtype 'unknown' in the inventory. They were not positively identified as batch or online programs from their source code.",
+      "impact": "The program inventory table in Chapter 3 cannot accurately classify these programs by execution mode. This affects architectural analysis and modernisation planning.",
+      "recommended_action": "Review the PROCEDURE DIVISION of each unknown-subtype program. Portfolio programs are most likely called as sub-programs from both batch JCL and CICS transactions. Common programs are likely called subroutines. Document their calling contexts.",
+      "source_program": "PORTADD, PORTDEL, PORTMSTR, PORTREAD, PORTTEST, PORTTRAN, PORTUPDT, PORTVALD, AUDPROC, DB2CMT, DB2CONN, DB2ERR, DB2STAT, ERRPROC",
+      "source_paragraph": null,
+      "source_line": null,
+      "detected_in": ["inventory_artifact"],
+      "related_rule_ids": [],
+      "related_gap_ids": []
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "ASM-001",
+      "description": "The system is a financial portfolio management system supporting investment account management, transaction processing, online inquiry, and batch reporting on IBM z/OS.",
+      "basis": "Program names, field names (PORT, TRN, POS), copybook names (PORTFLIO, POSREC, HISTREC), and program narratives from the Logic Agent",
+      "confidence": "high"
+    },
+    {
+      "assumption_id": "ASM-002",
+      "description": "Portfolio programs (PORTADD, PORTDEL, PORTMSTR, PORTREAD, PORTUPDT, PORTTRAN, PORTVALD) are called sub-programs that can be invoked from both batch JCL and online CICS transactions.",
+      "basis": "Programs have no explicit CICS or batch-specific code in their headers; they receive parameters via LINKAGE SECTION",
+      "confidence": "medium"
+    },
+    {
+      "assumption_id": "ASM-003",
+      "description": "ERRPROC is the central error logging and handling sub-program, called by at least 8 other programs in the codebase.",
+      "basis": "inventory_artifact call_graph edges; ERRPROC has the most incoming call edges of any program",
+      "confidence": "high"
+    },
+    {
+      "assumption_id": "ASM-004",
+      "description": "The portfolio master file is a VSAM KSDS (Key Sequenced Data Set) keyed on PORT-ID, with PORT-ID having a 'PORT' prefix format validation.",
+      "basis": "data_artifact PORT-RECORD structure; PORTMSTR logic checking PORT-ID(1:4) NOT = 'PORT'",
+      "confidence": "high"
+    },
+    {
+      "assumption_id": "ASM-005",
+      "description": "The DB2 database stores historical position data, audit logs, and statistics. VSAM files store current portfolio records and batch control data.",
+      "basis": "Program names (DB2CMT, DB2CONN, DB2ERR, DB2STAT, HISTLD00) and VSAM file status field names in batch programs",
+      "confidence": "medium"
+    },
+    {
+      "assumption_id": "ASM-006",
+      "description": "Transaction types BUY, SELL, and TRANSFER (code 'TR') are the three supported investment transaction types.",
+      "basis": "PORTTRAN logic: TRN-TYPE EVALUATE branches, condition TRN-TYPE NOT = 'TR' used in price/amount validation exceptions",
+      "confidence": "high"
+    },
+    {
+      "assumption_id": "ASM-007",
+      "description": "BCHCTL (batch control copybook) used by 5 programs represents a shared job control record that tracks process execution status, return codes, and sequencing for the batch scheduler.",
+      "basis": "PRCSEQ00 logic which reads BCT-JOB-NAME, BCT-STAT-READY, BCT-STAT-ACTIVE, BCT-STAT-ERROR, BCT-STAT-DONE fields",
+      "confidence": "high"
+    }
+  ]
+}

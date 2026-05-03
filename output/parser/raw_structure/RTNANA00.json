@@ -1,96 +1,1065 @@
-﻿{
-    "data_items":  [
-
-                   ],
-    "total_lines":  210,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RTNANA00.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  111,
-                           "name":  "P100-INIT-PROGRAM",
-                           "start_line":  111
-                       },
-                       {
-                           "end_line":  122,
-                           "name":  "P100-EXIT",
-                           "start_line":  122
-                       },
-                       {
-                           "end_line":  125,
-                           "name":  "P200-PROCESS-ANALYSIS",
-                           "start_line":  125
-                       },
-                       {
-                           "end_line":  149,
-                           "name":  "P200-EXIT",
-                           "start_line":  149
-                       },
-                       {
-                           "end_line":  152,
-                           "name":  "P210-WRITE-HEADERS",
-                           "start_line":  152
-                       },
-                       {
-                           "end_line":  166,
-                           "name":  "P210-EXIT",
-                           "start_line":  166
-                       },
-                       {
-                           "end_line":  169,
-                           "name":  "P220-PROCESS-DETAIL",
-                           "start_line":  169
-                       },
-                       {
-                           "end_line":  189,
-                           "name":  "P220-EXIT",
-                           "start_line":  189
-                       },
-                       {
-                           "end_line":  192,
-                           "name":  "P300-GENERATE-REPORT",
-                           "start_line":  192
-                       },
-                       {
-                           "end_line":  204,
-                           "name":  "P300-EXIT",
-                           "start_line":  204
-                       },
-                       {
-                           "end_line":  207,
-                           "name":  "P900-CLOSE-FILES",
-                           "start_line":  207
-                       },
-                       {
-                           "end_line":  209,
-                           "name":  "P900-EXIT",
-                           "start_line":  209
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  19,
-                                          "start_line":  11
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  210,
-                                        "start_line":  96
-                                    },
-                      "DATA":  {
-                                   "end_line":  95,
-                                   "start_line":  20
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  10,
-                                             "start_line":  1
-                                         }
-                  },
-    "program_id":  "RTNANA00",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "RTNANA00",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\RTNANA00.cbl",
+    "total_lines": 210
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 1,
+    "end_line": 10,
+    "program_id": "RTNANA00"
+  },
+  "data_division": {
+    "start_line": 20,
+    "end_line": 95,
+    "file_section": {
+      "entries": [
+        {
+          "type": "FD",
+          "file_name": "REPORT-FILE",
+          "line": 22,
+          "end_line": 26,
+          "recording_mode": "F",
+          "record_contains": null,
+          "block_contains": "0"
+        }
+      ],
+      "start_line": 21
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "WS-FILE-STATUS",
+          "line": 28,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-REPORT-STATUS",
+          "line": 29,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-DB2-AREA",
+          "line": 31,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-CURRENT-DATE-DATA",
+          "line": 34,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-CURRENT-DATE",
+          "line": 35,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-CURRENT-YEAR",
+          "line": 36,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-CURRENT-MONTH",
+          "line": 37,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-CURRENT-DAY",
+          "line": 38,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-CURRENT-TIME",
+          "line": 39,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-CURRENT-HOUR",
+          "line": 40,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-CURRENT-MINUTE",
+          "line": 41,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-CURRENT-SECOND",
+          "line": 42,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-CURRENT-MS",
+          "line": 43,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-ANALYSIS-AREA",
+          "line": 45,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-START-TIME",
+          "line": 46,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-END-TIME",
+          "line": 47,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-PROGRAM-COUNT",
+          "line": 48,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ERROR-COUNT",
+          "line": 49,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-WARNING-COUNT",
+          "line": 50,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-SUCCESS-COUNT",
+          "line": 51,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-SEVERE-COUNT",
+          "line": 52,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-REPORT-LINES",
+          "line": 54,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-HEADER1",
+          "line": 55,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-55",
+          "line": 56,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ALL",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-HEADER2",
+          "line": 57,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-57",
+          "line": 58,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-58",
+          "line": 59,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Return Code Analysis Report'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-60",
+          "line": 61,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-HEADER3",
+          "line": 62,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-62",
+          "line": 63,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Report Date:'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-RPT-DATE",
+          "line": 64,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-64",
+          "line": 65,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-65",
+          "line": 66,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Report Time:'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-RPT-TIME",
+          "line": 67,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-67",
+          "line": 68,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DETAIL-HDR",
+          "line": 69,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-69",
+          "line": 70,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Program'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-70",
+          "line": 71,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-71",
+          "line": 72,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Total'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-72",
+          "line": 73,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-73",
+          "line": 74,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Success'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-74",
+          "line": 75,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-75",
+          "line": 76,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Warning'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-76",
+          "line": 77,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-77",
+          "line": 78,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Error'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-78",
+          "line": 79,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-79",
+          "line": 80,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Severe'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-80",
+          "line": 81,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DETAIL-LINE",
+          "line": 82,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-DTL-PROGRAM",
+          "line": 83,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-83",
+          "line": 84,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-DTL-TOTAL",
+          "line": 85,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-85",
+          "line": 86,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-DTL-SUCCESS",
+          "line": 87,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-87",
+          "line": 88,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-DTL-WARNING",
+          "line": 89,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-89",
+          "line": 90,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-DTL-ERROR",
+          "line": 91,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-91",
+          "line": 92,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "WS-DTL-SEVERE",
+          "line": 93,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-93",
+          "line": 94,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        }
+      ],
+      "start_line": 27
+    },
+    "linkage_section": {
+      "entries": []
+    }
+  },
+  "procedure_division": {
+    "start_line": 96,
+    "end_line": 210,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "P100-INIT-PROGRAM",
+        "section": null,
+        "start_line": 111,
+        "end_line": 121,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "P100-EXIT",
+        "section": null,
+        "start_line": 122,
+        "end_line": 124,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P200-PROCESS-ANALYSIS",
+        "section": null,
+        "start_line": 125,
+        "end_line": 136,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 137,
+        "end_line": 148,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P200-EXIT",
+        "section": null,
+        "start_line": 149,
+        "end_line": 151,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P210-WRITE-HEADERS",
+        "section": null,
+        "start_line": 152,
+        "end_line": 165,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P210-EXIT",
+        "section": null,
+        "start_line": 166,
+        "end_line": 168,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P220-PROCESS-DETAIL",
+        "section": null,
+        "start_line": 169,
+        "end_line": 177,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "END-EXEC",
+        "section": null,
+        "start_line": 178,
+        "end_line": 188,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P220-EXIT",
+        "section": null,
+        "start_line": 189,
+        "end_line": 191,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P300-GENERATE-REPORT",
+        "section": null,
+        "start_line": 192,
+        "end_line": 203,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P300-EXIT",
+        "section": null,
+        "start_line": 204,
+        "end_line": 206,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P900-CLOSE-FILES",
+        "section": null,
+        "start_line": 207,
+        "end_line": 208,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "P900-EXIT",
+        "section": null,
+        "start_line": 209,
+        "end_line": 210,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 109
+      },
+      {
+        "type": "GOBACK",
+        "line": 118
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "P100-INIT-PROGRAM"
+    ],
+    "terminal_nodes": [
+      "P100-INIT-PROGRAM"
+    ],
+    "nodes": [
+      {
+        "id": "P100-INIT-PROGRAM",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 111,
+        "end_line": 121,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P100-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 122,
+        "end_line": 124,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P200-PROCESS-ANALYSIS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 125,
+        "end_line": 136,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 137,
+        "end_line": 148,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P200-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 149,
+        "end_line": 151,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P210-WRITE-HEADERS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 152,
+        "end_line": 165,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P210-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 166,
+        "end_line": 168,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P220-PROCESS-DETAIL",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 169,
+        "end_line": 177,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "END-EXEC",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 178,
+        "end_line": 188,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P220-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 189,
+        "end_line": 191,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P300-GENERATE-REPORT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 192,
+        "end_line": 203,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P300-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 204,
+        "end_line": 206,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P900-CLOSE-FILES",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 207,
+        "end_line": 208,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "P900-EXIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 209,
+        "end_line": 210,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "END-EXEC",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 141,
+        "unstructured": false,
+        "to": "P210-WRITE-HEADERS"
+      },
+      {
+        "from": "END-EXEC",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 144,
+        "unstructured": false,
+        "to": "P220-PROCESS-DETAIL"
+      }
+    ],
+    "dead_code_candidates": [
+      "P100-EXIT",
+      "P200-PROCESS-ANALYSIS",
+      "END-EXEC",
+      "P200-EXIT",
+      "P210-EXIT",
+      "END-EXEC",
+      "P220-EXIT",
+      "P300-GENERATE-REPORT",
+      "P300-EXIT",
+      "P900-CLOSE-FILES",
+      "P900-EXIT"
+    ],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

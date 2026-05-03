@@ -1,76 +1,469 @@
-﻿{
-    "paragraphs":  [
-                       {
-                           "name":  "P100-RECOVER-CONNECTION",
-                           "line_range":  [
-                                              62,
-                                              62
-                                          ]
-                       },
-                       {
-                           "name":  "P100-EXIT",
-                           "line_range":  [
-                                              82,
-                                              82
-                                          ]
-                       },
-                       {
-                           "name":  "P110-ATTEMPT-RECONNECT",
-                           "line_range":  [
-                                              85,
-                                              85
-                                          ]
-                       },
-                       {
-                           "name":  "P110-EXIT",
-                           "line_range":  [
-                                              101,
-                                              101
-                                          ]
-                       },
-                       {
-                           "name":  "P120-WAIT-INTERVAL",
-                           "line_range":  [
-                                              104,
-                                              104
-                                          ]
-                       },
-                       {
-                           "name":  "P120-EXIT",
-                           "line_range":  [
-                                              108,
-                                              108
-                                          ]
-                       },
-                       {
-                           "name":  "P200-RECOVER-TRANSACTION",
-                           "line_range":  [
-                                              111,
-                                              111
-                                          ]
-                       },
-                       {
-                           "name":  "P200-EXIT",
-                           "line_range":  [
-                                              122,
-                                              122
-                                          ]
-                       },
-                       {
-                           "name":  "P300-RECOVER-CURSOR",
-                           "line_range":  [
-                                              125,
-                                              125
-                                          ]
-                       },
-                       {
-                           "name":  "P300-EXIT",
-                           "line_range":  [
-                                              144,
-                                              144
-                                          ]
-                       }
-                   ],
-    "source_file":  "src\\programs\\online\\DB2RECV.cbl",
-    "program_id":  "DB2RECV"
+{
+  "program_id": "DB2RECV",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\online\\DB2RECV.cbl",
+  "processing_timestamp": "2026-05-03T18:35:21.042322Z",
+  "execution_traces": [
+    {
+      "entry_point": "P100-RECOVER-CONNECTION",
+      "entry_type": "procedure_entry",
+      "steps": [
+        {
+          "step": 1,
+          "paragraph": "P100-RECOVER-CONNECTION",
+          "action": "PARAGRAPH",
+          "target": null,
+          "condition": null,
+          "line": 62
+        }
+      ]
+    }
+  ],
+  "branch_map": [
+    {
+      "paragraph": "P100-RECOVER-CONNECTION",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "RECV-SUCCESS",
+          "condition_fields": [
+            "RECV-SUCCESS"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "END-PERFORM",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "WS-RETRY-COUNT >= WS-MAX-RETRIES",
+          "condition_fields": [
+            "WS-RETRY-COUNT",
+            "WS-MAX-RETRIES"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "END-EXEC",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "DB2-RESPONSE-CODE OF WS-DB2-REQUEST = 0",
+          "condition_fields": [
+            "OF",
+            "WS-DB2-REQUEST",
+            "DB2-RESPONSE-CODE"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "P200-RECOVER-TRANSACTION",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "SQLCODE = 0",
+          "condition_fields": [
+            "SQLCODE"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "END-EXEC",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "ERR-CONTINUE",
+          "condition_fields": [
+            "ERR-CONTINUE"
+          ]
+        }
+      ]
+    }
+  ],
+  "loops": [],
+  "dead_code_confirmed": [
+    "END-PERFORM",
+    "P100-EXIT",
+    "END-EXEC",
+    "P110-EXIT",
+    "END-EXEC",
+    "P120-EXIT",
+    "P200-EXIT",
+    "END-EXEC",
+    "P300-EXIT"
+  ],
+  "unresolvable_paths": [],
+  "trace_issues": [],
+  "program_narrative": "DB2RECV is a COBOL program that orchestrates business processes. It processes input data through multiple stages, performing validation, transformation, and output operations. The program includes error handling and data integrity checks.",
+  "paragraphs": [
+    {
+      "name": "P100-RECOVER-CONNECTION",
+      "section": null,
+      "line_range": [
+        62,
+        75
+      ],
+      "pseudocode": [
+        "-- Paragraph P100-RECOVER-CONNECTION: Core business logic",
+        "SET ws-retry-count. = 0",
+        "CALL until",
+        "CALL p110-attempt-reconnect",
+        "IF RECV-SUCCESS THEN",
+        "CALL p120-wait-interval",
+        "INCREMENT ws-retry-count BY 1"
+      ],
+      "pseudocode_text": "-- Paragraph P100-RECOVER-CONNECTION: Core business logic\nSET ws-retry-count. = 0\nCALL until\nCALL p110-attempt-reconnect\nIF RECV-SUCCESS THEN\nCALL p120-wait-interval\nINCREMENT ws-retry-count BY 1",
+      "field_references": [
+        "EXIT",
+        "P120-EXIT",
+        "UNTIL",
+        "P110-ATTEMPT-RECONNECT",
+        "ADD",
+        "RECV-SUCCESS",
+        "P110-EXIT",
+        "WS-MAX-RETRIES",
+        "P120-WAIT-INTERVAL",
+        "WS-RETRY-COUNT"
+      ],
+      "calls_made": [],
+      "complexity_score": 3,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "END-PERFORM",
+      "section": null,
+      "line_range": [
+        76,
+        81
+      ],
+      "pseudocode": [
+        "-- Paragraph END-PERFORM: Core business logic",
+        "IF WS-RETRY-COUNT >= WS-MAX-RETRIES THEN",
+        "SET recv-response-code = -1"
+      ],
+      "pseudocode_text": "-- Paragraph END-PERFORM: Core business logic\nIF WS-RETRY-COUNT >= WS-MAX-RETRIES THEN\nSET recv-response-code = -1",
+      "field_references": [
+        "RECV-FAILED",
+        "END-PERFORM",
+        "RECV-RESPONSE-CODE",
+        "SET",
+        "WS-MAX-RETRIES",
+        "WS-RETRY-COUNT",
+        "END-IF",
+        "MOVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P100-EXIT",
+      "section": null,
+      "line_range": [
+        82,
+        84
+      ],
+      "pseudocode": [
+        "-- Paragraph P100-EXIT: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph P100-EXIT: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "P100-EXIT",
+        "EXIT"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P110-ATTEMPT-RECONNECT",
+      "section": null,
+      "line_range": [
+        85,
+        90
+      ],
+      "pseudocode": [
+        "-- Paragraph P110-ATTEMPT-RECONNECT: Core business logic",
+        "SET db2-request-type = c"
+      ],
+      "pseudocode_text": "-- Paragraph P110-ATTEMPT-RECONNECT: Core business logic\nSET db2-request-type = c",
+      "field_references": [
+        "LENGTH",
+        "COMMAREA",
+        "C",
+        "EXEC",
+        "PROGRAM",
+        "P110-ATTEMPT-RECONNECT",
+        "DB2ONLN",
+        "LINK",
+        "DB2-REQUEST-TYPE",
+        "OF"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "END-EXEC",
+      "section": null,
+      "line_range": [
+        91,
+        100
+      ],
+      "pseudocode": [
+        "-- Paragraph END-EXEC: Core business logic",
+        "IF DB2-RESPONSE-CODE OF WS-DB2-REQUEST = 0 THEN",
+        "SET recv-response-code = 0"
+      ],
+      "pseudocode_text": "-- Paragraph END-EXEC: Core business logic\nIF DB2-RESPONSE-CODE OF WS-DB2-REQUEST = 0 THEN\nSET recv-response-code = 0",
+      "field_references": [
+        "DB2-SQLCODE",
+        "END-EXEC",
+        "RECV-RETRY",
+        "RECV-SQLCODE",
+        "OF",
+        "SET",
+        "WS-DB2-REQUEST",
+        "RECV-SUCCESS",
+        "RECV-RESPONSE-CODE",
+        "DB2-RESPONSE-CODE"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P110-EXIT",
+      "section": null,
+      "line_range": [
+        101,
+        103
+      ],
+      "pseudocode": [
+        "-- Paragraph P110-EXIT: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph P110-EXIT: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "EXIT",
+        "P110-EXIT"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P120-WAIT-INTERVAL",
+      "section": null,
+      "line_range": [
+        104,
+        106
+      ],
+      "pseudocode": [
+        "-- Paragraph P120-WAIT-INTERVAL: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph P120-WAIT-INTERVAL: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "INTERVAL",
+        "DELAY",
+        "EXEC",
+        "WS-RETRY-INTERVAL",
+        "P120-WAIT-INTERVAL",
+        "CICS"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "END-EXEC",
+      "section": null,
+      "line_range": [
+        107,
+        107
+      ],
+      "pseudocode": [
+        "-- Paragraph END-EXEC: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph END-EXEC: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "END-EXEC"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P120-EXIT",
+      "section": null,
+      "line_range": [
+        108,
+        110
+      ],
+      "pseudocode": [
+        "-- Paragraph P120-EXIT: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph P120-EXIT: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "P120-EXIT",
+        "EXIT"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P200-RECOVER-TRANSACTION",
+      "section": null,
+      "line_range": [
+        111,
+        121
+      ],
+      "pseudocode": [
+        "-- Paragraph P200-RECOVER-TRANSACTION: Core business logic",
+        "IF SQLCODE = 0 THEN",
+        "SET recv-response-code = 0",
+        "SET recv-sqlcode = sqlcode",
+        "SET recv-response-code = -1"
+      ],
+      "pseudocode_text": "-- Paragraph P200-RECOVER-TRANSACTION: Core business logic\nIF SQLCODE = 0 THEN\nSET recv-response-code = 0\nSET recv-sqlcode = sqlcode\nSET recv-response-code = -1",
+      "field_references": [
+        "END-EXEC",
+        "EXEC",
+        "SQL",
+        "RECV-SQLCODE",
+        "RECV-FAILED",
+        "ROLLBACK",
+        "RECV-RESPONSE-CODE",
+        "SET",
+        "RECV-SUCCESS",
+        "P200-RECOVER-TRANSACTION"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P200-EXIT",
+      "section": null,
+      "line_range": [
+        122,
+        124
+      ],
+      "pseudocode": [
+        "-- Paragraph P200-EXIT: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph P200-EXIT: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "P200-EXIT",
+        "EXIT"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P300-RECOVER-CURSOR",
+      "section": null,
+      "line_range": [
+        125,
+        134
+      ],
+      "pseudocode": [
+        "-- Paragraph P300-RECOVER-CURSOR: Core business logic",
+        "INITIALIZE ws-error-area. (special value)",
+        "SET err-program. = recv-program",
+        "SET err-paragraph. = recv-cursor",
+        "SET err-sqlcode. = recv-sqlcode"
+      ],
+      "pseudocode_text": "-- Paragraph P300-RECOVER-CURSOR: Core business logic\nINITIALIZE ws-error-area. (special value)\nSET err-program. = recv-program\nSET err-paragraph. = recv-cursor\nSET err-sqlcode. = recv-sqlcode",
+      "field_references": [
+        "ERR-SQLCODE",
+        "RECV-CURSOR",
+        "LINK",
+        "RECV-PROGRAM",
+        "ERR-WARNING",
+        "ERRHNDL",
+        "PROGRAM",
+        "P300-RECOVER-CURSOR",
+        "ERR-PROGRAM",
+        "LENGTH"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "END-EXEC",
+      "section": null,
+      "line_range": [
+        135,
+        143
+      ],
+      "pseudocode": [
+        "-- Paragraph END-EXEC: Core business logic",
+        "IF ERR-CONTINUE THEN",
+        "SET recv-message. = err-message"
+      ],
+      "pseudocode_text": "-- Paragraph END-EXEC: Core business logic\nIF ERR-CONTINUE THEN\nSET recv-message. = err-message",
+      "field_references": [
+        "END-EXEC",
+        "RECV-MESSAGE",
+        "RECV-RETRY",
+        "ERR-MESSAGE",
+        "RECV-FAILED",
+        "SET",
+        "ERR-CONTINUE",
+        "END-IF",
+        "MOVE"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "P300-EXIT",
+      "section": null,
+      "line_range": [
+        144,
+        145
+      ],
+      "pseudocode": [
+        "-- Paragraph P300-EXIT: Core business logic",
+        "-- [paragraph logic]"
+      ],
+      "pseudocode_text": "-- Paragraph P300-EXIT: Core business logic\n-- [paragraph logic]",
+      "field_references": [
+        "P300-EXIT",
+        "EXIT"
+      ],
+      "calls_made": [],
+      "complexity_score": 0,
+      "has_unresolved_statements": false,
+      "annotations": []
+    }
+  ],
+  "unresolved_statements": [],
+  "pseudocode_issues": []
 }

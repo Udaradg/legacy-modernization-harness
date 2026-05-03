@@ -1,41 +1,273 @@
-﻿{
-    "paragraphs":  [
-                       {
-                           "name":  "0000-MAIN",
-                           "line_range":  [
-                                              32,
-                                              32
-                                          ]
-                       },
-                       {
-                           "name":  "1000-VALIDATE-ID",
-                           "line_range":  [
-                                              52,
-                                              52
-                                          ]
-                       },
-                       {
-                           "name":  "2000-VALIDATE-ACCOUNT",
-                           "line_range":  [
-                                              73,
-                                              73
-                                          ]
-                       },
-                       {
-                           "name":  "3000-VALIDATE-TYPE",
-                           "line_range":  [
-                                              88,
-                                              88
-                                          ]
-                       },
-                       {
-                           "name":  "4000-VALIDATE-AMOUNT",
-                           "line_range":  [
-                                              105,
-                                              105
-                                          ]
-                       }
-                   ],
-    "source_file":  "src\\programs\\portfolio\\PORTVALD.cbl",
-    "program_id":  "PORTVALD"
+{
+  "program_id": "PORTVALD",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTVALD.cbl",
+  "processing_timestamp": "2026-05-03T18:35:21.161632Z",
+  "execution_traces": [
+    {
+      "entry_point": "0000-MAIN",
+      "entry_type": "procedure_entry",
+      "steps": [
+        {
+          "step": 1,
+          "paragraph": "0000-MAIN",
+          "action": "PARAGRAPH",
+          "target": null,
+          "condition": null,
+          "line": 32
+        }
+      ]
+    }
+  ],
+  "branch_map": [
+    {
+      "paragraph": "0000-MAIN",
+      "branches": [
+        {
+          "type": "EVALUATE",
+          "subject": "TRUE"
+        }
+      ]
+    },
+    {
+      "paragraph": "1000-VALIDATE-ID",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "LS-INPUT-VALUE(1:4) NOT = VAL-ID-PREFIX",
+          "condition_fields": [
+            "LS-INPUT-VALUE",
+            "VAL-ID-PREFIX"
+          ]
+        },
+        {
+          "type": "IF",
+          "condition_text": "VAL-NUMERIC-CHECK IS NOT NUMERIC",
+          "condition_fields": [
+            "NUMERIC",
+            "VAL-NUMERIC-CHECK"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "2000-VALIDATE-ACCOUNT",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "LS-INPUT-VALUE IS NOT NUMERIC",
+          "condition_fields": [
+            "NUMERIC",
+            "LS-INPUT-VALUE"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "3000-VALIDATE-TYPE",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "LS-INPUT-VALUE NOT = 'STK'",
+          "condition_fields": [
+            "LS-INPUT-VALUE",
+            "STK"
+          ]
+        }
+      ]
+    },
+    {
+      "paragraph": "4000-VALIDATE-AMOUNT",
+      "branches": [
+        {
+          "type": "IF",
+          "condition_text": "VAL-TEMP-NUM < VAL-MIN-AMOUNT",
+          "condition_fields": [
+            "VAL-TEMP-NUM",
+            "VAL-MIN-AMOUNT"
+          ]
+        }
+      ]
+    }
+  ],
+  "loops": [],
+  "dead_code_confirmed": [],
+  "unresolvable_paths": [],
+  "trace_issues": [],
+  "program_narrative": "PORTVALD is a COBOL program that orchestrates business processes. It processes input data through multiple stages, performing validation, transformation, and output operations. The program includes error handling and data integrity checks.",
+  "paragraphs": [
+    {
+      "name": "0000-MAIN",
+      "section": null,
+      "line_range": [
+        32,
+        51
+      ],
+      "pseudocode": [
+        "-- Paragraph 0000-MAIN: Core business logic",
+        "EVALUATE (TRUE)",
+        "CALL 1000-validate-id",
+        "CALL 2000-validate-account",
+        "CALL 3000-validate-type",
+        "CALL 4000-validate-amount",
+        "SET ls-return-code = val-invalid-id",
+        "RETURN to caller"
+      ],
+      "pseudocode_text": "-- Paragraph 0000-MAIN: Core business logic\nEVALUATE (TRUE)\nCALL 1000-validate-id\nCALL 2000-validate-account\nCALL 3000-validate-type\nCALL 4000-validate-amount\nSET ls-return-code = val-invalid-id\nRETURN to caller",
+      "field_references": [
+        "LS-VAL-AMT",
+        "MOVE",
+        "LS-ERROR-MSG",
+        "OTHER",
+        "VALIDATE-AMOUNT",
+        "END-EVALUATE",
+        "VAL-INVALID-ID",
+        "GOBACK",
+        "LS-VAL-TYPE",
+        "VALIDATE-TYPE"
+      ],
+      "calls_made": [],
+      "complexity_score": 9,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "1000-VALIDATE-ID",
+      "section": null,
+      "line_range": [
+        52,
+        72
+      ],
+      "pseudocode": [
+        "-- Paragraph 1000-VALIDATE-ID: Validation logic",
+        "IF LS-INPUT-VALUE(1:4) NOT = VAL-ID-PREFIX THEN",
+        "SET ls-return-code = val-invalid-id",
+        "SET ls-error-msg = val-err-id",
+        "SET val-numeric-check = ls-input-value(5:4)",
+        "IF VAL-NUMERIC-CHECK IS NOT NUMERIC THEN",
+        "SET ls-return-code = val-invalid-id",
+        "SET ls-error-msg = val-err-id",
+        "SET ls-return-code = val-success",
+        "INITIALIZE ls-error-msg (special value)"
+      ],
+      "pseudocode_text": "-- Paragraph 1000-VALIDATE-ID: Validation logic\nIF LS-INPUT-VALUE(1:4) NOT = VAL-ID-PREFIX THEN\nSET ls-return-code = val-invalid-id\nSET ls-error-msg = val-err-id\nSET val-numeric-check = ls-input-value(5:4)\nIF VAL-NUMERIC-CHECK IS NOT NUMERIC THEN\nSET ls-return-code = val-invalid-id\nSET ls-error-msg = val-err-id\nSET ls-return-code = val-success\nINITIALIZE ls-error-msg (special value)",
+      "field_references": [
+        "NUMERIC",
+        "VAL-SUCCESS",
+        "ID",
+        "LS-ERROR-MSG",
+        "LS-INPUT-VALUE",
+        "PORT",
+        "VAL-INVALID-ID",
+        "PARAGRAPH",
+        "VAL-NUMERIC-CHECK",
+        "LS-RETURN-CODE"
+      ],
+      "calls_made": [],
+      "complexity_score": 2,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "2000-VALIDATE-ACCOUNT",
+      "section": null,
+      "line_range": [
+        73,
+        87
+      ],
+      "pseudocode": [
+        "-- Paragraph 2000-VALIDATE-ACCOUNT: Validation logic",
+        "IF LS-INPUT-VALUE IS NOT NUMERIC THEN",
+        "SET ls-return-code = val-invalid-acct",
+        "SET ls-error-msg = val-err-acct",
+        "SET ls-return-code = val-success",
+        "INITIALIZE ls-error-msg (special value)"
+      ],
+      "pseudocode_text": "-- Paragraph 2000-VALIDATE-ACCOUNT: Validation logic\nIF LS-INPUT-VALUE IS NOT NUMERIC THEN\nSET ls-return-code = val-invalid-acct\nSET ls-error-msg = val-err-acct\nSET ls-return-code = val-success\nINITIALIZE ls-error-msg (special value)",
+      "field_references": [
+        "NUMERIC",
+        "VAL-SUCCESS",
+        "LS-ERROR-MSG",
+        "LS-INPUT-VALUE",
+        "VAL-ERR-ACCT",
+        "VAL-INVALID-ACCT",
+        "PARAGRAPH",
+        "VALIDATE-ACCOUNT",
+        "LS-RETURN-CODE",
+        "END-IF"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "3000-VALIDATE-TYPE",
+      "section": null,
+      "line_range": [
+        88,
+        104
+      ],
+      "pseudocode": [
+        "-- Paragraph 3000-VALIDATE-TYPE: Validation logic",
+        "IF LS-INPUT-VALUE NOT = 'STK' THEN",
+        "SET ls-return-code = val-invalid-type",
+        "SET ls-error-msg = val-err-type",
+        "SET ls-return-code = val-success",
+        "INITIALIZE ls-error-msg (special value)"
+      ],
+      "pseudocode_text": "-- Paragraph 3000-VALIDATE-TYPE: Validation logic\nIF LS-INPUT-VALUE NOT = 'STK' THEN\nSET ls-return-code = val-invalid-type\nSET ls-error-msg = val-err-type\nSET ls-return-code = val-success\nINITIALIZE ls-error-msg (special value)",
+      "field_references": [
+        "VAL-SUCCESS",
+        "VAL-ERR-TYPE",
+        "LS-ERROR-MSG",
+        "BND",
+        "LS-INPUT-VALUE",
+        "STK",
+        "PARAGRAPH",
+        "VAL-INVALID-TYPE",
+        "VALIDATE-TYPE",
+        "LS-RETURN-CODE"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    },
+    {
+      "name": "4000-VALIDATE-AMOUNT",
+      "section": null,
+      "line_range": [
+        105,
+        120
+      ],
+      "pseudocode": [
+        "-- Paragraph 4000-VALIDATE-AMOUNT: Validation logic",
+        "SET val-temp-num = ls-input-value",
+        "IF VAL-TEMP-NUM < VAL-MIN-AMOUNT THEN",
+        "SET ls-return-code = val-invalid-amt",
+        "SET ls-error-msg = val-err-amt",
+        "SET ls-return-code = val-success",
+        "INITIALIZE ls-error-msg (special value)"
+      ],
+      "pseudocode_text": "-- Paragraph 4000-VALIDATE-AMOUNT: Validation logic\nSET val-temp-num = ls-input-value\nIF VAL-TEMP-NUM < VAL-MIN-AMOUNT THEN\nSET ls-return-code = val-invalid-amt\nSET ls-error-msg = val-err-amt\nSET ls-return-code = val-success\nINITIALIZE ls-error-msg (special value)",
+      "field_references": [
+        "VAL-MAX-AMOUNT",
+        "EXIT",
+        "VAL-SUCCESS",
+        "LS-ERROR-MSG",
+        "VALIDATE-AMOUNT",
+        "LS-INPUT-VALUE",
+        "VAL-TEMP-NUM",
+        "PARAGRAPH",
+        "VAL-INVALID-AMT",
+        "VAL-ERR-AMT"
+      ],
+      "calls_made": [],
+      "complexity_score": 1,
+      "has_unresolved_statements": false,
+      "annotations": []
+    }
+  ],
+  "unresolved_statements": [],
+  "pseudocode_issues": []
 }

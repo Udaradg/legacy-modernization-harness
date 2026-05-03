@@ -1,478 +1,287 @@
-﻿{
-    "record_name":  "TSTGEN00_WS",
-    "source_type":  "program_ws",
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\test\\TSTGEN00.cbl",
-    "fields":  [
-                   {
-                       "line":  43,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "CONFIG-RECORD",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  44,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "CFG-TEST-TYPE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  45,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "CFG-VOLUME",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  46,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "CFG-PARAMETERS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  51,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "PORTFOLIO-RECORD",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  57,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "TRANSACTION-RECORD",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  63,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "SEED-RECORD",
-                       "pic":  "9(9).",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  69,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-FILE-STATUS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  70,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-CFG-STATUS",
-                       "pic":  "XX.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  71,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-PORT-STATUS",
-                       "pic":  "XX.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  72,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TRAN-STATUS",
-                       "pic":  "XX.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  73,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-RAND-STATUS",
-                       "pic":  "XX.",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  75,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-TEST-TYPES",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  76,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "PORTFOLIO",
-                       "name":  "WS-PORTFOLIO",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  77,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "TRANSACTN",
-                       "name":  "WS-TRANSACTION",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  78,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ERROR",
-                       "name":  "WS-ERROR-TEST",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  79,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "VOLUME",
-                       "name":  "WS-VOLUME-TEST",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  81,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-PROCESSING-FLAGS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  82,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "N",
-                       "name":  "WS-END-OF-CONFIG",
-                       "pic":  "X",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  83,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "Y",
-                       "name":  "END-OF-CONFIG",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  85,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-COUNTERS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  86,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-RECORDS-WRITTEN",
-                       "pic":  "9(9)",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  87,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  "ZERO",
-                       "name":  "WS-ERROR-COUNT",
-                       "pic":  "9(9)",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  89,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-RANDOM-VALUES",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  90,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-RANDOM-SEED",
-                       "pic":  "9(9).",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  91,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-RANDOM-NUM",
-                       "pic":  "9(9).",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  92,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-RANDOM-DECIMAL",
-                       "pic":  "9(9)V99.",
-                       "length":  9,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  94,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-PORTFOLIO-DATA",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  95,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-PORT-ID",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  96,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-PORT-NAME",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  97,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-PORT-TYPE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  98,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-PORT-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  99,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-PORT-BALANCE",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  101,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-TRANSACTION-DATA",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  102,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TRAN-ID",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  103,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TRAN-TYPE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  104,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TRAN-AMOUNT",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  105,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TRAN-DATE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  106,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-TRAN-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   }
-               ],
-    "issues":  [
-
-               ]
+{
+  "id": "TSTGEN00_WS",
+  "source_type": "program_ws",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\test\\TSTGEN00.cbl",
+  "used_by_programs": [
+    "TSTGEN00"
+  ],
+  "total_fields": 34,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "COPY_RTNCODE",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "RTNCODE",
+      "line": 66,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "COPY_ERRHAND",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "ERRHAND",
+      "line": 67,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-FILE-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 69,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-CFG-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 70,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PORT-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 71,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TRAN-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 72,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-RAND-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 73,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-TEST-TYPES",
+      "pic": null,
+      "type": "GROUP",
+      "line": 75,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PORTFOLIO",
+      "pic": null,
+      "type": "GROUP",
+      "line": 76,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TRANSACTION",
+      "pic": null,
+      "type": "GROUP",
+      "line": 77,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ERROR-TEST",
+      "pic": null,
+      "type": "GROUP",
+      "line": 78,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-VOLUME-TEST",
+      "pic": null,
+      "type": "GROUP",
+      "line": 79,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-PROCESSING-FLAGS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 81,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-END-OF-CONFIG",
+      "pic": null,
+      "type": "GROUP",
+      "line": 82,
+      "children": []
+    },
+    {
+      "level": 88,
+      "name": "END-OF-CONFIG",
+      "pic": null,
+      "type": "GROUP",
+      "line": 83,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-COUNTERS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 85,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-RECORDS-WRITTEN",
+      "pic": null,
+      "type": "GROUP",
+      "line": 86,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ERROR-COUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 87,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-RANDOM-VALUES",
+      "pic": null,
+      "type": "GROUP",
+      "line": 89,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-RANDOM-SEED",
+      "pic": null,
+      "type": "GROUP",
+      "line": 90,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-RANDOM-NUM",
+      "pic": null,
+      "type": "GROUP",
+      "line": 91,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-RANDOM-DECIMAL",
+      "pic": null,
+      "type": "GROUP",
+      "line": 92,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-PORTFOLIO-DATA",
+      "pic": null,
+      "type": "GROUP",
+      "line": 94,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PORT-ID",
+      "pic": null,
+      "type": "GROUP",
+      "line": 95,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PORT-NAME",
+      "pic": null,
+      "type": "GROUP",
+      "line": 96,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PORT-TYPE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 97,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PORT-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 98,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PORT-BALANCE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 99,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-TRANSACTION-DATA",
+      "pic": null,
+      "type": "GROUP",
+      "line": 101,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TRAN-ID",
+      "pic": null,
+      "type": "GROUP",
+      "line": 102,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TRAN-TYPE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 103,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TRAN-AMOUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 104,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TRAN-DATE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 105,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-TRAN-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 106,
+      "children": []
+    }
+  ],
+  "layout_issues": []
 }

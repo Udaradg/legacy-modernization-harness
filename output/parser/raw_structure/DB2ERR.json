@@ -1,86 +1,526 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "DBTBLS",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "SQLCA",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "DBPROC",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "ERRHAND",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  200,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\DB2ERR.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  56,
-                           "name":  "0000-MAIN",
-                           "start_line":  56
-                       },
-                       {
-                           "end_line":  72,
-                           "name":  "1000-LOG-ERROR",
-                           "start_line":  72
-                       },
-                       {
-                           "end_line":  100,
-                           "name":  "1100-SET-SEVERITY",
-                           "start_line":  100
-                       },
-                       {
-                           "end_line":  126,
-                           "name":  "1200-INSERT-ERROR",
-                           "start_line":  126
-                       },
-                       {
-                           "end_line":  140,
-                           "name":  "2000-DIAGNOSE-ERROR",
-                           "start_line":  140
-                       },
-                       {
-                           "end_line":  171,
-                           "name":  "3000-RETRIEVE-ERROR",
-                           "start_line":  171
-                       },
-                       {
-                           "end_line":  196,
-                           "name":  "9000-ERROR-ROUTINE",
-                           "start_line":  196
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  14,
-                                          "start_line":  10
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  200,
-                                        "start_line":  55
-                                    },
-                      "DATA":  {
-                                   "end_line":  54,
-                                   "start_line":  15
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  9,
-                                             "start_line":  7
-                                         }
-                  },
-    "program_id":  "DB2ERR",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "DB2ERR",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\common\\DB2ERR.cbl",
+    "total_lines": 200
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 7,
+    "end_line": 9,
+    "program_id": "DB2ERR"
+  },
+  "data_division": {
+    "start_line": 15,
+    "end_line": 54,
+    "file_section": {
+      "entries": []
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "WS-ERRLOG-REC",
+          "line": 18,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-CURRENT-TIMESTAMP",
+          "line": 28,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-FORMATTED-SQLCODE",
+          "line": 29,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-ERROR-CATEGORIES",
+          "line": 31,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DEADLOCK",
+          "line": 32,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "-911",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-TIMEOUT",
+          "line": 33,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "-913",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-CONNECTION-ERROR",
+          "line": 34,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "-30081",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-DUP-KEY",
+          "line": 35,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "-803",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-NOT-FOUND",
+          "line": 36,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        }
+      ],
+      "start_line": 16
+    },
+    "linkage_section": {
+      "entries": [
+        {
+          "level": 1,
+          "name": "LS-ERROR-REQUEST",
+          "line": 39,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-FUNCTION",
+          "line": 40,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "FUNC-LOG",
+          "line": 41,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'LOG '",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "FUNC-DIAG",
+          "line": 42,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'DIAG'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "FUNC-RETR",
+          "line": 43,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'RETR'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-PROGRAM-ID",
+          "line": 44,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-ERROR-INFO",
+          "line": 45,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "LS-SQLCODE",
+          "line": 46,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "LS-SQLSTATE",
+          "line": 47,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "LS-ERROR-TEXT",
+          "line": 48,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-ADDITIONAL-INFO",
+          "line": 49,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-RETURN-CODE",
+          "line": 50,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "LS-RETRY-FLAG",
+          "line": 51,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "LS-SHOULD-RETRY",
+          "line": 52,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Y'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "LS-NO-RETRY",
+          "line": 53,
+          "section": "LINKAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        }
+      ],
+      "start_line": 38
+    }
+  },
+  "procedure_division": {
+    "start_line": 55,
+    "end_line": 200,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 56,
+        "end_line": 71,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-LOG-ERROR",
+        "section": null,
+        "start_line": 72,
+        "end_line": 99,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1100-SET-SEVERITY",
+        "section": null,
+        "start_line": 100,
+        "end_line": 125,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1200-INSERT-ERROR",
+        "section": null,
+        "start_line": 126,
+        "end_line": 139,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-DIAGNOSE-ERROR",
+        "section": null,
+        "start_line": 140,
+        "end_line": 170,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-RETRIEVE-ERROR",
+        "section": null,
+        "start_line": 171,
+        "end_line": 195,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "9000-ERROR-ROUTINE",
+        "section": null,
+        "start_line": 196,
+        "end_line": 200,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 69
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 56,
+        "end_line": 71,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-LOG-ERROR",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 72,
+        "end_line": 99,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1100-SET-SEVERITY",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 100,
+        "end_line": 125,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1200-INSERT-ERROR",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 126,
+        "end_line": 139,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-DIAGNOSE-ERROR",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 140,
+        "end_line": 170,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-RETRIEVE-ERROR",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 171,
+        "end_line": 195,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "9000-ERROR-ROUTINE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 196,
+        "end_line": 200,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 59,
+        "unstructured": false,
+        "to": "1000-LOG-ERROR"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 61,
+        "unstructured": false,
+        "to": "2000-DIAGNOSE-ERROR"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 63,
+        "unstructured": false,
+        "to": "3000-RETRIEVE-ERROR"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 66,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "1000-LOG-ERROR",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 81,
+        "unstructured": false,
+        "to": "1100-SET-SEVERITY"
+      },
+      {
+        "from": "1000-LOG-ERROR",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 97,
+        "unstructured": false,
+        "to": "1200-INSERT-ERROR"
+      },
+      {
+        "from": "1200-INSERT-ERROR",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 136,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      }
+    ],
+    "dead_code_candidates": [],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

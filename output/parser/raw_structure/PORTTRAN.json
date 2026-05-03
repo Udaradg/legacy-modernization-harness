@@ -1,131 +1,741 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "TRNREC",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "PORTREC",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "ERRHAND",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "AUDITLOG",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  317,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTTRAN.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  60,
-                           "name":  "0000-MAIN",
-                           "start_line":  60
-                       },
-                       {
-                           "end_line":  74,
-                           "name":  "1000-INITIALIZE",
-                           "start_line":  74
-                       },
-                       {
-                           "end_line":  92,
-                           "name":  "2000-PROCESS-TRANSACTIONS",
-                           "start_line":  92
-                       },
-                       {
-                           "end_line":  102,
-                           "name":  "2100-VALIDATE-TRANSACTION",
-                           "start_line":  102
-                       },
-                       {
-                           "end_line":  120,
-                           "name":  "2110-CHECK-PORTFOLIO",
-                           "start_line":  120
-                       },
-                       {
-                           "end_line":  136,
-                           "name":  "2120-CHECK-TRANSACTION-TYPE",
-                           "start_line":  136
-                       },
-                       {
-                           "end_line":  151,
-                           "name":  "2130-CHECK-AMOUNTS",
-                           "start_line":  151
-                       },
-                       {
-                           "end_line":  167,
-                           "name":  "2200-UPDATE-POSITIONS",
-                           "start_line":  167
-                       },
-                       {
-                           "end_line":  182,
-                           "name":  "2210-PROCESS-BUY",
-                           "start_line":  182
-                       },
-                       {
-                           "end_line":  201,
-                           "name":  "2220-PROCESS-SELL",
-                           "start_line":  201
-                       },
-                       {
-                           "end_line":  226,
-                           "name":  "2230-PROCESS-TRANSFER",
-                           "start_line":  226
-                       },
-                       {
-                           "end_line":  231,
-                           "name":  "2240-PROCESS-FEE",
-                           "start_line":  231
-                       },
-                       {
-                           "end_line":  249,
-                           "name":  "2300-UPDATE-AUDIT-TRAIL",
-                           "start_line":  249
-                       },
-                       {
-                           "end_line":  292,
-                           "name":  "2310-WRITE-AUDIT-RECORD",
-                           "start_line":  292
-                       },
-                       {
-                           "end_line":  302,
-                           "name":  "3000-TERMINATE",
-                           "start_line":  302
-                       },
-                       {
-                           "end_line":  311,
-                           "name":  "9000-ERROR-ROUTINE",
-                           "start_line":  311
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  29,
-                                          "start_line":  10
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  317,
-                                        "start_line":  59
-                                    },
-                      "DATA":  {
-                                   "end_line":  58,
-                                   "start_line":  30
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  9,
-                                             "start_line":  7
-                                         }
-                  },
-    "program_id":  "PORTTRAN",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "PORTTRAN",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\portfolio\\PORTTRAN.cbl",
+    "total_lines": 317
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 7,
+    "end_line": 9,
+    "program_id": "PORTTRAN"
+  },
+  "data_division": {
+    "start_line": 30,
+    "end_line": 58,
+    "file_section": {
+      "entries": [
+        {
+          "type": "FD",
+          "file_name": "TRANSACTION-FILE",
+          "line": 32,
+          "end_line": 36,
+          "recording_mode": "F",
+          "record_contains": null,
+          "block_contains": "0"
+        },
+        {
+          "type": "FD",
+          "file_name": "PORTFOLIO-FILE",
+          "line": 37,
+          "end_line": 41,
+          "recording_mode": "F",
+          "record_contains": null,
+          "block_contains": "0"
+        }
+      ],
+      "start_line": 31
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "type": "copy_stub",
+          "copybook": "ERRHAND",
+          "library": null,
+          "line": 43,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "type": "copy_stub",
+          "copybook": "AUDITLOG",
+          "library": null,
+          "line": 44,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "level": 1,
+          "name": "WS-FILE-STATUS",
+          "line": 46,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-TRAN-STATUS",
+          "line": 47,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-PORT-STATUS",
+          "line": 48,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-COUNTERS",
+          "line": 50,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-READ-COUNT",
+          "line": 51,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-PROCESS-COUNT",
+          "line": 52,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ERROR-COUNT",
+          "line": 53,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-EOF-FLAG",
+          "line": 55,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "END-OF-FILE",
+          "line": 56,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Y'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "MORE-RECORDS",
+          "line": 57,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        }
+      ],
+      "start_line": 42
+    },
+    "linkage_section": {
+      "entries": []
+    }
+  },
+  "procedure_division": {
+    "start_line": 59,
+    "end_line": 317,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 60,
+        "end_line": 73,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-INITIALIZE",
+        "section": null,
+        "start_line": 74,
+        "end_line": 91,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-PROCESS-TRANSACTIONS",
+        "section": null,
+        "start_line": 92,
+        "end_line": 101,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2100-VALIDATE-TRANSACTION",
+        "section": null,
+        "start_line": 102,
+        "end_line": 119,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2110-CHECK-PORTFOLIO",
+        "section": null,
+        "start_line": 120,
+        "end_line": 135,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2120-CHECK-TRANSACTION-TYPE",
+        "section": null,
+        "start_line": 136,
+        "end_line": 150,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2130-CHECK-AMOUNTS",
+        "section": null,
+        "start_line": 151,
+        "end_line": 166,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2200-UPDATE-POSITIONS",
+        "section": null,
+        "start_line": 167,
+        "end_line": 181,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2210-PROCESS-BUY",
+        "section": null,
+        "start_line": 182,
+        "end_line": 200,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2220-PROCESS-SELL",
+        "section": null,
+        "start_line": 201,
+        "end_line": 225,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2230-PROCESS-TRANSFER",
+        "section": null,
+        "start_line": 226,
+        "end_line": 230,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2240-PROCESS-FEE",
+        "section": null,
+        "start_line": 231,
+        "end_line": 248,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2300-UPDATE-AUDIT-TRAIL",
+        "section": null,
+        "start_line": 249,
+        "end_line": 291,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2310-WRITE-AUDIT-RECORD",
+        "section": null,
+        "start_line": 292,
+        "end_line": 301,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-TERMINATE",
+        "section": null,
+        "start_line": 302,
+        "end_line": 310,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "9000-ERROR-ROUTINE",
+        "section": null,
+        "start_line": 311,
+        "end_line": 317,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 71
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 60,
+        "end_line": 73,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-INITIALIZE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 74,
+        "end_line": 91,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-PROCESS-TRANSACTIONS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 92,
+        "end_line": 101,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2100-VALIDATE-TRANSACTION",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 102,
+        "end_line": 119,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2110-CHECK-PORTFOLIO",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 120,
+        "end_line": 135,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2120-CHECK-TRANSACTION-TYPE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 136,
+        "end_line": 150,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2130-CHECK-AMOUNTS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 151,
+        "end_line": 166,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2200-UPDATE-POSITIONS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 167,
+        "end_line": 181,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2210-PROCESS-BUY",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 182,
+        "end_line": 200,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2220-PROCESS-SELL",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 201,
+        "end_line": 225,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2230-PROCESS-TRANSFER",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 226,
+        "end_line": 230,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2240-PROCESS-FEE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 231,
+        "end_line": 248,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2300-UPDATE-AUDIT-TRAIL",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 249,
+        "end_line": 291,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2310-WRITE-AUDIT-RECORD",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 292,
+        "end_line": 301,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-TERMINATE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 302,
+        "end_line": 310,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "9000-ERROR-ROUTINE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 311,
+        "end_line": 317,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 61,
+        "unstructured": false,
+        "to": "1000-INITIALIZE"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 64,
+        "unstructured": false,
+        "to": "2000-PROCESS-TRANSACTIONS"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 69,
+        "unstructured": false,
+        "to": "3000-TERMINATE"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 82,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 88,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2000-PROCESS-TRANSACTIONS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 98,
+        "unstructured": false,
+        "to": "2100-VALIDATE-TRANSACTION"
+      },
+      {
+        "from": "2100-VALIDATE-TRANSACTION",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 105,
+        "unstructured": false,
+        "to": "2110-CHECK-PORTFOLIO"
+      },
+      {
+        "from": "2100-VALIDATE-TRANSACTION",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 107,
+        "unstructured": false,
+        "to": "2120-CHECK-TRANSACTION-TYPE"
+      },
+      {
+        "from": "2100-VALIDATE-TRANSACTION",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 110,
+        "unstructured": false,
+        "to": "2130-CHECK-AMOUNTS"
+      },
+      {
+        "from": "2100-VALIDATE-TRANSACTION",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 116,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2200-UPDATE-POSITIONS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 170,
+        "unstructured": false,
+        "to": "2210-PROCESS-BUY"
+      },
+      {
+        "from": "2200-UPDATE-POSITIONS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 172,
+        "unstructured": false,
+        "to": "2220-PROCESS-SELL"
+      },
+      {
+        "from": "2200-UPDATE-POSITIONS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 174,
+        "unstructured": false,
+        "to": "2230-PROCESS-TRANSFER"
+      },
+      {
+        "from": "2200-UPDATE-POSITIONS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 176,
+        "unstructured": false,
+        "to": "2240-PROCESS-FEE"
+      },
+      {
+        "from": "2200-UPDATE-POSITIONS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 179,
+        "unstructured": false,
+        "to": "2300-UPDATE-AUDIT-TRAIL"
+      },
+      {
+        "from": "2210-PROCESS-BUY",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 187,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2210-PROCESS-BUY",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 197,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2220-PROCESS-SELL",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 206,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2220-PROCESS-SELL",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 212,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2220-PROCESS-SELL",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 222,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2230-PROCESS-TRANSFER",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 228,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2240-PROCESS-FEE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 236,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2240-PROCESS-FEE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 245,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2300-UPDATE-AUDIT-TRAIL",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 289,
+        "unstructured": false,
+        "to": "2310-WRITE-AUDIT-RECORD"
+      },
+      {
+        "from": "2310-WRITE-AUDIT-RECORD",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 298,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      }
+    ],
+    "dead_code_candidates": [
+      "2200-UPDATE-POSITIONS"
+    ],
+    "unstructured_constructs": [],
+    "cfg_issues": []
+  }
 }

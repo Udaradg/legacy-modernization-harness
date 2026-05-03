@@ -1,143 +1,794 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "HISTREC",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "BCHCTL",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "DBTBLS",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "SQLCA",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "DBPROC",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "ERRHAND",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "BCHCON",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  233,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\HISTLD00.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  67,
-                           "name":  "0000-MAIN",
-                           "start_line":  67
-                       },
-                       {
-                           "end_line":  80,
-                           "name":  "1000-INITIALIZE",
-                           "start_line":  80
-                       },
-                       {
-                           "end_line":  86,
-                           "name":  "2000-PROCESS",
-                           "start_line":  86
-                       },
-                       {
-                           "end_line":  95,
-                           "name":  "3000-TERMINATE",
-                           "start_line":  95
-                       },
-                       {
-                           "end_line":  102,
-                           "name":  "1100-OPEN-FILES",
-                           "start_line":  102
-                       },
-                       {
-                           "end_line":  116,
-                           "name":  "1200-CONNECT-DB2",
-                           "start_line":  116
-                       },
-                       {
-                           "end_line":  120,
-                           "name":  "1300-INIT-CHECKPOINTS",
-                           "start_line":  120
-                       },
-                       {
-                           "end_line":  134,
-                           "name":  "2100-READ-HISTORY",
-                           "start_line":  134
-                       },
-                       {
-                           "end_line":  143,
-                           "name":  "2200-LOAD-TO-DB2",
-                           "start_line":  143
-                       },
-                       {
-                           "end_line":  177,
-                           "name":  "2300-CHECK-COMMIT",
-                           "start_line":  177
-                       },
-                       {
-                           "end_line":  191,
-                           "name":  "2310-UPDATE-CHECKPOINT",
-                           "start_line":  191
-                       },
-                       {
-                           "end_line":  202,
-                           "name":  "3100-FINAL-COMMIT",
-                           "start_line":  202
-                       },
-                       {
-                           "end_line":  210,
-                           "name":  "3200-CLOSE-FILES",
-                           "start_line":  210
-                       },
-                       {
-                           "end_line":  215,
-                           "name":  "3300-DISCONNECT-DB2",
-                           "start_line":  215
-                       },
-                       {
-                           "end_line":  219,
-                           "name":  "3400-DISPLAY-STATS",
-                           "start_line":  219
-                       },
-                       {
-                           "end_line":  226,
-                           "name":  "9000-ERROR-ROUTINE",
-                           "start_line":  226
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  30,
-                                          "start_line":  10
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  233,
-                                        "start_line":  66
-                                    },
-                      "DATA":  {
-                                   "end_line":  65,
-                                   "start_line":  31
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  9,
-                                             "start_line":  7
-                                         }
-                  },
-    "program_id":  "HISTLD00",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "HISTLD00",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\HISTLD00.cbl",
+    "total_lines": 233
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 7,
+    "end_line": 9,
+    "program_id": "HISTLD00"
+  },
+  "data_division": {
+    "start_line": 31,
+    "end_line": 65,
+    "file_section": {
+      "entries": [
+        {
+          "type": "FD",
+          "file_name": "TRANSACTION-HISTORY",
+          "line": 33,
+          "end_line": 35,
+          "recording_mode": null,
+          "record_contains": null,
+          "block_contains": null
+        },
+        {
+          "type": "FD",
+          "file_name": "BATCH-CONTROL-FILE",
+          "line": 36,
+          "end_line": 38,
+          "recording_mode": null,
+          "record_contains": null,
+          "block_contains": null
+        }
+      ],
+      "start_line": 32
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "type": "copy_stub",
+          "copybook": "DBTBLS",
+          "library": null,
+          "line": 41,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "type": "copy_stub",
+          "copybook": "SQLCA",
+          "library": null,
+          "line": 44,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "type": "copy_stub",
+          "copybook": "DBPROC",
+          "library": null,
+          "line": 45,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "type": "copy_stub",
+          "copybook": "ERRHAND",
+          "library": null,
+          "line": 46,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "type": "copy_stub",
+          "copybook": "BCHCON",
+          "library": null,
+          "line": 47,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "level": 1,
+          "name": "WS-FILE-STATUS",
+          "line": 49,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-TH-STATUS",
+          "line": 50,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-BCT-STATUS",
+          "line": 51,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-COUNTERS",
+          "line": 53,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-RECORDS-READ",
+          "line": 54,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "0",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-RECORDS-WRITTEN",
+          "line": 55,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "0",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ERROR-COUNT",
+          "line": 56,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "0",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-COMMIT-COUNT",
+          "line": 57,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "0",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-COMMIT-THRESHOLD",
+          "line": 59,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "1000",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-SWITCHES",
+          "line": 61,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-END-OF-FILE-SW",
+          "line": 62,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "END-OF-FILE",
+          "line": 63,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Y'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "MORE-RECORDS",
+          "line": 64,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        }
+      ],
+      "start_line": 39
+    },
+    "linkage_section": {
+      "entries": []
+    }
+  },
+  "procedure_division": {
+    "start_line": 66,
+    "end_line": 233,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 67,
+        "end_line": 79,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-INITIALIZE",
+        "section": null,
+        "start_line": 80,
+        "end_line": 85,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-PROCESS",
+        "section": null,
+        "start_line": 86,
+        "end_line": 94,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-TERMINATE",
+        "section": null,
+        "start_line": 95,
+        "end_line": 101,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1100-OPEN-FILES",
+        "section": null,
+        "start_line": 102,
+        "end_line": 115,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1200-CONNECT-DB2",
+        "section": null,
+        "start_line": 116,
+        "end_line": 119,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1300-INIT-CHECKPOINTS",
+        "section": null,
+        "start_line": 120,
+        "end_line": 133,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2100-READ-HISTORY",
+        "section": null,
+        "start_line": 134,
+        "end_line": 142,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2200-LOAD-TO-DB2",
+        "section": null,
+        "start_line": 143,
+        "end_line": 176,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2300-CHECK-COMMIT",
+        "section": null,
+        "start_line": 177,
+        "end_line": 190,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2310-UPDATE-CHECKPOINT",
+        "section": null,
+        "start_line": 191,
+        "end_line": 201,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3100-FINAL-COMMIT",
+        "section": null,
+        "start_line": 202,
+        "end_line": 209,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3200-CLOSE-FILES",
+        "section": null,
+        "start_line": 210,
+        "end_line": 214,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3300-DISCONNECT-DB2",
+        "section": null,
+        "start_line": 215,
+        "end_line": 218,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3400-DISPLAY-STATS",
+        "section": null,
+        "start_line": 219,
+        "end_line": 225,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "9000-ERROR-ROUTINE",
+        "section": null,
+        "start_line": 226,
+        "end_line": 233,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 77
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 67,
+        "end_line": 79,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-INITIALIZE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 80,
+        "end_line": 85,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-PROCESS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 86,
+        "end_line": 94,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-TERMINATE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 95,
+        "end_line": 101,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1100-OPEN-FILES",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 102,
+        "end_line": 115,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1200-CONNECT-DB2",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 116,
+        "end_line": 119,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1300-INIT-CHECKPOINTS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 120,
+        "end_line": 133,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2100-READ-HISTORY",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 134,
+        "end_line": 142,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2200-LOAD-TO-DB2",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 143,
+        "end_line": 176,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2300-CHECK-COMMIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 177,
+        "end_line": 190,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2310-UPDATE-CHECKPOINT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 191,
+        "end_line": 201,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3100-FINAL-COMMIT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 202,
+        "end_line": 209,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3200-CLOSE-FILES",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 210,
+        "end_line": 214,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3300-DISCONNECT-DB2",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 215,
+        "end_line": 218,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3400-DISPLAY-STATS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 219,
+        "end_line": 225,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "9000-ERROR-ROUTINE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 226,
+        "end_line": 233,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 68,
+        "unstructured": false,
+        "to": "1000-INITIALIZE"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 70,
+        "unstructured": false,
+        "to": "2000-PROCESS"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 74,
+        "unstructured": false,
+        "to": "3000-TERMINATE"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 81,
+        "unstructured": false,
+        "to": "1100-OPEN-FILES"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 82,
+        "unstructured": false,
+        "to": "1200-CONNECT-DB2"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 83,
+        "unstructured": false,
+        "to": "1300-INIT-CHECKPOINTS"
+      },
+      {
+        "from": "2000-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 87,
+        "unstructured": false,
+        "to": "2100-READ-HISTORY"
+      },
+      {
+        "from": "2000-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 90,
+        "unstructured": false,
+        "to": "2200-LOAD-TO-DB2"
+      },
+      {
+        "from": "2000-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 91,
+        "unstructured": false,
+        "to": "2300-CHECK-COMMIT"
+      },
+      {
+        "from": "3000-TERMINATE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 96,
+        "unstructured": false,
+        "to": "3100-FINAL-COMMIT"
+      },
+      {
+        "from": "3000-TERMINATE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 97,
+        "unstructured": false,
+        "to": "3200-CLOSE-FILES"
+      },
+      {
+        "from": "3000-TERMINATE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 98,
+        "unstructured": false,
+        "to": "3300-DISCONNECT-DB2"
+      },
+      {
+        "from": "3000-TERMINATE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 99,
+        "unstructured": false,
+        "to": "3400-DISPLAY-STATS"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 106,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 112,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "1200-CONNECT-DB2",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 117,
+        "unstructured": false,
+        "to": "CONNECT-TO-DB2"
+      },
+      {
+        "from": "1300-INIT-CHECKPOINTS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 127,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "2200-LOAD-TO-DB2",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 172,
+        "unstructured": false,
+        "to": "DB2-ERROR-ROUTINE"
+      },
+      {
+        "from": "2300-CHECK-COMMIT",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 187,
+        "unstructured": false,
+        "to": "2310-UPDATE-CHECKPOINT"
+      },
+      {
+        "from": "2310-UPDATE-CHECKPOINT",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 198,
+        "unstructured": false,
+        "to": "9000-ERROR-ROUTINE"
+      },
+      {
+        "from": "3100-FINAL-COMMIT",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 207,
+        "unstructured": false,
+        "to": "2310-UPDATE-CHECKPOINT"
+      },
+      {
+        "from": "3300-DISCONNECT-DB2",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 216,
+        "unstructured": false,
+        "to": "DISCONNECT-FROM-DB2"
+      }
+    ],
+    "dead_code_candidates": [],
+    "unstructured_constructs": [],
+    "cfg_issues": [
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "1200-CONNECT-DB2",
+        "target": "CONNECT-TO-DB2",
+        "message": "Control transfer target 'CONNECT-TO-DB2' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2200-LOAD-TO-DB2",
+        "target": "DB2-ERROR-ROUTINE",
+        "message": "Control transfer target 'DB2-ERROR-ROUTINE' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "3300-DISCONNECT-DB2",
+        "target": "DISCONNECT-FROM-DB2",
+        "message": "Control transfer target 'DISCONNECT-FROM-DB2' not found in paragraph list"
+      }
+    ]
+  }
 }

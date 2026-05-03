@@ -1,310 +1,151 @@
-﻿{
-    "record_name":  "PRCSEQ00_WS",
-    "source_type":  "program_ws",
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\PRCSEQ00.cbl",
-    "fields":  [
-                   {
-                       "line":  43,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-FILE-STATUS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  44,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-PSR-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  45,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-BCT-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  47,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-WORK-AREAS",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  48,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-CURRENT-TIME",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  49,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-SEQUENCE-IX",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  50,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-PROCESS-COUNT",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  51,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-ACTIVE-COUNT",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  52,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-ERROR-COUNT",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  54,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "WS-PROCESS-TABLE",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  55,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "WS-PROC-ENTRY",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  100
-                   },
-                   {
-                       "line":  57,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "WS-PROC-ID",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  58,
-                       "type":  "INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "WS-PROC-SEQ",
-                       "pic":  "9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  59,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "WS-PROC-STATUS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  60,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  10,
-                       "value":  null,
-                       "name":  "WS-PROC-RC",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  63,
-                       "type":  "UNKNOWN",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  1,
-                       "value":  null,
-                       "name":  "LS-SEQUENCE-REQUEST",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  64,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "LS-FUNCTION",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  65,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "INIT",
-                       "name":  "FUNC-INIT",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  66,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "NEXT",
-                       "name":  "FUNC-NEXT",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  67,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "STAT",
-                       "name":  "FUNC-STAT",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  68,
-                       "type":  "UNKNOWN",
-                       "is_condition":  true,
-                       "redefines":  null,
-                       "level":  88,
-                       "value":  "TERM",
-                       "name":  "FUNC-TERM",
-                       "pic":  null,
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  69,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "LS-PROCESS-DATE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  70,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "LS-SEQUENCE-TYPE",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  71,
-                       "type":  "STRING",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "LS-NEXT-PROCESS",
-                       "pic":  "X(",
-                       "length":  0,
-                       "occurs":  null
-                   },
-                   {
-                       "line":  72,
-                       "type":  "SIGNED_INTEGER",
-                       "is_condition":  false,
-                       "redefines":  null,
-                       "level":  5,
-                       "value":  null,
-                       "name":  "LS-RETURN-CODE",
-                       "pic":  "S9(",
-                       "length":  0,
-                       "occurs":  null
-                   }
-               ],
-    "issues":  [
-
-               ]
+{
+  "id": "PRCSEQ00_WS",
+  "source_type": "program_ws",
+  "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\batch\\PRCSEQ00.cbl",
+  "used_by_programs": [
+    "PRCSEQ00"
+  ],
+  "total_fields": 17,
+  "total_bytes": 0,
+  "records": [
+    {
+      "level": 1,
+      "name": "COPY_BCHCON",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "BCHCON",
+      "line": 40,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "COPY_ERRHAND",
+      "pic": null,
+      "type": "COPY_STUB",
+      "copy_copybook": "ERRHAND",
+      "line": 41,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-FILE-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 43,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PSR-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 44,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-BCT-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 45,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-WORK-AREAS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 47,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-CURRENT-TIME",
+      "pic": null,
+      "type": "GROUP",
+      "line": 48,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-SEQUENCE-IX",
+      "pic": null,
+      "type": "GROUP",
+      "line": 49,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PROCESS-COUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 50,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ACTIVE-COUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 51,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-ERROR-COUNT",
+      "pic": null,
+      "type": "GROUP",
+      "line": 52,
+      "children": []
+    },
+    {
+      "level": 1,
+      "name": "WS-PROCESS-TABLE",
+      "pic": null,
+      "type": "GROUP",
+      "line": 54,
+      "children": []
+    },
+    {
+      "level": 5,
+      "name": "WS-PROC-ENTRY",
+      "pic": null,
+      "type": "GROUP",
+      "line": 55,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "WS-PROC-ID",
+      "pic": null,
+      "type": "GROUP",
+      "line": 57,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "WS-PROC-SEQ",
+      "pic": null,
+      "type": "GROUP",
+      "line": 58,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "WS-PROC-STATUS",
+      "pic": null,
+      "type": "GROUP",
+      "line": 59,
+      "children": []
+    },
+    {
+      "level": 10,
+      "name": "WS-PROC-RC",
+      "pic": null,
+      "type": "GROUP",
+      "line": 60,
+      "children": []
+    }
+  ],
+  "layout_issues": []
 }

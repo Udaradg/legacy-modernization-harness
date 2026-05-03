@@ -1,93 +1,1109 @@
-﻿{
-    "data_items":  [
-                       {
-                           "name":  "RTNCODE",
-                           "type":  "copy"
-                       },
-                       {
-                           "name":  "ERRHAND",
-                           "type":  "copy"
-                       }
-                   ],
-    "total_lines":  225,
-    "source_file":  "C:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\test\\TSTVAL00.cbl",
-    "paragraphs":  [
-                       {
-                           "end_line":  128,
-                           "name":  "0000-MAIN",
-                           "start_line":  128
-                       },
-                       {
-                           "end_line":  134,
-                           "name":  "1000-INITIALIZE",
-                           "start_line":  134
-                       },
-                       {
-                           "end_line":  139,
-                           "name":  "1100-OPEN-FILES",
-                           "start_line":  139
-                       },
-                       {
-                           "end_line":  168,
-                           "name":  "1200-WRITE-HEADERS",
-                           "start_line":  168
-                       },
-                       {
-                           "end_line":  172,
-                           "name":  "1300-INIT-METRICS",
-                           "start_line":  172
-                       },
-                       {
-                           "end_line":  176,
-                           "name":  "2000-PROCESS",
-                           "start_line":  176
-                       },
-                       {
-                           "end_line":  187,
-                           "name":  "2100-EXECUTE-TEST",
-                           "start_line":  187
-                       },
-                       {
-                           "end_line":  206,
-                           "name":  "2900-WRITE-SUMMARY",
-                           "start_line":  206
-                       },
-                       {
-                           "end_line":  216,
-                           "name":  "3000-CLEANUP",
-                           "start_line":  216
-                       },
-                       {
-                           "end_line":  222,
-                           "name":  "9999-ERROR-HANDLER",
-                           "start_line":  222
-                       }
-                   ],
-    "divisions":  {
-                      "ENVIRONMENT":  {
-                                          "end_line":  39,
-                                          "start_line":  14
-                                      },
-                      "PROCEDURE":  {
-                                        "end_line":  225,
-                                        "start_line":  127
-                                    },
-                      "DATA":  {
-                                   "end_line":  126,
-                                   "start_line":  40
-                               },
-                      "IDENTIFICATION":  {
-                                             "end_line":  13,
-                                             "start_line":  1
-                                         }
-                  },
-    "program_id":  "TSTVAL00",
-    "control_flow":  {
-                         "perform_edges":  [
-
-                                           ],
-                         "goto_edges":  [
-
-                                        ]
-                     }
+{
+  "meta": {
+    "program_id": "TSTVAL00",
+    "source_file": "c:\\Projects\\Repos\\GitHub\\legacy-modernization-harness\\src\\programs\\test\\TSTVAL00.cbl",
+    "total_lines": 225
+  },
+  "parse_issues": [],
+  "identification_division": {
+    "start_line": 1,
+    "end_line": 13,
+    "program_id": "TSTVAL00",
+    "author": "CLAUDE.",
+    "date_written": "2024-04-09."
+  },
+  "data_division": {
+    "start_line": 40,
+    "end_line": 126,
+    "file_section": {
+      "entries": [
+        {
+          "type": "FD",
+          "file_name": "TEST-CASES",
+          "line": 42,
+          "end_line": 50,
+          "recording_mode": "F",
+          "record_contains": null,
+          "block_contains": "0"
+        },
+        {
+          "type": "FD",
+          "file_name": "EXPECTED-RESULTS",
+          "line": 51,
+          "end_line": 55,
+          "recording_mode": "F",
+          "record_contains": null,
+          "block_contains": "0"
+        },
+        {
+          "type": "FD",
+          "file_name": "ACTUAL-RESULTS",
+          "line": 56,
+          "end_line": 60,
+          "recording_mode": "F",
+          "record_contains": null,
+          "block_contains": "0"
+        },
+        {
+          "type": "FD",
+          "file_name": "TEST-REPORT",
+          "line": 61,
+          "end_line": 65,
+          "recording_mode": "F",
+          "record_contains": null,
+          "block_contains": "0"
+        }
+      ],
+      "start_line": 41
+    },
+    "working_storage_section": {
+      "entries": [
+        {
+          "type": "copy_stub",
+          "copybook": "RTNCODE",
+          "library": null,
+          "line": 67,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "type": "copy_stub",
+          "copybook": "ERRHAND",
+          "library": null,
+          "line": 68,
+          "section": "WORKING-STORAGE",
+          "note": "Expanded by Data Agent"
+        },
+        {
+          "level": 1,
+          "name": "WS-FILE-STATUS",
+          "line": 70,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-TEST-STATUS",
+          "line": 71,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-EXP-STATUS",
+          "line": 72,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ACT-STATUS",
+          "line": 73,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-RPT-STATUS",
+          "line": 74,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-TEST-TYPES",
+          "line": 76,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-FUNCTIONAL",
+          "line": 77,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'FUNCTIONAL'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-INTEGRATION",
+          "line": 78,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'INTEGRATE'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-PERFORMANCE",
+          "line": 79,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'PERFORM'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ERROR",
+          "line": 80,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'ERROR'",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-PROCESSING-FLAGS",
+          "line": 82,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-END-OF-TESTS",
+          "line": 83,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "END-OF-TESTS",
+          "line": 84,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Y'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-TEST-PASSED",
+          "line": 85,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'N'",
+          "children": []
+        },
+        {
+          "level": 88,
+          "name": "TEST-PASSED",
+          "line": 86,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'Y'",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-TEST-METRICS",
+          "line": 88,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-TOTAL-TESTS",
+          "line": 89,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ZERO",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-TESTS-PASSED",
+          "line": 90,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ZERO",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-TESTS-FAILED",
+          "line": 91,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ZERO",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-START-TIME",
+          "line": 92,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ZERO",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-END-TIME",
+          "line": 93,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ZERO",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-ELAPSED-TIME",
+          "line": 94,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ZERO",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-REPORT-HEADERS",
+          "line": 96,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-HEADER1",
+          "line": 97,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-97",
+          "line": 98,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "ALL",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-HEADER2",
+          "line": 99,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-99",
+          "line": 100,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-100",
+          "line": 101,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'TEST VALIDATION REPORT'",
+          "children": []
+        },
+        {
+          "level": 10,
+          "name": "FILLER-102",
+          "line": 103,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-TEST-DETAIL",
+          "line": 105,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-TEST-ID-OUT",
+          "line": 106,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "FILLER-106",
+          "line": 107,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-TEST-TYPE-OUT",
+          "line": 108,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "FILLER-108",
+          "line": 109,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-TEST-DESC-OUT",
+          "line": 110,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "FILLER-110",
+          "line": 111,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-TEST-STATUS-OUT",
+          "line": 112,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "FILLER-112",
+          "line": 113,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        },
+        {
+          "level": 1,
+          "name": "WS-SUMMARY-LINE",
+          "line": 115,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "FILLER-115",
+          "line": 116,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'TOTAL TESTS:'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-TOTAL-OUT",
+          "line": 117,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "FILLER-117",
+          "line": 118,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'  PASSED:'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-PASSED-OUT",
+          "line": 119,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "FILLER-119",
+          "line": 120,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'  FAILED:'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-FAILED-OUT",
+          "line": 121,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "FILLER-121",
+          "line": 122,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'  SUCCESS:'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "WS-SUCCESS-RATE",
+          "line": 123,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": null,
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "FILLER-123",
+          "line": 124,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "'%'",
+          "children": []
+        },
+        {
+          "level": 5,
+          "name": "FILLER-124",
+          "line": 125,
+          "section": "WORKING-STORAGE",
+          "pic": null,
+          "occurs": null,
+          "redefines": null,
+          "value": "SPACES",
+          "children": []
+        }
+      ],
+      "start_line": 66
+    },
+    "linkage_section": {
+      "entries": []
+    }
+  },
+  "procedure_division": {
+    "start_line": 127,
+    "end_line": 225,
+    "sections": [],
+    "paragraphs": [
+      {
+        "name": "0000-MAIN",
+        "section": null,
+        "start_line": 128,
+        "end_line": 133,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false,
+        "is_entry_point": true
+      },
+      {
+        "name": "1000-INITIALIZE",
+        "section": null,
+        "start_line": 134,
+        "end_line": 138,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1100-OPEN-FILES",
+        "section": null,
+        "start_line": 139,
+        "end_line": 167,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1200-WRITE-HEADERS",
+        "section": null,
+        "start_line": 168,
+        "end_line": 171,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "1300-INIT-METRICS",
+        "section": null,
+        "start_line": 172,
+        "end_line": 175,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2000-PROCESS",
+        "section": null,
+        "start_line": 176,
+        "end_line": 186,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2100-EXECUTE-TEST",
+        "section": null,
+        "start_line": 187,
+        "end_line": 205,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "2900-WRITE-SUMMARY",
+        "section": null,
+        "start_line": 206,
+        "end_line": 215,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "3000-CLEANUP",
+        "section": null,
+        "start_line": 216,
+        "end_line": 219,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "TEST-REPORT",
+        "section": null,
+        "start_line": 220,
+        "end_line": 221,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      },
+      {
+        "name": "9999-ERROR-HANDLER",
+        "section": null,
+        "start_line": 222,
+        "end_line": 225,
+        "has_perform": false,
+        "has_goto": false,
+        "has_call": false,
+        "has_stop_run": false
+      }
+    ],
+    "terminal_statements": [
+      {
+        "type": "GOBACK",
+        "line": 132
+      },
+      {
+        "type": "GOBACK",
+        "line": 225
+      }
+    ]
+  },
+  "control_flow_graph": {
+    "entry_points": [
+      "0000-MAIN"
+    ],
+    "terminal_nodes": [
+      "0000-MAIN",
+      "9999-ERROR-HANDLER"
+    ],
+    "nodes": [
+      {
+        "id": "0000-MAIN",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 128,
+        "end_line": 133,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1000-INITIALIZE",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 134,
+        "end_line": 138,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1100-OPEN-FILES",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 139,
+        "end_line": 167,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1200-WRITE-HEADERS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 168,
+        "end_line": 171,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "1300-INIT-METRICS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 172,
+        "end_line": 175,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2000-PROCESS",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 176,
+        "end_line": 186,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2100-EXECUTE-TEST",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 187,
+        "end_line": 205,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "2900-WRITE-SUMMARY",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 206,
+        "end_line": 215,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "3000-CLEANUP",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 216,
+        "end_line": 219,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "TEST-REPORT",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 220,
+        "end_line": 221,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      },
+      {
+        "id": "9999-ERROR-HANDLER",
+        "type": "paragraph",
+        "section": null,
+        "start_line": 222,
+        "end_line": 225,
+        "is_entry_point": false,
+        "is_terminal": false,
+        "is_dead_code": false,
+        "unstructured_constructs": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 129,
+        "unstructured": false,
+        "to": "1000-INITIALIZE"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 130,
+        "unstructured": false,
+        "to": "2000-PROCESS"
+      },
+      {
+        "from": "0000-MAIN",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 131,
+        "unstructured": false,
+        "to": "3000-CLEANUP"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 135,
+        "unstructured": false,
+        "to": "1100-OPEN-FILES"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 136,
+        "unstructured": false,
+        "to": "1200-WRITE-HEADERS"
+      },
+      {
+        "from": "1000-INITIALIZE",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 137,
+        "unstructured": false,
+        "to": "1300-INIT-METRICS"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 144,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 151,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 158,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "1100-OPEN-FILES",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 165,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "2000-PROCESS",
+        "type": "PERFORM_INLINE",
+        "resolved": true,
+        "source_line": 177,
+        "unstructured": false,
+        "to": "2000-PROCESS",
+        "inline": true
+      },
+      {
+        "from": "2000-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 182,
+        "unstructured": false,
+        "to": "2100-EXECUTE-TEST"
+      },
+      {
+        "from": "2000-PROCESS",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 185,
+        "unstructured": false,
+        "to": "2900-WRITE-SUMMARY"
+      },
+      {
+        "from": "2100-EXECUTE-TEST",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 190,
+        "unstructured": false,
+        "to": "2200-RUN-FUNCTIONAL-TEST"
+      },
+      {
+        "from": "2100-EXECUTE-TEST",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 192,
+        "unstructured": false,
+        "to": "2300-RUN-INTEGRATION-TEST"
+      },
+      {
+        "from": "2100-EXECUTE-TEST",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 194,
+        "unstructured": false,
+        "to": "2400-RUN-PERFORMANCE-TEST"
+      },
+      {
+        "from": "2100-EXECUTE-TEST",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 196,
+        "unstructured": false,
+        "to": "2500-RUN-ERROR-TEST"
+      },
+      {
+        "from": "2100-EXECUTE-TEST",
+        "type": "PERFORM_SIMPLE",
+        "resolved": true,
+        "source_line": 200,
+        "unstructured": false,
+        "to": "9999-ERROR-HANDLER"
+      },
+      {
+        "from": "2100-EXECUTE-TEST",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 202,
+        "unstructured": false,
+        "to": "2600-VALIDATE-RESULTS"
+      },
+      {
+        "from": "2100-EXECUTE-TEST",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 203,
+        "unstructured": false,
+        "to": "2700-UPDATE-METRICS"
+      },
+      {
+        "from": "2100-EXECUTE-TEST",
+        "type": "PERFORM_SIMPLE",
+        "resolved": false,
+        "source_line": 204,
+        "unstructured": false,
+        "to": "2800-WRITE-TEST-DETAIL"
+      }
+    ],
+    "dead_code_candidates": [
+      "TEST-REPORT"
+    ],
+    "unstructured_constructs": [],
+    "cfg_issues": [
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2100-EXECUTE-TEST",
+        "target": "2200-RUN-FUNCTIONAL-TEST",
+        "message": "Control transfer target '2200-RUN-FUNCTIONAL-TEST' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2100-EXECUTE-TEST",
+        "target": "2300-RUN-INTEGRATION-TEST",
+        "message": "Control transfer target '2300-RUN-INTEGRATION-TEST' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2100-EXECUTE-TEST",
+        "target": "2400-RUN-PERFORMANCE-TEST",
+        "message": "Control transfer target '2400-RUN-PERFORMANCE-TEST' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2100-EXECUTE-TEST",
+        "target": "2500-RUN-ERROR-TEST",
+        "message": "Control transfer target '2500-RUN-ERROR-TEST' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2100-EXECUTE-TEST",
+        "target": "2600-VALIDATE-RESULTS",
+        "message": "Control transfer target '2600-VALIDATE-RESULTS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2100-EXECUTE-TEST",
+        "target": "2700-UPDATE-METRICS",
+        "message": "Control transfer target '2700-UPDATE-METRICS' not found in paragraph list"
+      },
+      {
+        "severity": "warning",
+        "type": "unresolved_target",
+        "paragraph": "2100-EXECUTE-TEST",
+        "target": "2800-WRITE-TEST-DETAIL",
+        "message": "Control transfer target '2800-WRITE-TEST-DETAIL' not found in paragraph list"
+      }
+    ]
+  }
 }
