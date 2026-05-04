@@ -1,0 +1,4 @@
+rule_set_id,name,description,rule_count
+ERROR_HANDLING,Error Handling,Rules in the ERROR_HANDLING category,42
+VALIDATION,Validation,Rules in the VALIDATION category,43
+LIMIT_CHECK,Limit Check,Rules in the LIMIT_CHECK category,5
