@@ -1,21 +1,13 @@
 ---
 name: dependency-graph
-description: >
-  Reads the file_registry produced by the file-walker skill. Opens each
-  program file and scans for all outgoing cross-references: COPY statements,
-  static and dynamic CALLs, CICS LINK/XCTL commands, and SQL INCLUDEs.
-  Builds a directed dependency graph (nodes + typed edges), populates
-  copybook_map and used_by fields, and collects all issues. Produces the
-  final inventory_artifact.json schema sections: call_graph, copybook_map,
-  stats, and issues. Used exclusively by the Inventory Agent (1_inventory).
+description: Receives the lookup_registry produced by the file-walker skill and an ENTRY_POINT_FILE. Starting from the entry point, performs a breadth-first traversal of all COPY, static/dynamic CALL, CICS LINK/XCTL, and SQL INCLUDE references. Only files reachable (directly or transitively) from the entry point are included in the final output. Unreachable .cbl files that exist in the search root are silently excluded. Builds a directed dependency graph, populates copybook_map and used_by fields, and collects all issues. Produces the final inventory_artifact.json. Used exclusively by the Inventory Agent (1_inventory).
 ---
 
 ## Purpose
 
-For every program in the file_registry, detect all outgoing references to
-other programs and copybooks. Build a directed graph. Populate the
-`used_by` field in the copybook_registry. Collect unresolved references and
-dynamic calls as issues.
+Starting from `ENTRY_POINT_FILE`, discover the complete dependency tree by scanning each reachable program file for outgoing cross-references and following them recursively. Build a directed graph containing **only** the programs and copybooks that are reachable from the entry point.
+
+Files that exist in `SEARCH_ROOT` but are NOT reachable from the entry point must **not** appear in the output `file_registry`, `copybook_registry`, or `call_graph`.
 
 Do NOT read or interpret COBOL logic, paragraph names, or data definitions.
 Only scan for cross-reference statements.
@@ -41,8 +33,7 @@ Only scan for cross-reference statements.
 
 ## Grep patterns
 
-Apply these patterns per program file. Always respect the COBOL column rules
-from the file-walker skill: skip lines where column 7 (index 6) is `*` or `/`.
+Apply these patterns per program file. Always respect the COBOL column rules from the file-walker skill: skip lines where column 7 (index 6) is `*` or `/`.
 
 ```bash
 # COPY — basic and with library qualifier
@@ -93,22 +84,99 @@ filters before classifying as `DYNAMIC_CALL`:
 
 ---
 
-## Graph construction rules
+## BFS traversal algorithm
 
 ```
-1. Start with nodes from file_registry (programs) and copybook_registry
-2. For each program, run all grep patterns above
-3. For each match:
-   a. Normalise target name to UPPERCASE
-   b. Look up target in file_registry or copybook_registry
-   c. If found: set "resolved": true
-   d. If not found: set "resolved": false, log warning issue
-   e. Create edge object (see schema below)
-4. For COPY edges: add source program ID to copybook_registry[target].used_by
-5. For DYNAMIC_CALL: set "target": null, record variable name
-6. Detect circular COPY chains: if A COPYs B and B COPYs A → log error issue
-7. After all files processed: compute stats block
+INPUTS:
+  entry_point_file  — absolute path to the root .cbl file
+  lookup_registry   — { programs_lookup, copybooks_lookup, jcl_lookup, bms_lookup }
+
+OUTPUTS (built incrementally):
+  file_registry     — list of reachable program entries (initially empty)
+  copybook_registry — list of reachable copybook entries (initially empty)
+  jcl_registry      — list of JCL jobs that reference reachable programs
+  call_graph.nodes  — de-duplicated node list (program + copybook)
+  call_graph.edges  — all edges found during traversal
+  copybook_map      — { copybook_name: [program_ids_that_copy_it] }
+  issues[]          — collected warnings and errors
+
+ALGORITHM:
+  visited_programs  = empty set    # program IDs already processed
+  visited_copybooks = empty set    # copybook IDs already processed
+  queue             = [ entry_point_file ]   # BFS work queue (program files only)
+
+  STEP 1 — Seed:
+    Extract PROGRAM-ID from entry_point_file (same grep as file-walker).
+    Create a file_registry entry for the entry point.
+    Add its PROGRAM-ID to visited_programs.
+    Add it as a node in call_graph.nodes.
+
+  STEP 2 — BFS loop (process programs):
+    WHILE queue is not empty:
+      current_file = dequeue(queue)
+      current_id   = PROGRAM-ID of current_file (uppercased)
+
+      Run all grep patterns on current_file to find references.
+      For each reference found:
+
+        a. Normalise target name to UPPERCASE.
+
+        b. If edge type is COPY or SQL_INCLUDE:
+             Look up target in lookup_registry.copybooks_lookup.
+             If found AND target NOT in visited_copybooks:
+               Add copybook entry to copybook_registry.
+               Add it as a node in call_graph.nodes.
+               Add target to visited_copybooks.
+             Add edge (current_id → target) to call_graph.edges.
+             Add current_id to copybook_map[target].
+             If not found in lookup: set resolved=false, log warning issue.
+
+        c. If edge type is STATIC_CALL, CICS_LINK, or CICS_XCTL:
+             Look up target in lookup_registry.programs_lookup.
+             If found AND target NOT in visited_programs:
+               Add program entry to file_registry.
+               Add it as a node in call_graph.nodes.
+               Add target to visited_programs.
+               Enqueue the program's file path → queue.  ← triggers recursive scan
+             Add edge (current_id → target) to call_graph.edges.
+             If not found in lookup: set resolved=false, log warning issue.
+
+        d. If edge type is DYNAMIC_CALL:
+             Apply disambiguation rules.
+             Add edge with target=null to call_graph.edges.
+             Log info issue.
+
+        e. If edge type is CICS_RETURN:
+             Record the transaction ID in the edge — no file to enqueue.
+
+  STEP 3 — JCL cross-reference (post-BFS):
+    For each job in lookup_registry.jcl_lookup:
+      If any step.program value matches a program ID in visited_programs:
+        Add the JCL job entry to jcl_registry.
+        Add it as a node in call_graph.nodes.
+        Add an EXEC edge from the job to that program.
+
+  STEP 4 — used_by population:
+    For each (copybook_id, users_list) in copybook_map:
+      Set copybook_registry[copybook_id].used_by = users_list.
+
+  STEP 5 — Compute stats block from the collected lists.
 ```
+
+**Key rule**: only enqueue a program file if it was found in
+`lookup_registry.programs_lookup` AND has not been visited yet. This prevents
+infinite loops on circular CALLs and avoids processing unreachable programs.
+
+---
+
+## Circular dependency handling
+
+- Circular CALL chains (A calls B calls A): the visited_programs set prevents
+  re-enqueuing — both will be in the output but the second edge is still
+  recorded normally.
+- Circular COPY chains (A copies B copies A): detect by checking
+  `visited_copybooks` before adding — if B is already visited when processing
+  A's COPY of B, record the edge but log a `circular_copy` error issue.
 
 ---
 
@@ -122,94 +190,119 @@ This skill produces the following sections of `inventory_artifact.json`:
 {
   "meta": {
     "generated_at": "2024-01-15T10:30:00Z",
-    "repo_root": "/absolute/path/to/repo",
+    "entry_point_file": "/absolute/path/to/MAINPROG.CBL",
+    "entry_point_id": "MAINPROG",
+    "search_root": "/absolute/path/to/search/folder/",
     "agent_version": "1_inventory@1.0",
-    "total_files_scanned": 85
+    "total_programs_reachable": 12,
+    "total_copybooks_reachable": 8
   },
   "stats": {
-    "programs": 42,
-    "batch_programs": 18,
-    "online_programs": 24,
-    "copybooks": 31,
-    "jcl_jobs": 12,
-    "bms_maps": 8,
-    "control_cards": 2,
-    "db2_includes": 4,
-    "call_edges_total": 187,
-    "call_edges_resolved": 179,
-    "call_edges_unresolved": 8,
-    "dynamic_calls": 4,
-    "copy_edges": 143,
-    "cics_link_edges": 22,
-    "cics_xctl_edges": 6
+    "programs": <>,
+    "batch_programs": <>,
+    "online_programs": <>,
+    "copybooks": <>,
+    "jcl_jobs": <>,
+    "bms_maps": <>,
+    "db2_includes": <>,
+    "call_edges_total": <>,
+    "call_edges_resolved": <>,
+    "call_edges_unresolved": <>,
+    "dynamic_calls": <>,
+    "copy_edges": <>,
+    "cics_link_edges": <>,
+    "cics_xctl_edges": <>
   },
-  "file_registry": [ ],
-  "copybook_registry": [ ],
-  "jcl_registry": [ ],
+  "file_registry": [
+    {
+      "id": "MAINPROG",
+      "program_id": "MAINPROG",
+      "path": "programs/batch/MAINPROG.CBL",
+      "relative_path": "programs/batch/MAINPROG.CBL",
+      "type": "program",
+      "subtype": "batch",
+      "size_bytes": 14200,
+      "is_entry_point": true
+    }
+  ],
+  "copybook_registry": [
+    {
+      "id": "CVACT01Y",
+      "path": "copybook/common/CVACT01Y.CPY",
+      "relative_path": "copybook/common/CVACT01Y.CPY",
+      "type": "copybook",
+      "used_by": ["MAINPROG", "SUBPROG1"]
+    }
+  ],
+  "jcl_registry": [
+    {
+      "id": "ACCTFILE",
+      "path": "jcl/ACCTFILE.JCL",
+      "relative_path": "jcl/ACCTFILE.JCL",
+      "job_name": "ACCTFILE",
+      "steps": [
+        { "step_name": "MAINSTEP", "program": "MAINPROG", "type": "cobol" }
+      ]
+    }
+  ],
   "call_graph": {
     "nodes": [
       {
-        "id": "CBACT01C",
+        "id": "MAINPROG",
         "type": "program",
         "subtype": "batch",
-        "path": "app/cbl/CBACT01C.CBL"
+        "path": "programs/batch/MAINPROG.CBL",
+        "is_entry_point": true
       },
       {
         "id": "CVACT01Y",
         "type": "copybook",
-        "path": "app/copy/CVACT01Y.CPY"
+        "path": "copybook/common/CVACT01Y.CPY"
       }
     ],
     "edges": [
       {
-        "from": "CBACT01C",
-        "to": "CBACT04C",
+        "from": "MAINPROG",
+        "to": "SUBPROG1",
         "type": "STATIC_CALL",
         "resolved": true,
         "source_line_hint": 420
       },
       {
-        "from": "CBACT01C",
+        "from": "MAINPROG",
         "to": "CVACT01Y",
         "type": "COPY",
         "resolved": true,
         "source_line_hint": 85
       },
       {
-        "from": "CBACT01C",
+        "from": "MAINPROG",
         "to": null,
         "type": "DYNAMIC_CALL",
         "resolved": false,
         "variable": "WS-PROG-NAME",
         "confirmed": true,
         "source_line_hint": 530
-      },
-      {
-        "from": "COSGN00C",
-        "to": "COADM01C",
-        "type": "CICS_XCTL",
-        "resolved": true,
-        "source_line_hint": 312
       }
     ]
   },
   "copybook_map": {
-    "CVACT01Y": ["CBACT01C", "COACT01C", "COACT02C"],
-    "CVCRD01Y": ["CBACT01C", "COCRDSLC", "COCRDUPC"]
+    "CVACT01Y": ["MAINPROG", "SUBPROG1"],
+    "CVCRD01Y": ["MAINPROG"]
   },
   "issues": [
     {
       "severity": "warning",
       "type": "unresolved_reference",
-      "source": "CBACT01C",
+      "source": "MAINPROG",
       "reference": "EXTPROG1",
       "edge_type": "STATIC_CALL",
-      "message": "CALL target 'EXTPROG1' not found in file registry — may be external or in load library"
+      "message": "CALL target 'EXTPROG1' not found in lookup registry — may be external or in load library"
     },
     {
       "severity": "info",
       "type": "dynamic_call",
-      "source": "CBACT01C",
+      "source": "MAINPROG",
       "variable": "WS-PROG-NAME",
       "confirmed": true,
       "message": "Dynamic CALL via variable WS-PROG-NAME — cannot resolve statically"
@@ -217,7 +310,7 @@ This skill produces the following sections of `inventory_artifact.json`:
     {
       "severity": "warning",
       "type": "missing_program_id",
-      "source_file": "app/cbl/OLDPROG.CBL",
+      "source_file": "programs/batch/OLDPROG.CBL",
       "fallback_id": "OLDPROG",
       "message": "PROGRAM-ID not found — using filename as fallback ID"
     },
@@ -232,15 +325,21 @@ This skill produces the following sections of `inventory_artifact.json`:
 }
 ```
 
+Note: `is_entry_point: true` is set only on the root program supplied as
+`ENTRY_POINT_FILE`. All other programs default to `is_entry_point: false`
+(the field may be omitted for non-entry-point programs).
+
 ---
 
 ## Error handling
 
 | Condition | Severity | Action |
 |---|---|---|
-| Target of CALL/COPY not in registry | `warning` | Add edge with `resolved: false`, log issue |
+| ENTRY_POINT_FILE not found on disk | `error` | Abort — report to agent |
+| ENTRY_POINT_FILE not a `.cbl` or `.cob` file | `error` | Abort — report to agent |
+| Target of CALL/COPY not in lookup_registry | `warning` | Add edge with `resolved: false`, log issue; do NOT enqueue |
 | Dynamic CALL variable not confirmed in WS | `info` | Add edge with `confirmed: false`, log issue |
-| Circular COPY chain | `error` | Log issue, do not recurse — record both parties |
-| CICS LINK/XCTL target not in registry | `warning` | Add edge with `resolved: false`, log issue |
-| Grep produces no output for a file | `info` | File has no outgoing references — normal for some utilities |
-| File in file_registry cannot be re-read | `error` | Log issue, skip edge extraction for that file |
+| Circular COPY chain | `error` | Log issue, do not re-process — record both parties |
+| CICS LINK/XCTL target not in lookup_registry | `warning` | Add edge with `resolved: false`, log issue |
+| Grep produces no output for a file | `info` | File has no outgoing references — normal for leaf programs |
+| Program file found in lookup but cannot be read | `error` | Log issue, skip edge extraction for that file |

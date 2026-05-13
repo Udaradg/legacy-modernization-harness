@@ -1,21 +1,16 @@
 ---
 name: file-walker
-description: >
-  Recursively traverses a COBOL repository directory tree. Classifies every
-  file by type based on its extension, extracts PROGRAM-ID from COBOL source
-  files, and produces the raw file_registry, copybook_registry, and
-  jcl_registry that the Inventory Agent assembles into the final artifact.
-  Used exclusively by the Inventory Agent (1_inventory).
+description: Scans a SEARCH_ROOT directory tree and builds a lookup_registry — a map of every available COBOL program, copybook, JCL job, and BMS map that can be used later for dependency resolution. Does NOT decide which files belong to the module; that is the dependency-graph skill's job. The lookup_registry is keyed by uppercased program/copybook name so references can be resolved quickly. Used exclusively by the Inventory Agent (1_inventory).
 ---
 
 ## Purpose
 
-Walk the repository filesystem. For every file found, record its path,
-classify its type, and extract key identifiers (PROGRAM-ID for programs,
-JOB name for JCL). Produce structured registry lists.
+Scan the filesystem under `SEARCH_ROOT` and create a **lookup registry** of every available file. This registry acts as a resolution table: when the dependency-graph skill encounters a CALL or COPY target name, it looks the name up here to find the physical file path.
 
-Do NOT follow cross-references or resolve COPY/CALL statements — that is
-the dependency-graph skill's job.
+**This skill does NOT determine which files are part of the module under analysis.** It simply makes all candidate files discoverable. The
+dependency-graph skill decides what is included in the final output based on reachability from the entry point.
+
+Do NOT follow cross-references or resolve COPY/CALL statements — that is the dependency-graph skill's job.
 
 ---
 
@@ -31,8 +26,8 @@ the dependency-graph skill's job.
 | `.lst` | `listing` | Compiler listing — record path only, skip content scan |
 | `.sql`, `.dclgen` | `db2` | DB2 DCLGEN or embedded SQL include |
 
-If an extension does not match any row above, record it with type `unknown`
-and log an `info` issue.
+If an extension does not match any row above, skip the file silently (it is
+not needed for dependency resolution).
 
 ---
 
@@ -91,77 +86,85 @@ grep -iE "^//([A-Z0-9#@\$]{1,8})\s+EXEC\s+PGM=([A-Z0-9\-]+)" "$FILE"
 ## Execution steps
 
 ```
-1. Use Glob to find all files under REPO_ROOT matching target extensions:
+1. Use Glob to find all files under SEARCH_ROOT matching target extensions:
    pattern: **/*.{cbl,cob,cpy,jcl,bms,ctl,lst,sql,dclgen}
-   Apply EXCLUDE_DIRS filter — skip any path containing an excluded segment.
+   Apply EXCLUDE_DIRS filter — skip any path segment matching an excluded name.
 
 2. For each file found:
-   a. Record absolute path and relative path from REPO_ROOT
+   a. Record absolute path and relative path from SEARCH_ROOT
    b. Determine type and subtype from extension (see table above)
    c. If type == program:
         - Extract PROGRAM-ID using grep pattern above
+        - Use PROGRAM-ID (uppercased) as the lookup key
+        - Also index by filename-without-extension (uppercased) as a secondary key
         - Record size_bytes
-   d. If type == jcl:
+   d. If type == copybook:
+        - Use filename-without-extension (uppercased) as the lookup key
+   e. If type == jcl:
         - Extract JOB name
         - Extract all EXEC PGM step bindings
-   e. If type == listing: record path only — do not read content
+   f. If type == listing: record path only — do not read content
 
-3. Build three separate lists:
-   - file_registry      (programs)
-   - copybook_registry  (copybooks and db2 includes)
-   - jcl_registry       (jcl jobs with their steps)
+3. Build the lookup_registry as a map keyed by uppercased name:
+   - programs_lookup   : { "PROGNAME": { ...entry... }, ... }
+   - copybooks_lookup  : { "COPYBOOKNAME": { ...entry... }, ... }
+   - jcl_lookup        : { "JOBNAME": { ...entry... }, ... }
+   - bms_lookup        : { "MAPNAME": { ...entry... }, ... }
 
-4. Return all three lists to the Inventory Agent.
+4. Return lookup_registry to the Inventory Agent.
 ```
 
 ---
 
 ## Output structures
 
-### file_registry entry
+### lookup_registry (returned to agent)
 
 ```json
 {
-  "id": "CBACT01C",
-  "program_id": "CBACT01C",
-  "path": "app/cbl/CBACT01C.CBL",
-  "relative_path": "app/cbl/CBACT01C.CBL",
-  "type": "program",
-  "subtype": "batch",
-  "size_bytes": 14200
+  "programs_lookup": {
+    "CBACT01C": {
+      "id": "CBACT01C",
+      "program_id": "CBACT01C",
+      "path": "app/cbl/CBACT01C.CBL",
+      "relative_path": "app/cbl/CBACT01C.CBL",
+      "type": "program",
+      "subtype": "batch",
+      "size_bytes": 14200
+    }
+  },
+  "copybooks_lookup": {
+    "CVACT01Y": {
+      "id": "CVACT01Y",
+      "path": "app/copy/CVACT01Y.CPY",
+      "relative_path": "app/copy/CVACT01Y.CPY",
+      "type": "copybook"
+    }
+  },
+  "jcl_lookup": {
+    "ACCTFILE": {
+      "id": "ACCTFILE",
+      "path": "app/jcl/ACCTFILE.JCL",
+      "relative_path": "app/jcl/ACCTFILE.JCL",
+      "job_name": "ACCTFILE",
+      "steps": [
+        { "step_name": "SORT001",  "program": "SORT",     "type": "utility" },
+        { "step_name": "ACCTPROC", "program": "CBACT01C", "type": "cobol"   }
+      ]
+    }
+  },
+  "bms_lookup": {
+    "INQSET": {
+      "id": "INQSET",
+      "path": "maps/INQSET.BMS",
+      "relative_path": "maps/INQSET.BMS",
+      "type": "bms_map"
+    }
+  }
 }
 ```
 
-### copybook_registry entry
-
-```json
-{
-  "id": "CVACT01Y",
-  "path": "app/copy/CVACT01Y.CPY",
-  "relative_path": "app/copy/CVACT01Y.CPY",
-  "type": "copybook",
-  "used_by": []
-}
-```
-
-Note: `used_by` starts empty here — the dependency-graph skill populates it.
-
-### jcl_registry entry
-
-```json
-{
-  "id": "ACCTFILE",
-  "path": "app/jcl/ACCTFILE.JCL",
-  "relative_path": "app/jcl/ACCTFILE.JCL",
-  "job_name": "ACCTFILE",
-  "steps": [
-    { "step_name": "SORT001", "program": "SORT",     "type": "utility" },
-    { "step_name": "ACCTPROC","program": "CBACT01C", "type": "cobol"   }
-  ]
-}
-```
-
-Step `type` rules: if program name is `SORT`, `IDCAMS`, `IEBGENER`,
+Step `type` rules for JCL: if program name is `SORT`, `IDCAMS`, `IEBGENER`,
 `IEFBR14`, `DFSRRC00` → `utility`; else → `cobol`.
 
 ---
@@ -172,6 +175,5 @@ Step `type` rules: if program name is `SORT`, `IDCAMS`, `IEBGENER`,
 |---|---|
 | File cannot be read | Log `error` issue, continue to next file |
 | PROGRAM-ID not found in `.cbl` | Use filename as ID, log `warning` |
-| Duplicate PROGRAM-ID across two files | Log `error` with both paths — do not deduplicate |
+| Duplicate PROGRAM-ID across two files | Log `error` with both paths — keep both, second entry stored under filename-key |
 | JOB name not found in `.jcl` | Use filename as ID, log `warning` |
-| File extension not in classification table | Record as `unknown` type, log `info` |
